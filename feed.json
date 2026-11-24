@@ -1,5 +1,29 @@
 {
-  "app_title": "Cập nhật tự động lúc 09:58 24/11/2026",
-  "updated_at": "09:58 24/11/2026",
-  "matches": []
+  "app_title": "Cập nhật lúc 10:45 24/11/2026",
+  "updated_at": "10:45 24/11/2026",
+  "matches": [
+    {
+      "id": "status_fallback",
+      "league": "Kiểm tra kết nối",
+      "status": "LIVE",
+      "kickoff": "10:45 24/11/2026",
+      "home_name": "Link đã hoạt động",
+      "home_logo": "",
+      "away_name": "Trang web không trả về danh sách trận tĩnh",
+      "away_logo": "",
+      "score": "OK",
+      "streams": [
+        {
+          "label": "Kênh Video Thử Nghiệm (Bấm để test TV)",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+          "referer": ""
+        },
+        {
+          "label": "Mở trực tiếp trang GaVang33 trên TV",
+          "url": "https://gavang33.gg/",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    }
+  ]
 }
