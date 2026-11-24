@@ -1,6 +1,6 @@
 {
-  "app_title": "GioVang • 21:03 24/11/2026",
-  "updated_at": "21:03 24/11/2026",
+  "app_title": "GioVang • 21:12 24/11/2026",
+  "updated_at": "21:12 24/11/2026",
   "matches": [
     {
       "id": "gv_7",
@@ -22,42 +22,6 @@
     },
     {
       "id": "gv_8",
-      "league": "AFC Champions League",
-      "status": "LIVE",
-      "kickoff": "19:15",
-      "home_name": "Ratchaburi Fc",
-      "home_logo": "https://images.keovip88.net/images/teams/ratchaburi-fc.png",
-      "away_name": "Johor Darul Takzim",
-      "away_logo": "https://images.keovip88.net/images/teams/johor-darul-takzim.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Dory",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370073_hd/1795370073_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-ratchaburi-fc-vs-johor-darul-takzim-24-11-6a8a38deeb269e70040bbd7a"
-        }
-      ]
-    },
-    {
-      "id": "gv_9",
-      "league": "AFC Champions League",
-      "status": "LIVE",
-      "kickoff": "19:15",
-      "home_name": "Shanghai Port",
-      "home_logo": "https://images.keovip88.net/images/teams/shanghai-port.png",
-      "away_name": "Buriram United",
-      "away_logo": "https://images.keovip88.net/images/teams/buriram-united.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Trĩ",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370097_hd/1795370097_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-shanghai-port-vs-buriram-united-24-11-6a8b8a6f4d3de1ad3e0d952c"
-        }
-      ]
-    },
-    {
-      "id": "gv_10",
       "league": "World Cup U17",
       "status": "LIVE",
       "kickoff": "20:00",
@@ -75,25 +39,7 @@
       ]
     },
     {
-      "id": "gv_11",
-      "league": "World Cup U17",
-      "status": "LIVE",
-      "kickoff": "21:30",
-      "home_name": "Dominican Republic U17",
-      "home_logo": "https://images.keovip88.net/images/teams/dominican-republic-u17.png",
-      "away_name": "Chile U17",
-      "away_logo": "https://images.keovip88.net/images/teams/chile-u17.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Hấu",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795498044_hd/1795498044_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-dominican-republic-u17-vs-chile-u17-24-11-6a1636bd85360c6da00af32b"
-        }
-      ]
-    },
-    {
-      "id": "gv_12",
+      "id": "gv_9",
       "league": "AFC Cup",
       "status": "LIVE",
       "kickoff": "20:45",
@@ -111,7 +57,7 @@
       ]
     },
     {
-      "id": "gv_13",
+      "id": "gv_10",
       "league": "TRITON",
       "status": "LIVE",
       "kickoff": "20:00",
@@ -135,8 +81,8 @@
       "kickoff": "23:00",
       "home_name": "Shabab Al Ahli",
       "home_logo": "https://images.keovip88.net/images/teams/shabab-al-ahli.png",
-      "away_name": "Al",
-      "away_logo": "",
+      "away_name": "Al-Qadasiya",
+      "away_logo": "https://images.keovip88.net/images/teams/al-qadsiah.png",
       "score": "vs",
       "streams": [
         {
@@ -205,7 +151,7 @@
       "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
-      "home_name": "Đội Nhà",
+      "home_name": "Galatasaray",
       "home_logo": "https://images.keovip88.net/images/teams/galatasaray.png",
       "away_name": "Aston Villa",
       "away_logo": "https://images.keovip88.net/images/teams/aston-villa.png",
@@ -213,7 +159,7 @@
       "streams": [
         {
           "label": "BLV Chồn",
-          "url": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455208_hd/1795455208_hd@720p.m3u8",
           "referer": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e"
         }
       ]
@@ -231,7 +177,7 @@
       "streams": [
         {
           "label": "BLV Trĩ",
-          "url": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455239_hd/1795455239_hd@720p.m3u8",
           "referer": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c"
         }
       ]

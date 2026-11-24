@@ -1,6 +1,6 @@
 {
-  "app_title": "Cập nhật lúc 21:01 24/11/2026",
-  "updated_at": "21:01 24/11/2026",
+  "app_title": "Cập nhật lúc 21:11 24/11/2026",
+  "updated_at": "21:11 24/11/2026",
   "matches": [
     {
       "id": "m_1",
@@ -779,7 +779,7 @@
     {
       "id": "m_44",
       "league": "Serbian Mozzart Bet Superliga",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "19:00",
       "home_name": "Radnicki Nis",
       "home_logo": "https://img.cltvap.cc/football/team/794c52e40471e247cc8e50dc33841c1d.png",
@@ -797,7 +797,7 @@
     {
       "id": "m_45",
       "league": "IDN LC",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "19:00",
       "home_name": "Bali United",
       "home_logo": "https://img.cltvap.cc/football/team/09fe2ecf88f68970da755f8655d5da8a.png",
@@ -1658,7 +1658,7 @@
     {
       "id": "m_92",
       "league": "Saudi Professional League",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "21:25",
       "home_name": "Al Fateh",
       "home_logo": "https://img.cltvap.cc/football/team/ae23ea18931ebe834ef6fe4799572e7f.png",
