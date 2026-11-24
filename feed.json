@@ -1,6 +1,6 @@
 {
-  "app_title": "Cập nhật lúc 19:34 24/11/2026",
-  "updated_at": "19:34 24/11/2026",
+  "app_title": "Cập nhật lúc 19:47 24/11/2026",
+  "updated_at": "19:47 24/11/2026",
   "matches": [
     {
       "id": "m_1",
@@ -95,7 +95,7 @@
     {
       "id": "m_6",
       "league": "FIFA U17 World Cup",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:00",
       "home_name": "Japan U17",
       "home_logo": "https://img.cltvap.cc/football/team/4d444ad7ea33c56cfc0d5701b6e79f59.png",
@@ -113,7 +113,7 @@
     {
       "id": "m_7",
       "league": "UEFA Youth League",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:00",
       "home_name": "Arsenal U19",
       "home_logo": "https://img.cltvap.cc/football/team/361260e39f38a6fdd23d64eec1530ba1.png",
@@ -779,7 +779,7 @@
     {
       "id": "m_44",
       "league": "Japanese J1 League",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "17:30",
       "home_name": "Urawa Red Diamonds",
       "home_logo": "https://img.cltvap.cc/football/team/ca15e36551392e8c99b53b5b2f8531d3.png",
@@ -887,7 +887,7 @@
     {
       "id": "m_50",
       "league": "UEFA Youth League",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:00",
       "home_name": "Sporting CP U19",
       "home_logo": "https://img.cltvap.cc/football/team/0e1d190df124492ca435fd0ce683a75c.png",
@@ -1491,7 +1491,7 @@
     {
       "id": "m_83",
       "league": "Azerbaijan First Division",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "17:30",
       "home_name": "Karvan Evlakh",
       "home_logo": "https://img.cltvap.cc/football/team/aa6d9f240dd67791dd86ff4de072d846.png",
@@ -1509,7 +1509,7 @@
     {
       "id": "m_84",
       "league": "Azerbaijan First Division",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "17:30",
       "home_name": "Baku Sporting FK",
       "home_logo": "https://img.cltvap.cc/football/team/afd11580da1ff691b68dcb564d9d10e5.png",
@@ -1581,7 +1581,7 @@
     {
       "id": "m_88",
       "league": "FIFA U17 World Cup",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:00",
       "home_name": "New Zealand U17",
       "home_logo": "https://img.cltvap.cc/football/team/f827b5406c7aa5b4fe10062ae06a137b.png",
@@ -1599,7 +1599,7 @@
     {
       "id": "m_89",
       "league": "FIFA U17 World Cup",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:00",
       "home_name": "Vietnam U17",
       "home_logo": "https://img.cltvap.cc/football/team/488df3a9b3fc86ac6c9e8f6d40733067.png",

@@ -1,10 +1,10 @@
 {
-  "app_title": "GioVang • 19:35 24/11/2026",
-  "updated_at": "19:35 24/11/2026",
+  "app_title": "GioVang • 19:48 24/11/2026",
+  "updated_at": "19:48 24/11/2026",
   "matches": [
     {
       "id": "gv_1",
-      "league": "Ngày",
+      "league": "GioVang TV",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Shabab Al Ahli",
@@ -14,164 +14,212 @@
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
-          "url": "https://giovang.guru/tracking-link",
-          "referer": "https://giovang.guru/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544"
-        },
-        {
-          "label": "BLV Cược ngay",
+          "label": "Phòng Trực Tiếp",
           "url": "https://giovang.guru/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544",
-          "referer": "https://giovang.guru/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
           "referer": "https://giovang.guru/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544"
         }
       ]
     },
     {
       "id": "gv_2",
-      "league": "Ngày",
+      "league": "GioVang TV",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
-      "home_name": "Shabab Al Ahli",
-      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
-      "away_name": "Al-Qadasiya",
-      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "home_name": "Al Seeb",
+      "home_logo": "https://images.keovip88.net/images/teams/al-seeb.png",
+      "away_name": "Al Shorta",
+      "away_logo": "https://images.keovip88.net/images/teams/al-shorta.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
-          "url": "https://giovang.guru/tracking-link",
-          "referer": "https://giovang.guru/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91"
-        },
-        {
-          "label": "BLV Cược ngay",
+          "label": "Phòng Trực Tiếp",
           "url": "https://giovang.guru/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91",
-          "referer": "https://giovang.guru/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
           "referer": "https://giovang.guru/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91"
         }
       ]
     },
     {
       "id": "gv_3",
-      "league": "Ngày",
+      "league": "GioVang TV",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
-      "home_name": "Shabab Al Ahli",
-      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
-      "away_name": "Al-Qadasiya",
-      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "home_name": "Eczacibasi Nu",
+      "home_logo": "https://static.flashscore.com/res/image/data/6wWfI3zB-jm1g2SD5.png",
+      "away_name": "Tent Nu",
+      "away_logo": "https://static.flashscore.com/res/image/data/xbeN85jl-2wgqbgJU.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
-          "url": "https://giovang.guru/tracking-link",
-          "referer": "https://giovang.guru/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2"
-        },
-        {
-          "label": "BLV Cược ngay",
+          "label": "Phòng Trực Tiếp",
           "url": "https://giovang.guru/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2",
-          "referer": "https://giovang.guru/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
           "referer": "https://giovang.guru/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2"
         }
       ]
     },
     {
       "id": "gv_4",
-      "league": "Ngày",
+      "league": "GioVang TV",
       "status": "SẮP ĐÁ",
-      "kickoff": "23:00",
-      "home_name": "Shabab Al Ahli",
-      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
-      "away_name": "Al-Qadasiya",
-      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "kickoff": "00:00",
+      "home_name": "Besiktas Cola Turka",
+      "home_logo": "https://cdn.keobongvip.digital/images/basketball-teams/4c56f517bc64726563ed7f0d226a828e.png",
+      "away_name": "Paris",
+      "away_logo": "https://cdn.keobongvip.digital/images/basketball-teams/379bcd41f23aff50b9aa09d0d41e22d1.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795456123_hd/1795456123_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273"
-        },
-        {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795456123_hd/1795456123_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273",
           "referer": "https://giovang.guru/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273"
         }
       ]
     },
     {
       "id": "gv_5",
-      "league": "Ngày",
+      "league": "GioVang TV",
       "status": "SẮP ĐÁ",
-      "kickoff": "23:00",
-      "home_name": "Shabab Al Ahli",
-      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
-      "away_name": "Al-Qadasiya",
-      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "kickoff": "00:45",
+      "home_name": "Galatasaray",
+      "home_logo": "https://images.keovip88.net/images/teams/galatasaray.png",
+      "away_name": "Aston Villa",
+      "away_logo": "https://images.keovip88.net/images/teams/aston-villa.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455208_hd/1795455208_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e"
-        },
-        {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455208_hd/1795455208_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e",
           "referer": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e"
         }
       ]
     },
     {
       "id": "gv_6",
-      "league": "Ngày",
+      "league": "GioVang TV",
       "status": "SẮP ĐÁ",
-      "kickoff": "23:00",
-      "home_name": "Shabab Al Ahli",
+      "kickoff": "00:45",
+      "home_name": "Bodo Glimt",
       "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
-      "away_name": "Al-Qadasiya",
+      "away_name": "Lask Linz",
       "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455239_hd/1795455239_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c"
-        },
-        {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455239_hd/1795455239_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c",
           "referer": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c"
         }
       ]
     },
     {
       "id": "gv_7",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "Shabab Al Ahli",
+      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
+      "away_name": "Al Qadasiya",
+      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455104_hd/1795455104_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544"
+        }
+      ]
+    },
+    {
+      "id": "gv_8",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "Al Seeb",
+      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
+      "away_name": "Al Shorta",
+      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455175_hd/1795455175_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91"
+        }
+      ]
+    },
+    {
+      "id": "gv_9",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "Eczacibasi Nu",
+      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
+      "away_name": "Tent Nu",
+      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795456293_hd/1795456293_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2"
+        }
+      ]
+    },
+    {
+      "id": "gv_10",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "Besiktas Cola Turka",
+      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
+      "away_name": "Paris",
+      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795456123_hd/1795456123_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273"
+        }
+      ]
+    },
+    {
+      "id": "gv_11",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "Galatasaray",
+      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
+      "away_name": "Aston Villa",
+      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455208_hd/1795455208_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e"
+        }
+      ]
+    },
+    {
+      "id": "gv_12",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "Bodo Glimt",
+      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
+      "away_name": "Lask Linz",
+      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455239_hd/1795455239_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c"
+        }
+      ]
+    },
+    {
+      "id": "gv_13",
       "league": "AFC Champions League",
       "status": "LIVE",
       "kickoff": "19:15",
@@ -182,24 +230,14 @@
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
+          "label": "Phòng BLV 1",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795370039_hd/1795370039_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-cong-an-ha-noi-vs-vissel-kobe-24-11-6a88e7865d02aeccba00526c"
-        },
-        {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370039_hd/1795370039_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-cong-an-ha-noi-vs-vissel-kobe-24-11-6a88e7865d02aeccba00526c"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
           "referer": "https://giovang.guru/truc-tiep-cong-an-ha-noi-vs-vissel-kobe-24-11-6a88e7865d02aeccba00526c"
         }
       ]
     },
     {
-      "id": "gv_8",
+      "id": "gv_14",
       "league": "AFC Champions League",
       "status": "LIVE",
       "kickoff": "19:15",
@@ -210,24 +248,14 @@
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
+          "label": "Phòng BLV 1",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795370073_hd/1795370073_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-ratchaburi-fc-vs-johor-darul-takzim-24-11-6a8a38deeb269e70040bbd7a"
-        },
-        {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370073_hd/1795370073_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-ratchaburi-fc-vs-johor-darul-takzim-24-11-6a8a38deeb269e70040bbd7a"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
           "referer": "https://giovang.guru/truc-tiep-ratchaburi-fc-vs-johor-darul-takzim-24-11-6a8a38deeb269e70040bbd7a"
         }
       ]
     },
     {
-      "id": "gv_9",
+      "id": "gv_15",
       "league": "AFC Champions League",
       "status": "LIVE",
       "kickoff": "19:15",
@@ -238,131 +266,32 @@
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
+          "label": "Phòng BLV 1",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795370097_hd/1795370097_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-shanghai-port-vs-buriram-united-24-11-6a8b8a6f4d3de1ad3e0d952c"
-        },
-        {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370097_hd/1795370097_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-shanghai-port-vs-buriram-united-24-11-6a8b8a6f4d3de1ad3e0d952c"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
           "referer": "https://giovang.guru/truc-tiep-shanghai-port-vs-buriram-united-24-11-6a8b8a6f4d3de1ad3e0d952c"
         }
       ]
     },
     {
-      "id": "gv_10",
-      "league": "Turkey Sultanlar Ligi",
+      "id": "gv_16",
+      "league": "World Cup U17",
       "status": "LIVE",
-      "kickoff": "18:00",
-      "home_name": "Onikisubat",
-      "home_logo": "https://upload.wikimedia.org/wikipedia/en/7/72/Sultanlar_Ligi.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-      "away_name": "Ziraat Bankasi",
-      "away_logo": "https://static.flashscore.com/res/image/data/nN1hHJYA-vaQC7xt4.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Soi Kèo",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370534_hd/1795370534_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-onikisubat-vs-ziraat-bankasi-24-11-a8lf95heg7ty"
-        },
-        {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370534_hd/1795370534_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-onikisubat-vs-ziraat-bankasi-24-11-a8lf95heg7ty"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
-          "referer": "https://giovang.guru/truc-tiep-onikisubat-vs-ziraat-bankasi-24-11-a8lf95heg7ty"
-        }
-      ]
-    },
-    {
-      "id": "gv_11",
-      "league": "TRITON",
-      "status": "SẮP ĐÁ",
       "kickoff": "20:00",
-      "home_name": "Super High Roller Series",
-      "home_logo": "https://i.ytimg.com/vi/rS-7vvE56xU/sddefault.jpg",
-      "away_name": "North Cyprus 2026 Day",
-      "away_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQFdtfOY-6B27HJYc-7UVmgbYNHOORlWxZQZmoW0J-ppHy3mokHaagUSg&s=10",
+      "home_name": "Nhat Ban U17",
+      "home_logo": "https://images.keovip88.net/images/teams/japan-u17.png",
+      "away_name": "Serbia U17",
+      "away_logo": "https://images.keovip88.net/images/teams/srbija-cgora-u17.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Soi Kèo",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795498009_hd/1795498009_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-super-high-roller-series-vs-north-cyprus-2026-day-10-24-11-gqu85loek89n"
+          "label": "Phòng BLV 1",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370097_hd/1795370097_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-nhat-ban-u17-vs-serbia-u17-24-11-6a124178c018edea420a98fe"
         },
         {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795498009_hd/1795498009_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-super-high-roller-series-vs-north-cyprus-2026-day-10-24-11-gqu85loek89n"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
-          "referer": "https://giovang.guru/truc-tiep-super-high-roller-series-vs-north-cyprus-2026-day-10-24-11-gqu85loek89n"
-        }
-      ]
-    },
-    {
-      "id": "gv_12",
-      "league": "PGL Major Singapore 2026 Stage 1",
-      "status": "SẮP ĐÁ",
-      "kickoff": "11:00",
-      "home_name": "Pgl Major Stage",
-      "home_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcXpW4kmkC3UBqEL2ooWKrhxy8cMn0ngH9OWz9fDreLehcX4JTeE1PnZE&s=10",
-      "away_name": "Pgl Major Singapore",
-      "away_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqpfjyiOMULPoxbDG_RIYMycP9KtYlvrb6o6INuesB8w&s",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Soi Kèo",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795447017_hd/1795447017_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-pgl-major-stage-1-1-vs-pgl-major-singapore-24-11-7pnd8v4nc5fb"
-        },
-        {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795500871_hd/1795500871_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-pgl-major-stage-1-1-vs-pgl-major-singapore-24-11-7pnd8v4nc5fb"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
-          "referer": "https://giovang.guru/truc-tiep-pgl-major-stage-1-1-vs-pgl-major-singapore-24-11-7pnd8v4nc5fb"
-        }
-      ]
-    },
-    {
-      "id": "gv_13",
-      "league": "PGL Major Singapore 2026 Stage 1",
-      "status": "SẮP ĐÁ",
-      "kickoff": "16:00",
-      "home_name": "Pgl Major Stage 1 1 Ca 3",
-      "home_logo": "https://i.ytimg.com/vi/_7LJB5SAgrY/hq720.jpg?v=6b027532&sqp=COTAk9gG-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAYTghyO_-Awpudi8uGTpyRMx7D3w",
-      "away_name": "Pgl Major Stage 1 1 Ca",
-      "away_logo": "https://i.ytimg.com/vi/_7LJB5SAgrY/hq720.jpg?v=6b027532&sqp=COTAk9gG-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAYTghyO_-Awpudi8uGTpyRMx7D3w",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Soi Kèo",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795491476_hd/1795491476_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-pgl-major-stage-1-1-ca-3-vs-pgl-major-stage-1-1-ca-4-24-11-o279d53v4tr1"
-        },
-        {
-          "label": "BLV Cược ngay",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795491476_hd/1795491476_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-pgl-major-stage-1-1-ca-3-vs-pgl-major-stage-1-1-ca-4-24-11-o279d53v4tr1"
-        },
-        {
-          "label": "Phòng BLV 3",
-          "url": "https://giovang.guru/tracking-link",
-          "referer": "https://giovang.guru/truc-tiep-pgl-major-stage-1-1-ca-3-vs-pgl-major-stage-1-1-ca-4-24-11-o279d53v4tr1"
+          "label": "Phòng BLV 2",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370124_hd/1795370124_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-nhat-ban-u17-vs-serbia-u17-24-11-6a124178c018edea420a98fe"
         }
       ]
     }
