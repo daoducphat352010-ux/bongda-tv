@@ -1,287 +1,109 @@
 import json
 import re
-from datetime import datetime, timezone, timedelta
-from urllib.parse import urljoin
+from datetime import datetime, timedelta, timezone
+from urllib.parse import parse_qs, urlparse
 from playwright.sync_api import sync_playwright
 
-SOURCE_URL = "https://giovang.co"
-OUTPUT_FILE = "feed_giovang.json"
-VN_TZ = timezone(timedelta(hours=7))
-
-GARBAGE_LABELS = {
-    "",
-    "xem ngay",
-    "xem ngay >",
-    "soi kèo",
-    "soi keo",
-    "nhận định",
-    "nhan dinh",
-    "trực tiếp",
-    "truc tiep",
-    "live",
-    "sắp đá",
-    "sap da",
-    "vs",
-    "ht",
-    "ft",
-    "chi tiết",
-    "chi tiet",
-    "trang chủ",
-    "trang chu",
-    "đăng nhập",
-    "dang nhap",
-    "đăng ký",
-    "dang ky",
-}
+ROOT_DOMAIN = "https://giovang.co"
+SOURCE_URLS = [
+    f"{ROOT_DOMAIN}/",
+]
+OUTPUT_FILE = "giovang_feed.json"
 
 
-def clean(s: str) -> str:
-    return re.sub(r"\s+", " ", s or "").strip()
-
-
-def is_garbage(s: str) -> bool:
-    low = clean(s).lower()
-    if low in GARBAGE_LABELS:
-        return True
-    if len(low) < 2 or len(low) > 70:
-        return True
-    if re.fullmatch(r"[\d\s:./+-]+", low):
-        return True
-    return False
-
-
-def normalize_logo_url(src: str, base_url: str) -> str:
-    s = clean(src)
-    if not s or s.startswith("data:"):
+def clean_league_text(raw: str) -> str:
+    if not raw:
         return ""
-    return urljoin(base_url, s)
+    txt = re.sub(r"\s+", " ", raw).strip()
+    txt = re.sub(r"^[^\w\u00C0-\u1EF9]+|[^\w\u00C0-\u1EF9)]+$", "", txt).strip()
+    return txt
 
 
-def scrape_giovang() -> dict:
-    raw_items = []
-    final_url = SOURCE_URL
-    page_title = ""
+def is_valid_league(cand: str, home: str, away: str, blv_names=None) -> bool:
+    c = clean_league_text(cand)
+    if len(c) < 3 or len(c) > 60:
+        return False
 
-    try:
-        with sync_playwright() as p:
-            browser = p.chromium.launch(
-                headless=True,
-                args=["--no-sandbox", "--disable-dev-shm-usage"]
-            )
-            context = browser.new_context(
-                viewport={"width": 1440, "height": 960},
-                user_agent=(
-                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) "
-                    "Chrome/124.0.0.0 Safari/537.36"
-                ),
-                locale="vi-VN",
-            )
-            page = context.new_page()
-            page.goto(SOURCE_URL, wait_until="domcontentloaded", timeout=45000)
-            page.wait_for_timeout(5000)
+    cl = c.lower()
+    hl = (home or "").lower().strip()
+    al = (away or "").lower().strip()
 
-            final_url = page.url
-            page_title = clean(page.title())
-            print(f"[INFO] Loaded URL: {final_url} | Title: {page_title}")
+    if hl and len(hl) >= 3 and (hl in cl or cl in hl):
+        return False
+    if al and len(al) >= 3 and (al in cl or cl in al):
+        return False
 
-            for _ in range(18):
-                before_y = page.evaluate("window.scrollY")
-                page.evaluate("window.scrollBy(0, 650)")
-                page.wait_for_timeout(450)
-                after_y = page.evaluate("window.scrollY")
-                if after_y == before_y and after_y > 0:
-                    break
+    if blv_names:
+        for b in blv_names:
+            bl = clean_league_text(b).lower()
+            if bl and len(bl) >= 3 and (bl in cl or cl in bl):
+                return False
 
-            page.evaluate("window.scrollTo(0, 0)")
-            page.wait_for_timeout(400)
+    if re.search(r"\bvs\b", cl) or re.match(r"^\d{1,2}:\d{2}", c):
+        return False
+    if re.search(r"\b\d{1,2}/\d{1,2}(?:/\d{2,4})?\b", cl):
+        return False
 
-            raw_items = page.evaluate(
-                """() => {
-                    const out = [];
-                    const seenLinks = new Set();
-                    const anchors = Array.from(document.querySelectorAll('a[href]'));
+    banned_phrases = (
+        "miễn phí", "chất lượng", "fullhd", "full hd", "tốc độ", "mượt mà",
+        "không giật", "không quảng cáo", "giovang", "giờ vàng", "gavang",
+        "trực tiếp", "xem bóng", "lịch thi đấu", "kết quả", "bảng xếp hạng",
+        "nguồn phát", "trang chủ", "sắp đá", "xem ngay", "đang diễn ra", "kết thúc"
+    )
+    if any(p in cl for p in banned_phrases):
+        return False
 
-                    for (const a of anchors) {
-                        const href = (a.getAttribute('href') || '').trim();
-                        if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:')) continue;
+    if cl in ("home", "live", "hd", "vs", "ft", "ht"):
+        return False
+    if cl.startswith("blv ") or cl.startswith("phòng "):
+        return False
 
-                        let fullUrl = '';
-                        try { fullUrl = new URL(href, location.origin).href; } catch (e) { continue; }
-                        if (seenLinks.has(fullUrl)) continue;
+    return True
 
-                        let card = a;
-                        let cur = a.parentElement;
-                        for (let i = 0; i < 6 && cur && cur.parentElement; i++) {
-                            const r = cur.getBoundingClientRect();
-                            const aCnt = cur.querySelectorAll('a[href]').length;
-                            if (r.height >= 32 && r.height <= 450 && aCnt <= 12) {
-                                card = cur;
-                                break;
-                            }
-                            cur = cur.parentElement;
-                        }
 
-                        const cardText = (card.innerText || '').replace(/\\s+/g, ' ').trim();
-                        if (cardText.length < 3) continue;
+def parse_match_info(raw_text: str, base_href: str):
+    slug = base_href.rstrip("/").split("/")[-1]
 
-                        let blvName = '';
-                        const leafEls = Array.from(card.querySelectorAll('*')).filter(el => el.children.length === 0);
-                        const leaves = leafEls
-                            .map(el => (el.innerText || '').replace(/\\s+/g, ' ').trim())
-                            .filter(Boolean);
+    kickoff = "LIVE"
+    m_slug_time = re.search(r"-luc-(\d{2})(\d{2})-ngay-(\d{2}-\d{2}-\d{4})", slug, re.I)
+    if m_slug_time:
+        hh, mm, _ = m_slug_time.groups()
+        kickoff = f"{hh}:{mm}"
+    else:
+        m_text_time = re.search(r"\b(\d{1,2}:\d{2})\b", raw_text)
+        if m_text_time:
+            kickoff = m_text_time.group(1)
 
-                        for (const t of leaves) {
-                            if (/^blv\\b/i.test(t) && t.length <= 40) {
-                                blvName = t;
-                                break;
-                            }
-                        }
-                        if (!blvName) {
-                            const aText = (a.innerText || '').replace(/\\s+/g, ' ').trim();
-                            if (aText && aText.length <= 32 && !/^(xem ngay|soi kèo|soi keo|live|trực tiếp|chi tiết)$/i.test(aText)) {
-                                blvName = aText;
-                            }
-                        }
+    home = ""
+    away = ""
+    raw_lines = [re.sub(r"\s+", " ", ln).strip() for ln in raw_text.splitlines() if ln.strip()]
+    vs_idx = -1
+    for i, ln in enumerate(raw_lines):
+        if ln.upper() == "VS":
+            vs_idx = i
+            break
 
-                        const imgs = [];
-                        for (const img of card.querySelectorAll('img')) {
-                            const cand =
-                                img.getAttribute('data-src') ||
-                                img.getAttribute('data-original') ||
-                                img.getAttribute('data-lazy-src') ||
-                                img.getAttribute('src') ||
-                                '';
-                            if (cand && !cand.startsWith('data:image/svg')) {
-                                imgs.push(cand);
-                            }
-                        }
-
-                        seenLinks.add(fullUrl);
-                        out.push({
-                            url: fullUrl,
-                            cardText,
-                            blvName,
-                            leaves,
-                            imgs
-                        });
-                    }
-                    return out;
-                }"""
-            )
-
-            print(f"[INFO] Raw candidate links found: {len(raw_items)}")
-            browser.close()
-    except Exception as exc:
-        print(f"[ERROR] {exc}")
-
-    matches = []
-    seen_match_keys = set()
-
-    for item in raw_items:
-        full_url = item.get("url", "")
-        card_text = clean(item.get("cardText", ""))
-        leaves = [clean(x) for x in (item.get("leaves") or []) if not is_garbage(x)]
-
-        imgs = []
-        for raw_img in (item.get("imgs") or []):
-            u = normalize_logo_url(raw_img, final_url)
-            if u and u not in imgs:
-                imgs.append(u)
-
-        time_m = re.search(r"\b(\d{1,2}:\d{2}(?:\s*[-–/]\s*\d{1,2}/\d{1,2})?)\b", card_text)
-        kickoff = clean(time_m.group(1)) if time_m else ""
-        is_live = bool(re.search(r"\b(live|đang đá|trực tiếp)\b", card_text, re.I))
-        status = "LIVE" if is_live else "UPCOMING"
-
-        league = ""
-        for lv in leaves:
-            if re.search(
-                r"(cup|league|champions|europa|conference|premier|la liga|serie a|bundesliga|ligue 1|v-league|world cup|euro|aff|sea games|giải)",
-                lv,
-                re.I,
-            ) and len(lv) <= 45:
-                league = lv
+    if vs_idx > 0:
+        for back in range(vs_idx - 1, -1, -1):
+            cand = raw_lines[back]
+            if not re.match(r"^\d{1,2}:\d{2}", cand) and cand.upper() not in ("LIVE", "HD", "SẮP ĐÁ"):
+                home = cand[:32]
+                break
+        for fwd in range(vs_idx + 1, len(raw_lines)):
+            cand = raw_lines[fwd]
+            if (
+                not re.match(r"^\d{1,2}:\d{2}", cand)
+                and not re.match(r"^\d{1,2}/\d{1,2}", cand)
+                and cand.upper() not in ("LIVE", "HD", "FULL HD", "SẮP ĐÁ", "XEM NGAY")
+            ):
+                away = cand[:32]
                 break
 
-        blv_raw = clean(item.get("blvName", ""))
-        team_pool = []
-        for lv in leaves:
-            if lv == league or (blv_raw and lv.lower() == blv_raw.lower()):
-                continue
-            if re.fullmatch(r"\d{1,2}:\d{2}", lv):
-                continue
-            if lv not in team_pool:
-                team_pool.append(lv)
-
-        home_name = ""
-        away_name = ""
-        if len(team_pool) >= 2:
-            home_name, away_name = team_pool[0], team_pool[1]
-        else:
-            cleaned_blob = re.sub(r"\b\d{1,2}:\d{2}\b", " ", card_text)
-            for sep in [" vs ", " VS ", " - ", " – ", " v "]:
-                if sep in cleaned_blob:
-                    p0, p1 = cleaned_blob.split(sep, 1)
-                    h = clean(p0.split("|")[-1])
-                    a = clean(p1.split("|")[0])
-                    if not is_garbage(h) and not is_garbage(a):
-                        home_name, away_name = h, a
-                        break
-
-        if not home_name:
-            fallback_candidates = [x for x in leaves if x.lower() != (blv_raw or "").lower()]
-            if fallback_candidates:
-                home_name = fallback_candidates[0]
-            elif len(card_text) >= 2:
-                home_name = card_text[:50]
-
-        if not home_name:
-            continue
-
-        dedup_key = f"{full_url}|{home_name.lower()}|{away_name.lower()}"
-        if dedup_key in seen_match_keys:
-            continue
-        seen_match_keys.add(dedup_key)
-
-        blv_label = blv_raw if (blv_raw and not is_garbage(blv_raw)) else "BLV 1"
-        home_logo = imgs[0] if len(imgs) >= 1 else ""
-        away_logo = imgs[1] if len(imgs) >= 2 else ""
-
-        matches.append({
-            "id": f"gv_{len(matches) + 1}",
-            "league": league,
-            "status": status,
-            "kickoff": kickoff,
-            "home_name": home_name,
-            "home_logo": home_logo,
-            "away_name": away_name,
-            "away_logo": away_logo,
-            "score": "vs",
-            "streams": [
-                {
-                    "label": blv_label,
-                    "url": full_url,
-                    "referer": final_url
-                }
-            ]
-        })
-
-    return {
-        "app_title": "GioVang TV",
-        "source_name": "giovang.co",
-        "source_url_final": final_url,
-        "updated_at": datetime.now(VN_TZ).strftime("%d/%m/%Y %H:%M"),
-        "matches": matches
-    }
-
-
-def main() -> None:
-    payload = scrape_giovang()
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
-    print(f"Wrote {len(payload['matches'])} matches to {OUTPUT_FILE}")
-
-
-if __name__ == "__main__":
-    main()
+    if not home or not away:
+        clean_slug = re.sub(r"-luc-\d{4}-ngay-.*$", "", slug, flags=re.I)
+        clean_slug = re.sub(r"-[a-zA-Z0-9]{6,}$", "", clean_slug)
+        teams_from_slug = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
+        if len(teams_from_slug) == 2 and teams_from_slug[0] and teams_from_slug[1]:
+            if not home:
+                home = teams_from_slug[0].replace("-", " ").title().strip()
+            if not away
