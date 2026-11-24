@@ -6,35 +6,43 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: update-football-feed
+  group: auto-update-football-feed
   cancel-in-progress: true
 
 permissions:
   contents: write
 
 jobs:
-  update-feed:
+  update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install Playwright Chromium
+      - name: Install dependencies and Playwright Chromium
         run: |
+          python -m pip install --upgrade pip
           pip install playwright
           playwright install chromium
 
-      - name: Run Scraper
+      - name: Run scraper
         run: python scraper.py
 
-      - name: Save feed.json
+      - name: Commit and push updated feed.json
         run: |
-          git config user.name "AutoBot"
-          git config user.email "bot@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main || true
           git add feed.json
-          git commit -m "Auto update matches" || exit 0
-          git push
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: update feed.json"
+            git push
+          else
+            echo "No changes in feed.json"
+          fi
