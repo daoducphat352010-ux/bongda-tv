@@ -28,8 +28,6 @@ KNOWN_LEAGUES = [
     "MLS",
     "TRITON",
     "PGL Major Singapore 2026 Stage 1",
-    "Bóng chuyền",
-    "Bóng rổ",
     "Cúp C1",
     "Cúp C2",
     "Cúp C3",
@@ -45,7 +43,6 @@ def clean_text(raw: str) -> str:
 def clean_team_name(name: str) -> str:
     t = clean_text(name)
     t = re.sub(r"^(?:xem\s+)?tr[uự]c\s*ti[eế]p\s*[:\-]?\s*", "", t, flags=re.I)
-    # Chỉ cắt chuỗi ngày tháng dd/mm hoặc dd-mm rõ ràng ở cuối, không cắt nhầm từ ngắn như "Al"
     t = re.sub(r"\s+\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?$", "", t)
     t = re.sub(r"\s+\d{1,2}\s+\d{1,2}(?:\s+\d{2,4})?$", "", t)
     t = re.sub(r"\b[a-f0-9]{8,}\b$", "", t, flags=re.I)
@@ -73,11 +70,8 @@ def parse_teams_from_slug(base_href: str) -> tuple[str, str]:
     slug = base_href.rstrip("/").split("/")[-1]
     clean_slug = re.sub(r"^(?:xem-)?truc-tiep-", "", slug, flags=re.I)
     clean_slug = re.sub(r"-luc-\d{4}.*$", "", clean_slug, flags=re.I)
-    # Loại bỏ mã hash cuối dạng -6a8b8a6f4d3de1ad3e0d9544 hoặc -tou7n5ebpqv2 hoặc -28303273
     clean_slug = re.sub(r"-(?:[a-f0-9]{10,}|[a-z0-9]{8,14})$", "", clean_slug, flags=re.I)
-    # Loại bỏ ngày dd-mm(-yyyy) ở cuối nếu có
     clean_slug = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?$", "", clean_slug)
-    # Lặp thêm 1 lần nếu vừa có mã cuối vừa có ngày
     clean_slug = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?$", "", clean_slug)
 
     parts = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
@@ -96,48 +90,43 @@ def is_league_label(text: str) -> bool:
     low = t.lower()
     if low in (
         "hôm nay,", "hôm nay", "ngày mai,", "ngày mai", "live", "sắp đá",
-        "vs", "xem ngay", "trực tiếp", "bóng đá trực tiếp", "đội nhà", "đội khách"
+        "vs", "xem ngay", "trực tiếp", "bóng đá trực tiếp", "đội nhà", "đội khách",
+        "tất cả", "bóng đá", "bóng chuyền", "bóng rổ", "esports"
     ):
         return False
     if any(lg.lower() in low for lg in KNOWN_LEAGUES):
         return True
     return bool(
         re.search(
-            r"\b(cup|league|championship|major|series|u17|u19|u21|u23|la liga|serie a|bundesliga|ligue 1|premier|afc|uefa|fifa|nba|cba|tbl|bóng chuyền|bóng rổ)\b",
+            r"\b(cup|league|championship|major|series|u17|u19|u21|u23|la liga|serie a|bundesliga|ligue 1|premier|afc|uefa|fifa|nba|cba|tbl)\b",
             low,
         )
     )
 
 
 def extract_league_name(item: dict, home: str, away: str) -> str:
-    raw_league = clean_text(item.get("league") or "")
-    section_league = clean_text(item.get("sectionLeague") or "")
-    lines = [clean_text(ln) for ln in (item.get("text") or "").splitlines() if clean_text(ln)]
-
     candidates = []
-    for src in (raw_league, section_league):
-        if src:
-            candidates.append(src)
+    for key in ("league", "sectionLeague", "topLeague"):
+        val = clean_text(item.get(key) or "")
+        if val:
+            candidates.append(val)
+
+    lines = [clean_text(ln) for ln in (item.get("text") or "").splitlines() if clean_text(ln)]
     for ln in lines:
-        if is_league_label(ln) and ln.lower() != home.lower() and ln.lower() != away.lower():
+        if ln.lower() != home.lower() and ln.lower() != away.lower():
             candidates.append(ln)
 
     for cand in candidates:
-        lg = cand
-        # Nếu có nhiều dòng trong tiêu đề giải, lấy dòng khớp tên giải
-        if "\n" in cand:
-            for sub in [clean_text(x) for x in cand.splitlines() if clean_text(x)]:
-                if is_league_label(sub):
-                    lg = sub
-                    break
-        for token in (home, away, "BLV", "Trực tiếp", "LIVE", "SẮP ĐÁ", "Xem ngay"):
-            if token and len(token) >= 3:
-                idx = lg.lower().find(token.lower())
-                if idx != -1:
-                    lg = lg[:idx].strip(" -|•:·/,")
-        lg = re.sub(r"\b\d{1,2}:\d{2}\b", "", lg).strip(" -|•:·/,")
-        if lg and len(lg) <= 50 and not lg.lower().startswith(("hôm nay", "ngày mai")):
-            return lg
+        for sub in [clean_text(x) for x in cand.splitlines() if clean_text(x)]:
+            lg = sub
+            for token in (home, away, "BLV", "Trực tiếp", "LIVE", "SẮP ĐÁ", "Xem ngay"):
+                if token and len(token) >= 3:
+                    idx = lg.lower().find(token.lower())
+                    if idx != -1:
+                        lg = lg[:idx].strip(" -|•:·/,")
+            lg = re.sub(r"\b\d{1,2}:\d{2}\b", "", lg).strip(" -|•:·/,")
+            if is_league_label(lg):
+                return lg
 
     return "Bóng Đá Trực Tiếp"
 
@@ -428,6 +417,105 @@ def extract_rooms_and_streams(
     return streams, home_logo, away_logo
 
 
+def collect_candidates_from_page(page):
+    return page.evaluate(
+        r"""() => {
+            // Thu thập các tiêu đề giải/mục nằm trên trang kèm tọa độ Y thực tế
+            const headers = [];
+            const hNodes = document.querySelectorAll('h1, h2, h3, h4, h5, [class*="league"], [class*="tournament"], [class*="tour"], [class*="champ"], [class*="title"], [class*="header"]');
+            for (const hn of hNodes) {
+                if (hn.querySelector('a[href*="/truc-tiep-"], a[href*="-vs-"]')) continue;
+                const rect = hn.getBoundingClientRect();
+                if (rect.width <= 0 || rect.height <= 0) continue;
+                const txt = (hn.innerText || '').trim();
+                if (!txt || txt.length < 2 || txt.length > 50 || txt.includes('\n')) continue;
+                headers.push({ top: rect.top + window.scrollY, text: txt });
+            }
+
+            const out = [];
+            const anchors = Array.from(document.querySelectorAll('a[href]'));
+            for (const a of anchors) {
+                const href = (a.href || '').trim();
+                if (!href.startsWith('http')) continue;
+                const lowHref = href.toLowerCase();
+                if (!lowHref.includes('/truc-tiep-') && !lowHref.includes('-vs-')) continue;
+
+                let card = a;
+                for (let i = 0; i < 5; i++) {
+                    const parent = card.parentElement;
+                    if (!parent) break;
+                    const linksInParent = parent.querySelectorAll('a[href*="/truc-tiep-"], a[href*="-vs-"]').length;
+                    const pText = (parent.innerText || '').trim();
+                    if (linksInParent <= 2 && pText.length > 0 && pText.length <= 240) {
+                        card = parent;
+                    } else {
+                        break;
+                    }
+                }
+
+                const cardRect = card.getBoundingClientRect();
+                const cardTop = cardRect.top + window.scrollY;
+
+                // Lấy tiêu đề giải gần nhất nằm phía trên thẻ trận
+                let topLeague = '';
+                let bestTop = -1;
+                for (const h of headers) {
+                    if (h.top <= cardTop + 8 && h.top > bestTop) {
+                        bestTop = h.top;
+                        topLeague = h.text;
+                    }
+                }
+
+                const homeEl = card.querySelector('[class*="home"] [class*="name"], .team-home, .home-name, [class*="home-team"]');
+                const awayEl = card.querySelector('[class*="away"] [class*="name"], .team-away, .away-name, [class*="away-team"]');
+
+                let league = '';
+                const lgEl = card.querySelector('[class*="league"], [class*="tournament"], [class*="tour"], [class*="champ"], [class*="cate"]');
+                if (lgEl) {
+                    league = (lgEl.innerText || '').trim();
+                }
+
+                let cardBlv = '';
+                const blvEl = card.querySelector('[class*="blv"], [class*="commentator"], [class*="caster"]');
+                if (blvEl) {
+                    cardBlv = (blvEl.innerText || '').trim();
+                }
+
+                const text = (card.innerText || a.innerText || '').trim();
+
+                const imgs = Array.from(card.querySelectorAll('img'))
+                    .map(img => ({
+                        src: img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || img.currentSrc || img.src || '',
+                        alt: (img.getAttribute('alt') || '').toLowerCase(),
+                        cls: (img.className || '').toLowerCase()
+                    }))
+                    .filter(x =>
+                        x.src.startsWith('http') &&
+                        !/\/kbv\.svg|\/league\/|banner|ads|logo-web|favicon|\.gif|avatar/i.test(x.src + ' ' + x.alt + ' ' + x.cls)
+                    )
+                    .map(x => x.src);
+
+                const uniqueImgs = [...new Set(imgs)];
+                const teamImgs = uniqueImgs.filter(u => /\/images\/teams\//i.test(u));
+                const pool = teamImgs.length >= 2 ? teamImgs : uniqueImgs;
+
+                out.push({
+                    href: href,
+                    text: text,
+                    homeText: homeEl ? (homeEl.innerText || '').trim() : '',
+                    awayText: awayEl ? (awayEl.innerText || '').trim() : '',
+                    league: league,
+                    topLeague: topLeague,
+                    cardBlv: cardBlv,
+                    homeLogo: pool[0] || '',
+                    awayLogo: pool[1] || ''
+                });
+            }
+            return out;
+        }"""
+    )
+
+
 def scrape_all():
     grouped_matches = {}
 
@@ -446,7 +534,7 @@ def scrape_all():
                 page.goto(base_url, wait_until="domcontentloaded", timeout=25000)
                 page.wait_for_timeout(3500)
 
-                for _ in range(40):
+                for _ in range(45):
                     page.evaluate(
                         r"""() => {
                             const btns = Array.from(document.querySelectorAll('button, a, [role="tab"]'));
@@ -464,97 +552,7 @@ def scrape_all():
                 continue
 
             active_host = urlparse(page.url).netloc.lower()
-
-            candidates = page.evaluate(
-                r"""() => {
-                    const out = [];
-                    const anchors = Array.from(document.querySelectorAll('a[href]'));
-                    for (const a of anchors) {
-                        const href = (a.href || '').trim();
-                        if (!href.startsWith('http')) continue;
-                        const lowHref = href.toLowerCase();
-                        if (!lowHref.includes('/truc-tiep-') && !lowHref.includes('-vs-')) continue;
-
-                        let card = a;
-                        for (let i = 0; i < 5; i++) {
-                            const parent = card.parentElement;
-                            if (!parent) break;
-                            const linksInParent = parent.querySelectorAll('a[href*="/truc-tiep-"], a[href*="-vs-"]').length;
-                            const pText = (parent.innerText || '').trim();
-                            if (linksInParent <= 2 && pText.length > 0 && pText.length <= 240) {
-                                card = parent;
-                            } else {
-                                break;
-                            }
-                        }
-
-                        const homeEl = card.querySelector('[class*="home"] [class*="name"], .team-home, .home-name, [class*="home-team"]');
-                        const awayEl = card.querySelector('[class*="away"] [class*="name"], .team-away, .away-name, [class*="away-team"]');
-
-                        let league = '';
-                        const lgEl = card.querySelector('[class*="league"], [class*="tournament"], [class*="tour"], [class*="champ"], [class*="cate"]');
-                        if (lgEl) {
-                            league = (lgEl.innerText || '').trim();
-                        }
-
-                        // Tìm tiêu đề giải đứng ngay trước thẻ trận hoặc nhóm trận
-                        let sectionLeague = '';
-                        let walker = card;
-                        for (let hop = 0; hop < 6 && walker; hop++) {
-                            let prev = walker.previousElementSibling;
-                            while (prev) {
-                                const txt = (prev.innerText || '').trim();
-                                if (txt && txt.length >= 2 && txt.length <= 50 && !txt.includes('\n')) {
-                                    if (/league|tournament|tour|champ|title|header|group|section/i.test(prev.className || '') || /^H[1-5]$/.test(prev.tagName)) {
-                                        sectionLeague = txt;
-                                        break;
-                                    }
-                                }
-                                prev = prev.previousElementSibling;
-                            }
-                            if (sectionLeague) break;
-                            walker = walker.parentElement;
-                        }
-
-                        let cardBlv = '';
-                        const blvEl = card.querySelector('[class*="blv"], [class*="commentator"], [class*="caster"]');
-                        if (blvEl) {
-                            cardBlv = (blvEl.innerText || '').trim();
-                        }
-
-                        const text = (card.innerText || a.innerText || '').trim();
-
-                        const imgs = Array.from(card.querySelectorAll('img'))
-                            .map(img => ({
-                                src: img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || img.currentSrc || img.src || '',
-                                alt: (img.getAttribute('alt') || '').toLowerCase(),
-                                cls: (img.className || '').toLowerCase()
-                            }))
-                            .filter(x =>
-                                x.src.startsWith('http') &&
-                                !/\/kbv\.svg|\/league\/|banner|ads|logo-web|favicon|\.gif|avatar/i.test(x.src + ' ' + x.alt + ' ' + x.cls)
-                            )
-                            .map(x => x.src);
-
-                        const uniqueImgs = [...new Set(imgs)];
-                        const teamImgs = uniqueImgs.filter(u => /\/images\/teams\//i.test(u));
-                        const pool = teamImgs.length >= 2 ? teamImgs : uniqueImgs;
-
-                        out.push({
-                            href: href,
-                            text: text,
-                            homeText: homeEl ? (homeEl.innerText || '').trim() : '',
-                            awayText: awayEl ? (awayEl.innerText || '').trim() : '',
-                            league: league,
-                            sectionLeague: sectionLeague,
-                            cardBlv: cardBlv,
-                            homeLogo: pool[0] || '',
-                            awayLogo: pool[1] || ''
-                        });
-                    }
-                    return out;
-                }"""
-            )
+            candidates = collect_candidates_from_page(page)
 
             for item in candidates:
                 raw_href = item.get("href", "").strip()
