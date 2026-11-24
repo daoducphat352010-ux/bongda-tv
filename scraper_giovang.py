@@ -1,7 +1,7 @@
 import json
 import re
 from datetime import datetime, timedelta, timezone
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import urljoin
 from playwright.sync_api import sync_playwright
 
 ROOT_DOMAIN = "https://giovang.co"
@@ -11,106 +11,107 @@ SOURCE_URLS = [
 OUTPUT_FILE = "giovang_feed.json"
 
 
-def clean_league_text(raw: str) -> str:
+def clean_text(raw: str) -> str:
     if not raw:
         return ""
-    txt = re.sub(r"\s+", " ", raw).strip()
-    txt = re.sub(r"^[^\w\u00C0-\u1EF9]+|[^\w\u00C0-\u1EF9)]+$", "", txt).strip()
-    return txt
+    return re.sub(r"\s+", " ", raw).strip()
 
 
-def is_valid_league(cand: str, home: str, away: str, blv_names=None) -> bool:
-    c = clean_league_text(cand)
-    if len(c) < 3 or len(c) > 60:
-        return False
+def clean_team_name(name: str) -> str:
+    t = clean_text(name)
+    t = re.sub(r"^(?:xem\s+)?tr[uự]c\s*ti[eế]p\s*[:\-]?\s*", "", t, flags=re.I)
+    t = re.sub(r"\s+\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?$", "", t)
+    t = re.sub(r"\s+\d{1,2}\s+\d{1,2}(?:\s+\d{2,4})?$", "", t)
+    t = re.sub(r"\s+(?:full\s*hd|hd|live|hom\s*nay|hôm\s*nay)$", "", t, flags=re.I)
+    return t.strip(" -|:")[:34]
 
-    cl = c.lower()
-    hl = (home or "").lower().strip()
-    al = (away or "").lower().strip()
 
-    if hl and len(hl) >= 3 and (hl in cl or cl in hl):
-        return False
-    if al and len(al) >= 3 and (al in cl or cl in al):
-        return False
-
-    if blv_names:
-        for b in blv_names:
-            bl = clean_league_text(b).lower()
-            if bl and len(bl) >= 3 and (bl in cl or cl in bl):
-                return False
-
-    if re.search(r"\bvs\b", cl) or re.match(r"^\d{1,2}:\d{2}", c):
-        return False
-    if re.search(r"\b\d{1,2}/\d{1,2}(?:/\d{2,4})?\b", cl):
-        return False
-
-    banned_phrases = (
-        "miễn phí", "chất lượng", "fullhd", "full hd", "tốc độ", "mượt mà",
-        "không giật", "không quảng cáo", "giovang", "giờ vàng", "gavang",
-        "trực tiếp", "xem bóng", "lịch thi đấu", "kết quả", "bảng xếp hạng",
-        "nguồn phát", "trang chủ", "sắp đá", "xem ngay", "đang diễn ra", "kết thúc"
+def is_banned_url(href: str) -> bool:
+    low = href.lower()
+    banned_paths = (
+        "/livescore", "/ket-qua", "/bang-xep-hang", "/lich-thi-dau",
+        "/tin-tuc", "/soi-keo", "/nhan-dinh", "/highlight", "/video",
+        "/khuyen-mai", "/nha-cai", "/lien-he", "/gioi-thieu"
     )
-    if any(p in cl for p in banned_phrases):
-        return False
-
-    if cl in ("home", "live", "hd", "vs", "ft", "ht"):
-        return False
-    if cl.startswith("blv ") or cl.startswith("phòng "):
-        return False
-
-    return True
+    if any(p in low for p in banned_paths):
+        return True
+    return "-vs-" not in low
 
 
 def parse_match_info(raw_text: str, base_href: str):
     slug = base_href.rstrip("/").split("/")[-1]
 
     kickoff = "LIVE"
-    m_slug_time = re.search(r"-luc-(\d{2})(\d{2})-ngay-(\d{2}-\d{2}-\d{4})", slug, re.I)
+    m_slug_time = re.search(r"-luc-(\d{2})(\d{2})", slug, re.I)
     if m_slug_time:
-        hh, mm, _ = m_slug_time.groups()
-        kickoff = f"{hh}:{mm}"
+        kickoff = f"{m_slug_time.group(1)}:{m_slug_time.group(2)}"
     else:
         m_text_time = re.search(r"\b(\d{1,2}:\d{2})\b", raw_text)
         if m_text_time:
             kickoff = m_text_time.group(1)
 
+    lines = [clean_text(ln) for ln in raw_text.splitlines() if clean_text(ln)]
+    noise_exact = {
+        "LIVE", "HD", "FULL HD", "VS", "SẮP ĐÁ", "ĐANG ĐÁ",
+        "XEM NGAY", "TRỰC TIẾP", "KẾT THÚC", "HT", "FT"
+    }
+
+    league_name = "GioVang TV"
+    for ln in lines[:2]:
+        if (
+            3 <= len(ln) <= 48
+            and ln.upper() not in noise_exact
+            and " vs " not in ln.lower()
+            and not re.match(r"^\d{1,2}[:/]\d{2}", ln)
+            and not re.search(r"tr[uự]c\s*ti[eế]p", ln, re.I)
+        ):
+            league_name = ln
+            break
+
     home = ""
     away = ""
-    raw_lines = [re.sub(r"\s+", " ", ln).strip() for ln in raw_text.splitlines() if ln.strip()]
     vs_idx = -1
-    for i, ln in enumerate(raw_lines):
-        if ln.upper() == "VS":
+    for i, ln in enumerate(lines):
+        if ln.upper() == "VS" or re.match(r"^\d+\s*-\s*\d+$", ln):
             vs_idx = i
             break
 
     if vs_idx > 0:
         for back in range(vs_idx - 1, -1, -1):
-            cand = raw_lines[back]
-            if not re.match(r"^\d{1,2}:\d{2}", cand) and cand.upper() not in ("LIVE", "HD", "SẮP ĐÁ"):
-                home = cand[:32]
-                break
-        for fwd in range(vs_idx + 1, len(raw_lines)):
-            cand = raw_lines[fwd]
+            cand = lines[back]
             if (
-                not re.match(r"^\d{1,2}:\d{2}", cand)
-                and not re.match(r"^\d{1,2}/\d{1,2}", cand)
-                and cand.upper() not in ("LIVE", "HD", "FULL HD", "SẮP ĐÁ", "XEM NGAY")
+                cand.upper() not in noise_exact
+                and cand != league_name
+                and not re.match(r"^\d{1,2}[:/]\d{2}", cand)
+                and not re.search(r"tr[uự]c\s*ti[eế]p", cand, re.I)
             ):
-                away = cand[:32]
+                home = clean_team_name(cand)
+                break
+        for fwd in range(vs_idx + 1, len(lines)):
+            cand = lines[fwd]
+            if (
+                cand.upper() not in noise_exact
+                and not re.match(r"^\d{1,2}[:/]\d{2}", cand)
+                and not re.search(r"tr[uự]c\s*ti[eế]p", cand, re.I)
+                and not cand.lower().startswith("blv")
+            ):
+                away = clean_team_name(cand)
                 break
 
     if not home or not away:
-        clean_slug = re.sub(r"-luc-\d{4}-ngay-.*$", "", slug, flags=re.I)
+        clean_slug = re.sub(r"^(?:xem-)?truc-tiep-", "", slug, flags=re.I)
+        clean_slug = re.sub(r"-luc-\d{4}.*$", "", clean_slug, flags=re.I)
+        clean_slug = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?$", "", clean_slug)
         clean_slug = re.sub(r"-[a-zA-Z0-9]{6,}$", "", clean_slug)
-        teams_from_slug = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
-        if len(teams_from_slug) == 2 and teams_from_slug[0] and teams_from_slug[1]:
+        parts = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
+        if len(parts) == 2 and parts[0] and parts[1]:
             if not home:
-                home = teams_from_slug[0].replace("-", " ").title().strip()
+                home = clean_team_name(parts[0].replace("-", " ").title())
             if not away:
-                away = teams_from_slug[1].replace("-", " ").title().strip()
-        else:
-            home = home or clean_slug.replace("-", " ").title()[:32]
-            away = away or "Trực Tiếp"
+                away = clean_team_name(parts[1].replace("-", " ").title())
+
+    home = home or "Đội Nhà"
+    away = away or "Đội Khách"
 
     now_vn = datetime.now(timezone(timedelta(hours=7)))
     status = "LIVE"
@@ -120,68 +121,119 @@ def parse_match_info(raw_text: str, base_href: str):
         diff_minutes = (now_vn - kickoff_dt).total_seconds() / 60.0
         status = "LIVE" if -15 <= diff_minutes <= 130 else "SẮP ĐÁ"
 
-    return home, away, kickoff, status
+    return league_name, home, away, kickoff, status
 
 
-def clean_commentator_label(raw_label: str, fallback_idx: int) -> str:
-    if not raw_label:
-        return f"Phòng BLV {fallback_idx}"
-
-    lines = [re.sub(r"\s+", " ", ln).strip() for ln in raw_label.splitlines() if ln.strip()]
-    picked = ""
-    for ln in lines:
+def clean_blv_label(raw: str, idx: int) -> str:
+    txt = clean_text(raw)
+    if not txt:
+        return f"Phòng BLV {idx}"
+    for ln in [clean_text(x) for x in raw.splitlines() if clean_text(x)]:
         if re.match(r"^\d+([.,]\d+)?[kKmM]?$", ln):
             continue
-        if re.match(r"^\d{1,2}:\d{2}$", ln):
-            continue
-        if ln.upper() in ("LIVE", "HD", "FULL HD", "XEM NGAY", "TRỰC TIẾP", "VS", "SẮP ĐÁ"):
-            continue
-        if " vs " in ln.lower():
+        if ln.upper() in ("LIVE", "HD", "FULL HD", "SD", "VIP", "XEM NGAY", "TRỰC TIẾP"):
             continue
         if 2 <= len(ln) <= 36:
-            picked = ln
+            txt = ln
             break
-
-    if not picked:
-        return f"Phòng BLV {fallback_idx}"
-    if not picked.lower().startswith("blv"):
-        return f"BLV {picked}"
-    return picked
+    if txt.lower().startswith(("blv", "server", "link", "kênh", "phòng")):
+        return txt
+    return f"BLV {txt}"
 
 
-def get_room_key(url: str) -> str:
-    parsed = urlparse(url)
-    qs = parse_qs(parsed.query)
-    anchor_id = (qs.get("anchorId") or [""])[0].strip()
-    if anchor_id:
-        return f"{parsed.path.rstrip('/')}?anchorId={anchor_id}"
-    return parsed.path.rstrip("/")
-
-
-def capture_room_streams(page, url: str):
-    captured = []
+def extract_rooms_and_streams(page, match_url: str):
+    captured_m3u8 = []
 
     def on_request(req):
         u = req.url
-        if (".m3u8" in u.lower() or ".mpd" in u.lower()) and u not in captured:
-            captured.append(u)
+        if (".m3u8" in u.lower() or ".mpd" in u.lower()) and u not in captured_m3u8:
+            captured_m3u8.append(u)
 
     page.on("request", on_request)
+    room_entries = []
     try:
-        page.goto(url, wait_until="domcontentloaded", timeout=14000)
-        page.wait_for_timeout(2400)
+        page.goto(match_url, wait_until="domcontentloaded", timeout=15000)
+        page.wait_for_timeout(2500)
+
+        raw_rooms = page.evaluate(
+            r"""() => {
+                const items = [];
+                const seen = new Set();
+                const selectors = [
+                    'a[href*="anchor"]', 'a[href*="blv"]', 'a[href*="server"]',
+                    'a[href*="link="]', '[data-url]', '[data-link]', '[data-stream]',
+                    '.list-blv a', '.list-blv button', '.blv-item', '.server-item',
+                    '.room-item', '[class*="blv"] a', '[class*="blv"] button',
+                    '[class*="server"] a', '[class*="server"] button'
+                ];
+                const nodes = document.querySelectorAll(selectors.join(','));
+                for (const el of nodes) {
+                    const label = (el.innerText || el.getAttribute('title') || '').trim();
+                    const href = el.getAttribute('href') || '';
+                    const dataUrl = el.getAttribute('data-url') || el.getAttribute('data-link') || el.getAttribute('data-stream') || '';
+                    const target = dataUrl || href;
+                    if (!label && !target) continue;
+                    const key = label + '|' + target;
+                    if (seen.has(key)) continue;
+                    seen.add(key);
+                    items.push({ label, href, dataUrl });
+                }
+                return items;
+            }"""
+        )
+
+        for idx, r in enumerate(raw_rooms):
+            lbl = clean_blv_label(r.get("label", ""), idx + 1)
+            if any(x in lbl.lower() for x in ("trang chủ", "lịch thi đấu", "kết quả", "bảng xếp hạng")):
+                continue
+            d_url = (r.get("dataUrl") or "").strip()
+            h_url = (r.get("href") or "").strip()
+            resolved = ""
+            if d_url.startswith("http"):
+                resolved = d_url
+            elif h_url and not h_url.startswith(("javascript:", "#")):
+                resolved = urljoin(match_url, h_url)
+            room_entries.append({"label": lbl, "url": resolved})
+
         html_dump = page.content()
         extra = re.findall(r'https?://[^\s"\'<>\\)]+\.(?:m3u8|mpd)(?:\?[^\s"\'<>\\)]*)?', html_dump, re.I)
         for u in extra:
             clean_u = u.replace("\\/", "/")
-            if clean_u not in captured:
-                captured.append(clean_u)
+            if clean_u not in captured_m3u8:
+                captured_m3u8.append(clean_u)
     except Exception:
         pass
     finally:
         page.remove_listener("request", on_request)
 
-    return captured
+    streams = []
+    if room_entries:
+        for idx, r in enumerate(room_entries[:6]):
+            stream_url = r["url"]
+            if not stream_url:
+                stream_url = captured_m3u8[idx] if idx < len(captured_m3u8) else (captured_m3u8[0] if captured_m3u8 else match_url)
+            elif idx == 0 and captured_m3u8 and ".m3u8" not in stream_url.lower():
+                stream_url = captured_m3u8[0]
+            streams.append({
+                "label": r["label"],
+                "url": stream_url,
+                "referer": match_url,
+            })
+    elif captured_m3u8:
+        for idx, m_url in enumerate(captured_m3u8[:4]):
+            streams.append({
+                "label": f"Phòng BLV {idx + 1}",
+                "url": m_url,
+                "referer": match_url,
+            })
+    else:
+        streams.append({
+            "label": "Phòng Trực Tiếp",
+            "url": match_url,
+            "referer": match_url,
+        })
+
+    return streams
 
 
 def scrape_all():
@@ -201,31 +253,50 @@ def scrape_all():
             try:
                 page.goto(base_url, wait_until="domcontentloaded", timeout=25000)
                 page.wait_for_timeout(3500)
-
-                for _ in range(20):
-                    page.evaluate("window.scrollBy(0, 750)")
-                    page.wait_for_timeout(400)
+                for _ in range(18):
+                    page.evaluate("window.scrollBy(0, 800)")
+                    page.wait_for_timeout(350)
             except Exception:
                 continue
 
             candidates = page.evaluate(
                 r"""() => {
                     const out = [];
-                    const isMatchHref = (u) => /truc-tiep|xem-|live|match|tran-dau/i.test(u.toLowerCase());
                     const anchors = Array.from(document.querySelectorAll('a[href]'));
                     for (const a of anchors) {
                         const href = (a.href || '').trim();
-                        if (!href.startsWith('http') || !isMatchHref(href)) continue;
-                        const card = a.closest('div, li, article') || a;
+                        if (!href.startsWith('http') || !href.toLowerCase().includes('-vs-')) continue;
+
+                        let card = a;
+                        for (let i = 0; i < 4; i++) {
+                            if (!card.parentElement) break;
+                            const pText = (card.parentElement.innerText || '').trim();
+                            if (pText.length > 0 && pText.length <= 260) {
+                                card = card.parentElement;
+                            } else {
+                                break;
+                            }
+                        }
+
                         const text = (card.innerText || a.innerText || '').trim();
                         const imgs = Array.from(card.querySelectorAll('img'))
-                            .map(img => img.getAttribute('data-src') || img.currentSrc || img.src || '')
-                            .filter(src => src.startsWith('http') && !/banner|ads|logo-web|favicon|\.gif|\.svg|avatar/i.test(src));
+                            .map(img => ({
+                                src: img.getAttribute('data-src') || img.currentSrc || img.src || '',
+                                alt: (img.getAttribute('alt') || '').toLowerCase(),
+                                cls: (img.className || '').toLowerCase()
+                            }))
+                            .filter(x =>
+                                x.src.startsWith('http') &&
+                                !/banner|ads|logo-web|favicon|\.gif|\.svg|avatar|league|giai-dau|trophy|cup|afc|uefa|champions|europa/i.test(x.src + ' ' + x.alt + ' ' + x.cls)
+                            )
+                            .map(x => x.src);
+
+                        const teamLogos = imgs.length >= 3 ? imgs.slice(-2) : imgs;
                         out.push({
                             href: href,
                             text: text,
-                            homeLogo: imgs[0] || '',
-                            awayLogo: imgs[1] || ''
+                            homeLogo: teamLogos[0] || '',
+                            awayLogo: teamLogos[1] || ''
                         });
                     }
                     return out;
@@ -234,16 +305,17 @@ def scrape_all():
 
             for item in candidates:
                 raw_href = item.get("href", "").strip()
-                if not raw_href or raw_href.rstrip("/") == base_url.rstrip("/"):
+                if not raw_href or is_banned_url(raw_href):
                     continue
 
                 base_href = raw_href.split("?")[0].rstrip("/")
-                home_name, away_name, kickoff, status = parse_match_info(item.get("text", ""), base_href)
-
                 if base_href not in grouped_matches:
+                    league_name, home_name, away_name, kickoff, status = parse_match_info(
+                        item.get("text", ""), base_href
+                    )
                     grouped_matches[base_href] = {
                         "id": f"gv_{len(grouped_matches) + 1}",
-                        "league": "GioVang TV",
+                        "league": league_name,
                         "status": status,
                         "kickoff": kickoff,
                         "home_name": home_name,
@@ -252,55 +324,26 @@ def scrape_all():
                         "away_logo": item.get("awayLogo") or "",
                         "score": "vs",
                         "page_url": base_href,
-                        "rooms": {},
                         "streams": [],
                     }
 
-                if "anchorId=" in raw_href:
-                    r_key = get_room_key(raw_href)
-                    if r_key not in grouped_matches[base_href]["rooms"]:
-                        grouped_matches[base_href]["rooms"][r_key] = {"url": raw_href, "name": ""}
-
-                if len(grouped_matches) >= 80:
+                if len(grouped_matches) >= 60:
                     break
 
         matches = list(grouped_matches.values())
-        for m in matches[:15]:
-            entry_url = next(iter(m["rooms"].values()))["url"] if m["rooms"] else m["page_url"]
-            m3u8_list = capture_room_streams(page, entry_url)
-            room_items = list(m["rooms"].values())
-            if room_items:
-                m["streams"] = [
-                    {
-                        "label": clean_commentator_label(r.get("name", ""), idx + 1),
-                        "url": m3u8_list[0] if (idx == 0 and m3u8_list) else r["url"],
-                        "referer": r["url"],
-                    }
-                    for idx, r in enumerate(room_items[:4])
-                ]
-            else:
-                m["streams"] = [
-                    {
-                        "label": "Phòng Trực Tiếp",
-                        "url": m3u8_list[0] if m3u8_list else m["page_url"],
-                        "referer": m["page_url"],
-                    }
-                ]
+        for m in matches[:25]:
+            m["streams"] = extract_rooms_and_streams(page, m["page_url"])
             del m["page_url"]
-            del m["rooms"]
 
-        for m in matches[15:]:
-            room_items = list(m["rooms"].values())
+        for m in matches[25:]:
             m["streams"] = [
                 {
-                    "label": clean_commentator_label(r.get("name", ""), idx + 1),
-                    "url": r["url"],
-                    "referer": r["url"],
+                    "label": "Phòng Trực Tiếp",
+                    "url": m["page_url"],
+                    "referer": m["page_url"],
                 }
-                for idx, r in enumerate(room_items[:4])
-            ] or [{"label": "Phòng Trực Tiếp", "url": m["page_url"], "referer": m["page_url"]}]
+            ]
             del m["page_url"]
-            del m["rooms"]
 
         browser.close()
 
