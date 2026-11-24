@@ -7,8 +7,23 @@ from playwright.sync_api import sync_playwright
 ROOT_DOMAIN = "https://giovang.co"
 SOURCE_URLS = [
     f"{ROOT_DOMAIN}/",
+    f"{ROOT_DOMAIN}/truc-tiep-bong-da",
 ]
 OUTPUT_FILE = "giovang_feed.json"
+
+BANNED_BLV_KEYWORDS = (
+    "soi kèo", "soi keo", "cược", "cuoc", "nhà cái", "nha cai",
+    "đăng ký", "dang ky", "đăng nhập", "dang nhap", "khuyến mãi",
+    "tỷ lệ", "ty le", "kèo nhà cái", "telegram", "zalo", "facebook",
+    "tải app", "tai app", "trang chủ", "lịch thi đấu", "kết quả",
+    "bảng xếp hạng", "livescore", "tin tức", "highlight"
+)
+
+NON_FOOTBALL_KEYWORDS = (
+    "sultanlar ligi", "pgl major", "triton", "dota", "cs2", "csgo",
+    "valorant", "lol", "nba", "tennis", "atp", "wta", "bóng rổ",
+    "bóng chuyền", "cầu lông", "esports"
+)
 
 
 def clean_text(raw: str) -> str:
@@ -38,6 +53,21 @@ def is_banned_url(href: str) -> bool:
     return "-vs-" not in low
 
 
+def is_valid_league_label(ln: str) -> bool:
+    low = ln.lower()
+    if len(ln) < 3 or len(ln) > 48:
+        return False
+    if low in ("ngày", "ngay", "giờ", "gio", "live", "hd", "full hd", "vs", "sắp đá", "đang đá", "xem ngay", "trực tiếp", "kết thúc", "ht", "ft"):
+        return False
+    if low.startswith(("ngày ", "ngay ", "blv ", "phòng ")):
+        return False
+    if " vs " in low or re.match(r"^\d{1,2}[:/]\d{2}", ln):
+        return False
+    if re.search(r"tr[uự]c\s*ti[eế]p", low):
+        return False
+    return True
+
+
 def parse_match_info(raw_text: str, base_href: str):
     slug = base_href.rstrip("/").split("/")[-1]
 
@@ -53,18 +83,12 @@ def parse_match_info(raw_text: str, base_href: str):
     lines = [clean_text(ln) for ln in raw_text.splitlines() if clean_text(ln)]
     noise_exact = {
         "LIVE", "HD", "FULL HD", "VS", "SẮP ĐÁ", "ĐANG ĐÁ",
-        "XEM NGAY", "TRỰC TIẾP", "KẾT THÚC", "HT", "FT"
+        "XEM NGAY", "TRỰC TIẾP", "KẾT THÚC", "HT", "FT", "NGÀY"
     }
 
     league_name = "GioVang TV"
-    for ln in lines[:2]:
-        if (
-            3 <= len(ln) <= 48
-            and ln.upper() not in noise_exact
-            and " vs " not in ln.lower()
-            and not re.match(r"^\d{1,2}[:/]\d{2}", ln)
-            and not re.search(r"tr[uự]c\s*ti[eế]p", ln, re.I)
-        ):
+    for ln in lines[:3]:
+        if is_valid_league_label(ln):
             league_name = ln
             break
 
@@ -124,18 +148,28 @@ def parse_match_info(raw_text: str, base_href: str):
     return league_name, home, away, kickoff, status
 
 
+def is_valid_blv_text(raw: str) -> bool:
+    low = clean_text(raw).lower()
+    if not low or len(low) < 2 or len(low) > 36:
+        return False
+    if any(k in low for k in BANNED_BLV_KEYWORDS):
+        return False
+    return True
+
+
 def clean_blv_label(raw: str, idx: int) -> str:
     txt = clean_text(raw)
-    if not txt:
-        return f"Phòng BLV {idx}"
     for ln in [clean_text(x) for x in raw.splitlines() if clean_text(x)]:
         if re.match(r"^\d+([.,]\d+)?[kKmM]?$", ln):
             continue
         if ln.upper() in ("LIVE", "HD", "FULL HD", "SD", "VIP", "XEM NGAY", "TRỰC TIẾP"):
             continue
-        if 2 <= len(ln) <= 36:
+        if is_valid_blv_text(ln):
             txt = ln
             break
+
+    if not is_valid_blv_text(txt):
+        return ""
     if txt.lower().startswith(("blv", "server", "link", "kênh", "phòng")):
         return txt
     return f"BLV {txt}"
@@ -152,19 +186,18 @@ def extract_rooms_and_streams(page, match_url: str):
     page.on("request", on_request)
     room_entries = []
     try:
-        page.goto(match_url, wait_until="domcontentloaded", timeout=15000)
-        page.wait_for_timeout(2500)
+        page.goto(match_url, wait_until="domcontentloaded", timeout=18000)
+        page.wait_for_timeout(2800)
 
         raw_rooms = page.evaluate(
             r"""() => {
                 const items = [];
                 const seen = new Set();
                 const selectors = [
-                    'a[href*="anchor"]', 'a[href*="blv"]', 'a[href*="server"]',
-                    'a[href*="link="]', '[data-url]', '[data-link]', '[data-stream]',
                     '.list-blv a', '.list-blv button', '.blv-item', '.server-item',
                     '.room-item', '[class*="blv"] a', '[class*="blv"] button',
-                    '[class*="server"] a', '[class*="server"] button'
+                    '[class*="server"] a', '[class*="server"] button',
+                    '[data-url]', '[data-link]', '[data-stream]'
                 ];
                 const nodes = document.querySelectorAll(selectors.join(','));
                 for (const el of nodes) {
@@ -184,7 +217,7 @@ def extract_rooms_and_streams(page, match_url: str):
 
         for idx, r in enumerate(raw_rooms):
             lbl = clean_blv_label(r.get("label", ""), idx + 1)
-            if any(x in lbl.lower() for x in ("trang chủ", "lịch thi đấu", "kết quả", "bảng xếp hạng")):
+            if not lbl:
                 continue
             d_url = (r.get("dataUrl") or "").strip()
             h_url = (r.get("href") or "").strip()
@@ -207,26 +240,34 @@ def extract_rooms_and_streams(page, match_url: str):
         page.remove_listener("request", on_request)
 
     streams = []
+    used_urls = set()
+
     if room_entries:
-        for idx, r in enumerate(room_entries[:6]):
+        for idx, r in enumerate(room_entries[:4]):
             stream_url = r["url"]
             if not stream_url:
                 stream_url = captured_m3u8[idx] if idx < len(captured_m3u8) else (captured_m3u8[0] if captured_m3u8 else match_url)
             elif idx == 0 and captured_m3u8 and ".m3u8" not in stream_url.lower():
                 stream_url = captured_m3u8[0]
+
+            if stream_url in used_urls:
+                continue
+            used_urls.add(stream_url)
             streams.append({
                 "label": r["label"],
                 "url": stream_url,
                 "referer": match_url,
             })
-    elif captured_m3u8:
-        for idx, m_url in enumerate(captured_m3u8[:4]):
+
+    if not streams and captured_m3u8:
+        for idx, m_url in enumerate(captured_m3u8[:3]):
             streams.append({
                 "label": f"Phòng BLV {idx + 1}",
                 "url": m_url,
                 "referer": match_url,
             })
-    else:
+
+    if not streams:
         streams.append({
             "label": "Phòng Trực Tiếp",
             "url": match_url,
@@ -251,10 +292,25 @@ def scrape_all():
 
         for base_url in SOURCE_URLS:
             try:
-                page.goto(base_url, wait_until="domcontentloaded", timeout=25000)
+                page.goto(base_url, wait_until="domcontentloaded", timeout=28000)
                 page.wait_for_timeout(3500)
-                for _ in range(18):
-                    page.evaluate("window.scrollBy(0, 800)")
+
+                # Bấm tab Bóng đá hoặc nút Xem thêm nếu có
+                page.evaluate(
+                    r"""() => {
+                        const btns = Array.from(document.querySelectorAll('button, a, li, span'));
+                        for (const el of btns) {
+                            const t = (el.innerText || '').trim().toLowerCase();
+                            if (t === 'bóng đá' || t === 'tất cả' || t === 'xem thêm') {
+                                try { el.click(); } catch (e) {}
+                            }
+                        }
+                    }"""
+                )
+                page.wait_for_timeout(1500)
+
+                for _ in range(25):
+                    page.evaluate("window.scrollBy(0, 850)")
                     page.wait_for_timeout(350)
             except Exception:
                 continue
@@ -308,12 +364,17 @@ def scrape_all():
                 if not raw_href or is_banned_url(raw_href):
                     continue
 
+                raw_txt = item.get("text", "")
+                if any(k in raw_txt.lower() for k in NON_FOOTBALL_KEYWORDS):
+                    continue
+
                 base_href = raw_href.split("?")[0].rstrip("/")
-                if base_href not in grouped_matches:
-                    league_name, home_name, away_name, kickoff, status = parse_match_info(
-                        item.get("text", ""), base_href
-                    )
-                    grouped_matches[base_href] = {
+                league_name, home_name, away_name, kickoff, status = parse_match_info(raw_txt, base_href)
+
+                # Chống trùng lặp tuyệt đối theo cặp tên đội + giờ đá
+                dedup_key = f"{home_name.lower()}|{away_name.lower()}|{kickoff}"
+                if dedup_key not in grouped_matches:
+                    grouped_matches[dedup_key] = {
                         "id": f"gv_{len(grouped_matches) + 1}",
                         "league": league_name,
                         "status": status,
@@ -327,7 +388,7 @@ def scrape_all():
                         "streams": [],
                     }
 
-                if len(grouped_matches) >= 60:
+                if len(grouped_matches) >= 80:
                     break
 
         matches = list(grouped_matches.values())
