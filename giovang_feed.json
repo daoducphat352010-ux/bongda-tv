@@ -1,0 +1,402 @@
+{
+  "app_title": "GioVang • 19:26 24/11/2026",
+  "updated_at": "19:26 24/11/2026",
+  "matches": [
+    {
+      "id": "gv_1",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "Livescore",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/livescore",
+          "referer": "https://giovang.guru/livescore"
+        }
+      ]
+    },
+    {
+      "id": "gv_2",
+      "league": "GioVang TV",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Shabab Al Ahli",
+      "home_logo": "https://images.keovip88.net/images/teams/shabab-al-ahli.png",
+      "away_name": "Al-Qadasiya",
+      "away_logo": "https://images.keovip88.net/images/league/afc-champions-league.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544",
+          "referer": "https://giovang.guru/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544"
+        }
+      ]
+    },
+    {
+      "id": "gv_3",
+      "league": "GioVang TV",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Truc Tiep Al Seeb",
+      "home_logo": "https://images.keovip88.net/images/teams/al-seeb.png",
+      "away_name": "Al Shorta 24 11",
+      "away_logo": "https://images.keovip88.net/images/teams/al-shorta.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91",
+          "referer": "https://giovang.guru/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91"
+        }
+      ]
+    },
+    {
+      "id": "gv_4",
+      "league": "GioVang TV",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Truc Tiep Eczacibasi Nu",
+      "home_logo": "https://static.flashscore.com/res/image/data/6wWfI3zB-jm1g2SD5.png",
+      "away_name": "Tent Nu 24 11",
+      "away_logo": "https://static.flashscore.com/res/image/data/xbeN85jl-2wgqbgJU.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2",
+          "referer": "https://giovang.guru/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2"
+        }
+      ]
+    },
+    {
+      "id": "gv_5",
+      "league": "GioVang TV",
+      "status": "SẮP ĐÁ",
+      "kickoff": "00:00",
+      "home_name": "Truc Tiep Besiktas Cola Turka",
+      "home_logo": "https://cdn.keobongvip.digital/images/basketball-teams/4c56f517bc64726563ed7f0d226a828e.png",
+      "away_name": "Paris 25 11",
+      "away_logo": "https://cdn.keobongvip.digital/images/basketball-teams/379bcd41f23aff50b9aa09d0d41e22d1.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795456123_hd/1795456123_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273"
+        }
+      ]
+    },
+    {
+      "id": "gv_6",
+      "league": "GioVang TV",
+      "status": "SẮP ĐÁ",
+      "kickoff": "00:45",
+      "home_name": "Truc Tiep Galatasaray",
+      "home_logo": "https://images.keovip88.net/images/teams/galatasaray.png",
+      "away_name": "Aston Villa 25 11",
+      "away_logo": "https://images.keovip88.net/images/teams/aston-villa.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455208_hd/1795455208_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e"
+        }
+      ]
+    },
+    {
+      "id": "gv_7",
+      "league": "GioVang TV",
+      "status": "SẮP ĐÁ",
+      "kickoff": "00:45",
+      "home_name": "Truc Tiep Bodo Glimt",
+      "home_logo": "https://images.keovip88.net/images/teams/bodo-glimt.png",
+      "away_name": "Lask Linz 25 11",
+      "away_logo": "https://images.keovip88.net/images/teams/lask-linz.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455239_hd/1795455239_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c"
+        }
+      ]
+    },
+    {
+      "id": "gv_8",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "19:15",
+      "home_name": "Truc Tiep Cong An Ha Noi",
+      "home_logo": "https://images.keovip88.net/images/league/afc-champions-league.png",
+      "away_name": "Vissel Kobe 24 11",
+      "away_logo": "https://images.keovip88.net/images/teams/cong-an-ha-noi.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370039_hd/1795370039_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-cong-an-ha-noi-vs-vissel-kobe-24-11-6a88e7865d02aeccba00526c"
+        }
+      ]
+    },
+    {
+      "id": "gv_9",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "19:15",
+      "home_name": "Truc Tiep Ratchaburi Fc",
+      "home_logo": "https://images.keovip88.net/images/league/afc-champions-league.png",
+      "away_name": "Johor Darul Takzim 24 11",
+      "away_logo": "https://images.keovip88.net/images/teams/ratchaburi-fc.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370073_hd/1795370073_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-ratchaburi-fc-vs-johor-darul-takzim-24-11-6a8a38deeb269e70040bbd7a"
+        }
+      ]
+    },
+    {
+      "id": "gv_10",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "19:15",
+      "home_name": "Truc Tiep Shanghai Port",
+      "home_logo": "https://images.keovip88.net/images/league/afc-champions-league.png",
+      "away_name": "Buriram United 24 11",
+      "away_logo": "https://images.keovip88.net/images/teams/shanghai-port.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370097_hd/1795370097_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-shanghai-port-vs-buriram-united-24-11-6a8b8a6f4d3de1ad3e0d952c"
+        }
+      ]
+    },
+    {
+      "id": "gv_11",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "18:00",
+      "home_name": "Truc Tiep Onikisubat",
+      "home_logo": "https://upload.wikimedia.org/wikipedia/en/7/72/Sultanlar_Ligi.png",
+      "away_name": "Ziraat Bankasi 24 11",
+      "away_logo": "https://upload.wikimedia.org/wikipedia/en/7/72/Sultanlar_Ligi.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795370534_hd/1795370534_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-onikisubat-vs-ziraat-bankasi-24-11-a8lf95heg7ty"
+        }
+      ]
+    },
+    {
+      "id": "gv_12",
+      "league": "GioVang TV",
+      "status": "SẮP ĐÁ",
+      "kickoff": "11:00",
+      "home_name": "Truc Tiep Pgl Major Stage 1 1",
+      "home_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7bWn7s_jrmhKinzbG0fDU7Sv_1wlhRjBFQudG0JNs0lzmnIXZz8YQ448&s=10",
+      "away_name": "Pgl Major Singapore 24 11",
+      "away_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcXpW4kmkC3UBqEL2ooWKrhxy8cMn0ngH9OWz9fDreLehcX4JTeE1PnZE&s=10",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795447017_hd/1795447017_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-pgl-major-stage-1-1-vs-pgl-major-singapore-24-11-7pnd8v4nc5fb"
+        }
+      ]
+    },
+    {
+      "id": "gv_13",
+      "league": "GioVang TV",
+      "status": "SẮP ĐÁ",
+      "kickoff": "16:00",
+      "home_name": "Truc Tiep Pgl Major Stage 1 1 Ca 3",
+      "home_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7bWn7s_jrmhKinzbG0fDU7Sv_1wlhRjBFQudG0JNs0lzmnIXZz8YQ448&s=10",
+      "away_name": "Pgl Major Stage 1 1 Ca 4 24 11",
+      "away_logo": "https://i.ytimg.com/vi/_7LJB5SAgrY/hq720.jpg?v=6b027532&sqp=COTAk9gG-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAYTghyO_-Awpudi8uGTpyRMx7D3w",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://pzhgifbkllliv.vcdn.cloud/1795491476_hd/1795491476_hd@720p.m3u8",
+          "referer": "https://giovang.guru/truc-tiep-pgl-major-stage-1-1-ca-3-vs-pgl-major-stage-1-1-ca-4-24-11-o279d53v4tr1"
+        }
+      ]
+    },
+    {
+      "id": "gv_14",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "#Xem Truc Tiep Bong Da Cung Giov",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/#xem-truc-tiep-bong-da-cung-giovang-tv",
+          "referer": "https://giovang.guru/#xem-truc-tiep-bong-da-cung-giovang-tv"
+        }
+      ]
+    },
+    {
+      "id": "gv_15",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "#Tinh Nang Noi Bat Khi Xem Truc ",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/#tinh-nang-noi-bat-khi-xem-truc-tiep-bong-da-tai-giovangtv",
+          "referer": "https://giovang.guru/#tinh-nang-noi-bat-khi-xem-truc-tiep-bong-da-tai-giovangtv"
+        }
+      ]
+    },
+    {
+      "id": "gv_16",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "#Lich Truc Tiep Bong Da Va Thong",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/#lich-truc-tiep-bong-da-va-thong-bao-gio-thi-dau",
+          "referer": "https://giovang.guru/#lich-truc-tiep-bong-da-va-thong-bao-gio-thi-dau"
+        }
+      ]
+    },
+    {
+      "id": "gv_17",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "#Phat Lai Tran Dau Va Highlight ",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/#phat-lai-tran-dau-va-highlight-tai-giovang",
+          "referer": "https://giovang.guru/#phat-lai-tran-dau-va-highlight-tai-giovang"
+        }
+      ]
+    },
+    {
+      "id": "gv_18",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "#Cach Su Dung Giovang De Xem Tru",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/#cach-su-dung-giovang-de-xem-truc-tiep-bong-da",
+          "referer": "https://giovang.guru/#cach-su-dung-giovang-de-xem-truc-tiep-bong-da"
+        }
+      ]
+    },
+    {
+      "id": "gv_19",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "#Toc Do Phat Song Truc Tiep Bong",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/#toc-do-phat-song-truc-tiep-bong-da-nhanh",
+          "referer": "https://giovang.guru/#toc-do-phat-song-truc-tiep-bong-da-nhanh"
+        }
+      ]
+    },
+    {
+      "id": "gv_20",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "#So Sanh Giovang Voi Cac Nen Tan",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/#so-sanh-giovang-voi-cac-nen-tang-xem-tructiepbongda-khac",
+          "referer": "https://giovang.guru/#so-sanh-giovang-voi-cac-nen-tang-xem-tructiepbongda-khac"
+        }
+      ]
+    },
+    {
+      "id": "gv_21",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "#Dinh Huong Cua Kenh Xem Bong Da",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/#dinh-huong-cua-kenh-xem-bong-da-truc-tuyen-giovangtv-trong-tuong-lai",
+          "referer": "https://giovang.guru/#dinh-huong-cua-kenh-xem-bong-da-truc-tuyen-giovangtv-trong-tuong-lai"
+        }
+      ]
+    },
+    {
+      "id": "gv_22",
+      "league": "GioVang TV",
+      "status": "LIVE",
+      "kickoff": "LIVE",
+      "home_name": "#Lam The Nao De Khac Phuc Tinh T",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng Trực Tiếp",
+          "url": "https://giovang.guru/#lam-the-nao-de-khac-phuc-tinh-trang-giat-lag-khi-xem-truc-tiep-bong-da-tren-giovang",
+          "referer": "https://giovang.guru/#lam-the-nao-de-khac-phuc-tinh-trang-giat-lag-khi-xem-truc-tiep-bong-da-tren-giovang"
+        }
+      ]
+    }
+  ]
+}
