@@ -1,6 +1,6 @@
 {
-  "app_title": "Cập nhật lúc 13:12 24/11/2026",
-  "updated_at": "13:12 24/11/2026",
+  "app_title": "Cập nhật lúc 14:21 24/11/2026",
+  "updated_at": "14:21 24/11/2026",
   "matches": [
     {
       "id": "m_1",
@@ -8,11 +8,16 @@
       "status": "SẮP ĐÁ",
       "kickoff": "14:45",
       "home_name": "Newcastle Jets",
-      "home_logo": "https://img.cltvap.cc/football/team/015df51660b2918c97305936453e454c.png",
+      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
       "away_name": "Kashiwa",
-      "away_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "away_logo": "https://img.cltvap.cc/football/team/d272859d78eb8ca7a14753f4293fbf45.png",
       "score": "vs",
       "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (HD Trực Tiếp)",
+          "url": "https://live2.zktsva.app/live/741294.m3u8",
+          "referer": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a"
+        },
         {
           "label": "BLV Gà Siêu Kiêu (Web Player)",
           "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
@@ -25,10 +30,10 @@
       "league": "IDN LC",
       "status": "SẮP ĐÁ",
       "kickoff": "16:00",
-      "home_name": "Garudayaksa Fc",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Pss",
-      "away_logo": "https://img.cltvap.cc/football/team/015df51660b2918c97305936453e454c.png",
+      "home_name": "Garudayaksa FC",
+      "home_logo": "https://img.cltvap.cc/football/team/015df51660b2918c97305936453e454c.png",
+      "away_name": "PSS Sleman",
+      "away_logo": "https://img.cltvap.cc/football/team/20bf90d9a55ef5dc4a503754db3f8b49.png",
       "score": "vs",
       "streams": [
         {
@@ -44,9 +49,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "16:00",
       "home_name": "Persebaya Surabaya",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Psbs Biak",
-      "away_logo": "https://img.cltvap.cc/football/team/66307444901ddb38c881129b7ea0105e.png",
+      "home_logo": "https://img.cltvap.cc/football/team/66307444901ddb38c881129b7ea0105e.png",
+      "away_name": "PSBS Biak Numfor",
+      "away_logo": "https://img.cltvap.cc/football/team/cbd5d35d354519a981a2a97f5c41bcbb.png",
       "score": "vs",
       "streams": [
         {
@@ -62,9 +67,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Daejeon Hana Citizen",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "home_logo": "https://img.cltvap.cc/football/team/090eeb1513e8f1d0cf6d8647d10b2eea.png",
       "away_name": "Beijing Guoan",
-      "away_logo": "https://img.cltvap.cc/football/team/090eeb1513e8f1d0cf6d8647d10b2eea.png",
+      "away_logo": "https://img.cltvap.cc/football/team/f9f803b7f492448da2201101b8f98d13.png",
       "score": "vs",
       "streams": [
         {
@@ -80,9 +85,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Kyoto Sanga",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Pohang",
-      "away_logo": "https://img.cltvap.cc/football/team/7d6fa50ea67cde7d66612a8189897ba5.png",
+      "home_logo": "https://img.cltvap.cc/football/team/7d6fa50ea67cde7d66612a8189897ba5.png",
+      "away_name": "Pohang Steelers",
+      "away_logo": "https://img.cltvap.cc/football/team/6f05c460789939ac83282bd0686446f1.png",
       "score": "vs",
       "streams": [
         {
@@ -98,9 +103,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Shanghai Port",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Buriram",
-      "away_logo": "https://img.cltvap.cc/football/team/e4e3bed039e14ee2821c1babec380452.png",
+      "home_logo": "https://img.cltvap.cc/football/team/e4e3bed039e14ee2821c1babec380452.png",
+      "away_name": "Buriram United",
+      "away_logo": "https://img.cltvap.cc/football/team/649a85f258f62ec83a62983488e4b347.png",
       "score": "vs",
       "streams": [
         {
@@ -115,10 +120,10 @@
       "league": "AFC Champions League Elite",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
-      "home_name": "Cong An Ha Noi Fc",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "home_name": "Cong An Ha Noi FC",
+      "home_logo": "https://img.cltvap.cc/football/team/9882bbda1cd86a2af4e724f399d1a1c8.png",
       "away_name": "Vissel Kobe",
-      "away_logo": "https://img.cltvap.cc/football/team/9882bbda1cd86a2af4e724f399d1a1c8.png",
+      "away_logo": "https://img.cltvap.cc/football/team/d85cce27ab583e5b3cead155f02b098a.png",
       "score": "vs",
       "streams": [
         {
@@ -133,10 +138,10 @@
       "league": "AFC Champions League Elite",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
-      "home_name": "Ratchaburi Fc",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Johor Darul Tazim Fc",
-      "away_logo": "https://img.cltvap.cc/football/team/ca2b8d70931647840c78209be51763a3.png",
+      "home_name": "Ratchaburi FC",
+      "home_logo": "https://img.cltvap.cc/football/team/ca2b8d70931647840c78209be51763a3.png",
+      "away_name": "Johor Darul Ta'zim FC",
+      "away_logo": "https://img.cltvap.cc/football/team/3ab85cf20a3ed001a60a9fcd8ec09afe.png",
       "score": "vs",
       "streams": [
         {
@@ -152,9 +157,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Costa Rica U17",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "home_logo": "https://img.cltvap.cc/football/team/2d7f3f6e23f7cb31f2209ab8cc8f47a4.png",
       "away_name": "Ireland U17",
-      "away_logo": "https://img.cltvap.cc/football/team/2d7f3f6e23f7cb31f2209ab8cc8f47a4.png",
+      "away_logo": "https://img.cltvap.cc/football/team/c940e50f90b9e73f42045c05d49c6e17.png",
       "score": "vs",
       "streams": [
         {
@@ -170,9 +175,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Venezuela U17",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "home_logo": "https://img.cltvap.cc/football/team/dfa3dc7c4d56d73f925a782bc6063a4b.png",
       "away_name": "Romania U17",
-      "away_logo": "https://img.cltvap.cc/football/team/dfa3dc7c4d56d73f925a782bc6063a4b.png",
+      "away_logo": "https://img.cltvap.cc/football/team/1f8d87e1161af68b81bace188a1ec624.png",
       "score": "vs",
       "streams": [
         {
@@ -188,9 +193,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
       "home_name": "Japan U17",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "home_logo": "https://img.cltvap.cc/football/team/4d444ad7ea33c56cfc0d5701b6e79f59.png",
       "away_name": "Serbia U17",
-      "away_logo": "https://img.cltvap.cc/football/team/4d444ad7ea33c56cfc0d5701b6e79f59.png",
+      "away_logo": "https://img.cltvap.cc/football/team/059bbd8df7767d3bc7829e3735c221e2.png",
       "score": "vs",
       "streams": [
         {
@@ -206,9 +211,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
       "home_name": "Arsenal U19",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "home_logo": "https://img.cltvap.cc/football/team/361260e39f38a6fdd23d64eec1530ba1.png",
       "away_name": "Borussia Dortmund U19",
-      "away_logo": "https://img.cltvap.cc/football/team/361260e39f38a6fdd23d64eec1530ba1.png",
+      "away_logo": "https://img.cltvap.cc/football/team/1c99cfa824629a2c1039a7a61c41ef56.png",
       "score": "vs",
       "streams": [
         {
@@ -224,9 +229,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "20:30",
       "home_name": "Mexico U17",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "home_logo": "https://img.cltvap.cc/football/team/3653cce234494bfbd33e077f4a028f66.png",
       "away_name": "Cameroon U17",
-      "away_logo": "https://img.cltvap.cc/football/team/3653cce234494bfbd33e077f4a028f66.png",
+      "away_logo": "https://img.cltvap.cc/football/team/e2ce14e81dba66dbff9cbc35ecfdb704.png",
       "score": "vs",
       "streams": [
         {
@@ -241,10 +246,10 @@
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "20:45",
-      "home_name": "East Bengal Fc",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Al Hussein Sc Irbid",
-      "away_logo": "https://img.cltvap.cc/football/team/21649c3d173c8f4ec9d526432ad9f088.png",
+      "home_name": "East Bengal FC",
+      "home_logo": "https://img.cltvap.cc/football/team/21649c3d173c8f4ec9d526432ad9f088.png",
+      "away_name": "Al-Hussein SC (Irbid)",
+      "away_logo": "https://img.cltvap.cc/football/team/c57a2fc40564fdcb7c1428215105372a.png",
       "score": "vs",
       "streams": [
         {
@@ -260,9 +265,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "Akron Togliatti",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Cska",
-      "away_logo": "https://img.cltvap.cc/football/team/d5a6f7b99c55a87b8a47337e7fe64588.png",
+      "home_logo": "https://img.cltvap.cc/football/team/d5a6f7b99c55a87b8a47337e7fe64588.png",
+      "away_name": "CSKA Moscow",
+      "away_logo": "https://img.cltvap.cc/football/team/3d44285b3ea2ff20d72778ad3245cf70.png",
       "score": "vs",
       "streams": [
         {
@@ -277,10 +282,10 @@
       "league": "Indian Super League",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
-      "home_name": "Northeast United Fc",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Sc Delhi",
-      "away_logo": "https://img.cltvap.cc/football/team/b019c0b2f14edb23e5c9a10a37a2e548.png",
+      "home_name": "Northeast United FC",
+      "home_logo": "https://img.cltvap.cc/football/team/b019c0b2f14edb23e5c9a10a37a2e548.png",
+      "away_name": "SC Delhi",
+      "away_logo": "https://img.cltvap.cc/football/team/361a7ca53936507117d9b3d5d9f018a5.png",
       "score": "vs",
       "streams": [
         {
@@ -296,9 +301,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
       "home_name": "Dominican Republic U17",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "home_logo": "https://img.cltvap.cc/football/team/b881bdc95f60018b055309c3ab096a5b.png",
       "away_name": "Chile U17",
-      "away_logo": "https://img.cltvap.cc/football/team/b881bdc95f60018b055309c3ab096a5b.png",
+      "away_logo": "https://img.cltvap.cc/football/team/76b605730bd2606bbcb290f1244dac9a.png",
       "score": "vs",
       "streams": [
         {
@@ -313,10 +318,10 @@
       "league": "GCC Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
-      "home_name": "Al Riffa",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Al Zawraa Sc",
-      "away_logo": "https://img.cltvap.cc/football/team/bd2f7046b89c07c685e79343f976ec9e.jpg",
+      "home_name": "Al-Riffa",
+      "home_logo": "https://img.cltvap.cc/football/team/bd2f7046b89c07c685e79343f976ec9e.jpg",
+      "away_name": "Al Zawraa SC",
+      "away_logo": "https://img.cltvap.cc/football/team/17e3cb55af2ada9d234099c573f8a81e.png",
       "score": "vs",
       "streams": [
         {
@@ -331,10 +336,10 @@
       "league": "Georgia Erovnuli Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
-      "home_name": "Gagra Fc",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
-      "away_name": "Dinamo",
-      "away_logo": "https://img.cltvap.cc/football/team/e450729cae3ba8210e9a08134b9258a1.png",
+      "home_name": "Gagra FC",
+      "home_logo": "https://img.cltvap.cc/football/team/e450729cae3ba8210e9a08134b9258a1.png",
+      "away_name": "Dinamo Tbilisi",
+      "away_logo": "https://img.cltvap.cc/football/team/ad24ca32a65ee246b1c20af06f4acb97.png",
       "score": "vs",
       "streams": [
         {
@@ -350,9 +355,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Brazil U17",
-      "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
+      "home_logo": "https://img.cltvap.cc/football/team/99bf3d153d4bf67d640051a1af322505.png",
       "away_name": "Tanzania U17",
-      "away_logo": "https://img.cltvap.cc/football/team/99bf3d153d4bf67d640051a1af322505.png",
+      "away_logo": "https://img.cltvap.cc/football/team/0ebcdb06cf4d039f0d08b356c26bc466.png",
       "score": "vs",
       "streams": [
         {
@@ -367,10 +372,10 @@
       "league": "Egyptian Premier League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
-      "home_name": "Smouha Sc",
-      "home_logo": "",
+      "home_name": "Smouha SC",
+      "home_logo": "https://img.cltvap.cc/football/team/2859c6dc44290631fe151b7d306dfde6.png",
       "away_name": "Bank El Ahly",
-      "away_logo": "https://img.cltvap.cc/football/team/2859c6dc44290631fe151b7d306dfde6.png",
+      "away_logo": "https://img.cltvap.cc/football/team/31f3149a6e207008059cd6bb40a4a423.png",
       "score": "vs",
       "streams": [
         {
@@ -386,9 +391,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Real Madrid U19",
-      "home_logo": "",
-      "away_name": "Psv Eindhoven U19",
-      "away_logo": "https://img.cltvap.cc/football/team/5e754f0f66a62ae8806a63677b45caa4.png",
+      "home_logo": "https://img.cltvap.cc/football/team/5e754f0f66a62ae8806a63677b45caa4.png",
+      "away_name": "PSV Eindhoven U19",
+      "away_logo": "https://img.cltvap.cc/football/team/bb1ee3913de6db06451968adf4d89a29.png",
       "score": "vs",
       "streams": [
         {
@@ -404,9 +409,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Algeria U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/c0f3a9cc8c0672341632498cdfb3fff9.png",
       "away_name": "Montenegro U17",
-      "away_logo": "https://img.cltvap.cc/football/team/c0f3a9cc8c0672341632498cdfb3fff9.png",
+      "away_logo": "https://img.cltvap.cc/football/team/9866b8a83d35abdd89ed76d565d71f75.png",
       "score": "vs",
       "streams": [
         {
@@ -422,9 +427,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Honduras U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/570197ce24c78651ca363a146213ba08.png",
       "away_name": "Colombia U17",
-      "away_logo": "https://img.cltvap.cc/football/team/570197ce24c78651ca363a146213ba08.png",
+      "away_logo": "https://img.cltvap.cc/football/team/13844d01d85a85bed47338e396b2aa3d.png",
       "score": "vs",
       "streams": [
         {
@@ -439,10 +444,10 @@
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
-      "home_name": "Al Seeb Sc",
-      "home_logo": "",
-      "away_name": "Al",
-      "away_logo": "https://img.cltvap.cc/football/team/99436fc30d359790afbd11fe602a5a45.png",
+      "home_name": "Al Seeb SC",
+      "home_logo": "https://img.cltvap.cc/football/team/99436fc30d359790afbd11fe602a5a45.png",
+      "away_name": "Al Shorta",
+      "away_logo": "https://img.cltvap.cc/football/team/24cb68778b46e3795fa58ad593e98b5d.png",
       "score": "vs",
       "streams": [
         {
@@ -458,9 +463,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Shabab Al Ahli",
-      "home_logo": "",
-      "away_name": "Al",
-      "away_logo": "https://img.cltvap.cc/football/team/05e87b1dbb904915a4a97fc095b73d20.png",
+      "home_logo": "https://img.cltvap.cc/football/team/05e87b1dbb904915a4a97fc095b73d20.png",
+      "away_name": "Al Qadsiah",
+      "away_logo": "https://img.cltvap.cc/football/team/bc74439d19c8bbaa17c57406b120b86d.png",
       "score": "vs",
       "streams": [
         {
@@ -475,10 +480,10 @@
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
-      "home_name": "Fk Bodoglimt",
-      "home_logo": "",
-      "away_name": "Lask Linz",
-      "away_logo": "https://img.cltvap.cc/football/team/98854ab97eadf3d2c7c6d657ad99df96.png",
+      "home_name": "FK Bodo/Glimt",
+      "home_logo": "https://img.cltvap.cc/football/team/98854ab97eadf3d2c7c6d657ad99df96.png",
+      "away_name": "LASK Linz",
+      "away_logo": "https://img.cltvap.cc/football/team/5d33f831f779428858138d28c9dd4480.png",
       "score": "vs",
       "streams": [
         {
@@ -494,9 +499,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
       "home_name": "Galatasaray",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/fbcf002c8d6dd34813fa2b3a4cc9b04c.png",
       "away_name": "Aston Villa",
-      "away_logo": "https://img.cltvap.cc/football/team/fbcf002c8d6dd34813fa2b3a4cc9b04c.png",
+      "away_logo": "https://img.cltvap.cc/football/team/42703a6d65494454a252c12de6606767.png",
       "score": "vs",
       "streams": [
         {
@@ -512,9 +517,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "01:15",
       "home_name": "Al Nassr",
-      "home_logo": "",
-      "away_name": "Al Sadd Sports Club",
-      "away_logo": "https://img.cltvap.cc/football/team/0d9975f7e846a1ecb099f4cd62d1b8f7.png",
+      "home_logo": "https://img.cltvap.cc/football/team/0d9975f7e846a1ecb099f4cd62d1b8f7.png",
+      "away_name": "Al-Sadd Sports Club",
+      "away_logo": "https://img.cltvap.cc/football/team/5c794bfbf3227563c85323bb624721ec.png",
       "score": "vs",
       "streams": [
         {
@@ -530,9 +535,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Arsenal",
-      "home_logo": "",
-      "away_name": "Borussia",
-      "away_logo": "https://img.cltvap.cc/football/team/10ea668ae8bd495eba6759f5cbf51898.png",
+      "home_logo": "https://img.cltvap.cc/football/team/10ea668ae8bd495eba6759f5cbf51898.png",
+      "away_name": "Borussia Dortmund",
+      "away_logo": "https://img.cltvap.cc/football/team/7bdb9eee769c433798a9be5a4fc32792.png",
       "score": "vs",
       "streams": [
         {
@@ -548,9 +553,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Como",
-      "home_logo": "",
-      "away_name": "Aek",
-      "away_logo": "https://img.cltvap.cc/football/team/1c6cbee0ec814ae9bd3748ecaadf2cd9.png",
+      "home_logo": "https://img.cltvap.cc/football/team/1c6cbee0ec814ae9bd3748ecaadf2cd9.png",
+      "away_name": "AEK Athens",
+      "away_logo": "https://img.cltvap.cc/football/team/12dcc69bef67aa2a93107e940ee89144.png",
       "score": "vs",
       "streams": [
         {
@@ -566,9 +571,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Feyenoord",
-      "home_logo": "",
-      "away_name": "Fc Porto",
-      "away_logo": "https://img.cltvap.cc/football/team/44073f2d2c979a9388f98505ac3b754d.png",
+      "home_logo": "https://img.cltvap.cc/football/team/44073f2d2c979a9388f98505ac3b754d.png",
+      "away_name": "FC Porto",
+      "away_logo": "https://img.cltvap.cc/football/team/83aa826e3c45d5047a8c917fb0b41a5e.png",
       "score": "vs",
       "streams": [
         {
@@ -580,13 +585,13 @@
     },
     {
       "id": "m_33",
-      "league": "Napoli",
+      "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
-      "home_name": "UEFA Champions League",
-      "home_logo": "",
-      "away_name": "Manchester City",
-      "away_logo": "https://img.cltvap.cc/football/team/ec2c30faf28746e7b60788b56ae1b6e3.png",
+      "home_name": "Manchester City",
+      "home_logo": "https://img.cltvap.cc/football/team/ec2c30faf28746e7b60788b56ae1b6e3.png",
+      "away_name": "Napoli",
+      "away_logo": "https://img.cltvap.cc/football/team/9c738b85e092484ea03b3aab3fd68450.png",
       "score": "vs",
       "streams": [
         {
@@ -601,10 +606,10 @@
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
-      "home_name": "Rb Leipzig",
-      "home_logo": "",
-      "away_name": "Rc Lens",
-      "away_logo": "https://img.cltvap.cc/football/team/3a07a5889e62447bb427fbb7ae023619.png",
+      "home_name": "RB Leipzig",
+      "home_logo": "https://img.cltvap.cc/football/team/3a07a5889e62447bb427fbb7ae023619.png",
+      "away_name": "RC Lens",
+      "away_logo": "https://img.cltvap.cc/football/team/3a5b0e69dab94560a31b0d2ff025eab9.png",
       "score": "vs",
       "streams": [
         {
@@ -620,9 +625,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Real Madrid",
-      "home_logo": "",
-      "away_name": "Psv",
-      "away_logo": "https://img.cltvap.cc/football/team/5d83fbd4a22c445080c53e8ab832a889.png",
+      "home_logo": "https://img.cltvap.cc/football/team/5d83fbd4a22c445080c53e8ab832a889.png",
+      "away_name": "PSV Eindhoven",
+      "away_logo": "https://img.cltvap.cc/football/team/cad5af4d1ff0e6f3119af3d273d95d31.png",
       "score": "vs",
       "streams": [
         {
@@ -638,9 +643,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Slovan Bratislava",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/8e220a74791be9e0eb13507f0ce444db.png",
       "away_name": "Real Betis",
-      "away_logo": "https://img.cltvap.cc/football/team/8e220a74791be9e0eb13507f0ce444db.png",
+      "away_logo": "https://img.cltvap.cc/football/team/79d543e6fcea4e8083e30af82380a747.png",
       "score": "vs",
       "streams": [
         {
@@ -656,9 +661,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "06:20",
       "home_name": "Millonarios",
-      "home_logo": "",
-      "away_name": "Atletico",
-      "away_logo": "https://img.cltvap.cc/football/team/88bf2a10fe7e8d3f9a21b73f3f77fcde.png",
+      "home_logo": "https://img.cltvap.cc/football/team/88bf2a10fe7e8d3f9a21b73f3f77fcde.png",
+      "away_name": "Atletico Bucaramanga",
+      "away_logo": "https://img.cltvap.cc/football/team/70c92764e181ce7abe6176c411a93fe3.png",
       "score": "vs",
       "streams": [
         {
@@ -673,10 +678,10 @@
       "league": "Categoría Primera A",
       "status": "SẮP ĐÁ",
       "kickoff": "08:30",
-      "home_name": "America De Cali",
-      "home_logo": "",
+      "home_name": "America de Cali",
+      "home_logo": "https://img.cltvap.cc/football/team/ed6ae7fa894cb5bdbccfd605d1d6ad04.png",
       "away_name": "Deportivo Cali",
-      "away_logo": "https://img.cltvap.cc/football/team/ed6ae7fa894cb5bdbccfd605d1d6ad04.png",
+      "away_logo": "https://img.cltvap.cc/football/team/b997a2811a0caed43ff38b631a708420.png",
       "score": "vs",
       "streams": [
         {
@@ -692,9 +697,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "10:00",
       "home_name": "San Jose Earthquakes",
-      "home_logo": "",
-      "away_name": "Houston",
-      "away_logo": "https://img.cltvap.cc/football/team/7079d708b4e391c0c26b20da7b2fb32c.png",
+      "home_logo": "https://img.cltvap.cc/football/team/7079d708b4e391c0c26b20da7b2fb32c.png",
+      "away_name": "Houston Dynamo",
+      "away_logo": "https://img.cltvap.cc/football/team/2d21e6bbd505075b1bc6df8b5a887e8f.png",
       "score": "vs",
       "streams": [
         {
@@ -710,9 +715,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "14:45",
       "home_name": "Melbourne Victory",
-      "home_logo": "",
-      "away_name": "The Cong",
-      "away_logo": "https://img.cltvap.cc/football/team/c540f8f279c09a2a3df1cbbfe82d7184.png",
+      "home_logo": "https://img.cltvap.cc/football/team/c540f8f279c09a2a3df1cbbfe82d7184.png",
+      "away_name": "The Cong-Viettel",
+      "away_logo": "https://img.cltvap.cc/football/team/840e2d7165cf2a34ec6c65a1fd9b58a9.png",
       "score": "vs",
       "streams": [
         {
@@ -728,9 +733,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Mito Hollyhock",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/9ead844240532c4e12d3eb45d2087924.png",
       "away_name": "Tokyo Verdy",
-      "away_logo": "https://img.cltvap.cc/football/team/9ead844240532c4e12d3eb45d2087924.png",
+      "away_logo": "https://img.cltvap.cc/football/team/2a8adb34e764602183a7bee8f51726e4.png",
       "score": "vs",
       "streams": [
         {
@@ -745,10 +750,10 @@
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
-      "home_name": "Fc Tokyo",
-      "home_logo": "",
-      "away_name": "Sanfrecce",
-      "away_logo": "https://img.cltvap.cc/football/team/333df39860930a21cf72b4e9664723ab.png",
+      "home_name": "FC Tokyo",
+      "home_logo": "https://img.cltvap.cc/football/team/333df39860930a21cf72b4e9664723ab.png",
+      "away_name": "Sanfrecce Hiroshima",
+      "away_logo": "https://img.cltvap.cc/football/team/c81d5ff7a33a4f6a9312a8703f619352.png",
       "score": "vs",
       "streams": [
         {
@@ -764,9 +769,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Okayama",
-      "home_logo": "",
-      "away_name": "Shimizu S Pulse",
-      "away_logo": "https://img.cltvap.cc/football/team/fb5c6121bf5b351f60ebf8ffd5b9d887.png",
+      "home_logo": "https://img.cltvap.cc/football/team/fb5c6121bf5b351f60ebf8ffd5b9d887.png",
+      "away_name": "Shimizu S-Pulse",
+      "away_logo": "https://img.cltvap.cc/football/team/fa4105f0408ef893d941e70ae003ab4c.png",
       "score": "vs",
       "streams": [
         {
@@ -782,9 +787,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Avispa Fukuoka",
-      "home_logo": "",
-      "away_name": "Yokohama F",
-      "away_logo": "https://img.cltvap.cc/football/team/bf0e2229b39b6cb6fd17e9d0f3fb747e.png",
+      "home_logo": "https://img.cltvap.cc/football/team/bf0e2229b39b6cb6fd17e9d0f3fb747e.png",
+      "away_name": "Yokohama F. Marinos",
+      "away_logo": "https://img.cltvap.cc/football/team/78ddaaa79d9502f5e2df0fbb6261f937.png",
       "score": "vs",
       "streams": [
         {
@@ -799,10 +804,10 @@
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
-      "home_name": "Jef United Ichihara Chiba",
-      "home_logo": "",
-      "away_name": "Nagoya",
-      "away_logo": "https://img.cltvap.cc/football/team/9ce2dfe0c36e6a9774eaecf9731375b6.png",
+      "home_name": "JEF United Ichihara Chiba",
+      "home_logo": "https://img.cltvap.cc/football/team/9ce2dfe0c36e6a9774eaecf9731375b6.png",
+      "away_name": "Nagoya Grampus",
+      "away_logo": "https://img.cltvap.cc/football/team/32aa68e1fa3d62dad572d19b21a09353.png",
       "score": "vs",
       "streams": [
         {
@@ -817,10 +822,10 @@
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
-      "home_name": "V Varen Nagasaki",
-      "home_logo": "",
-      "away_name": "Kawasaki",
-      "away_logo": "https://img.cltvap.cc/football/team/b28ace839956d8eacce11926ea5e43b3.png",
+      "home_name": "V-Varen Nagasaki",
+      "home_logo": "https://img.cltvap.cc/football/team/b28ace839956d8eacce11926ea5e43b3.png",
+      "away_name": "Kawasaki Frontale",
+      "away_logo": "https://img.cltvap.cc/football/team/937795c0851c1e794e96a5cb660fcd59.png",
       "score": "vs",
       "streams": [
         {
@@ -836,9 +841,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Gamba Osaka",
-      "home_logo": "",
-      "away_name": "Port Fc",
-      "away_logo": "https://img.cltvap.cc/football/team/91008a96b5de8c75376d17057f89890e.png",
+      "home_logo": "https://img.cltvap.cc/football/team/91008a96b5de8c75376d17057f89890e.png",
+      "away_name": "Port FC",
+      "away_logo": "https://img.cltvap.cc/football/team/fb00f7ae0bf4530e86baf7bec110f69f.png",
       "score": "vs",
       "streams": [
         {
@@ -854,9 +859,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Kashima Antlers",
-      "home_logo": "",
-      "away_name": "Jeonbuk Hyundai",
-      "away_logo": "https://img.cltvap.cc/football/team/90ca524b1b1c17911b1bf8e425c8d96d.png",
+      "home_logo": "https://img.cltvap.cc/football/team/90ca524b1b1c17911b1bf8e425c8d96d.png",
+      "away_name": "Jeonbuk Hyundai Motors",
+      "away_logo": "https://img.cltvap.cc/football/team/ee2117f952745163fecfa4b74a6a2bea.png",
       "score": "vs",
       "streams": [
         {
@@ -872,9 +877,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "17:30",
       "home_name": "Urawa Red Diamonds",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/ca15e36551392e8c99b53b5b2f8531d3.png",
       "away_name": "Cerezo Osaka",
-      "away_logo": "https://img.cltvap.cc/football/team/ca15e36551392e8c99b53b5b2f8531d3.png",
+      "away_logo": "https://img.cltvap.cc/football/team/ab10ee503e539e55a9a11a9ff202405a.png",
       "score": "vs",
       "streams": [
         {
@@ -890,9 +895,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
       "home_name": "Radnicki Nis",
-      "home_logo": "",
-      "away_name": "Fk Zeleznicar",
-      "away_logo": "https://img.cltvap.cc/football/team/794c52e40471e247cc8e50dc33841c1d.png",
+      "home_logo": "https://img.cltvap.cc/football/team/794c52e40471e247cc8e50dc33841c1d.png",
+      "away_name": "FK Zeleznicar Pancevo",
+      "away_logo": "https://img.cltvap.cc/football/team/5a4205b9ee3d49c60df7bf22bc2e2203.png",
       "score": "vs",
       "streams": [
         {
@@ -908,9 +913,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
       "home_name": "Bali United",
-      "home_logo": "",
-      "away_name": "Barito",
-      "away_logo": "https://img.cltvap.cc/football/team/09fe2ecf88f68970da755f8655d5da8a.png",
+      "home_logo": "https://img.cltvap.cc/football/team/09fe2ecf88f68970da755f8655d5da8a.png",
+      "away_name": "Barito Putera",
+      "away_logo": "https://img.cltvap.cc/football/team/631d7950b866054f174c8d7389418f3b.png",
       "score": "vs",
       "streams": [
         {
@@ -926,9 +931,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Persib Bandung",
-      "home_logo": "",
-      "away_name": "Fc Seoul",
-      "away_logo": "https://img.cltvap.cc/football/team/b2004093bf25a5a8d1768970d6e49d71.png",
+      "home_logo": "https://img.cltvap.cc/football/team/b2004093bf25a5a8d1768970d6e49d71.png",
+      "away_name": "FC Seoul",
+      "away_logo": "https://img.cltvap.cc/football/team/ad010af729c420626d1865ad744168d3.png",
       "score": "vs",
       "streams": [
         {
@@ -944,9 +949,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Ecuador U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/4bcd83a98bc4ee323ec93c0f0e704d04.png",
       "away_name": "South Korea U17",
-      "away_logo": "https://img.cltvap.cc/football/team/4bcd83a98bc4ee323ec93c0f0e704d04.png",
+      "away_logo": "https://img.cltvap.cc/football/team/6581bc34692022be4c21d98778e33df0.png",
       "score": "vs",
       "streams": [
         {
@@ -962,9 +967,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Uganda U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/81f7acabd411274fcf65ce2070ed568a.png",
       "away_name": "New Caledonia U17",
-      "away_logo": "https://img.cltvap.cc/football/team/81f7acabd411274fcf65ce2070ed568a.png",
+      "away_logo": "https://img.cltvap.cc/football/team/0cb656f78993ef2542ab838079ec9426.png",
       "score": "vs",
       "streams": [
         {
@@ -979,10 +984,10 @@
       "league": "UEFA Youth League",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
-      "home_name": "Sporting Cp U19",
-      "home_logo": "",
+      "home_name": "Sporting CP U19",
+      "home_logo": "https://img.cltvap.cc/football/team/0e1d190df124492ca435fd0ce683a75c.png",
       "away_name": "Manchester United U19",
-      "away_logo": "https://img.cltvap.cc/football/team/0e1d190df124492ca435fd0ce683a75c.png",
+      "away_logo": "https://img.cltvap.cc/football/team/44eb7130030b0be19a244dbf1927561f.png",
       "score": "vs",
       "streams": [
         {
@@ -998,9 +1003,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "20:30",
       "home_name": "Haiti U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/087bc7552322045ad94868390dce5b37.png",
       "away_name": "Saudi Arabia U17",
-      "away_logo": "https://img.cltvap.cc/football/team/087bc7552322045ad94868390dce5b37.png",
+      "away_logo": "https://img.cltvap.cc/football/team/cf372cbe6eae54c6a6dfb3ebbcdc3404.png",
       "score": "vs",
       "streams": [
         {
@@ -1016,9 +1021,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "20:30",
       "home_name": "Uruguay U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/3068cfc254b9a77c7eac84c9565eeeab.png",
       "away_name": "France U17",
-      "away_logo": "https://img.cltvap.cc/football/team/3068cfc254b9a77c7eac84c9565eeeab.png",
+      "away_logo": "https://img.cltvap.cc/football/team/8eb4b4c01bf3375828c5494c2f6e7685.png",
       "score": "vs",
       "streams": [
         {
@@ -1034,9 +1039,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "20:45",
       "home_name": "Nasaf Qarshi",
-      "home_logo": "",
-      "away_name": "Al",
-      "away_logo": "https://img.cltvap.cc/football/team/bef3a45bcf56447c8acfb7b077820022.png",
+      "home_logo": "https://img.cltvap.cc/football/team/bef3a45bcf56447c8acfb7b077820022.png",
+      "away_name": "Al Khaldiya",
+      "away_logo": "https://img.cltvap.cc/football/team/648d61541736aa2c89fc96fcb19ac852.png",
       "score": "vs",
       "streams": [
         {
@@ -1052,9 +1057,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "Kazma",
-      "home_logo": "",
-      "away_name": "Erbil Sc",
-      "away_logo": "https://img.cltvap.cc/football/team/49c8ec5cda0bdb751d50095676d88e8d.png",
+      "home_logo": "https://img.cltvap.cc/football/team/49c8ec5cda0bdb751d50095676d88e8d.png",
+      "away_name": "Erbil SC",
+      "away_logo": "https://img.cltvap.cc/football/team/3a52398498773a8ed0006583046d8050.png",
       "score": "vs",
       "streams": [
         {
@@ -1070,9 +1075,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
       "home_name": "Greece U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/1da38e9fc1f765ffa964a0ab64c8d8fe.png",
       "away_name": "Qatar U17",
-      "away_logo": "https://img.cltvap.cc/football/team/1da38e9fc1f765ffa964a0ab64c8d8fe.png",
+      "away_logo": "https://img.cltvap.cc/football/team/7303a103c93fea0445384d6ff3f3d1b9.png",
       "score": "vs",
       "streams": [
         {
@@ -1088,9 +1093,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
       "home_name": "Panama U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/a159b2e2c6b3cb7bf0e92eb43fe27bdd.png",
       "away_name": "Egypt U17",
-      "away_logo": "https://img.cltvap.cc/football/team/a159b2e2c6b3cb7bf0e92eb43fe27bdd.png",
+      "away_logo": "https://img.cltvap.cc/football/team/65a579da11fa712149bca347ecfcb208.png",
       "score": "vs",
       "streams": [
         {
@@ -1106,9 +1111,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Akhmat Grozny",
-      "home_logo": "",
-      "away_name": "Fk",
-      "away_logo": "https://img.cltvap.cc/football/team/553ebe5306456914b5574aa8ef0eaf0f.png",
+      "home_logo": "https://img.cltvap.cc/football/team/553ebe5306456914b5574aa8ef0eaf0f.png",
+      "away_name": "FK Krasnodar",
+      "away_logo": "https://img.cltvap.cc/football/team/f48a781b76e04c7a50ea2136cb37ab87.png",
       "score": "vs",
       "streams": [
         {
@@ -1124,9 +1129,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Denmark U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/685d3703a0b1410dc3bf2280eb5a15ec.png",
       "away_name": "Argentina U17",
-      "away_logo": "https://img.cltvap.cc/football/team/685d3703a0b1410dc3bf2280eb5a15ec.png",
+      "away_logo": "https://img.cltvap.cc/football/team/7d44a77ef7bf7d809287828b992f3007.png",
       "score": "vs",
       "streams": [
         {
@@ -1142,9 +1147,9 @@
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Australia U17",
-      "home_logo": "",
+      "home_logo": "https://img.cltvap.cc/football/team/2d8fe42de2f833581faa077f788329fa.png",
       "away_name": "Mozambique U17",
-      "away_logo": "https://img.cltvap.cc/football/team/2d8fe42de2f833581faa077f788329fa.png",
+      "away_logo": "https://img.cltvap.cc/football/team/d3b8cf8b9c797942fe68565e4ed2d8c3.png",
       "score": "vs",
       "streams": [
         {
@@ -1159,10 +1164,10 @@
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
-      "home_name": "Al Kuwait Sc",
-      "home_logo": "",
-      "away_name": "Al",
-      "away_logo": "https://img.cltvap.cc/football/team/b292fe77f1c6c63d12782e565ea3e92f.png",
+      "home_name": "Al Kuwait SC",
+      "home_logo": "https://img.cltvap.cc/football/team/b292fe77f1c6c63d12782e565ea3e92f.png",
+      "away_name": "Al Wahda(UAE)",
+      "away_logo": "https://img.cltvap.cc/football/team/21da55d164e80f29bdfd9f8cef55a76b.png",
       "score": "vs",
       "streams": [
         {
@@ -1177,10 +1182,10 @@
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
-      "home_name": "Al Jazirauae",
-      "home_logo": "",
-      "away_name": "Gol Gohar Fc",
-      "away_logo": "https://img.cltvap.cc/football/team/9352b8e0b9515b84abf716a32c42777e.png",
+      "home_name": "Al-Jazira(UAE)",
+      "home_logo": "https://img.cltvap.cc/football/team/9352b8e0b9515b84abf716a32c42777e.png",
+      "away_name": "Gol Gohar FC",
+      "away_logo": "https://img.cltvap.cc/football/team/69625f17e031ad1fcb33823338b74d95.png",
       "score": "vs",
       "streams": [
         {
@@ -1195,10 +1200,10 @@
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
-      "home_name": "Al Muharraq",
-      "home_logo": "",
-      "away_name": "Arkadag Fk",
-      "away_logo": "https://img.cltvap.cc/football/team/4e9422ab24a8dff2521be20e1c129f20.png",
+      "home_name": "Al-Muharraq",
+      "home_logo": "https://img.cltvap.cc/football/team/4e9422ab24a8dff2521be20e1c129f20.png",
+      "away_name": "Arkadag FK",
+      "away_logo": "https://img.cltvap.cc/football/team/aad022bfac5c480bed8d0dc2a710281e.png",
       "score": "vs",
       "streams": [
         {
@@ -1213,10 +1218,10 @@
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
-      "home_name": "Al Faisaly Amman",
-      "home_logo": "",
-      "away_name": "Al Rayyan Sports Club",
-      "away_logo": "https://img.cltvap.cc/football/team/d73fc6a782904bb6819be4e0e86e8a55.png",
+      "home_name": "Al-Faisaly Amman",
+      "home_logo": "https://img.cltvap.cc/football/team/d73fc6a782904bb6819be4e0e86e8a55.png",
+      "away_name": "Al-Rayyan Sports Club",
+      "away_logo": "https://img.cltvap.cc/football/team/d36d53da32742efb1d00f27e959603a0.png",
       "score": "vs",
       "streams": [
         {
