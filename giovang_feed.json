@@ -1,20 +1,20 @@
 {
-  "app_title": "GioVang • 20:57 24/11/2026",
-  "updated_at": "20:57 24/11/2026",
+  "app_title": "GioVang • 21:03 24/11/2026",
+  "updated_at": "21:03 24/11/2026",
   "matches": [
     {
       "id": "gv_7",
-      "league": "Bóng Đá Trực Tiếp",
+      "league": "AFC Champions League",
       "status": "LIVE",
       "kickoff": "19:15",
-      "home_name": "AFC Champions League",
+      "home_name": "Cong An Ha Noi",
       "home_logo": "https://images.keovip88.net/images/teams/cong-an-ha-noi.png",
       "away_name": "Vissel Kobe",
       "away_logo": "https://images.keovip88.net/images/teams/vissel-kobe.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Trực Tiếp",
+          "label": "BLV Tỵ",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795370039_hd/1795370039_hd@720p.m3u8",
           "referer": "https://giovang.guru/truc-tiep-cong-an-ha-noi-vs-vissel-kobe-24-11-6a88e7865d02aeccba00526c"
         }
@@ -22,17 +22,17 @@
     },
     {
       "id": "gv_8",
-      "league": "Bóng Đá Trực Tiếp",
+      "league": "AFC Champions League",
       "status": "LIVE",
       "kickoff": "19:15",
-      "home_name": "AFC Champions League",
+      "home_name": "Ratchaburi Fc",
       "home_logo": "https://images.keovip88.net/images/teams/ratchaburi-fc.png",
       "away_name": "Johor Darul Takzim",
       "away_logo": "https://images.keovip88.net/images/teams/johor-darul-takzim.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Trực Tiếp",
+          "label": "BLV Dory",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795370073_hd/1795370073_hd@720p.m3u8",
           "referer": "https://giovang.guru/truc-tiep-ratchaburi-fc-vs-johor-darul-takzim-24-11-6a8a38deeb269e70040bbd7a"
         }
@@ -40,17 +40,17 @@
     },
     {
       "id": "gv_9",
-      "league": "Bóng Đá Trực Tiếp",
+      "league": "AFC Champions League",
       "status": "LIVE",
       "kickoff": "19:15",
-      "home_name": "AFC Champions League",
+      "home_name": "Shanghai Port",
       "home_logo": "https://images.keovip88.net/images/teams/shanghai-port.png",
       "away_name": "Buriram United",
       "away_logo": "https://images.keovip88.net/images/teams/buriram-united.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Trực Tiếp",
+          "label": "BLV Trĩ",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795370097_hd/1795370097_hd@720p.m3u8",
           "referer": "https://giovang.guru/truc-tiep-shanghai-port-vs-buriram-united-24-11-6a8b8a6f4d3de1ad3e0d952c"
         }
@@ -58,17 +58,17 @@
     },
     {
       "id": "gv_10",
-      "league": "Bóng Đá Trực Tiếp",
+      "league": "World Cup U17",
       "status": "LIVE",
       "kickoff": "20:00",
-      "home_name": "World Cup U17",
+      "home_name": "Nhat Ban U17",
       "home_logo": "https://images.keovip88.net/images/teams/japan-u17.png",
       "away_name": "Serbia U17",
       "away_logo": "https://images.keovip88.net/images/teams/srbija-cgora-u17.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Trực Tiếp",
+          "label": "BLV Cận",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795370124_hd/1795370124_hd@720p.m3u8",
           "referer": "https://giovang.guru/truc-tiep-nhat-ban-u17-vs-serbia-u17-24-11-6a124178c018edea420a98fe"
         }
@@ -76,17 +76,17 @@
     },
     {
       "id": "gv_11",
-      "league": "Bóng Đá Trực Tiếp",
+      "league": "World Cup U17",
       "status": "LIVE",
       "kickoff": "21:30",
-      "home_name": "World Cup U17",
+      "home_name": "Dominican Republic U17",
       "home_logo": "https://images.keovip88.net/images/teams/dominican-republic-u17.png",
-      "away_name": "Chilê U17",
+      "away_name": "Chile U17",
       "away_logo": "https://images.keovip88.net/images/teams/chile-u17.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Trực Tiếp",
+          "label": "BLV Hấu",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795498044_hd/1795498044_hd@720p.m3u8",
           "referer": "https://giovang.guru/truc-tiep-dominican-republic-u17-vs-chile-u17-24-11-6a1636bd85360c6da00af32b"
         }
@@ -94,17 +94,17 @@
     },
     {
       "id": "gv_12",
-      "league": "Bóng Đá Trực Tiếp",
+      "league": "AFC Cup",
       "status": "LIVE",
       "kickoff": "20:45",
-      "home_name": "AFC Cup",
+      "home_name": "East Bengal",
       "home_logo": "https://images.keovip88.net/images/teams/east-bengal.png",
       "away_name": "Al Hussein Irbid",
       "away_logo": "https://images.keovip88.net/images/teams/al-hussein-irbid.png",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Trực Tiếp",
+          "label": "BLV Bee",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795370151_hd/1795370151_hd@720p.m3u8",
           "referer": "https://giovang.guru/truc-tiep-east-bengal-vs-al-hussein-irbid-24-11-6a8a38e5eb269e70040bbd90"
         }
@@ -112,37 +112,19 @@
     },
     {
       "id": "gv_13",
-      "league": "Bóng Đá Trực Tiếp",
+      "league": "TRITON",
       "status": "LIVE",
       "kickoff": "20:00",
-      "home_name": "TRITON",
+      "home_name": "Super High Roller Series",
       "home_logo": "https://media.licdn.com/dms/image/v2/D560BAQFmiiRYrimxNg/company-logo_200_200/B56ZfFhLx6GoAM-/0/1751365501421/tritonpokerseries_logo?e=2147483647&v=beta&t=9W5uqeQaKAdzjm9A9iCzEHMlEo5BvlWRUkVUtzJK1P0",
       "away_name": "North Cyprus 2026 Day 10",
       "away_logo": "https://i.ytimg.com/vi/rS-7vvE56xU/sddefault.jpg",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV Trực Tiếp",
+          "label": "BLV Chồn",
           "url": "https://pzhgifbkllliv.vcdn.cloud/1795498009_hd/1795498009_hd@720p.m3u8",
           "referer": "https://giovang.guru/truc-tiep-super-high-roller-series-vs-north-cyprus-2026-day-10-24-11-gqu85loek89n"
-        }
-      ]
-    },
-    {
-      "id": "gv_14",
-      "league": "Bóng Đá Trực Tiếp",
-      "status": "LIVE",
-      "kickoff": "16:00",
-      "home_name": "PGL Major Singapore 2026 Stage 1",
-      "home_logo": "https://giovang.guru/wp-content/themes/GioVang/assets/images/icon-league-default.svg",
-      "away_name": "PGL Major Stage 1 #1 Ca 4",
-      "away_logo": "https://i.ytimg.com/vi/_7LJB5SAgrY/hq720.jpg?v=6b027532&sqp=COTAk9gG-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAYTghyO_-Awpudi8uGTpyRMx7D3w",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Trực Tiếp",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795491476_hd/1795491476_hd@720p.m3u8",
-          "referer": "https://giovang.guru/truc-tiep-pgl-major-stage-1-1-ca-3-vs-pgl-major-stage-1-1-ca-4-24-11-o279d53v4tr1"
         }
       ]
     },
@@ -153,12 +135,12 @@
       "kickoff": "23:00",
       "home_name": "Shabab Al Ahli",
       "home_logo": "https://images.keovip88.net/images/teams/shabab-al-ahli.png",
-      "away_name": "Al-Qadasiya",
-      "away_logo": "https://images.keovip88.net/images/teams/al-qadsiah.png",
+      "away_name": "Al",
+      "away_logo": "",
       "score": "vs",
       "streams": [
         {
-          "label": "Trĩ",
+          "label": "BLV Trĩ",
           "url": "https://giovang.guru/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544",
           "referer": "https://giovang.guru/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544"
         }
@@ -176,7 +158,7 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Mason",
+          "label": "BLV Mason",
           "url": "https://giovang.guru/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91",
           "referer": "https://giovang.guru/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91"
         }
@@ -189,12 +171,12 @@
       "kickoff": "23:00",
       "home_name": "Eczacibasi Nu",
       "home_logo": "https://static.flashscore.com/res/image/data/6wWfI3zB-jm1g2SD5.png",
-      "away_name": "Tent Nu 24 11 Tou7N5Ebpqv2",
+      "away_name": "Tent Nu",
       "away_logo": "https://static.flashscore.com/res/image/data/xbeN85jl-2wgqbgJU.png",
       "score": "vs",
       "streams": [
         {
-          "label": "Sún",
+          "label": "BLV Sún",
           "url": "https://giovang.guru/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2",
           "referer": "https://giovang.guru/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2"
         }
@@ -212,8 +194,8 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Cầy",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795456123_hd/1795456123_hd@720p.m3u8",
+          "label": "BLV Cầy",
+          "url": "https://giovang.guru/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273",
           "referer": "https://giovang.guru/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273"
         }
       ]
@@ -223,15 +205,15 @@
       "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
-      "home_name": "Galatasaray",
+      "home_name": "Đội Nhà",
       "home_logo": "https://images.keovip88.net/images/teams/galatasaray.png",
       "away_name": "Aston Villa",
       "away_logo": "https://images.keovip88.net/images/teams/aston-villa.png",
       "score": "vs",
       "streams": [
         {
-          "label": "Chồn",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455208_hd/1795455208_hd@720p.m3u8",
+          "label": "BLV Chồn",
+          "url": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e",
           "referer": "https://giovang.guru/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e"
         }
       ]
@@ -248,8 +230,8 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Trĩ",
-          "url": "https://pzhgifbkllliv.vcdn.cloud/1795455239_hd/1795455239_hd@720p.m3u8",
+          "label": "BLV Trĩ",
+          "url": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c",
           "referer": "https://giovang.guru/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c"
         }
       ]
