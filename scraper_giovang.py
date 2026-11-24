@@ -40,7 +40,6 @@ def clean_text(raw: str) -> str:
 def clean_team_name(name: str) -> str:
     t = clean_text(name)
     t = re.sub(r"^(?:xem\s+)?tr[uự]c\s*ti[eế]p\s*[:\-]?\s*", "", t, flags=re.I)
-    # Cắt bỏ mã hash cuối slug hoặc ngày tháng dư (như "24 11 Tou7N5Ebpqv2")
     t = re.sub(r"\b\d{1,2}\s+\d{1,2}(?:\s+\d{2,4})?\b.*$", "", t)
     t = re.sub(r"\b[a-z0-9]{8,}\b$", "", t, flags=re.I)
     t = re.sub(r"\s+\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?$", "", t)
@@ -68,7 +67,6 @@ def parse_teams_from_slug(base_href: str) -> tuple[str, str]:
     slug = base_href.rstrip("/").split("/")[-1]
     clean_slug = re.sub(r"^(?:xem-)?truc-tiep-", "", slug, flags=re.I)
     clean_slug = re.sub(r"-luc-\d{4}.*$", "", clean_slug, flags=re.I)
-    # Cắt đoạn ngày dd-mm(-yyyy) và mã hash ở cuối slug
     clean_slug = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?(?:-[a-z0-9]{6,})?$", "", clean_slug, flags=re.I)
     clean_slug = re.sub(r"-[a-z0-9]{8,}$", "", clean_slug, flags=re.I)
     parts = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
@@ -117,6 +115,79 @@ def extract_league_name(item: dict, home: str, away: str) -> str:
     return "Bóng Đá Trực Tiếp"
 
 
+def clean_blv_name(raw: str, home: str = "", away: str = "") -> str:
+    """Chỉ trả về tên BLV sạch (ví dụ 'BLV Trĩ', 'BLV Chồn'), loại bỏ rác/nhãn kỹ thuật/tên đội."""
+    if not raw:
+        return ""
+    # Nếu có nhiều dòng, ưu tiên dòng chứa chữ 'blv' hoặc tên ngắn gọn
+    lines = [clean_text(x) for x in raw.splitlines() if clean_text(x)]
+    picked = ""
+    for ln in lines:
+        if re.search(r"\bblv\b", ln, flags=re.I):
+            picked = ln
+            break
+    if not picked and lines:
+        picked = lines[0]
+
+    txt = clean_text(picked)
+    # Cắt bỏ phần dư sau dấu gạch đứng, ngoặc, hoặc câu mô tả dài
+    txt = re.split(r"[|•·/(\[\n]", txt)[0].strip()
+    txt = re.sub(r"^(?:xem\s+)?tr[uự]c\s*ti[eế]p\s*(?:cùng\s*)?", "", txt, flags=re.I).strip()
+
+    low = txt.lower()
+    if not txt or len(txt) > 22:
+        return ""
+
+    junk_exact = {
+        "blv", "live", "hd", "full hd", "sd", "vip", "vs", "xem ngay",
+        "trực tiếp", "sắp đá", "đang đá", "kết thúc", "ht", "ft",
+        "soi kèo", "cược ngay", "đặt cược", "nhà cái", "khuyến mãi",
+        "trang chủ", "lịch thi đấu", "kết quả", "bảng xếp hạng",
+        "phòng trực tiếp", "blv trực tiếp", "server", "link", "kênh", "phòng"
+    }
+    if low in junk_exact:
+        return ""
+
+    junk_substrings = (
+        "soi kèo", "cược ngay", "đặt cược", "nhà cái", "khuyến mãi",
+        "bình luận viên", "bình luận trực tiếp", "nhận định", "tỷ số",
+        "trang chủ", "lịch thi đấu", "kết quả", "bảng xếp hạng",
+        "http", "www.", ".com", ".net", ".gg", ".guru", ".live"
+    )
+    if any(s in low for s in junk_substrings):
+        return ""
+
+    # Không nhận nhầm tên đội bóng hoặc tên giải đấu làm tên BLV
+    for t in (home, away):
+        if t and len(t) >= 3 and (low == t.lower() or t.lower() in low):
+            return ""
+    if is_league_label(txt):
+        return ""
+
+    # Tách phần tên sau chữ 'BLV' nếu có
+    m_blv = re.match(r"^blv[\s:.-]*(.+)$", txt, flags=re.I)
+    if m_blv:
+        name_part = clean_text(m_blv.group(1))
+        # Chỉ giữ 1-2 từ tên riêng (tránh lấy cả câu dài)
+        words = name_part.split()
+        if not words or len(words) > 3:
+            return ""
+        clean_name = " ".join(words)
+        if clean_name.lower() in junk_exact:
+            return ""
+        return f"BLV {clean_name}"
+
+    # Nếu không có chữ 'BLV' ở đầu, chỉ nhận tên riêng ngắn 1-2 từ (không chứa số/ký tự lạ)
+    if re.match(r"^(?:server|link|kênh|phòng)\s*\d*$", low):
+        return txt.title()
+
+    words = txt.split()
+    if 1 <= len(words) <= 2 and re.match(r"^[A-Za-zÀ-ỹ]+(?:\s+[A-Za-zÀ-ỹ]+)?$", txt):
+        return f"BLV {txt}"
+
+    return ""
+
+
 def parse_match_info(item: dict, base_href: str):
     raw_text = item.get("text", "")
     lines = [clean_text(ln) for ln in raw_text.splitlines() if clean_text(ln)]
@@ -130,7 +201,6 @@ def parse_match_info(item: dict, base_href: str):
     home = clean_team_name(item.get("homeText") or "")
     away = clean_team_name(item.get("awayText") or "")
 
-    # Nếu home/away lấy nhầm tên giải thì bỏ qua để dùng tên đội chuẩn
     if is_league_label(home):
         home = ""
     if is_league_label(away):
@@ -194,42 +264,20 @@ def parse_match_info(item: dict, base_href: str):
         kickoff = now_vn.strftime("%H:%M")
         status = "LIVE" if has_live_badge else "SẮP ĐÁ"
 
-    card_blv = clean_text(item.get("cardBlv") or "")
-    if re.search(r"soi\s*kèo|cược\s*ngay", card_blv, re.I):
-        card_blv = ""
+    card_blv = clean_blv_name(item.get("cardBlv") or "", home, away)
+    if not card_blv:
+        for ln in lines:
+            cand_blv = clean_blv_name(ln, home, away)
+            if cand_blv:
+                card_blv = cand_blv
+                break
 
     return league_name, home, away, kickoff, status, card_blv
 
 
-def is_valid_blv_label(lbl: str) -> bool:
-    low = lbl.lower().strip()
-    if not low or len(low) > 26:
-        return False
-    bad_words = (
-        "soi kèo", "cược ngay", "đặt cược", "nhà cái", "khuyến mãi",
-        "trang chủ", "lịch thi đấu", "kết quả", "bảng xếp hạng", "xem ngay"
-    )
-    return not any(w in low for w in bad_words)
-
-
-def clean_blv_label(raw: str, idx: int) -> str:
-    txt = clean_text(raw)
-    if not txt:
-        return f"BLV {idx}"
-    for ln in [clean_text(x) for x in raw.splitlines() if clean_text(x)]:
-        if re.match(r"^\d+([.,]\d+)?[kKmM]?$", ln):
-            continue
-        if ln.upper() in ("LIVE", "HD", "FULL HD", "SD", "VIP", "XEM NGAY", "TRỰC TIẾP"):
-            continue
-        if 2 <= len(ln) <= 28:
-            txt = ln
-            break
-    if txt.lower().startswith(("blv", "server", "link", "kênh", "phòng")):
-        return txt
-    return f"BLV {txt}"
-
-
-def extract_rooms_and_streams(page, match_url: str, card_blv: str, cur_home_logo: str, cur_away_logo: str):
+def extract_rooms_and_streams(
+    page, match_url: str, card_blv: str, cur_home_logo: str, cur_away_logo: str, home_name: str, away_name: str
+):
     captured_m3u8 = []
 
     def on_request(req):
@@ -250,7 +298,7 @@ def extract_rooms_and_streams(page, match_url: str, card_blv: str, cur_home_logo
             r"""() => {
                 const items = [];
                 const seen = new Set();
-                const root = document.querySelector('#player, .player-wrapper, .player-container, .box-player, .watch-box, main') || document.body;
+                const root = document.querySelector('#player, .player-wrapper, .player-container, .box-player, .watch-box') || document.body;
                 const selectors = [
                     'a[href*="anchor"]', 'a[href*="blv"]', 'a[href*="server"]',
                     '[data-url]', '[data-link]', '[data-stream]',
@@ -260,7 +308,7 @@ def extract_rooms_and_streams(page, match_url: str, card_blv: str, cur_home_logo
                 ];
                 const nodes = root.querySelectorAll(selectors.join(','));
                 for (const el of nodes) {
-                    if (el.closest('[class*="related"], [class*="other-match"], [class*="sidebar"], [class*="list-match"], [class*="odds"], [class*="keo"]')) continue;
+                    if (el.closest('[class*="related"], [class*="other-match"], [class*="sidebar"], [class*="list-match"], [class*="odds"], [class*="keo"], article, .entry-content, .post-content')) continue;
                     const label = (el.innerText || el.getAttribute('title') || '').trim();
                     const href = el.getAttribute('href') || '';
                     const dataUrl = el.getAttribute('data-url') || el.getAttribute('data-link') || el.getAttribute('data-stream') || '';
@@ -290,9 +338,9 @@ def extract_rooms_and_streams(page, match_url: str, card_blv: str, cur_home_logo
         if len(detail_logos) >= 2 and (not away_logo or "/kbv.svg" in away_logo or "/league/" in away_logo):
             away_logo = detail_logos[1]
 
-        for idx, r in enumerate(detail_data.get("rooms", [])):
-            lbl = clean_blv_label(r.get("label", ""), idx + 1)
-            if not is_valid_blv_label(lbl):
+        for r in detail_data.get("rooms", []):
+            lbl = clean_blv_name(r.get("label", ""), home_name, away_name)
+            if not lbl:
                 continue
             d_url = (r.get("dataUrl") or "").strip()
             h_url = (r.get("href") or "").strip()
@@ -303,7 +351,8 @@ def extract_rooms_and_streams(page, match_url: str, card_blv: str, cur_home_logo
                 resolved = d_url
             elif h_url and not h_url.startswith(("javascript:", "#")):
                 resolved = urljoin(match_url, h_url)
-            room_entries.append({"label": lbl, "url": resolved})
+            if not any(x["label"].lower() == lbl.lower() for x in room_entries):
+                room_entries.append({"label": lbl, "url": resolved})
 
         html_dump = page.content()
         extra = re.findall(r'https?://[^\s"\'<>\\)]+\.(?:m3u8|mpd)(?:\?[^\s"\'<>\\)]*)?', html_dump, re.I)
@@ -316,7 +365,7 @@ def extract_rooms_and_streams(page, match_url: str, card_blv: str, cur_home_logo
     finally:
         page.remove_listener("request", on_request)
 
-    default_blv = card_blv if (card_blv and is_valid_blv_label(card_blv)) else "BLV Trực Tiếp"
+    default_blv = card_blv or "BLV Trực Tiếp"
     streams = []
 
     if captured_m3u8:
@@ -330,7 +379,7 @@ def extract_rooms_and_streams(page, match_url: str, card_blv: str, cur_home_logo
         else:
             for idx, m_url in enumerate(captured_m3u8[:4]):
                 lbl = room_entries[idx]["label"] if idx < len(room_entries) else (
-                    default_blv if idx == 0 else f"BLV {idx + 1}"
+                    default_blv if idx == 0 else f"Server {idx + 1}"
                 )
                 streams.append({
                     "label": lbl,
@@ -495,7 +544,7 @@ def scrape_all():
         matches = list(grouped_matches.values())
         for m in matches[:40]:
             streams, h_logo, a_logo = extract_rooms_and_streams(
-                page, m["page_url"], m["card_blv"], m["home_logo"], m["away_logo"]
+                page, m["page_url"], m["card_blv"], m["home_logo"], m["away_logo"], m["home_name"], m["away_name"]
             )
             m["streams"] = streams
             m["home_logo"] = h_logo
@@ -504,7 +553,7 @@ def scrape_all():
             del m["card_blv"]
 
         for m in matches[40:]:
-            blv_lbl = m["card_blv"] if (m["card_blv"] and is_valid_blv_label(m["card_blv"])) else "BLV Trực Tiếp"
+            blv_lbl = m["card_blv"] or "BLV Trực Tiếp"
             m["streams"] = [
                 {
                     "label": blv_lbl,
