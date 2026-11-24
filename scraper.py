@@ -3,54 +3,58 @@ import re
 from datetime import datetime, timedelta, timezone
 from playwright.sync_api import sync_playwright
 
-# Danh sách trang nguồn (nếu sau này web đổi tên miền, bạn chỉ cần sửa link ở đây)
 SOURCE_URLS = [
     "https://gavang33.gg/",
 ]
 
 
-def clean_team_names(raw_text: str, href: str):
-    lines = [line.strip() for line in raw_text.splitlines() if line.strip()]
-    # Lọc bỏ các chữ phụ như LIVE, HD, giờ đá, tên giải ngắn
-    filtered = [
-        ln for ln in lines
-        if not re.match(r"^\d{1,2}:\d{2}$", ln)
-        and ln.upper() not in ("LIVE", "HD", "FULL HD", "XEM NGAY", "TRỰC TIẾP", "VS")
-        and len(ln) <= 40
-    ]
+def parse_match_info(raw_text: str, base_href: str):
+    slug = base_href.rstrip("/").split("/")[-1]
 
+    # 1. Tách đúng giờ đá từ đường dẫn (vd: ...-luc-1915-ngay-24-11-2026-...)
     kickoff = "LIVE"
-    for ln in lines:
-        m_time = re.search(r"\b(\d{1,2}:\d{2})\b", ln)
-        if m_time:
-            kickoff = m_time.group(1)
-            break
+    m_slug_time = re.search(r"-luc-(\d{2})(\d{2})-ngay-(\d{2}-\d{2}-\d{4})", slug, re.I)
+    if m_slug_time:
+        hh, mm, _ = m_slug_time.groups()
+        kickoff = f"{hh}:{mm}"
+    else:
+        m_text_time = re.search(r"\b(\d{1,2}:\d{2})\b", raw_text)
+        if m_text_time:
+            kickoff = m_text_time.group(1)
 
-    is_live = any("LIVE" in ln.upper() or "ĐANG ĐÁ" in ln.upper() or "HIỆP" in ln.upper() for ln in lines)
-    status = "LIVE" if is_live or kickoff == "LIVE" else "UPCOMING"
+    # 2. Cắt bỏ phần "-luc-1915-ngay-..." để tên 2 đội sạch sẽ
+    clean_slug = re.sub(r"-luc-\d{4}-ngay-.*$", "", slug, flags=re.I)
+    clean_slug = re.sub(r"-[a-zA-Z0-9]{6,}$", "", clean_slug)
+    teams_from_slug = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
 
-    # Thử tách tên 2 đội từ text trên thẻ
-    joined = " ".join(filtered)
-    vs_split = re.split(r"\s+(?:vs|v|-|–)\s+", joined, maxsplit=1, flags=re.I)
-    if len(vs_split) == 2 and len(vs_split[0]) >= 2 and len(vs_split[1]) >= 2:
-        return vs_split[0][:28], vs_split[1][:28], kickoff, status
+    if len(teams_from_slug) == 2 and teams_from_slug[0] and teams_from_slug[1]:
+        home = teams_from_slug[0].replace("-", " ").title().strip()
+        away = teams_from_slug[1].replace("-", " ").title().strip()
+    else:
+        lines = [
+            ln.strip()
+            for ln in raw_text.splitlines()
+            if ln.strip()
+            and not re.match(r"^\d{1,2}:\d{2}$", ln.strip())
+            and ln.strip().upper() not in ("LIVE", "HD", "FULL HD", "VS", "XEM NGAY", "TRỰC TIẾP")
+        ]
+        home = lines[0][:28] if len(lines) >= 1 else clean_slug.replace("-", " ").title()
+        away = lines[1][:28] if len(lines) >= 2 else "Trực Tiếp"
 
-    if len(filtered) >= 2:
-        return filtered[0][:28], filtered[1][:28], kickoff, status
+    # 3. Phân loại LIVE hay SẮP ĐÁ theo giờ Việt Nam
+    now_vn = datetime.now(timezone(timedelta(hours=7)))
+    status = "LIVE"
+    if re.match(r"^\d{2}:\d{2}$", kickoff):
+        kh, km = map(int, kickoff.split(":"))
+        kickoff_dt = now_vn.replace(hour=kh, minute=km, second=0, microsecond=0)
+        diff_minutes = (now_vn - kickoff_dt).total_seconds() / 60.0
+        status = "LIVE" if -15 <= diff_minutes <= 130 else "SẮP ĐÁ"
 
-    # Dự phòng: lấy tên từ đường dẫn URL
-    slug = href.rstrip("/").split("/")[-1]
-    clean_slug = re.sub(r"-[a-zA-Z0-9]{4,}$", "", slug).replace("-", " ").title()
-    parts = re.split(r"\s+(?:vs|v)\s+", clean_slug, maxsplit=1, flags=re.I)
-    home = parts[0].strip() if parts and parts[0].strip() else clean_slug
-    away = parts[1].strip() if len(parts) > 1 and parts[1].strip() else "Trực Tiếp"
-    return home[:28], away[:28], kickoff, status
+    return home, away, kickoff, status
 
 
 def scrape_all():
-    matches = []
-    seen_urls = set()
-    page_diagnostics = []
+    grouped_matches = {}
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -66,12 +70,9 @@ def scrape_all():
             try:
                 page.goto(base_url, wait_until="domcontentloaded", timeout=25000)
                 page.wait_for_timeout(4500)
-                page_diagnostics.append(f"{page.title()} ({page.url})")
-            except Exception as e:
-                page_diagnostics.append(f"Lỗi mở {base_url}: {type(e).__name__}")
+            except Exception:
                 continue
 
-            # Trích xuất toàn bộ thẻ trận đấu sau khi JavaScript đã chạy xong
             candidates = page.evaluate(
                 """() => {
                     const out = [];
@@ -79,20 +80,11 @@ def scrape_all():
                     for (const a of anchors) {
                         const href = a.href || '';
                         if (!href.startsWith('http')) continue;
-                        const lower = href.toLowerCase();
-                        const card = a.closest('article, li, [class*="match"], [class*="item"], [class*="card"], [class*="game"], tr') || a;
-                        const text = (card.innerText || a.innerText || '').trim();
-                        const imgs = Array.from(card.querySelectorAll('img'))
-                            .map(img => img.src || img.getAttribute('data-src') || '')
-                            .filter(src => src.startsWith('http') && !src.includes('logo-web') && !src.includes('banner'));
-
-                        const isMatchUrl = /truc-tiep|xem-|live|match|tran-dau/i.test(lower);
-                        const hasTwoLogos = imgs.length >= 2 && text.length >= 6;
-                        if (isMatchUrl || hasTwoLogos) {
+                        if (/truc-tiep|xem-|live|match|tran-dau/i.test(href.toLowerCase())) {
+                            const card = a.closest('article, li, [class*="match"], [class*="item"], [class*="card"], [class*="game"], tr') || a;
                             out.push({
                                 href: href,
-                                text: text,
-                                logos: imgs.slice(0, 2)
+                                text: (card.innerText || a.innerText || '').trim()
                             });
                         }
                     }
@@ -101,43 +93,45 @@ def scrape_all():
             )
 
             for item in candidates:
-                href = item.get("href", "").strip()
-                if not href or href in seen_urls or href.rstrip("/") == base_url.rstrip("/"):
+                raw_href = item.get("href", "").strip()
+                if not raw_href or raw_href.rstrip("/") == base_url.rstrip("/"):
                     continue
-                seen_urls.add(href)
 
-                home_name, away_name, kickoff, status = clean_team_names(item.get("text", ""), href)
-                logos = item.get("logos") or []
-                home_logo = logos[0] if len(logos) >= 1 else ""
-                away_logo = logos[1] if len(logos) >= 2 else ""
-
-                matches.append(
-                    {
-                        "id": f"m_{len(matches) + 1}",
+                # Gộp tất cả link phòng BLV (?anchorId=...) của cùng 1 trận vào 1 thẻ duy nhất
+                base_href = raw_href.split("?")[0].rstrip("/")
+                if base_href not in grouped_matches:
+                    home_name, away_name, kickoff, status = parse_match_info(item.get("text", ""), base_href)
+                    grouped_matches[base_href] = {
+                        "id": f"m_{len(grouped_matches) + 1}",
                         "league": "Trực Tiếp Bóng Đá",
                         "status": status,
                         "kickoff": kickoff,
                         "home_name": home_name,
-                        "home_logo": home_logo,
+                        "home_logo": "",
                         "away_name": away_name,
-                        "away_logo": away_logo,
+                        "away_logo": "",
                         "score": "vs",
-                        "page_url": href,
+                        "page_url": base_href,
+                        "room_urls": [],
                         "streams": [],
                     }
-                )
 
-                if len(matches) >= 18:
+                if raw_href not in grouped_matches[base_href]["room_urls"]:
+                    grouped_matches[base_href]["room_urls"].append(raw_href)
+
+                if len(grouped_matches) >= 20:
                     break
 
-        # Vào thử 10 trận đầu tiên để bắt link luồng phát (.m3u8 / .mpd) trực tiếp cho ExoPlayer
-        for m in matches[:10]:
-            captured_m3u8 = []
+        matches = list(grouped_matches.values())
+
+        # Bắt link luồng phát (.m3u8 / .mpd) cho 12 trận đầu tiên
+        for m in matches[:12]:
+            captured_streams = []
 
             def on_request(req):
                 u = req.url
-                if (".m3u8" in u.lower() or ".mpd" in u.lower()) and u not in captured_m3u8:
-                    captured_m3u8.append(u)
+                if (".m3u8" in u.lower() or ".mpd" in u.lower()) and u not in captured_streams:
+                    captured_streams.append(u)
 
             page.on("request", on_request)
             try:
@@ -147,15 +141,15 @@ def scrape_all():
                 extra = re.findall(r'https?://[^\s"\'<>\\)]+\.(?:m3u8|mpd)(?:\?[^\s"\'<>\\)]*)?', html_dump, re.I)
                 for u in extra:
                     clean_u = u.replace("\\/", "/")
-                    if clean_u not in captured_m3u8:
-                        captured_m3u8.append(clean_u)
+                    if clean_u not in captured_streams:
+                        captured_streams.append(clean_u)
             except Exception:
                 pass
             finally:
                 page.remove_listener("request", on_request)
 
             streams = []
-            for idx, s_url in enumerate(captured_m3u8[:3], 1):
+            for idx, s_url in enumerate(captured_streams[:3], 1):
                 streams.append(
                     {
                         "label": f"Server {idx} - Phát trực tiếp (HD)",
@@ -164,59 +158,34 @@ def scrape_all():
                     }
                 )
 
-            streams.append(
-                {
-                    "label": "Server Dự Phòng (Mở Web Player)",
-                    "url": m["page_url"],
-                    "referer": SOURCE_URLS[0],
-                }
-            )
+            for r_idx, r_url in enumerate(m["room_urls"][:3], 1):
+                streams.append(
+                    {
+                        "label": f"Phòng BLV {r_idx} (Mở Web Player)",
+                        "url": r_url,
+                        "referer": SOURCE_URLS[0],
+                    }
+                )
+
             m["streams"] = streams
             del m["page_url"]
+            del m["room_urls"]
 
-        # Các trận còn lại dùng Web Player làm nguồn phát
-        for m in matches[10:]:
+        for m in matches[12:]:
             m["streams"] = [
                 {
-                    "label": "Mở trực tiếp trận đấu",
-                    "url": m["page_url"],
+                    "label": f"Phòng BLV {idx} (Mở Web Player)",
+                    "url": r_url,
                     "referer": SOURCE_URLS[0],
                 }
+                for idx, r_url in enumerate(m["room_urls"][:3], 1)
             ]
             del m["page_url"]
+            del m["room_urls"]
 
         browser.close()
 
     vn_time = datetime.now(timezone(timedelta(hours=7))).strftime("%H:%M %d/%m/%Y")
-
-    if not matches:
-        diag = " | ".join(page_diagnostics) if page_diagnostics else "Không có dữ liệu"
-        matches.append(
-            {
-                "id": "diag_1",
-                "league": "Chưa có trận hiển thị",
-                "status": "LIVE",
-                "kickoff": vn_time,
-                "home_name": "Nguồn đã phản hồi",
-                "home_logo": "",
-                "away_name": diag[:60],
-                "away_logo": "",
-                "score": "INFO",
-                "streams": [
-                    {
-                        "label": "Mở trực tiếp trang GaVang33 trên TV",
-                        "url": SOURCE_URLS[0],
-                        "referer": SOURCE_URLS[0],
-                    },
-                    {
-                        "label": "Kênh Video Thử Nghiệm (Full HD)",
-                        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-                        "referer": "",
-                    },
-                ],
-            }
-        )
-
     feed = {
         "app_title": f"Cập nhật lúc {vn_time}",
         "updated_at": vn_time,
