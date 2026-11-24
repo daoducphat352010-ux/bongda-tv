@@ -147,7 +147,6 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 }
             };
 
-            // 1. Lấy đúng 2 logo đội bóng lớn (>= 34px) ở khung tỷ số, loại bỏ icon quả bóng nhỏ (< 34px)
             const logos = [];
             const seenLogo = new Set();
             const imgs = Array.from(document.querySelectorAll('img'));
@@ -156,18 +155,21 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 const src = (img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-original') || '').trim();
                 if (!src.startsWith('http') || seenLogo.has(src)) continue;
                 const lower = src.toLowerCase();
-                if (/banner|ads|logo-web|favicon|\.gif|\.svg|button|loading|avatar|ball|soccer|football|icon|default/i.test(lower)) continue;
+                if (/banner|ads|logo-web|favicon|\.gif|\.svg|button|loading|avatar/i.test(lower)) continue;
 
                 const rect = img.getBoundingClientRect();
-                if (rect.top >= 0 && rect.top <= 750 && rect.width >= 34 && rect.width <= 150 && rect.height >= 34 && rect.height <= 150) {
-                    const ratio = rect.width / rect.height;
-                    if (ratio >= 0.75 && ratio <= 1.35) {
-                        seenLogo.add(src);
-                        logos.push(src);
-                    }
+                const w = rect.width || img.naturalWidth || 0;
+                const h = rect.height || img.naturalHeight || 0;
+                if (w >= 20 && w <= 220 && h >= 20 && h <= 220) {
+                    seenLogo.add(src);
+                    logos.push({ src, left: rect.left, top: rect.top });
                 }
-                if (logos.length >= 2) break;
+                if (logos.length >= 4) break;
             }
+
+            // Sắp xếp theo vị trí trên khung tỷ số (trên xuống, trái sang phải)
+            logos.sort((a, b) => (Math.abs(a.top - b.top) > 40 ? a.top - b.top : a.left - b.left));
+            const sortedLogos = logos.map(x => x.src);
 
             const leagueCandidates = [];
             const pushCand = (t) => {
@@ -244,7 +246,7 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 rooms.push({ url: window.location.href, name: activeHostName });
             }
 
-            return { logos, leagueCandidates, rooms, activeHostName };
+            return { logos: sortedLogos, leagueCandidates, rooms, activeHostName };
         }""",
         {"targetPath": target_path, "homeName": home_name, "awayName": away_name},
     )
@@ -375,20 +377,17 @@ def scrape_all():
                             roomName = (a.innerText || a.getAttribute('title') || imgAlt || '').trim();
                         }
 
-                        // Chỉ lấy logo đội bóng kích thước >= 32px, bỏ qua icon quả bóng nhỏ cạnh tên giải (< 30px)
                         const imgs = Array.from(card.querySelectorAll('img'))
-                            .filter(img => {
-                                if (img.closest('a[href*="anchorId="]')) return false;
-                                const rect = img.getBoundingClientRect();
-                                const w = rect.width || img.naturalWidth || 0;
-                                const h = rect.height || img.naturalHeight || 0;
-                                if (w > 0 && w < 32) return false;
-                                if (h > 0 && h < 32) return false;
-                                return true;
-                            })
-                            .map(img => (img.currentSrc || img.src || img.getAttribute('data-src') || '').trim())
-                            .filter(src => src.startsWith('http') && !/banner|ads|logo-web|favicon|\.gif|\.svg|avatar|ball|soccer|football|icon|default/i.test(src.toLowerCase()));
-                        const uniqueImgs = Array.from(new Set(imgs));
+                            .filter(img => !img.closest('a[href*="anchorId="]'))
+                            .map(img => ({
+                                src: (img.currentSrc || img.src || img.getAttribute('data-src') || '').trim(),
+                                left: img.getBoundingClientRect().left || 0,
+                                top: img.getBoundingClientRect().top || 0
+                            }))
+                            .filter(x => x.src.startsWith('http') && !/banner|ads|logo-web|favicon|\.gif|\.svg|avatar/i.test(x.src.toLowerCase()));
+
+                        imgs.sort((a, b) => (Math.abs(a.top - b.top) > 35 ? a.top - b.top : a.left - b.left));
+                        const uniqueImgs = Array.from(new Set(imgs.map(x => x.src)));
 
                         out.push({
                             href: href,
@@ -396,7 +395,7 @@ def scrape_all():
                             cardLines: cardLines,
                             groupHeader: groupHeader,
                             roomName: roomName,
-                            logos: uniqueImgs.slice(0, 2)
+                            logos: uniqueImgs.slice(0, 3)
                         });
                     }
                     return out;
@@ -462,6 +461,20 @@ def scrape_all():
 
         matches = list(grouped_matches.values())
 
+        # Đếm tần suất xuất hiện ảnh để tự động bỏ qua icon quả bóng dùng chung nhiều trận
+        img_freq = {}
+        for m in matches:
+            for key in ("home_logo", "away_logo"):
+                u = m.get(key) or ""
+                if u:
+                    img_freq[u] = img_freq.get(u, 0) + 1
+
+        for m in matches:
+            for key in ("home_logo", "away_logo"):
+                u = m.get(key) or ""
+                if u and img_freq.get(u, 0) >= 5:
+                    m[key] = ""
+
         for m in matches[:20]:
             target_path = urlparse(m["page_url"]).path.rstrip("/")
             entry_url = next(iter(m["rooms"].values()))["url"] if m["rooms"] else m["page_url"]
@@ -473,12 +486,17 @@ def scrape_all():
             except Exception:
                 pass
 
-            page_logos = details.get("logos") or []
-            if len(page_logos) >= 2 and (not m["home_logo"] or not m["away_logo"]):
-                m["home_logo"] = page_logos[0]
-                m["away_logo"] = page_logos[1]
-            elif len(page_logos) == 1 and not m["home_logo"]:
-                m["home_logo"] = page_logos[0]
+            page_logos = [u for u in (details.get("logos") or []) if img_freq.get(u, 0) < 5]
+            if len(page_logos) >= 2:
+                if not m["home_logo"]:
+                    m["home_logo"] = page_logos[0]
+                if not m["away_logo"]:
+                    m["away_logo"] = page_logos[1]
+            elif len(page_logos) == 1:
+                if not m["home_logo"]:
+                    m["home_logo"] = page_logos[0]
+                elif not m["away_logo"] and page_logos[0] != m["home_logo"]:
+                    m["away_logo"] = page_logos[0]
 
             page_rooms = details.get("rooms") or []
             if page_rooms:
