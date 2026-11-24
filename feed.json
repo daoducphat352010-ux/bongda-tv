@@ -1,6 +1,6 @@
 {
-  "app_title": "Cập nhật lúc 21:11 24/11/2026",
-  "updated_at": "21:11 24/11/2026",
+  "app_title": "Cập nhật lúc 21:16 24/11/2026",
+  "updated_at": "21:16 24/11/2026",
   "matches": [
     {
       "id": "m_1",
@@ -22,42 +22,6 @@
     },
     {
       "id": "m_2",
-      "league": "AFC Champions League Elite",
-      "status": "LIVE",
-      "kickoff": "19:15",
-      "home_name": "Shanghai Port",
-      "home_logo": "https://img.cltvap.cc/football/team/e4e3bed039e14ee2821c1babec380452.png",
-      "away_name": "Buriram",
-      "away_logo": "https://img.cltvap.cc/football/team/649a85f258f62ec83a62983488e4b347.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Quỷ",
-          "url": "https://live2.zktsva.app/live/304565.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/shanghai-port-vs-buriram-united-luc-1915-ngay-24-11-2026-23xmvkh6egw7qg8?anchorId=6a9fea8c419a47d5e57cb68d"
-        }
-      ]
-    },
-    {
-      "id": "m_3",
-      "league": "AFC Champions League Elite",
-      "status": "LIVE",
-      "kickoff": "19:15",
-      "home_name": "Ratchaburi Fc",
-      "home_logo": "https://img.cltvap.cc/football/team/ca2b8d70931647840c78209be51763a3.png",
-      "away_name": "Johor Darul Tazim Fc",
-      "away_logo": "https://img.cltvap.cc/football/team/3ab85cf20a3ed001a60a9fcd8ec09afe.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Ô Long",
-          "url": "https://live2.zktsva.app/live/432017.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/ratchaburi-fc-vs-johor-darul-tazim-fc-luc-1915-ngay-24-11-2026-zp5rzghgn25yq82?anchorId=6a31da2f9a2eb0e4aaedf62e"
-        }
-      ]
-    },
-    {
-      "id": "m_4",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "19:30",
@@ -75,7 +39,7 @@
       ]
     },
     {
-      "id": "m_5",
+      "id": "m_3",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "19:30",
@@ -93,7 +57,7 @@
       ]
     },
     {
-      "id": "m_6",
+      "id": "m_4",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "20:00",
@@ -111,7 +75,7 @@
       ]
     },
     {
-      "id": "m_7",
+      "id": "m_5",
       "league": "UEFA Youth League",
       "status": "LIVE",
       "kickoff": "20:00",
@@ -129,7 +93,7 @@
       ]
     },
     {
-      "id": "m_8",
+      "id": "m_6",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "20:30",
@@ -147,7 +111,7 @@
       ]
     },
     {
-      "id": "m_9",
+      "id": "m_7",
       "league": "AFC Champions League Two",
       "status": "LIVE",
       "kickoff": "20:45",
@@ -165,7 +129,7 @@
       ]
     },
     {
-      "id": "m_10",
+      "id": "m_8",
       "league": "Russian Cup",
       "status": "LIVE",
       "kickoff": "21:00",
@@ -183,7 +147,7 @@
       ]
     },
     {
-      "id": "m_11",
+      "id": "m_9",
       "league": "Indian Super League",
       "status": "LIVE",
       "kickoff": "21:00",
@@ -201,9 +165,27 @@
       ]
     },
     {
-      "id": "m_12",
+      "id": "m_10",
+      "league": "FIFA U17 World Cup",
+      "status": "LIVE",
+      "kickoff": "21:30",
+      "home_name": "Dominican Republic U17",
+      "home_logo": "https://img.cltvap.cc/football/team/b881bdc95f60018b055309c3ab096a5b.png",
+      "away_name": "Chile U17",
+      "away_logo": "https://img.cltvap.cc/football/team/76b605730bd2606bbcb290f1244dac9a.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Ô Long",
+          "url": "https://live2.zktsva.app/live/432017.m3u8",
+          "referer": "https://gavang33.ag/truc-tiep/dominican-republic-u17-vs-chile-u17-luc-2130-ngay-24-11-2026-23xmvkh6ljg5qg8?anchorId=6a31da2f9a2eb0e4aaedf62e"
+        }
+      ]
+    },
+    {
+      "id": "m_11",
       "league": "GCC Champions League",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "21:30",
       "home_name": "Al-Riffa",
       "home_logo": "https://img.cltvap.cc/football/team/bd2f7046b89c07c685e79343f976ec9e.jpg",
@@ -219,7 +201,7 @@
       ]
     },
     {
-      "id": "m_13",
+      "id": "m_12",
       "league": "Georgia Erovnuli Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -237,7 +219,7 @@
       ]
     },
     {
-      "id": "m_14",
+      "id": "m_13",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -255,7 +237,7 @@
       ]
     },
     {
-      "id": "m_15",
+      "id": "m_14",
       "league": "Egyptian Premier League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -273,7 +255,7 @@
       ]
     },
     {
-      "id": "m_16",
+      "id": "m_15",
       "league": "UEFA Youth League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -291,7 +273,7 @@
       ]
     },
     {
-      "id": "m_17",
+      "id": "m_16",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
@@ -309,7 +291,7 @@
       ]
     },
     {
-      "id": "m_18",
+      "id": "m_17",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
@@ -327,7 +309,7 @@
       ]
     },
     {
-      "id": "m_19",
+      "id": "m_18",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -345,7 +327,7 @@
       ]
     },
     {
-      "id": "m_20",
+      "id": "m_19",
       "league": "AFC Champions League Elite",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -363,7 +345,7 @@
       ]
     },
     {
-      "id": "m_21",
+      "id": "m_20",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
@@ -381,7 +363,7 @@
       ]
     },
     {
-      "id": "m_22",
+      "id": "m_21",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
@@ -399,7 +381,7 @@
       ]
     },
     {
-      "id": "m_23",
+      "id": "m_22",
       "league": "AFC Champions League Elite",
       "status": "SẮP ĐÁ",
       "kickoff": "01:15",
@@ -417,7 +399,7 @@
       ]
     },
     {
-      "id": "m_24",
+      "id": "m_23",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -435,7 +417,7 @@
       ]
     },
     {
-      "id": "m_25",
+      "id": "m_24",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -453,7 +435,7 @@
       ]
     },
     {
-      "id": "m_26",
+      "id": "m_25",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -471,7 +453,7 @@
       ]
     },
     {
-      "id": "m_27",
+      "id": "m_26",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -489,7 +471,7 @@
       ]
     },
     {
-      "id": "m_28",
+      "id": "m_27",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -507,7 +489,7 @@
       ]
     },
     {
-      "id": "m_29",
+      "id": "m_28",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -525,7 +507,7 @@
       ]
     },
     {
-      "id": "m_30",
+      "id": "m_29",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -543,7 +525,7 @@
       ]
     },
     {
-      "id": "m_31",
+      "id": "m_30",
       "league": "Categoría Primera A",
       "status": "SẮP ĐÁ",
       "kickoff": "06:20",
@@ -561,7 +543,7 @@
       ]
     },
     {
-      "id": "m_32",
+      "id": "m_31",
       "league": "Categoría Primera A",
       "status": "SẮP ĐÁ",
       "kickoff": "08:30",
@@ -579,7 +561,7 @@
       ]
     },
     {
-      "id": "m_33",
+      "id": "m_32",
       "league": "United States Major League Soccer",
       "status": "SẮP ĐÁ",
       "kickoff": "10:00",
@@ -597,7 +579,7 @@
       ]
     },
     {
-      "id": "m_34",
+      "id": "m_33",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "14:45",
@@ -615,7 +597,7 @@
       ]
     },
     {
-      "id": "m_35",
+      "id": "m_34",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -633,7 +615,7 @@
       ]
     },
     {
-      "id": "m_36",
+      "id": "m_35",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -651,7 +633,7 @@
       ]
     },
     {
-      "id": "m_37",
+      "id": "m_36",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -669,7 +651,7 @@
       ]
     },
     {
-      "id": "m_38",
+      "id": "m_37",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -687,7 +669,7 @@
       ]
     },
     {
-      "id": "m_39",
+      "id": "m_38",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -705,7 +687,7 @@
       ]
     },
     {
-      "id": "m_40",
+      "id": "m_39",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -723,7 +705,7 @@
       ]
     },
     {
-      "id": "m_41",
+      "id": "m_40",
       "league": "AFC Champions League Elite",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -741,7 +723,7 @@
       ]
     },
     {
-      "id": "m_42",
+      "id": "m_41",
       "league": "AFC Champions League Elite",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -759,7 +741,7 @@
       ]
     },
     {
-      "id": "m_43",
+      "id": "m_42",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:30",
@@ -777,7 +759,7 @@
       ]
     },
     {
-      "id": "m_44",
+      "id": "m_43",
       "league": "Serbian Mozzart Bet Superliga",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
@@ -795,7 +777,7 @@
       ]
     },
     {
-      "id": "m_45",
+      "id": "m_44",
       "league": "IDN LC",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
@@ -813,7 +795,7 @@
       ]
     },
     {
-      "id": "m_46",
+      "id": "m_45",
       "league": "AFC Champions League Two",
       "status": "LIVE",
       "kickoff": "19:15",
@@ -831,7 +813,7 @@
       ]
     },
     {
-      "id": "m_47",
+      "id": "m_46",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "19:30",
@@ -849,7 +831,7 @@
       ]
     },
     {
-      "id": "m_48",
+      "id": "m_47",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "19:30",
@@ -867,7 +849,7 @@
       ]
     },
     {
-      "id": "m_49",
+      "id": "m_48",
       "league": "UEFA Youth League",
       "status": "LIVE",
       "kickoff": "20:00",
@@ -885,7 +867,7 @@
       ]
     },
     {
-      "id": "m_50",
+      "id": "m_49",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "20:30",
@@ -903,7 +885,7 @@
       ]
     },
     {
-      "id": "m_51",
+      "id": "m_50",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "20:30",
@@ -921,7 +903,7 @@
       ]
     },
     {
-      "id": "m_52",
+      "id": "m_51",
       "league": "AFC Champions League Two",
       "status": "LIVE",
       "kickoff": "20:45",
@@ -939,7 +921,7 @@
       ]
     },
     {
-      "id": "m_53",
+      "id": "m_52",
       "league": "GCC Champions League",
       "status": "LIVE",
       "kickoff": "21:00",
@@ -957,9 +939,9 @@
       ]
     },
     {
-      "id": "m_54",
+      "id": "m_53",
       "league": "FIFA U17 World Cup",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "21:30",
       "home_name": "Greece U17",
       "home_logo": "https://img.cltvap.cc/football/team/1da38e9fc1f765ffa964a0ab64c8d8fe.png",
@@ -975,9 +957,9 @@
       ]
     },
     {
-      "id": "m_55",
+      "id": "m_54",
       "league": "FIFA U17 World Cup",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "21:30",
       "home_name": "Panama U17",
       "home_logo": "https://img.cltvap.cc/football/team/a159b2e2c6b3cb7bf0e92eb43fe27bdd.png",
@@ -993,7 +975,7 @@
       ]
     },
     {
-      "id": "m_56",
+      "id": "m_55",
       "league": "Russian Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -1011,7 +993,7 @@
       ]
     },
     {
-      "id": "m_57",
+      "id": "m_56",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
@@ -1029,7 +1011,7 @@
       ]
     },
     {
-      "id": "m_58",
+      "id": "m_57",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
@@ -1047,7 +1029,7 @@
       ]
     },
     {
-      "id": "m_59",
+      "id": "m_58",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -1065,7 +1047,7 @@
       ]
     },
     {
-      "id": "m_60",
+      "id": "m_59",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -1083,7 +1065,7 @@
       ]
     },
     {
-      "id": "m_61",
+      "id": "m_60",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -1101,7 +1083,7 @@
       ]
     },
     {
-      "id": "m_62",
+      "id": "m_61",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -1119,7 +1101,7 @@
       ]
     },
     {
-      "id": "m_63",
+      "id": "m_62",
       "league": "GCC Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "00:00",
@@ -1137,7 +1119,7 @@
       ]
     },
     {
-      "id": "m_64",
+      "id": "m_63",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
@@ -1160,7 +1142,7 @@
       ]
     },
     {
-      "id": "m_65",
+      "id": "m_64",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
@@ -1178,7 +1160,7 @@
       ]
     },
     {
-      "id": "m_66",
+      "id": "m_65",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -1196,7 +1178,7 @@
       ]
     },
     {
-      "id": "m_67",
+      "id": "m_66",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -1214,7 +1196,7 @@
       ]
     },
     {
-      "id": "m_68",
+      "id": "m_67",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -1232,7 +1214,7 @@
       ]
     },
     {
-      "id": "m_69",
+      "id": "m_68",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -1250,7 +1232,7 @@
       ]
     },
     {
-      "id": "m_70",
+      "id": "m_69",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -1268,7 +1250,7 @@
       ]
     },
     {
-      "id": "m_71",
+      "id": "m_70",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -1286,7 +1268,7 @@
       ]
     },
     {
-      "id": "m_72",
+      "id": "m_71",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -1309,7 +1291,7 @@
       ]
     },
     {
-      "id": "m_73",
+      "id": "m_72",
       "league": "Brazilian Serie A",
       "status": "SẮP ĐÁ",
       "kickoff": "06:00",
@@ -1327,7 +1309,7 @@
       ]
     },
     {
-      "id": "m_74",
+      "id": "m_73",
       "league": "Categoría Primera A",
       "status": "SẮP ĐÁ",
       "kickoff": "06:20",
@@ -1345,7 +1327,7 @@
       ]
     },
     {
-      "id": "m_75",
+      "id": "m_74",
       "league": "Argentine Division 1",
       "status": "SẮP ĐÁ",
       "kickoff": "07:00",
@@ -1363,7 +1345,7 @@
       ]
     },
     {
-      "id": "m_76",
+      "id": "m_75",
       "league": "Categoría Primera A",
       "status": "SẮP ĐÁ",
       "kickoff": "08:30",
@@ -1381,7 +1363,7 @@
       ]
     },
     {
-      "id": "m_77",
+      "id": "m_76",
       "league": "Guatemala Liga Nacional",
       "status": "SẮP ĐÁ",
       "kickoff": "09:00",
@@ -1399,7 +1381,7 @@
       ]
     },
     {
-      "id": "m_78",
+      "id": "m_77",
       "league": "Indonesian Super League",
       "status": "SẮP ĐÁ",
       "kickoff": "15:30",
@@ -1417,7 +1399,7 @@
       ]
     },
     {
-      "id": "m_79",
+      "id": "m_78",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -1435,7 +1417,7 @@
       ]
     },
     {
-      "id": "m_80",
+      "id": "m_79",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -1453,7 +1435,7 @@
       ]
     },
     {
-      "id": "m_81",
+      "id": "m_80",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -1471,7 +1453,7 @@
       ]
     },
     {
-      "id": "m_82",
+      "id": "m_81",
       "league": "Azerbaijan First Division",
       "status": "SẮP ĐÁ",
       "kickoff": "17:30",
@@ -1489,7 +1471,7 @@
       ]
     },
     {
-      "id": "m_83",
+      "id": "m_82",
       "league": "Azerbaijan First Division",
       "status": "SẮP ĐÁ",
       "kickoff": "17:30",
@@ -1507,7 +1489,7 @@
       ]
     },
     {
-      "id": "m_84",
+      "id": "m_83",
       "league": "AFC Champions League Two",
       "status": "LIVE",
       "kickoff": "19:15",
@@ -1525,7 +1507,7 @@
       ]
     },
     {
-      "id": "m_85",
+      "id": "m_84",
       "league": "AFC Champions League Two",
       "status": "LIVE",
       "kickoff": "19:15",
@@ -1543,7 +1525,7 @@
       ]
     },
     {
-      "id": "m_86",
+      "id": "m_85",
       "league": "AFC Champions League Two",
       "status": "LIVE",
       "kickoff": "19:15",
@@ -1561,7 +1543,7 @@
       ]
     },
     {
-      "id": "m_87",
+      "id": "m_86",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "20:00",
@@ -1579,7 +1561,7 @@
       ]
     },
     {
-      "id": "m_88",
+      "id": "m_87",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "20:00",
@@ -1602,7 +1584,7 @@
       ]
     },
     {
-      "id": "m_89",
+      "id": "m_88",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "21:00",
@@ -1620,7 +1602,7 @@
       ]
     },
     {
-      "id": "m_90",
+      "id": "m_89",
       "league": "FIFA U17 World Cup",
       "status": "LIVE",
       "kickoff": "21:00",
@@ -1638,7 +1620,7 @@
       ]
     },
     {
-      "id": "m_91",
+      "id": "m_90",
       "league": "Russian Cup",
       "status": "LIVE",
       "kickoff": "21:00",
@@ -1656,7 +1638,7 @@
       ]
     },
     {
-      "id": "m_92",
+      "id": "m_91",
       "league": "Saudi Professional League",
       "status": "LIVE",
       "kickoff": "21:25",
@@ -1674,7 +1656,7 @@
       ]
     },
     {
-      "id": "m_93",
+      "id": "m_92",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -1692,7 +1674,7 @@
       ]
     },
     {
-      "id": "m_94",
+      "id": "m_93",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -1710,7 +1692,7 @@
       ]
     },
     {
-      "id": "m_95",
+      "id": "m_94",
       "league": "Saudi Professional League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:05",
@@ -1728,7 +1710,7 @@
       ]
     },
     {
-      "id": "m_96",
+      "id": "m_95",
       "league": "UEFA Champions League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
@@ -1746,7 +1728,7 @@
       ]
     },
     {
-      "id": "m_97",
+      "id": "m_96",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -1764,7 +1746,7 @@
       ]
     },
     {
-      "id": "m_98",
+      "id": "m_97",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -1782,7 +1764,7 @@
       ]
     },
     {
-      "id": "m_99",
+      "id": "m_98",
       "league": "Russian Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "23:30",
