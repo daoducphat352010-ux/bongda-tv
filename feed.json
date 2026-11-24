@@ -1,6 +1,6 @@
 {
-  "app_title": "Cập nhật lúc 20:03 24/11/2026",
-  "updated_at": "20:03 24/11/2026",
+  "app_title": "Cập nhật lúc 20:21 24/11/2026",
+  "updated_at": "20:21 24/11/2026",
   "matches": [
     {
       "id": "m_1",
@@ -131,7 +131,7 @@
     {
       "id": "m_8",
       "league": "FIFA U17 World Cup",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:30",
       "home_name": "Mexico U17",
       "home_logo": "https://img.cltvap.cc/football/team/3653cce234494bfbd33e077f4a028f66.png",
@@ -141,7 +141,7 @@
       "streams": [
         {
           "label": "BLV Gà Siêu Ngố",
-          "url": "https://gavang33.ag/truc-tiep/mexico-u17-vs-cameroon-u17-luc-2030-ngay-24-11-2026-jw2r09hkgvp7rz8?anchorId=6aa136bffcdef77bf7fcc812",
+          "url": "https://live2.zktsva.app/live/301238.m3u8",
           "referer": "https://gavang33.ag/truc-tiep/mexico-u17-vs-cameroon-u17-luc-2030-ngay-24-11-2026-jw2r09hkgvp7rz8?anchorId=6aa136bffcdef77bf7fcc812"
         }
       ]
@@ -905,7 +905,7 @@
     {
       "id": "m_51",
       "league": "FIFA U17 World Cup",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:30",
       "home_name": "Haiti U17",
       "home_logo": "https://img.cltvap.cc/football/team/087bc7552322045ad94868390dce5b37.png",
@@ -923,7 +923,7 @@
     {
       "id": "m_52",
       "league": "FIFA U17 World Cup",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:30",
       "home_name": "Uruguay U17",
       "home_logo": "https://img.cltvap.cc/football/team/3068cfc254b9a77c7eac84c9565eeeab.png",
