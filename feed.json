@@ -1,10 +1,10 @@
 {
-  "app_title": "Cập nhật lúc 11:58 24/11/2026",
-  "updated_at": "11:58 24/11/2026",
+  "app_title": "Cập nhật lúc 12:04 24/11/2026",
+  "updated_at": "12:04 24/11/2026",
   "matches": [
     {
       "id": "m_1",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "14:45",
       "home_name": "Newcastle Jets",
@@ -22,7 +22,7 @@
     },
     {
       "id": "m_2",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "16:00",
       "home_name": "Garudayaksa Fc",
@@ -40,7 +40,7 @@
     },
     {
       "id": "m_3",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "16:00",
       "home_name": "Persebaya Surabaya",
@@ -58,7 +58,7 @@
     },
     {
       "id": "m_4",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Daejeon Hana Citizen",
@@ -76,7 +76,7 @@
     },
     {
       "id": "m_5",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Kyoto Sanga",
@@ -94,7 +94,7 @@
     },
     {
       "id": "m_6",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Shanghai Port",
@@ -112,7 +112,7 @@
     },
     {
       "id": "m_7",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Cong An Ha Noi Fc",
@@ -130,7 +130,7 @@
     },
     {
       "id": "m_8",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Ratchaburi Fc",
@@ -148,7 +148,7 @@
     },
     {
       "id": "m_9",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Costa Rica U17",
@@ -166,7 +166,7 @@
     },
     {
       "id": "m_10",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Venezuela U17",
@@ -184,7 +184,7 @@
     },
     {
       "id": "m_11",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
       "home_name": "Japan U17",
@@ -202,7 +202,7 @@
     },
     {
       "id": "m_12",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
       "home_name": "Arsenal U19",
@@ -220,7 +220,7 @@
     },
     {
       "id": "m_13",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "20:30",
       "home_name": "Mexico U17",
@@ -238,7 +238,7 @@
     },
     {
       "id": "m_14",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "20:45",
       "home_name": "East Bengal Fc",
@@ -256,7 +256,7 @@
     },
     {
       "id": "m_15",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "Akron Togliatti",
@@ -274,7 +274,7 @@
     },
     {
       "id": "m_16",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "Northeast United Fc",
@@ -292,7 +292,7 @@
     },
     {
       "id": "m_17",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
       "home_name": "Dominican Republic U17",
@@ -310,7 +310,7 @@
     },
     {
       "id": "m_18",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
       "home_name": "Al Riffa",
@@ -328,7 +328,7 @@
     },
     {
       "id": "m_19",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Gagra Fc",
@@ -346,7 +346,7 @@
     },
     {
       "id": "m_20",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Brazil U17",
@@ -364,7 +364,7 @@
     },
     {
       "id": "m_21",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Smouha Sc",
@@ -382,7 +382,7 @@
     },
     {
       "id": "m_22",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Real Madrid U19",
@@ -400,7 +400,7 @@
     },
     {
       "id": "m_23",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Algeria U17",
@@ -418,7 +418,7 @@
     },
     {
       "id": "m_24",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Honduras U17",
@@ -436,7 +436,7 @@
     },
     {
       "id": "m_25",
-      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Al Seeb Sc",
