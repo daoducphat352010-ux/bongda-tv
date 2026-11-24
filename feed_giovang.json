@@ -1,0 +1,133 @@
+{
+  "app_title": "GioVang TV",
+  "source_name": "giovang.co",
+  "updated_at": "24/11/2026 18:17",
+  "matches": [
+    {
+      "id": "gv_1",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "Xem Ngay",
+      "home_logo": "",
+      "away_name": "",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV 1",
+          "url": "https://giovang.co/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_2",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "Soi Kèo",
+      "home_logo": "",
+      "away_name": "",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV 1",
+          "url": "https://giovang.co/tracking-link",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_3",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "Xem ngay",
+      "home_logo": "",
+      "away_name": "",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV 1",
+          "url": "https://giovang.co/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_4",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "Xem ngay",
+      "home_logo": "",
+      "away_name": "",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV 1",
+          "url": "https://giovang.co/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_5",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "Xem ngay",
+      "home_logo": "",
+      "away_name": "",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV 1",
+          "url": "https://giovang.co/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_6",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "Xem ngay",
+      "home_logo": "",
+      "away_name": "",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV 1",
+          "url": "https://giovang.co/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_7",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "Xem ngay",
+      "home_logo": "",
+      "away_name": "",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV 1",
+          "url": "https://giovang.co/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    }
+  ]
+}
