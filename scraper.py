@@ -580,7 +580,7 @@ def scrape_all():
                 if u and img_freq.get(u, 0) >= 5:
                     m[key] = ""
 
-        # Quét chi tiết 20 trận đầu tiên: bổ sung logo từ khung tỷ số trận đó & gắn tên BLV vào cả luồng HD lẫn Web Player
+        # Quét chi tiết 20 trận đầu tiên: bổ sung logo từ khung tỷ số & giữ 1 mục duy nhất cho mỗi BLV (bỏ Web Player)
         for m in matches[:20]:
             target_path = urlparse(m["page_url"]).path.rstrip("/")
             entry_url = next(iter(m["rooms"].values()))["url"] if m["rooms"] else m["page_url"]
@@ -623,44 +623,29 @@ def scrape_all():
             room_items = list(m["rooms"].values())
 
             if room_items:
-                for r_idx, room in enumerate(room_items[:3], 1):
+                for r_idx, room in enumerate(room_items[:4], 1):
                     blv_label = clean_commentator_label(room.get("name", ""), r_idx)
                     if r_idx == 1 and room["url"] == entry_url:
                         room_m3u8 = first_room_m3u8
                     else:
                         room_m3u8 = capture_room_streams(page, room["url"])
 
-                    for s_url in room_m3u8[:1]:
-                        streams.append(
-                            {
-                                "label": f"{blv_label} (HD Trực Tiếp)",
-                                "url": s_url,
-                                "referer": room["url"],
-                            }
-                        )
-
+                    target_stream_url = room_m3u8[0] if room_m3u8 else room["url"]
                     streams.append(
                         {
-                            "label": f"{blv_label} (Web Player)",
-                            "url": room["url"],
-                            "referer": SOURCE_URLS[0],
+                            "label": blv_label,
+                            "url": target_stream_url,
+                            "referer": room["url"],
                         }
                     )
             else:
                 host_label = clean_commentator_label(details.get("activeHostName", ""), 1)
-                for s_url in first_room_m3u8[:2]:
-                    streams.append(
-                        {
-                            "label": f"{host_label} (HD Trực Tiếp)",
-                            "url": s_url,
-                            "referer": m["page_url"],
-                        }
-                    )
+                target_stream_url = first_room_m3u8[0] if first_room_m3u8 else m["page_url"]
                 streams.append(
                     {
-                        "label": f"{host_label} (Web Player)",
-                        "url": m["page_url"],
-                        "referer": SOURCE_URLS[0],
+                        "label": host_label,
+                        "url": target_stream_url,
+                        "referer": m["page_url"],
                     }
                 )
 
@@ -675,17 +660,17 @@ def scrape_all():
                 blv_label = clean_commentator_label(room.get("name", ""), r_idx)
                 streams.append(
                     {
-                        "label": f"{blv_label} (Web Player)",
+                        "label": blv_label,
                         "url": room["url"],
-                        "referer": SOURCE_URLS[0],
+                        "referer": room["url"],
                     }
                 )
             if not streams:
                 streams.append(
                     {
-                        "label": "Mở trực tiếp trận đấu",
+                        "label": "Phòng Trực Tiếp",
                         "url": m["page_url"],
-                        "referer": SOURCE_URLS[0],
+                        "referer": m["page_url"],
                     }
                 )
             m["streams"] = streams
