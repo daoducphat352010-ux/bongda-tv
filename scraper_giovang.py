@@ -28,6 +28,11 @@ KNOWN_LEAGUES = [
     "MLS",
     "TRITON",
     "PGL Major Singapore 2026 Stage 1",
+    "Bóng chuyền",
+    "Bóng rổ",
+    "Cúp C1",
+    "Cúp C2",
+    "Cúp C3",
 ]
 
 
@@ -40,11 +45,12 @@ def clean_text(raw: str) -> str:
 def clean_team_name(name: str) -> str:
     t = clean_text(name)
     t = re.sub(r"^(?:xem\s+)?tr[uự]c\s*ti[eế]p\s*[:\-]?\s*", "", t, flags=re.I)
-    t = re.sub(r"\b\d{1,2}\s+\d{1,2}(?:\s+\d{2,4})?\b.*$", "", t)
-    t = re.sub(r"\b[a-z0-9]{8,}\b$", "", t, flags=re.I)
+    # Chỉ cắt chuỗi ngày tháng dd/mm hoặc dd-mm rõ ràng ở cuối, không cắt nhầm từ ngắn như "Al"
     t = re.sub(r"\s+\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?$", "", t)
+    t = re.sub(r"\s+\d{1,2}\s+\d{1,2}(?:\s+\d{2,4})?$", "", t)
+    t = re.sub(r"\b[a-f0-9]{8,}\b$", "", t, flags=re.I)
     t = re.sub(r"\s+(?:full\s*hd|hd|live|hom\s*nay|hôm\s*nay)$", "", t, flags=re.I)
-    return t.strip(" -|:")[:36]
+    return t.strip(" -|:")[:38]
 
 
 def is_banned_url(href: str, allowed_host: str) -> bool:
@@ -56,7 +62,7 @@ def is_banned_url(href: str, allowed_host: str) -> bool:
         "/livescore", "/ket-qua", "/bang-xep-hang", "/lich-thi-dau",
         "/tin-tuc", "/soi-keo", "/nhan-dinh", "/highlight", "/video",
         "/khuyen-mai", "/nha-cai", "/lien-he", "/gioi-thieu",
-        "/tran-dau/", "/tracking-link"
+        "/tran-dau/", "/tracking-link", "/tag/", "/category/"
     )
     if any(p in low for p in banned_paths):
         return True
@@ -67,59 +73,78 @@ def parse_teams_from_slug(base_href: str) -> tuple[str, str]:
     slug = base_href.rstrip("/").split("/")[-1]
     clean_slug = re.sub(r"^(?:xem-)?truc-tiep-", "", slug, flags=re.I)
     clean_slug = re.sub(r"-luc-\d{4}.*$", "", clean_slug, flags=re.I)
-    clean_slug = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?(?:-[a-z0-9]{6,})?$", "", clean_slug, flags=re.I)
-    clean_slug = re.sub(r"-[a-z0-9]{8,}$", "", clean_slug, flags=re.I)
+    # Loại bỏ mã hash cuối dạng -6a8b8a6f4d3de1ad3e0d9544 hoặc -tou7n5ebpqv2 hoặc -28303273
+    clean_slug = re.sub(r"-(?:[a-f0-9]{10,}|[a-z0-9]{8,14})$", "", clean_slug, flags=re.I)
+    # Loại bỏ ngày dd-mm(-yyyy) ở cuối nếu có
+    clean_slug = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?$", "", clean_slug)
+    # Lặp thêm 1 lần nếu vừa có mã cuối vừa có ngày
+    clean_slug = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?$", "", clean_slug)
+
     parts = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
     if len(parts) == 2 and parts[0] and parts[1]:
-        return (
-            clean_team_name(parts[0].replace("-", " ").title()),
-            clean_team_name(parts[1].replace("-", " ").title()),
-        )
+        home_raw = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?$", "", parts[0]).replace("-", " ").strip()
+        away_raw = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?$", "", parts[1]).replace("-", " ").strip()
+        if home_raw and away_raw:
+            return clean_team_name(home_raw.title()), clean_team_name(away_raw.title())
     return "", ""
 
 
 def is_league_label(text: str) -> bool:
     t = clean_text(text)
-    if not t or len(t) > 45:
+    if not t or len(t) > 50 or len(t) < 2:
         return False
     low = t.lower()
-    if low in ("hôm nay,", "hôm nay", "ngày mai,", "ngày mai", "live", "sắp đá", "vs"):
+    if low in (
+        "hôm nay,", "hôm nay", "ngày mai,", "ngày mai", "live", "sắp đá",
+        "vs", "xem ngay", "trực tiếp", "bóng đá trực tiếp", "đội nhà", "đội khách"
+    ):
         return False
     if any(lg.lower() in low for lg in KNOWN_LEAGUES):
         return True
-    return bool(re.search(r"\b(cup|league|championship|major|series|u17|u19|u21|u23|la liga|serie a|bundesliga)\b", low))
+    return bool(
+        re.search(
+            r"\b(cup|league|championship|major|series|u17|u19|u21|u23|la liga|serie a|bundesliga|ligue 1|premier|afc|uefa|fifa|nba|cba|tbl|bóng chuyền|bóng rổ)\b",
+            low,
+        )
+    )
 
 
 def extract_league_name(item: dict, home: str, away: str) -> str:
     raw_league = clean_text(item.get("league") or "")
+    section_league = clean_text(item.get("sectionLeague") or "")
     lines = [clean_text(ln) for ln in (item.get("text") or "").splitlines() if clean_text(ln)]
 
     candidates = []
-    if raw_league:
-        candidates.append(raw_league)
+    for src in (raw_league, section_league):
+        if src:
+            candidates.append(src)
     for ln in lines:
-        if is_league_label(ln) and ln != home and ln != away:
+        if is_league_label(ln) and ln.lower() != home.lower() and ln.lower() != away.lower():
             candidates.append(ln)
 
     for cand in candidates:
         lg = cand
+        # Nếu có nhiều dòng trong tiêu đề giải, lấy dòng khớp tên giải
+        if "\n" in cand:
+            for sub in [clean_text(x) for x in cand.splitlines() if clean_text(x)]:
+                if is_league_label(sub):
+                    lg = sub
+                    break
         for token in (home, away, "BLV", "Trực tiếp", "LIVE", "SẮP ĐÁ", "Xem ngay"):
             if token and len(token) >= 3:
                 idx = lg.lower().find(token.lower())
                 if idx != -1:
                     lg = lg[:idx].strip(" -|•:·/,")
         lg = re.sub(r"\b\d{1,2}:\d{2}\b", "", lg).strip(" -|•:·/,")
-        if lg and len(lg) <= 45 and not lg.lower().startswith(("hôm nay", "ngày mai")):
+        if lg and len(lg) <= 50 and not lg.lower().startswith(("hôm nay", "ngày mai")):
             return lg
 
     return "Bóng Đá Trực Tiếp"
 
 
 def clean_blv_name(raw: str, home: str = "", away: str = "") -> str:
-    """Chỉ trả về tên BLV sạch (ví dụ 'BLV Trĩ', 'BLV Chồn'), loại bỏ rác/nhãn kỹ thuật/tên đội."""
     if not raw:
         return ""
-    # Nếu có nhiều dòng, ưu tiên dòng chứa chữ 'blv' hoặc tên ngắn gọn
     lines = [clean_text(x) for x in raw.splitlines() if clean_text(x)]
     picked = ""
     for ln in lines:
@@ -130,7 +155,6 @@ def clean_blv_name(raw: str, home: str = "", away: str = "") -> str:
         picked = lines[0]
 
     txt = clean_text(picked)
-    # Cắt bỏ phần dư sau dấu gạch đứng, ngoặc, hoặc câu mô tả dài
     txt = re.split(r"[|•·/(\[\n]", txt)[0].strip()
     txt = re.sub(r"^(?:xem\s+)?tr[uự]c\s*ti[eế]p\s*(?:cùng\s*)?", "", txt, flags=re.I).strip()
 
@@ -157,18 +181,15 @@ def clean_blv_name(raw: str, home: str = "", away: str = "") -> str:
     if any(s in low for s in junk_substrings):
         return ""
 
-    # Không nhận nhầm tên đội bóng hoặc tên giải đấu làm tên BLV
     for t in (home, away):
         if t and len(t) >= 3 and (low == t.lower() or t.lower() in low):
             return ""
     if is_league_label(txt):
         return ""
 
-    # Tách phần tên sau chữ 'BLV' nếu có
     m_blv = re.match(r"^blv[\s:.-]*(.+)$", txt, flags=re.I)
     if m_blv:
         name_part = clean_text(m_blv.group(1))
-        # Chỉ giữ 1-2 từ tên riêng (tránh lấy cả câu dài)
         words = name_part.split()
         if not words or len(words) > 3:
             return ""
@@ -177,7 +198,6 @@ def clean_blv_name(raw: str, home: str = "", away: str = "") -> str:
             return ""
         return f"BLV {clean_name}"
 
-    # Nếu không có chữ 'BLV' ở đầu, chỉ nhận tên riêng ngắn 1-2 từ (không chứa số/ký tự lạ)
     if re.match(r"^(?:server|link|kênh|phòng)\s*\d*$", low):
         return txt.title()
 
@@ -426,20 +446,20 @@ def scrape_all():
                 page.goto(base_url, wait_until="domcontentloaded", timeout=25000)
                 page.wait_for_timeout(3500)
 
-                for _ in range(30):
+                for _ in range(40):
                     page.evaluate(
                         r"""() => {
-                            const btns = Array.from(document.querySelectorAll('button, a'));
+                            const btns = Array.from(document.querySelectorAll('button, a, [role="tab"]'));
                             for (const b of btns) {
                                 const t = (b.innerText || '').trim().toLowerCase();
-                                if (/xem thêm|load more|tất cả|all/i.test(t) && t.length < 25) {
+                                if (/xem thêm|load more|tất cả|all|mở rộng/i.test(t) && t.length < 30) {
                                     try { b.click(); } catch (e) {}
                                 }
                             }
-                            window.scrollBy(0, 900);
+                            window.scrollBy(0, 950);
                         }"""
                     )
-                    page.wait_for_timeout(300)
+                    page.wait_for_timeout(250)
             except Exception:
                 continue
 
@@ -461,7 +481,7 @@ def scrape_all():
                             if (!parent) break;
                             const linksInParent = parent.querySelectorAll('a[href*="/truc-tiep-"], a[href*="-vs-"]').length;
                             const pText = (parent.innerText || '').trim();
-                            if (linksInParent <= 2 && pText.length > 0 && pText.length <= 220) {
+                            if (linksInParent <= 2 && pText.length > 0 && pText.length <= 240) {
                                 card = parent;
                             } else {
                                 break;
@@ -472,9 +492,28 @@ def scrape_all():
                         const awayEl = card.querySelector('[class*="away"] [class*="name"], .team-away, .away-name, [class*="away-team"]');
 
                         let league = '';
-                        const lgEl = card.querySelector('[class*="league"], [class*="tournament"], [class*="tour"], [class*="champ"]');
+                        const lgEl = card.querySelector('[class*="league"], [class*="tournament"], [class*="tour"], [class*="champ"], [class*="cate"]');
                         if (lgEl) {
                             league = (lgEl.innerText || '').trim();
+                        }
+
+                        // Tìm tiêu đề giải đứng ngay trước thẻ trận hoặc nhóm trận
+                        let sectionLeague = '';
+                        let walker = card;
+                        for (let hop = 0; hop < 6 && walker; hop++) {
+                            let prev = walker.previousElementSibling;
+                            while (prev) {
+                                const txt = (prev.innerText || '').trim();
+                                if (txt && txt.length >= 2 && txt.length <= 50 && !txt.includes('\n')) {
+                                    if (/league|tournament|tour|champ|title|header|group|section/i.test(prev.className || '') || /^H[1-5]$/.test(prev.tagName)) {
+                                        sectionLeague = txt;
+                                        break;
+                                    }
+                                }
+                                prev = prev.previousElementSibling;
+                            }
+                            if (sectionLeague) break;
+                            walker = walker.parentElement;
                         }
 
                         let cardBlv = '';
@@ -507,6 +546,7 @@ def scrape_all():
                             homeText: homeEl ? (homeEl.innerText || '').trim() : '',
                             awayText: awayEl ? (awayEl.innerText || '').trim() : '',
                             league: league,
+                            sectionLeague: sectionLeague,
                             cardBlv: cardBlv,
                             homeLogo: pool[0] || '',
                             awayLogo: pool[1] || ''
@@ -542,7 +582,7 @@ def scrape_all():
                     }
 
         matches = list(grouped_matches.values())
-        for m in matches[:40]:
+        for m in matches[:45]:
             streams, h_logo, a_logo = extract_rooms_and_streams(
                 page, m["page_url"], m["card_blv"], m["home_logo"], m["away_logo"], m["home_name"], m["away_name"]
             )
@@ -552,7 +592,7 @@ def scrape_all():
             del m["page_url"]
             del m["card_blv"]
 
-        for m in matches[40:]:
+        for m in matches[45:]:
             blv_lbl = m["card_blv"] or "BLV Trực Tiếp"
             m["streams"] = [
                 {
