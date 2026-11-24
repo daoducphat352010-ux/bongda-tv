@@ -1,39 +1,49 @@
 {
   "app_title": "GioVang TV",
   "source_name": "giovang.co",
-  "updated_at": "24/11/2026 18:19",
+  "updated_at": "24/11/2026 18:24",
   "matches": [
     {
       "id": "gv_1",
-      "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "Xem Ngay",
-      "home_logo": "",
-      "away_name": "",
-      "away_logo": "",
+      "league": "Champions League",
+      "status": "LIVE",
+      "kickoff": "17:00",
+      "home_name": "Daejeon Citizen",
+      "home_logo": "https://images.keovip88.net/images/league/afc-champions-league.png",
+      "away_name": "Beijing Guoan",
+      "away_logo": "https://images.keovip88.net/images/teams/daejeon-citizen.png",
       "score": "vs",
       "streams": [
         {
           "label": "BLV 1",
-          "url": "https://giovang.co/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544",
+          "url": "https://giovang.co/truc-tiep-daejeon-citizen-vs-beijing-guoan-24-11-6a88e7865d02aeccba00526b",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "Soi Kèo",
+          "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
       ]
     },
     {
       "id": "gv_2",
-      "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "Soi Kèo",
-      "home_logo": "",
-      "away_name": "",
-      "away_logo": "",
+      "league": "Champions League",
+      "status": "LIVE",
+      "kickoff": "17:00",
+      "home_name": "Kyoto Sanga",
+      "home_logo": "https://images.keovip88.net/images/league/afc-champions-league.png",
+      "away_name": "Pohang Steelers",
+      "away_logo": "https://images.keovip88.net/images/teams/kyoto-sanga.png",
       "score": "vs",
       "streams": [
         {
           "label": "BLV 1",
+          "url": "https://giovang.co/truc-tiep-kyoto-sanga-vs-pohang-steelers-24-11-6a8a38deeb269e70040bbd79",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "Soi Kèo",
           "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
@@ -42,17 +52,22 @@
     {
       "id": "gv_3",
       "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "Xem ngay",
-      "home_logo": "",
-      "away_name": "",
-      "away_logo": "",
+      "status": "LIVE",
+      "kickoff": "17:00",
+      "home_name": "Daejeon JKJ Nữ",
+      "home_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDzNlHFlEwZIwPoGvgLN_Bc6PMe-1uZiKk7g&s",
+      "away_name": "GS Caltex Nữ",
+      "away_logo": "https://static.flashscore.com/res/image/data/C6oehGYg-YPeUstG1.png",
       "score": "vs",
       "streams": [
         {
           "label": "BLV 1",
-          "url": "https://giovang.co/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91",
+          "url": "https://giovang.co/truc-tiep-daejeon-jkj-nu-vs-gs-caltex-nu-24-11-si15c7zmttac",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "Soi Kèo",
+          "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
       ]
@@ -60,17 +75,22 @@
     {
       "id": "gv_4",
       "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "Xem ngay",
-      "home_logo": "",
-      "away_name": "",
-      "away_logo": "",
+      "status": "LIVE",
+      "kickoff": "18:00",
+      "home_name": "Onikisubat",
+      "home_logo": "https://upload.wikimedia.org/wikipedia/en/7/72/Sultanlar_Ligi.png",
+      "away_name": "Ziraat Bankasi",
+      "away_logo": "https://upload.wikimedia.org/wikipedia/en/7/72/Sultanlar_Ligi.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
       "score": "vs",
       "streams": [
         {
           "label": "BLV 1",
-          "url": "https://giovang.co/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2",
+          "url": "https://giovang.co/truc-tiep-onikisubat-vs-ziraat-bankasi-24-11-a8lf95heg7ty",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "Soi Kèo",
+          "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
       ]
@@ -78,17 +98,22 @@
     {
       "id": "gv_5",
       "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "Xem ngay",
-      "home_logo": "",
-      "away_name": "",
-      "away_logo": "",
+      "status": "LIVE",
+      "kickoff": "11:00",
+      "home_name": "PGL Major Stage 1 #1",
+      "home_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7bWn7s_jrmhKinzbG0fDU7Sv_1wlhRjBFQudG0JNs0lzmnIXZz8YQ448&s=10",
+      "away_name": "PGL Major Singapore",
+      "away_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcXpW4kmkC3UBqEL2ooWKrhxy8cMn0ngH9OWz9fDreLehcX4JTeE1PnZE&s=10",
       "score": "vs",
       "streams": [
         {
           "label": "BLV 1",
-          "url": "https://giovang.co/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273",
+          "url": "https://giovang.co/truc-tiep-pgl-major-stage-1-1-vs-pgl-major-singapore-24-11-7pnd8v4nc5fb",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "Soi Kèo",
+          "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
       ]
@@ -96,17 +121,22 @@
     {
       "id": "gv_6",
       "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "Xem ngay",
-      "home_logo": "",
-      "away_name": "",
-      "away_logo": "",
+      "status": "LIVE",
+      "kickoff": "16:00",
+      "home_name": "PGL Major Stage 1 #1 Ca 3",
+      "home_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7bWn7s_jrmhKinzbG0fDU7Sv_1wlhRjBFQudG0JNs0lzmnIXZz8YQ448&s=10",
+      "away_name": "PGL Major Stage 1 #1 Ca 4",
+      "away_logo": "https://i.ytimg.com/vi/_7LJB5SAgrY/hq720.jpg?v=6b027532&sqp=COTAk9gG-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAYTghyO_-Awpudi8uGTpyRMx7D3w",
       "score": "vs",
       "streams": [
         {
           "label": "BLV 1",
-          "url": "https://giovang.co/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e",
+          "url": "https://giovang.co/truc-tiep-pgl-major-stage-1-1-ca-3-vs-pgl-major-stage-1-1-ca-4-24-11-o279d53v4tr1",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "Soi Kèo",
+          "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
       ]
@@ -116,15 +146,112 @@
       "league": "GioVang.co",
       "status": "UPCOMING",
       "kickoff": "",
-      "home_name": "Xem ngay",
-      "home_logo": "",
-      "away_name": "",
+      "home_name": "Net88",
+      "home_logo": "https://giovang.guru/wp-content/uploads/2026/05/logo-net88.gif",
+      "away_name": "NET88 – Chơi là phải nét",
       "away_logo": "",
       "score": "vs",
       "streams": [
         {
-          "label": "BLV 1",
-          "url": "https://giovang.co/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c",
+          "label": "Cược Ngay",
+          "url": "https://giovang.co/tracking-link",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 2",
+          "url": "https://giovang.guru/net88/",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_8",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "Gem88",
+      "home_logo": "https://giovang.guru/wp-content/uploads/2026/06/logo-gem88.gif",
+      "away_name": "Gem88 – Dẫn lối giàu sang",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Cược Ngay",
+          "url": "https://giovang.co/tracking-link",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 2",
+          "url": "https://giovang.guru/gem88/",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_9",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "Max88",
+      "home_logo": "https://giovang.guru/wp-content/uploads/2026/06/logo-max88.gif",
+      "away_name": "Max88 – Chơi là thắng",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Cược Ngay",
+          "url": "https://giovang.co/tracking-link",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 2",
+          "url": "https://giovang.guru/max88/",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_10",
+      "league": "GioVang.co",
+      "status": "UPCOMING",
+      "kickoff": "",
+      "home_name": "HitClub",
+      "home_logo": "https://giovang.guru/wp-content/uploads/2026/06/logo-hitclub.gif",
+      "away_name": "HitClub – Đầy ví mỗi ngày",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Cược Ngay",
+          "url": "https://giovang.co/tracking-link",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 2",
+          "url": "https://giovang.guru/hitclub/",
+          "referer": "https://giovang.co/"
+        }
+      ]
+    },
+    {
+      "id": "gv_11",
+      "league": "GioVang.co",
+      "status": "LIVE",
+      "kickoff": "",
+      "home_name": "Go88",
+      "home_logo": "https://giovang.guru/wp-content/uploads/2026/06/logo-go88.gif",
+      "away_name": "Go88 – Cứ vào là thắng",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Cược Ngay",
+          "url": "https://giovang.co/tracking-link",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 2",
+          "url": "https://giovang.guru/go88/",
           "referer": "https://giovang.co/"
         }
       ]
