@@ -1,10 +1,10 @@
 {
-  "app_title": "Cập nhật lúc 11:22 24/11/2026",
-  "updated_at": "11:22 24/11/2026",
+  "app_title": "Cập nhật lúc 11:39 24/11/2026",
+  "updated_at": "11:39 24/11/2026",
   "matches": [
     {
       "id": "m_1",
-      "league": "Trực Tiếp Bóng Đá",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "14:45",
       "home_name": "Newcastle Jets",
@@ -14,20 +14,30 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Phòng BLV 1 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o",
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
           "referer": "https://gavang33.gg/"
         },
         {
-          "label": "Phòng BLV 2 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/kyoto-sanga-vs-pohang-steelers-luc-1700-ngay-24-11-2026-318q66hx97w7qo9?anchorId=6ac6623d35fd50989491e855",
           "referer": "https://gavang33.gg/"
         }
       ]
     },
     {
       "id": "m_2",
-      "league": "Trực Tiếp Bóng Đá",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "16:00",
       "home_name": "Garudayaksa Fc",
@@ -37,20 +47,30 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Phòng BLV 1 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86",
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
           "referer": "https://gavang33.gg/"
         },
         {
-          "label": "Phòng BLV 2 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/kyoto-sanga-vs-pohang-steelers-luc-1700-ngay-24-11-2026-318q66hx97w7qo9?anchorId=6ac6623d35fd50989491e855",
           "referer": "https://gavang33.gg/"
         }
       ]
     },
     {
       "id": "m_3",
-      "league": "Trực Tiếp Bóng Đá",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "16:00",
       "home_name": "Persebaya Surabaya",
@@ -60,20 +80,30 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Phòng BLV 1 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8",
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
           "referer": "https://gavang33.gg/"
         },
         {
-          "label": "Phòng BLV 2 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/kyoto-sanga-vs-pohang-steelers-luc-1700-ngay-24-11-2026-318q66hx97w7qo9?anchorId=6ac6623d35fd50989491e855",
           "referer": "https://gavang33.gg/"
         }
       ]
     },
     {
       "id": "m_4",
-      "league": "Trực Tiếp Bóng Đá",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Daejeon Hana Citizen",
@@ -83,20 +113,30 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Phòng BLV 1 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep",
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
           "referer": "https://gavang33.gg/"
         },
         {
-          "label": "Phòng BLV 2 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/kyoto-sanga-vs-pohang-steelers-luc-1700-ngay-24-11-2026-318q66hx97w7qo9?anchorId=6ac6623d35fd50989491e855",
           "referer": "https://gavang33.gg/"
         }
       ]
     },
     {
       "id": "m_5",
-      "league": "Trực Tiếp Bóng Đá",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Kyoto Sanga",
@@ -106,20 +146,30 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Phòng BLV 1 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/kyoto-sanga-vs-pohang-steelers-luc-1700-ngay-24-11-2026-318q66hx97w7qo9",
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
           "referer": "https://gavang33.gg/"
         },
         {
-          "label": "Phòng BLV 2 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/kyoto-sanga-vs-pohang-steelers-luc-1700-ngay-24-11-2026-318q66hx97w7qo9?anchorId=6ac6623d35fd50989491e855",
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
           "referer": "https://gavang33.gg/"
         }
       ]
     },
     {
       "id": "m_6",
-      "league": "Trực Tiếp Bóng Đá",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Shanghai Port",
@@ -129,20 +179,30 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Phòng BLV 1 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/shanghai-port-vs-buriram-united-luc-1915-ngay-24-11-2026-23xmvkh6egw7qg8",
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
           "referer": "https://gavang33.gg/"
         },
         {
-          "label": "Phòng BLV 2 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/shanghai-port-vs-buriram-united-luc-1915-ngay-24-11-2026-23xmvkh6egw7qg8?anchorId=6a9fea8c419a47d5e57cb68d",
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
           "referer": "https://gavang33.gg/"
         }
       ]
     },
     {
       "id": "m_7",
-      "league": "Trực Tiếp Bóng Đá",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Cong An Ha Noi Fc",
@@ -152,20 +212,30 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Phòng BLV 1 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/cong-an-ha-noi-fc-vs-vissel-kobe-luc-1915-ngay-24-11-2026-pxwrxlhy62xwryk",
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
           "referer": "https://gavang33.gg/"
         },
         {
-          "label": "Phòng BLV 2 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/cong-an-ha-noi-fc-vs-vissel-kobe-luc-1915-ngay-24-11-2026-pxwrxlhy62xwryk?anchorId=6a68b4c60f5c6246168b1fa1",
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
           "referer": "https://gavang33.gg/"
         }
       ]
     },
     {
       "id": "m_8",
-      "league": "Trực Tiếp Bóng Đá",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Ratchaburi Fc",
@@ -175,20 +245,30 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Phòng BLV 1 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/ratchaburi-fc-vs-johor-darul-tazim-fc-luc-1915-ngay-24-11-2026-zp5rzghgn25yq82",
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
           "referer": "https://gavang33.gg/"
         },
         {
-          "label": "Phòng BLV 2 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/ratchaburi-fc-vs-johor-darul-tazim-fc-luc-1915-ngay-24-11-2026-zp5rzghgn25yq82?anchorId=6a31da2f9a2eb0e4aaedf62e",
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
           "referer": "https://gavang33.gg/"
         }
       ]
     },
     {
       "id": "m_9",
-      "league": "Trực Tiếp Bóng Đá",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Costa Rica U17",
@@ -198,13 +278,1540 @@
       "score": "vs",
       "streams": [
         {
-          "label": "Phòng BLV 1 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/costa-rica-u17-vs-ireland-u17-luc-1930-ngay-24-11-2026-x7lm7phj2epdm2w",
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
           "referer": "https://gavang33.gg/"
         },
         {
-          "label": "Phòng BLV 2 (Mở Web Player)",
-          "url": "https://gavang33.gg/truc-tiep/costa-rica-u17-vs-ireland-u17-luc-1930-ngay-24-11-2026-x7lm7phj2epdm2w?anchorId=6a78aab67e077ab7a1f9af59",
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_10",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "19:30",
+      "home_name": "Venezuela U17",
+      "home_logo": "https://img.cltvap.cc/football/team/dfa3dc7c4d56d73f925a782bc6063a4b.png",
+      "away_name": "Romania U17",
+      "away_logo": "https://img.cltvap.cc/football/team/1f8d87e1161af68b81bace188a1ec624.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_11",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:00",
+      "home_name": "Japan U17",
+      "home_logo": "https://img.cltvap.cc/football/team/4d444ad7ea33c56cfc0d5701b6e79f59.png",
+      "away_name": "Serbia U17",
+      "away_logo": "https://img.cltvap.cc/football/team/059bbd8df7767d3bc7829e3735c221e2.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_12",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:00",
+      "home_name": "Arsenal U19",
+      "home_logo": "https://img.cltvap.cc/football/team/361260e39f38a6fdd23d64eec1530ba1.png",
+      "away_name": "Borussia Dortmund U19",
+      "away_logo": "https://img.cltvap.cc/football/team/1c99cfa824629a2c1039a7a61c41ef56.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_13",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:30",
+      "home_name": "Mexico U17",
+      "home_logo": "https://img.cltvap.cc/football/team/3653cce234494bfbd33e077f4a028f66.png",
+      "away_name": "Cameroon U17",
+      "away_logo": "https://img.cltvap.cc/football/team/e2ce14e81dba66dbff9cbc35ecfdb704.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_14",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:45",
+      "home_name": "East Bengal Fc",
+      "home_logo": "https://img.cltvap.cc/football/team/21649c3d173c8f4ec9d526432ad9f088.png",
+      "away_name": "Al Hussein Sc Irbid",
+      "away_logo": "https://img.cltvap.cc/football/team/c57a2fc40564fdcb7c1428215105372a.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_15",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:00",
+      "home_name": "Akron Togliatti",
+      "home_logo": "https://img.cltvap.cc/football/team/d5a6f7b99c55a87b8a47337e7fe64588.png",
+      "away_name": "Cska",
+      "away_logo": "https://img.cltvap.cc/football/team/3d44285b3ea2ff20d72778ad3245cf70.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_16",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:00",
+      "home_name": "Northeast United Fc",
+      "home_logo": "https://img.cltvap.cc/football/team/b019c0b2f14edb23e5c9a10a37a2e548.png",
+      "away_name": "Sc Delhi",
+      "away_logo": "https://img.cltvap.cc/football/team/361a7ca53936507117d9b3d5d9f018a5.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_17",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:30",
+      "home_name": "Dominican Republic U17",
+      "home_logo": "https://img.cltvap.cc/football/team/b881bdc95f60018b055309c3ab096a5b.png",
+      "away_name": "Chile U17",
+      "away_logo": "https://img.cltvap.cc/football/team/76b605730bd2606bbcb290f1244dac9a.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_18",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:30",
+      "home_name": "Al Riffa",
+      "home_logo": "https://img.cltvap.cc/football/team/bd2f7046b89c07c685e79343f976ec9e.jpg",
+      "away_name": "Al Zawraa Sc",
+      "away_logo": "https://img.cltvap.cc/football/team/17e3cb55af2ada9d234099c573f8a81e.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_19",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:00",
+      "home_name": "Gagra Fc",
+      "home_logo": "https://img.cltvap.cc/football/team/e450729cae3ba8210e9a08134b9258a1.png",
+      "away_name": "Dinamo",
+      "away_logo": "https://img.cltvap.cc/football/team/ad24ca32a65ee246b1c20af06f4acb97.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_20",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:00",
+      "home_name": "Brazil U17",
+      "home_logo": "https://img.cltvap.cc/football/team/99bf3d153d4bf67d640051a1af322505.png",
+      "away_name": "Tanzania U17",
+      "away_logo": "https://img.cltvap.cc/football/team/0ebcdb06cf4d039f0d08b356c26bc466.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_21",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:00",
+      "home_name": "Smouha Sc",
+      "home_logo": "https://img.cltvap.cc/football/team/2859c6dc44290631fe151b7d306dfde6.png",
+      "away_name": "Bank El Ahly",
+      "away_logo": "https://img.cltvap.cc/football/team/31f3149a6e207008059cd6bb40a4a423.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_22",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:00",
+      "home_name": "Real Madrid U19",
+      "home_logo": "https://img.cltvap.cc/football/team/5e754f0f66a62ae8806a63677b45caa4.png",
+      "away_name": "Psv Eindhoven U19",
+      "away_logo": "https://img.cltvap.cc/football/team/bb1ee3913de6db06451968adf4d89a29.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_23",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:30",
+      "home_name": "Algeria U17",
+      "home_logo": "https://img.cltvap.cc/football/team/c0f3a9cc8c0672341632498cdfb3fff9.png",
+      "away_name": "Montenegro U17",
+      "away_logo": "https://img.cltvap.cc/football/team/9866b8a83d35abdd89ed76d565d71f75.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_24",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:30",
+      "home_name": "Honduras U17",
+      "home_logo": "https://img.cltvap.cc/football/team/570197ce24c78651ca363a146213ba08.png",
+      "away_name": "Colombia U17",
+      "away_logo": "https://img.cltvap.cc/football/team/13844d01d85a85bed47338e396b2aa3d.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_25",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Al Seeb Sc",
+      "home_logo": "https://img.cltvap.cc/football/team/99436fc30d359790afbd11fe602a5a45.png",
+      "away_name": "Al",
+      "away_logo": "https://img.cltvap.cc/football/team/24cb68778b46e3795fa58ad593e98b5d.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/newcastle-jets-vs-kashiwa-reysol-luc-1445-ngay-24-11-2026-vjxm8ghen25dr6o?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/garudayaksa-fc-vs-pss-sleman-luc-1600-ngay-24-11-2026-4wyrn4hy829eq86?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persebaya-surabaya-vs-psbs-biak-numfor-luc-1600-ngay-24-11-2026-jw2r09h5l91jrz8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/daejeon-hana-citizen-vs-beijing-guoan-luc-1700-ngay-24-11-2026-k82rekhg58x1rep?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_26",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Shabab Al Ahli",
+      "home_logo": "",
+      "away_name": "Al",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/shabab-al-ahli-vs-al-qadsiah-luc-2300-ngay-24-11-2026-23xmvkh6eggjqg8",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/shabab-al-ahli-vs-al-qadsiah-luc-2300-ngay-24-11-2026-23xmvkh6eggjqg8?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_27",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "00:45",
+      "home_name": "Fk Bodoglimt",
+      "home_logo": "",
+      "away_name": "Lask Linz",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/fk-bodoglimt-vs-lask-linz-luc-0045-ngay-25-11-2026-ednm9whwjy0dryo",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Ô Long (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/fk-bodoglimt-vs-lask-linz-luc-0045-ngay-25-11-2026-ednm9whwjy0dryo?anchorId=6a31da2f9a2eb0e4aaedf62e",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_28",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "00:45",
+      "home_name": "Galatasaray",
+      "home_logo": "",
+      "away_name": "Aston Villa",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/galatasaray-vs-aston-villa-luc-0045-ngay-25-11-2026-zp5rzghgnv64q82",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/galatasaray-vs-aston-villa-luc-0045-ngay-25-11-2026-zp5rzghgnv64q82?anchorId=6ac6623d35fd50989491e855",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_29",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "01:15",
+      "home_name": "Al Nassr",
+      "home_logo": "",
+      "away_name": "Al Sadd Sports Club",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-nassr-vs-al-sadd-sports-club-luc-0115-ngay-25-11-2026-3glrw7hnxllnqdy",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Son (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-nassr-vs-al-sadd-sports-club-luc-0115-ngay-25-11-2026-3glrw7hnxllnqdy?anchorId=69fc581d696b57b6f1dae269",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_30",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Arsenal",
+      "home_logo": "",
+      "away_name": "Borussia",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/arsenal-vs-borussia-dortmund-luc-0300-ngay-25-11-2026-965mkyhkjd11r1g",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/arsenal-vs-borussia-dortmund-luc-0300-ngay-25-11-2026-965mkyhkjd11r1g?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_31",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Como",
+      "home_logo": "",
+      "away_name": "Aek",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/como-vs-aek-athens-luc-0300-ngay-25-11-2026-jw2r09hkey03rz8",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Nhí (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/como-vs-aek-athens-luc-0300-ngay-25-11-2026-jw2r09hkey03rz8?anchorId=6aa14ecd419a47d5e57cb691",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_32",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Feyenoord",
+      "home_logo": "",
+      "away_name": "Fc Porto",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/feyenoord-vs-fc-porto-luc-0300-ngay-25-11-2026-x7lm7phjly39m2w",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Bệu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/feyenoord-vs-fc-porto-luc-0300-ngay-25-11-2026-x7lm7phjly39m2w?anchorId=69fc585e696b57b6f1dae26b",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_33",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Manchester City Vs",
+      "home_logo": "",
+      "away_name": "Trực Tiếp",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/manchester-city-vs-napoli-luc-0300-ngay-25-11-2026-1l4rjnh98o4lm7v",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Phệ + Gà Siêu Quỷ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/manchester-city-vs-napoli-luc-0300-ngay-25-11-2026-1l4rjnh98o4lm7v?anchorId=6a9fea8c419a47d5e57cb68d",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_34",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Rb Leipzig",
+      "home_logo": "",
+      "away_name": "Rc Lens",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/rb-leipzig-vs-rc-lens-luc-0300-ngay-25-11-2026-n54qllhnlgnkqvy",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/rb-leipzig-vs-rc-lens-luc-0300-ngay-25-11-2026-n54qllhnlgnkqvy?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_35",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Real Madrid",
+      "home_logo": "",
+      "away_name": "Psv",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/real-madrid-vs-psv-eindhoven-luc-0300-ngay-25-11-2026-zp5rzghgnvg4q82",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Gáy (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/real-madrid-vs-psv-eindhoven-luc-0300-ngay-25-11-2026-zp5rzghgnvg4q82?anchorId=6a68b4c60f5c6246168b1fa1",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_36",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Slovan Bratislava",
+      "home_logo": "",
+      "away_name": "Real Betis",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/slovan-bratislava-vs-real-betis-luc-0300-ngay-25-11-2026-23xmvkh6e1ywqg8",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Péo (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/slovan-bratislava-vs-real-betis-luc-0300-ngay-25-11-2026-23xmvkh6e1ywqg8?anchorId=6a78aab67e077ab7a1f9af59",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_37",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "06:20",
+      "home_name": "Millonarios",
+      "home_logo": "",
+      "away_name": "Atletico",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/millonarios-vs-atletico-bucaramanga-luc-0620-ngay-25-11-2026-2y8m4zhv3y6xql0",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/millonarios-vs-atletico-bucaramanga-luc-0620-ngay-25-11-2026-2y8m4zhv3y6xql0?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_38",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "08:30",
+      "home_name": "America De Cali",
+      "home_logo": "",
+      "away_name": "Deportivo Cali",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/america-de-cali-vs-deportivo-cali-luc-0830-ngay-25-11-2026-8yomo4hy7l34q0j",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/america-de-cali-vs-deportivo-cali-luc-0830-ngay-25-11-2026-8yomo4hy7l34q0j?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_39",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "LIVE",
+      "kickoff": "10:00",
+      "home_name": "San Jose Earthquakes",
+      "home_logo": "",
+      "away_name": "Houston",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/san-jose-earthquakes-vs-houston-dynamo-luc-1000-ngay-25-11-2026-ednm9wh5kw7nryo",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/san-jose-earthquakes-vs-houston-dynamo-luc-1000-ngay-25-11-2026-ednm9wh5kw7nryo?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_40",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "14:45",
+      "home_name": "Melbourne Victory",
+      "home_logo": "",
+      "away_name": "The Cong",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/melbourne-victory-vs-the-cong-viettel-luc-1445-ngay-25-11-2026-vjxm8ghen283r6o",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Gáy (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/melbourne-victory-vs-the-cong-viettel-luc-1445-ngay-25-11-2026-vjxm8ghen283r6o?anchorId=6a68b4c60f5c6246168b1fa1",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_41",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Mito Hollyhock",
+      "home_logo": "",
+      "away_name": "Tokyo Verdy",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/mito-hollyhock-vs-tokyo-verdy-luc-1700-ngay-25-11-2026-l5ergph4jwl6r8k",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Bệu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/mito-hollyhock-vs-tokyo-verdy-luc-1700-ngay-25-11-2026-l5ergph4jwl6r8k?anchorId=69fc585e696b57b6f1dae26b",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_42",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Fc Tokyo",
+      "home_logo": "",
+      "away_name": "Sanfrecce",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/fc-tokyo-vs-sanfrecce-hiroshima-luc-1700-ngay-25-11-2026-4jwq2ghndeewm0v",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Péo (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/fc-tokyo-vs-sanfrecce-hiroshima-luc-1700-ngay-25-11-2026-4jwq2ghndeewm0v?anchorId=6a78aab67e077ab7a1f9af59",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_43",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Okayama",
+      "home_logo": "",
+      "away_name": "Shimizu S Pulse",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/okayama-vs-shimizu-s-pulse-luc-1700-ngay-25-11-2026-y39mp1h68zznmoj",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/okayama-vs-shimizu-s-pulse-luc-1700-ngay-25-11-2026-y39mp1h68zznmoj?anchorId=6ac6623d35fd50989491e855",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_44",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Avispa Fukuoka",
+      "home_logo": "",
+      "away_name": "Yokohama F",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/avispa-fukuoka-vs-yokohama-f-marinos-luc-1700-ngay-25-11-2026-3glrw7hne7nlqdy",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Son (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/avispa-fukuoka-vs-yokohama-f-marinos-luc-1700-ngay-25-11-2026-3glrw7hne7nlqdy?anchorId=69fc581d696b57b6f1dae269",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_45",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Jef United Ichihara Chiba",
+      "home_logo": "",
+      "away_name": "Nagoya",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/jef-united-ichihara-chiba-vs-nagoya-grampus-luc-1700-ngay-25-11-2026-y39mp1h68z6nmoj",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/jef-united-ichihara-chiba-vs-nagoya-grampus-luc-1700-ngay-25-11-2026-y39mp1h68z6nmoj?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_46",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "V Varen Nagasaki",
+      "home_logo": "",
+      "away_name": "Kawasaki",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/v-varen-nagasaki-vs-kawasaki-frontale-luc-1700-ngay-25-11-2026-3glrw7hne74lqdy",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Ô Long (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/v-varen-nagasaki-vs-kawasaki-frontale-luc-1700-ngay-25-11-2026-3glrw7hne74lqdy?anchorId=6a31da2f9a2eb0e4aaedf62e",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_47",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Gamba Osaka",
+      "home_logo": "",
+      "away_name": "Port Fc",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/gamba-osaka-vs-port-fc-luc-1700-ngay-25-11-2026-2y8m4zh524pvql0",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Phệ + Gà Siêu Quỷ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/gamba-osaka-vs-port-fc-luc-1700-ngay-25-11-2026-2y8m4zh524pvql0?anchorId=6a9fea8c419a47d5e57cb68d",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_48",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Kashima Antlers",
+      "home_logo": "",
+      "away_name": "Jeonbuk Hyundai",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/kashima-antlers-vs-jeonbuk-hyundai-motors-luc-1700-ngay-25-11-2026-n54qllhnlkzlqvy",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/kashima-antlers-vs-jeonbuk-hyundai-motors-luc-1700-ngay-25-11-2026-n54qllhnlkzlqvy?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_49",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:30",
+      "home_name": "Urawa Red Diamonds",
+      "home_logo": "",
+      "away_name": "Cerezo Osaka",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/urawa-red-diamonds-vs-cerezo-osaka-luc-1730-ngay-25-11-2026-n54qllhny7npqvy",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/urawa-red-diamonds-vs-cerezo-osaka-luc-1730-ngay-25-11-2026-n54qllhny7npqvy?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_50",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "19:00",
+      "home_name": "Radnicki Nis",
+      "home_logo": "",
+      "away_name": "Fk Zeleznicar",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/radnicki-nis-vs-fk-zeleznicar-pancevo-luc-1900-ngay-25-11-2026-4wyrn4h61o2oq86",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Nhí (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/radnicki-nis-vs-fk-zeleznicar-pancevo-luc-1900-ngay-25-11-2026-4wyrn4h61o2oq86?anchorId=6aa14ecd419a47d5e57cb691",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_51",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "19:00",
+      "home_name": "Bali United",
+      "home_logo": "",
+      "away_name": "Barito",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/bali-united-vs-barito-putera-luc-1900-ngay-25-11-2026-pxwrxlhlgev3ryk",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/bali-united-vs-barito-putera-luc-1900-ngay-25-11-2026-pxwrxlhlgev3ryk?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_52",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "19:15",
+      "home_name": "Persib Bandung",
+      "home_logo": "",
+      "away_name": "Fc Seoul",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persib-bandung-vs-fc-seoul-luc-1915-ngay-25-11-2026-vjxm8ghen28kr6o",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Gáy (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/persib-bandung-vs-fc-seoul-luc-1915-ngay-25-11-2026-vjxm8ghen28kr6o?anchorId=6a68b4c60f5c6246168b1fa1",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_53",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "19:30",
+      "home_name": "Ecuador U17",
+      "home_logo": "",
+      "away_name": "South Korea U17",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/ecuador-u17-vs-south-korea-u17-luc-1930-ngay-25-11-2026-4jwq2ghn5j6lm0v",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Son (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/ecuador-u17-vs-south-korea-u17-luc-1930-ngay-25-11-2026-4jwq2ghn5j6lm0v?anchorId=69fc581d696b57b6f1dae269",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_54",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "19:30",
+      "home_name": "Uganda U17",
+      "home_logo": "",
+      "away_name": "New Caledonia U17",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/uganda-u17-vs-new-caledonia-u17-luc-1930-ngay-25-11-2026-l5ergph476lwr8k",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Péo (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/uganda-u17-vs-new-caledonia-u17-luc-1930-ngay-25-11-2026-l5ergph476lwr8k?anchorId=6a78aab67e077ab7a1f9af59",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_55",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:00",
+      "home_name": "Sporting Cp U19",
+      "home_logo": "",
+      "away_name": "Manchester United U19",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/sporting-cp-u19-vs-manchester-united-u19-luc-2000-ngay-25-11-2026-3glrw7hndnn4qdy",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Bệu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/sporting-cp-u19-vs-manchester-united-u19-luc-2000-ngay-25-11-2026-3glrw7hndnn4qdy?anchorId=69fc585e696b57b6f1dae26b",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_56",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:30",
+      "home_name": "Haiti U17",
+      "home_logo": "",
+      "away_name": "Saudi Arabia U17",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/haiti-u17-vs-saudi-arabia-u17-luc-2030-ngay-25-11-2026-965mkyhk0x57r1g",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/haiti-u17-vs-saudi-arabia-u17-luc-2030-ngay-25-11-2026-965mkyhk0x57r1g?anchorId=6ac6623d35fd50989491e855",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_57",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:30",
+      "home_name": "Uruguay U17",
+      "home_logo": "",
+      "away_name": "France U17",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/uruguay-u17-vs-france-u17-luc-2030-ngay-25-11-2026-y0or5jh8wk6kqwz",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/uruguay-u17-vs-france-u17-luc-2030-ngay-25-11-2026-y0or5jh8wk6kqwz?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_58",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:45",
+      "home_name": "Nasaf Qarshi",
+      "home_logo": "",
+      "away_name": "Al",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/nasaf-qarshi-vs-al-khaldiya-luc-2045-ngay-25-11-2026-3glrw7hnxl10qdy",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/nasaf-qarshi-vs-al-khaldiya-luc-2045-ngay-25-11-2026-3glrw7hnxl10qdy?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_59",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:00",
+      "home_name": "Kazma",
+      "home_logo": "",
+      "away_name": "Erbil Sc",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/kazma-vs-erbil-sc-luc-2100-ngay-25-11-2026-jw2r09h54o94rz8",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Ô Long (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/kazma-vs-erbil-sc-luc-2100-ngay-25-11-2026-jw2r09h54o94rz8?anchorId=6a31da2f9a2eb0e4aaedf62e",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_60",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:30",
+      "home_name": "Greece U17",
+      "home_logo": "",
+      "away_name": "Qatar U17",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/greece-u17-vs-qatar-u17-luc-2130-ngay-25-11-2026-ednm9whwp4x8ryo",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/greece-u17-vs-qatar-u17-luc-2130-ngay-25-11-2026-ednm9whwp4x8ryo?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_61",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:30",
+      "home_name": "Panama U17",
+      "home_logo": "",
+      "away_name": "Egypt U17",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/panama-u17-vs-egypt-u17-luc-2130-ngay-25-11-2026-6ypq3nhvpoevmd7",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Nhí (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/panama-u17-vs-egypt-u17-luc-2130-ngay-25-11-2026-6ypq3nhvpoevmd7?anchorId=6aa14ecd419a47d5e57cb691",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_62",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:00",
+      "home_name": "Akhmat Grozny",
+      "home_logo": "",
+      "away_name": "Fk",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/akhmat-grozny-vs-fk-krasnodar-luc-2200-ngay-25-11-2026-318q66hxp77vqo9",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Tốc (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/akhmat-grozny-vs-fk-krasnodar-luc-2200-ngay-25-11-2026-318q66hxp77vqo9?anchorId=69fcb2b17f55d5be198f16aa",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_63",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:30",
+      "home_name": "Denmark U17",
+      "home_logo": "",
+      "away_name": "Argentina U17",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/denmark-u17-vs-argentina-u17-luc-2230-ngay-25-11-2026-1l4rjnh9d028m7v",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Phệ + Gà Siêu Quỷ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/denmark-u17-vs-argentina-u17-luc-2230-ngay-25-11-2026-1l4rjnh9d028m7v?anchorId=6a9fea8c419a47d5e57cb68d",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_64",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:30",
+      "home_name": "Australia U17",
+      "home_logo": "",
+      "away_name": "Mozambique U17",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/australia-u17-vs-mozambique-u17-luc-2230-ngay-25-11-2026-jw2r09hkgv6krz8",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Péo (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/australia-u17-vs-mozambique-u17-luc-2230-ngay-25-11-2026-jw2r09hkgv6krz8?anchorId=6a78aab67e077ab7a1f9af59",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_65",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Al Kuwait Sc",
+      "home_logo": "",
+      "away_name": "Al",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-kuwait-sc-vs-al-wahdauae-luc-2300-ngay-25-11-2026-vjxm8ghen2g3r6o",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-kuwait-sc-vs-al-wahdauae-luc-2300-ngay-25-11-2026-vjxm8ghen2g3r6o?anchorId=6ac6623d35fd50989491e855",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_66",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Al Jazirauae",
+      "home_logo": "",
+      "away_name": "Gol Gohar Fc",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-jazirauae-vs-gol-gohar-fc-luc-2300-ngay-25-11-2026-1l4rjnh9831gm7v",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Bệu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-jazirauae-vs-gol-gohar-fc-luc-2300-ngay-25-11-2026-1l4rjnh9831gm7v?anchorId=69fc585e696b57b6f1dae26b",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_67",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Al Muharraq",
+      "home_logo": "",
+      "away_name": "Arkadag Fk",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-muharraq-vs-arkadag-fk-luc-2300-ngay-25-11-2026-jw2r09hkepxlrz8",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Gáy (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-muharraq-vs-arkadag-fk-luc-2300-ngay-25-11-2026-jw2r09hkepxlrz8?anchorId=6a68b4c60f5c6246168b1fa1",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_68",
+      "league": "Bóng Đá Trực Tiếp",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Al Faisaly Amman",
+      "home_logo": "",
+      "away_name": "Al Rayyan Sports Club",
+      "away_logo": "",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "Phòng BLV 1 (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-faisaly-amman-vs-al-rayyan-sports-club-luc-2300-ngay-25-11-2026-n54qllhnlkx7qvy",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Kiêu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-faisaly-amman-vs-al-rayyan-sports-club-luc-2300-ngay-25-11-2026-n54qllhnlkx7qvy?anchorId=6a955bd5c8262fd0d7ecee7a",
           "referer": "https://gavang33.gg/"
         }
       ]
