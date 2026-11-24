@@ -5,7 +5,7 @@ from urllib.parse import parse_qs, urlparse
 from playwright.sync_api import sync_playwright
 
 SOURCE_URLS = [
-    "https://gavang33.gg/",
+    "https://gavang33.live/",
 ]
 
 
