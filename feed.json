@@ -1,6 +1,6 @@
 {
-  "app_title": "Cập nhật lúc 20:27 24/11/2026",
-  "updated_at": "20:27 24/11/2026",
+  "app_title": "Cập nhật lúc 20:32 24/11/2026",
+  "updated_at": "20:32 24/11/2026",
   "matches": [
     {
       "id": "m_1",
@@ -149,11 +149,11 @@
     {
       "id": "m_9",
       "league": "AFC Champions League Two",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:45",
-      "home_name": "East Bengal FC",
+      "home_name": "East Bengal Fc",
       "home_logo": "https://img.cltvap.cc/football/team/21649c3d173c8f4ec9d526432ad9f088.png",
-      "away_name": "Al-Hussein SC (Irbid)",
+      "away_name": "Al Hussein Sc Irbid",
       "away_logo": "https://img.cltvap.cc/football/team/c57a2fc40564fdcb7c1428215105372a.png",
       "score": "vs",
       "streams": [
@@ -171,7 +171,7 @@
       "kickoff": "21:00",
       "home_name": "Akron Togliatti",
       "home_logo": "https://img.cltvap.cc/football/team/d5a6f7b99c55a87b8a47337e7fe64588.png",
-      "away_name": "CSKA Moscow",
+      "away_name": "Cska",
       "away_logo": "https://img.cltvap.cc/football/team/3d44285b3ea2ff20d72778ad3245cf70.png",
       "score": "vs",
       "streams": [
@@ -187,9 +187,9 @@
       "league": "Indian Super League",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
-      "home_name": "Northeast United FC",
+      "home_name": "Northeast United Fc",
       "home_logo": "https://img.cltvap.cc/football/team/b019c0b2f14edb23e5c9a10a37a2e548.png",
-      "away_name": "SC Delhi",
+      "away_name": "Sc Delhi",
       "away_logo": "https://img.cltvap.cc/football/team/361a7ca53936507117d9b3d5d9f018a5.png",
       "score": "vs",
       "streams": [
@@ -941,7 +941,7 @@
     {
       "id": "m_53",
       "league": "AFC Champions League Two",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "20:45",
       "home_name": "Nasaf Qarshi",
       "home_logo": "https://img.cltvap.cc/football/team/bef3a45bcf56447c8acfb7b077820022.png",
