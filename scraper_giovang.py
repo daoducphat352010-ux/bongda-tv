@@ -8,171 +8,51 @@ SOURCE_URL = "https://giovang.co"
 OUTPUT_FILE = "feed_giovang.json"
 VN_TZ = timezone(timedelta(hours=7))
 
-NON_STREAM_LABELS = {
+GARBAGE_LABELS = {
+    "",
+    "xem ngay",
+    "xem ngay >",
     "soi kèo",
     "soi keo",
     "nhận định",
     "nhan dinh",
-    "xem ngay",
-    "xem ngay >",
+    "trực tiếp",
+    "truc tiep",
+    "live",
+    "sắp đá",
+    "sap da",
+    "vs",
+    "ht",
+    "ft",
     "chi tiết",
     "chi tiet",
 }
 
-JUNK_TEAM_TEXTS = NON_STREAM_LABELS | {
-    "vs",
-    "live",
-    "trực tiếp",
-    "truc tiep",
-    "sắp đá",
-    "sap da",
-    "ht",
-    "ft",
-}
+
+def clean(s: str) -> str:
+    return re.sub(r"\s+", " ", s or "").strip()
 
 
-def clean_text(raw: str) -> str:
-    return re.sub(r"\s+", " ", raw or "").strip()
-
-
-def is_junk_team(text: str) -> bool:
-    t = clean_text(text).lower()
-    if not t or len(t) < 2 or len(t) > 60:
+def is_garbage(s: str) -> bool:
+    low = clean(s).lower()
+    if low in GARBAGE_LABELS:
         return True
-    if t in JUNK_TEAM_TEXTS:
+    if len(low) < 2 or len(low) > 70:
         return True
-    if re.fullmatch(r"[\d\s:./+-]+", t):
+    if re.fullmatch(r"[\d\s:./+-]+", low):
         return True
     return False
 
 
-def extract_league_name(card, card_text: str) -> str:
-    # Ưu tiên lấy từ các thẻ có class/text liên quan giải đấu bên trong thẻ
-    for sel in ["[class*='league']", "[class*='tour']", "[class*='cup']", "[class*='cate']"]:
-        try:
-            for el in card.locator(sel).all():
-                txt = clean_text(el.inner_text())
-                if 2 <= len(txt) <= 45 and not re.search(r"\b\d{1,2}:\d{2}\b", txt):
-                    return txt
-        except Exception:
-            continue
-
-    patterns = [
-        r"(AFC Champions League[^\n|]*|Cúp C1 Châu Á)",
-        r"(UEFA Champions League|Champions League)",
-        r"(UEFA Europa League|Europa League)",
-        r"(Conference League)",
-        r"(Premier League|Ngoại Hạng Anh|Ngoai Hang Anh)",
-        r"(La Liga)",
-        r"(Serie A)",
-        r"(Bundesliga)",
-        r"(Ligue 1)",
-        r"(V-League[^\n|]*|V\.League[^\n|]*)",
-        r"(World Cup[^\n|]*|Euro[^\n|]*|AFF Cup[^\n|]*|SEA Games[^\n|]*)",
-    ]
-    for pat in patterns:
-        m = re.search(pat, card_text, re.I)
-        if m:
-            return clean_text(m.group(1))
-    return ""
-
-
-def extract_kickoff_and_status(card_text: str) -> tuple[str, str]:
-    text = clean_text(card_text)
-    is_live = bool(re.search(r"\b(live|đang đá|trực tiếp)\b", text, re.I))
-    status = "LIVE" if is_live else "UPCOMING"
-    time_match = re.search(r"\b(\d{1,2}:\d{2}(?:\s*[-–/]\s*\d{1,2}/\d{1,2})?)\b", text)
-    kickoff = clean_text(time_match.group(1)) if time_match else ""
-    return kickoff, status
-
-
-def extract_teams(card, card_text: str) -> tuple[str, str]:
-    candidates = []
-    for sel in ["[class*='team']", "[class*='club']", "[class*='name']", "h2", "h3", "h4", "strong", "span", "p", "div"]:
-        try:
-            for el in card.locator(sel).all():
-                # Chỉ lấy text trực tiếp hoặc của node lá ngắn để tránh gom cả khối dài
-                txt = clean_text(el.inner_text())
-                if not is_junk_team(txt) and txt not in candidates:
-                    candidates.append(txt)
-        except Exception:
-            continue
-
-    # Ưu tiên các ứng viên nằm ở đầu/ngắn gọn (tên 2 đội thường xuất hiện đầu tiên)
-    short_teams = [c for c in candidates if len(c) <= 36]
-    if len(short_teams) >= 2:
-        return short_teams[0], short_teams[1]
-
-    blob = re.sub(r"\b\d{1,2}:\d{2}\b", " ", card_text)
-    for sep in [" vs ", " VS ", " - ", " – ", " v "]:
-        if sep in blob:
-            left, right = blob.split(sep, 1)
-            h = clean_text(left.split("|")[-1])
-            a = clean_text(right.split("|")[0])
-            if not is_junk_team(h) and not is_junk_team(a) and h.lower() != a.lower():
-                return h, a
-
-    if len(short_teams) == 1:
-        return short_teams[0], ""
-    return "", ""
-
-
-def scroll_entire_page(page) -> None:
-    prev_height = 0
-    for _ in range(15):
-        curr_height = page.evaluate("document.body.scrollHeight")
-        page.evaluate(f"window.scrollTo(0, {curr_height})")
-        page.wait_for_timeout(900)
-        new_height = page.evaluate("document.body.scrollHeight")
-        if new_height == curr_height and curr_height == prev_height:
-            break
-        prev_height = new_height
-    page.evaluate("window.scrollTo(0, 0)")
-    page.wait_for_timeout(500)
-
-
-def collect_match_containers(page):
-    selectors = [
-        "[class*='match']",
-        "[class*='fixture']",
-        "[class*='live-item']",
-        "[class*='stream-item']",
-        "[class*='event']",
-        "[data-match]",
-        "article",
-        "li",
-    ]
-    containers = []
-    seen_rects = set()
-
-    for sel in selectors:
-        try:
-            for loc in page.locator(sel).all():
-                try:
-                    box = loc.bounding_box()
-                    if not box or box["width"] < 80 or box["height"] < 32:
-                        continue
-                    # Bỏ qua container bao quá lớn (cả trang/danh sách)
-                    if box["height"] > 450 and loc.locator("a[href]").count() > 8:
-                        continue
-                    if loc.locator("a[href]").count() == 0:
-                        continue
-                    rect_key = f"{round(box['x'])}_{round(box['y'])}_{round(box['width'])}_{round(box['height'])}"
-                    if rect_key in seen_rects:
-                        continue
-                    seen_rects.add(rect_key)
-                    containers.append(loc)
-                except Exception:
-                    continue
-        except Exception:
-            continue
-
-    return containers
+def normalize_logo_url(src: str) -> str:
+    s = clean(src)
+    if not s or s.startswith("data:"):
+        return ""
+    return urljoin(SOURCE_URL + "/", s)
 
 
 def scrape_giovang() -> dict:
-    matches = []
-    seen_matches = set()
+    raw_items = []
 
     try:
         with sync_playwright() as p:
@@ -187,99 +67,200 @@ def scrape_giovang() -> dict:
                 locale="vi-VN",
             )
             page = context.new_page()
-            page.goto(SOURCE_URL, wait_until="domcontentloaded", timeout=45000)
-            page.wait_for_timeout(5000)
+            page.goto(SOURCE_URL, wait_until="networkidle", timeout=45000)
+            page.wait_for_timeout(3000)
 
-            scroll_entire_page(page)
-            containers = collect_match_containers(page)
+            # Cuộn từng bước để kích hoạt lazy-load cho cả danh sách trận và logo ảnh
+            for _ in range(30):
+                before_y = page.evaluate("window.scrollY")
+                page.evaluate("window.scrollBy(0, 550)")
+                page.wait_for_timeout(450)
+                after_y = page.evaluate("window.scrollY")
+                if after_y == before_y and after_y > 0:
+                    page.wait_for_timeout(800)
+                    after_y2 = page.evaluate("window.scrollY")
+                    if after_y2 == after_y:
+                        break
 
-            for card in containers:
-                try:
-                    card_text = clean_text(card.inner_text())
-                    if len(card_text) < 5:
-                        continue
+            page.evaluate("window.scrollTo(0, 0)")
+            page.wait_for_timeout(500)
 
-                    streams = []
-                    seen_stream_urls = set()
-                    blv_counter = 1
+            raw_items = page.evaluate(
+                """() => {
+                    const out = [];
+                    const seenLinks = new Set();
+                    const anchors = Array.from(document.querySelectorAll('a[href]'));
 
-                    for a_el in card.locator("a[href]").all():
-                        href = (a_el.get_attribute("href") or "").strip()
-                        if not href or href.startswith("#") or href.startswith("javascript:"):
-                            continue
-                        full_url = urljoin(SOURCE_URL, href)
-                        if full_url in seen_stream_urls:
-                            continue
+                    for (const a of anchors) {
+                        const href = (a.getAttribute('href') || '').trim();
+                        if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:')) continue;
 
-                        a_txt = clean_text(a_el.inner_text())
-                        a_low = a_txt.lower()
-                        if a_low in NON_STREAM_LABELS or "soi-keo" in full_url.lower() or "soi_keo" in full_url.lower():
-                            continue
+                        let fullUrl = '';
+                        try { fullUrl = new URL(href, location.origin).href; } catch (e) { continue; }
+                        if (!fullUrl.includes('giovang.co')) continue;
+                        if (/\\/(login|register|dang-nhap|dang-ky|tin-tuc|news|soi-keo|nhan-dinh|dmca|privacy|terms)/i.test(fullUrl)) continue;
+                        if (seenLinks.has(fullUrl)) continue;
 
-                        seen_stream_urls.add(full_url)
-                        if a_txt and len(a_txt) <= 24 and a_low not in JUNK_TEAM_TEXTS:
-                            label = a_txt
-                        else:
-                            label = f"BLV {blv_counter}"
-                            blv_counter += 1
+                        let card = a;
+                        let cur = a.parentElement;
+                        for (let i = 0; i < 6 && cur && cur.parentElement; i++) {
+                            const r = cur.getBoundingClientRect();
+                            const aCnt = cur.querySelectorAll('a[href]').length;
+                            if (r.height >= 36 && r.height <= 420 && aCnt <= 10) {
+                                card = cur;
+                                break;
+                            }
+                            cur = cur.parentElement;
+                        }
 
-                        streams.append({
-                            "label": label,
-                            "url": full_url,
-                            "referer": SOURCE_URL + "/"
-                        })
+                        const rect = card.getBoundingClientRect();
+                        if (rect.width < 60 || rect.height < 24) continue;
 
-                    if not streams:
-                        continue
+                        const cardText = (card.innerText || '').replace(/\\s+/g, ' ').trim();
+                        if (cardText.length < 4) continue;
 
-                    home_name, away_name = extract_teams(card, card_text)
-                    if not home_name and not away_name:
-                        continue
+                        // Tìm tên BLV nếu có
+                        let blvName = '';
+                        const leafEls = Array.from(card.querySelectorAll('*')).filter(el => el.children.length === 0);
+                        const leaves = leafEls
+                            .map(el => (el.innerText || '').replace(/\\s+/g, ' ').trim())
+                            .filter(Boolean);
 
-                    league = extract_league_name(card, card_text)
-                    kickoff, status = extract_kickoff_and_status(card_text)
+                        for (const t of leaves) {
+                            if (/^blv\\b/i.test(t) && t.length <= 40) {
+                                blvName = t;
+                                break;
+                            }
+                        }
+                        if (!blvName) {
+                            const aText = (a.innerText || '').replace(/\\s+/g, ' ').trim();
+                            if (aText && aText.length <= 32 && !/^(xem ngay|soi kèo|soi keo|live|trực tiếp|chi tiết)$/i.test(aText)) {
+                                blvName = aText;
+                            }
+                        }
 
-                    logos = []
-                    for img in card.locator("img[src]").all():
-                        src = (img.get_attribute("src") or "").strip()
-                        if not src or src.startswith("data:image/svg"):
-                            continue
-                        full_img = urljoin(SOURCE_URL, src)
-                        if full_img not in logos:
-                            logos.append(full_img)
+                        // Lấy ảnh từ src, data-src, data-original, data-lazy-src
+                        const imgs = [];
+                        for (const img of card.querySelectorAll('img')) {
+                            const cand =
+                                img.getAttribute('data-src') ||
+                                img.getAttribute('data-original') ||
+                                img.getAttribute('data-lazy-src') ||
+                                img.getAttribute('src') ||
+                                '';
+                            if (cand && !cand.startsWith('data:image/svg')) {
+                                imgs.push(cand);
+                            }
+                        }
 
-                    home_logo = logos[0] if len(logos) >= 1 else ""
-                    away_logo = logos[1] if len(logos) >= 2 else ""
-
-                    match_key = f"{home_name.lower()}|{away_name.lower()}|{kickoff}"
-                    if match_key in seen_matches:
-                        continue
-                    seen_matches.add(match_key)
-
-                    matches.append({
-                        "id": f"gv_{len(matches) + 1}",
-                        "league": league,
-                        "status": status,
-                        "kickoff": kickoff,
-                        "home_name": home_name,
-                        "home_logo": home_logo,
-                        "away_name": away_name,
-                        "away_logo": away_logo,
-                        "score": "vs",
-                        "streams": streams[:8]
-                    })
-                except Exception:
-                    continue
+                        seenLinks.add(fullUrl);
+                        out.push({
+                            url: fullUrl,
+                            cardText,
+                            blvName,
+                            leaves,
+                            imgs
+                        });
+                    }
+                    return out;
+                }"""
+            )
 
             browser.close()
     except Exception as exc:
-        print(f"[ERROR] Failed scraping {SOURCE_URL}: {exc}")
+        print(f"[ERROR] {exc}")
+
+    matches = []
+    seen_match_keys = set()
+
+    for item in raw_items:
+        full_url = item.get("url", "")
+        card_text = clean(item.get("cardText", ""))
+        leaves = [clean(x) for x in (item.get("leaves") or []) if not is_garbage(x)]
+
+        imgs = []
+        for raw_img in (item.get("imgs") or []):
+            u = normalize_logo_url(raw_img)
+            if u and u not in imgs:
+                imgs.append(u)
+
+        time_m = re.search(r"\b(\d{1,2}:\d{2}(?:\s*[-–/]\s*\d{1,2}/\d{1,2})?)\b", card_text)
+        kickoff = clean(time_m.group(1)) if time_m else ""
+        is_live = bool(re.search(r"\b(live|đang đá|trực tiếp)\b", card_text, re.I))
+        status = "LIVE" if is_live else "UPCOMING"
+
+        league = ""
+        for lv in leaves:
+            if re.search(
+                r"(cup|league|champions|europa|conference|premier|la liga|serie a|bundesliga|ligue 1|v-league|world cup|euro|aff|sea games|giải)",
+                lv,
+                re.I,
+            ) and len(lv) <= 45:
+                league = lv
+                break
+
+        blv_raw = clean(item.get("blvName", ""))
+        team_pool = []
+        for lv in leaves:
+            if lv == league or (blv_raw and lv.lower() == blv_raw.lower()):
+                continue
+            if re.fullmatch(r"\d{1,2}:\d{2}", lv):
+                continue
+            if lv not in team_pool:
+                team_pool.append(lv)
+
+        home_name = ""
+        away_name = ""
+        if len(team_pool) >= 2:
+            home_name, away_name = team_pool[0], team_pool[1]
+        else:
+            cleaned_blob = re.sub(r"\b\d{1,2}:\d{2}\b", " ", card_text)
+            for sep in [" vs ", " VS ", " - ", " – ", " v "]:
+                if sep in cleaned_blob:
+                    p0, p1 = cleaned_blob.split(sep, 1)
+                    h = clean(p0.split("|")[-1])
+                    a = clean(p1.split("|")[0])
+                    if not is_garbage(h) and not is_garbage(a):
+                        home_name, away_name = h, a
+                        break
+
+        if not home_name and not away_name:
+            continue
+
+        # Khóa chống trùng bám theo URL + tên đội để không làm mất các trận khác
+        dedup_key = f"{full_url}|{home_name.lower()}|{away_name.lower()}"
+        if dedup_key in seen_match_keys:
+            continue
+        seen_match_keys.add(dedup_key)
+
+        blv_label = blv_raw if (blv_raw and not is_garbage(blv_raw)) else "BLV 1"
+        home_logo = imgs[0] if len(imgs) >= 1 else ""
+        away_logo = imgs[1] if len(imgs) >= 2 else ""
+
+        matches.append({
+            "id": f"gv_{len(matches) + 1}",
+            "league": league,
+            "status": status,
+            "kickoff": kickoff,
+            "home_name": home_name,
+            "home_logo": home_logo,
+            "away_name": away_name,
+            "away_logo": away_logo,
+            "score": "vs",
+            "streams": [
+                {
+                    "label": blv_label,
+                    "url": full_url,
+                    "referer": SOURCE_URL + "/"
+                }
+            ]
+        })
 
     return {
         "app_title": "GioVang TV",
         "source_name": "giovang.co",
         "updated_at": datetime.now(VN_TZ).strftime("%d/%m/%Y %H:%M"),
-        "matches": matches[:250]
+        "matches": matches
     }
 
 
