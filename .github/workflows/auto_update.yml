@@ -1,4 +1,4 @@
-name: Auto Update Football Feed
+name: Auto Update Football Feeds
 
 on:
   schedule:
@@ -6,16 +6,16 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: auto-update-football-feed
+  group: auto-update-football-feeds
   cancel-in-progress: true
 
 permissions:
   contents: write
 
 jobs:
-  update:
+  update-feeds:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,25 +25,28 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies and Playwright Chromium
+      - name: Install Playwright Chromium
         run: |
           python -m pip install --upgrade pip
           pip install playwright
           playwright install chromium
 
-- name: Run scrapers
-        run: |
-          python scraper.py
-          python scraper_giovang.py
+      - name: Run GaVang33 Scraper
+        continue-on-error: true
+        run: python scraper.py
+
+      - name: Run GioVang Scraper
+        continue-on-error: true
+        run: python scraper_giovang.py
 
       - name: Commit and push updated feeds
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main || true
-          git add feed.json giovang_feed.json
+          git add feed.json giovang_feed.json || true
           if ! git diff --staged --quiet; then
-            git commit -m "chore: update feeds"
+            git commit -m "chore: update feed.json and giovang_feed.json"
             git push
           else
             echo "No changes in feeds"
