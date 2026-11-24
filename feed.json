@@ -1,11 +1,11 @@
 {
-  "app_title": "Cập nhật lúc 14:21 24/11/2026",
-  "updated_at": "14:21 24/11/2026",
+  "app_title": "Cập nhật lúc 14:42 24/11/2026",
+  "updated_at": "14:42 24/11/2026",
   "matches": [
     {
       "id": "m_1",
       "league": "AFC Champions League Elite",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "14:45",
       "home_name": "Newcastle Jets",
       "home_logo": "https://img.cltvap.cc/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png",
@@ -712,7 +712,7 @@
     {
       "id": "m_40",
       "league": "AFC Champions League Two",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "14:45",
       "home_name": "Melbourne Victory",
       "home_logo": "https://img.cltvap.cc/football/team/c540f8f279c09a2a3df1cbbfe82d7184.png",
@@ -1227,6 +1227,543 @@
         {
           "label": "BLV Gà Siêu Kiêu (Web Player)",
           "url": "https://gavang33.gg/truc-tiep/al-faisaly-amman-vs-al-rayyan-sports-club-luc-2300-ngay-25-11-2026-n54qllhnlkx7qvy?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_69",
+      "league": "GCC Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "00:00",
+      "home_name": "Qatar Sports Club",
+      "home_logo": "https://img.cltvap.cc/football/team/e17b91a2f24fb83448c42da816708785.png",
+      "away_name": "Al-Nasr Dubai",
+      "away_logo": "https://img.cltvap.cc/football/team/5e5f56f16382d66ff8bcdb20bd309169.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/qatar-sports-club-vs-al-nasr-dubai-luc-0000-ngay-26-11-2026-23xmvkhyvnw8qg8?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_70",
+      "league": "UEFA Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "00:45",
+      "home_name": "Sabah Baku",
+      "home_logo": "https://img.cltvap.cc/football/team/3333e7a476b2b7e0555c0c7607d1a10e.png",
+      "away_name": "FC Barcelona",
+      "away_logo": "https://img.cltvap.cc/football/team/c88eb303b56b45b088944ed95dc3d443.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Phệ + Gà Siêu Quỷ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/sabah-baku-vs-fc-barcelona-luc-0045-ngay-26-11-2026-l5ergph4zx4xr8k?anchorId=6a9fea8c419a47d5e57cb68d",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Péo (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/sabah-baku-vs-fc-barcelona-luc-0045-ngay-26-11-2026-l5ergph4zx4xr8k?anchorId=6a78aab67e077ab7a1f9af59",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_71",
+      "league": "UEFA Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "00:45",
+      "home_name": "SK Slavia Praha",
+      "home_logo": "https://img.cltvap.cc/football/team/2080ede2c5d09638a7188913c81075ef.png",
+      "away_name": "Villarreal CF",
+      "away_logo": "https://img.cltvap.cc/football/team/c23f7906c95f439eafebb8575c30e7e3.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Nhí (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/sk-slavia-praha-vs-villarreal-cf-luc-0045-ngay-26-11-2026-x7lm7phjlyx9m2w?anchorId=6aa14ecd419a47d5e57cb691",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_72",
+      "league": "UEFA Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Atletico Madrid",
+      "home_logo": "https://img.cltvap.cc/football/team/10cc5b7340144b8eb8238166e64bd62f.png",
+      "away_name": "Viking",
+      "away_logo": "https://img.cltvap.cc/football/team/2fa0840e0cb77fd66f104fa932302a72.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Bệu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/atletico-madrid-vs-viking-luc-0300-ngay-26-11-2026-jw2r09hkey93rz8?anchorId=69fc585e696b57b6f1dae26b",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_73",
+      "league": "UEFA Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Club Brugge",
+      "home_logo": "https://img.cltvap.cc/football/team/2e9f652d28ec91e0b66c0b714bff8d78.png",
+      "away_name": "Liverpool",
+      "away_logo": "https://img.cltvap.cc/football/team/b3df4496e857030cbd50532969bad9a6.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/club-brugge-vs-liverpool-luc-0300-ngay-26-11-2026-965mkyhkjdo1r1g?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_74",
+      "league": "UEFA Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Inter Milan",
+      "home_logo": "https://img.cltvap.cc/football/team/a8cd83c5eca342bbafa6ab8134c27e80.png",
+      "away_name": "VfB Stuttgart",
+      "away_logo": "https://img.cltvap.cc/football/team/58d10af2e12e4ed18ee9de02c0c4235e.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Ô Long (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/inter-milan-vs-vfb-stuttgart-luc-0300-ngay-26-11-2026-k82rekhg5p0erep?anchorId=6a31da2f9a2eb0e4aaedf62e",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_75",
+      "league": "UEFA Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "LOSC Lille",
+      "home_logo": "https://img.cltvap.cc/football/team/88276c7b79264337a84f3996acb57233.png",
+      "away_name": "FC Bayern Munich",
+      "away_logo": "https://img.cltvap.cc/football/team/d7d1832604de46559909b010b33e60ab.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/losc-lille-vs-fc-bayern-munich-luc-0300-ngay-26-11-2026-8yomo4h1wl3eq0j?anchorId=6ac6623d35fd50989491e855",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_76",
+      "league": "UEFA Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Paris Saint Germain",
+      "home_logo": "https://img.cltvap.cc/football/team/52b1faac01114db59798b5191df5c925.png",
+      "away_name": "AS Roma",
+      "away_logo": "https://img.cltvap.cc/football/team/7a192686d30c1ad031d2fb605eaf2f2a.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/paris-saint-germain-vs-as-roma-luc-0300-ngay-26-11-2026-l7oqdehgvwo5r51?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_77",
+      "league": "UEFA Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "03:00",
+      "home_name": "Sporting CP",
+      "home_logo": "https://img.cltvap.cc/football/team/646764e6e2fe4ca7970b9eb87c8b65af.png",
+      "away_name": "Manchester United",
+      "away_logo": "https://img.cltvap.cc/football/team/85f3bc66effc4225b0efb602bb5e85e3.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Phệ + Gà Siêu Quỷ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/sporting-cp-vs-manchester-united-luc-0300-ngay-26-11-2026-ednm9whwjy57ryo?anchorId=6a9fea8c419a47d5e57cb68d",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Gáy (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/sporting-cp-vs-manchester-united-luc-0300-ngay-26-11-2026-ednm9whwjy57ryo?anchorId=6a68b4c60f5c6246168b1fa1",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_78",
+      "league": "Argentine Division 1",
+      "status": "SẮP ĐÁ",
+      "kickoff": "07:00",
+      "home_name": "Boca Juniors",
+      "home_logo": "https://img.cltvap.cc/football/team/dadc7fc58b2f470a8986ee1bee0cccbe.png",
+      "away_name": "Independiente Rivadavia",
+      "away_logo": "https://img.cltvap.cc/football/team/df85f430a4bb46f28cb8a9b2e2aef198.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Son (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/boca-juniors-vs-independiente-rivadavia-luc-0700-ngay-26-11-2026-y0or5jh9l9dlqwz?anchorId=69fc581d696b57b6f1dae269",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_79",
+      "league": "Guatemala Liga Nacional",
+      "status": "SẮP ĐÁ",
+      "kickoff": "09:00",
+      "home_name": "CSD Municipal",
+      "home_logo": "https://img.cltvap.cc/football/team/314911335094cf9787d5791c85fdf676.png",
+      "away_name": "Aurora F.C.",
+      "away_logo": "https://img.cltvap.cc/football/team/cba0e284f34d7726695b5261a3420abe.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Son (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/csd-municipal-vs-aurora-fc-luc-0900-ngay-26-11-2026-pxwrxlhyowynryk?anchorId=69fc581d696b57b6f1dae269",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_80",
+      "league": "Indonesian Super League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "15:30",
+      "home_name": "Borneo FC Samarinda",
+      "home_logo": "https://img.cltvap.cc/football/team/5a0893c2c8fbdbbf734c07c71c8025b4.png",
+      "away_name": "Persita Tangerang",
+      "away_logo": "https://img.cltvap.cc/football/team/da85ffb03146e72ce9928729dcabda51.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/borneo-fc-samarinda-vs-persita-tangerang-luc-1530-ngay-26-11-2026-vjxm8ghezdgpr6o?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_81",
+      "league": "AFC Champions League Two",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Tampines Rovers FC",
+      "home_logo": "https://img.cltvap.cc/football/team/23dc72567ad2999491dfe56b50f7df62.png",
+      "away_name": "Shanghai Shenhua",
+      "away_logo": "https://img.cltvap.cc/football/team/e8327d4681b4a73c83be9fe087b30721.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Ngố (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/tampines-rovers-fc-vs-shanghai-shenhua-luc-1700-ngay-26-11-2026-x7lm7phjl59vm2w?anchorId=6aa136bffcdef77bf7fcc812",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_82",
+      "league": "AFC Champions League Two",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Gangwon FC",
+      "home_logo": "https://img.cltvap.cc/football/team/771a93ae7f62b1a47a71c3d62b89dca3.png",
+      "away_name": "Kitchee",
+      "away_logo": "https://img.cltvap.cc/football/team/8d9561a580262bbe28642af67c42cf83.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Nhí (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/gangwon-fc-vs-kitchee-luc-1700-ngay-26-11-2026-23xmvkh6eg4jqg8?anchorId=6aa14ecd419a47d5e57cb691",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_83",
+      "league": "AFC Champions League Two",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:00",
+      "home_name": "Kuching City FC",
+      "home_logo": "https://img.cltvap.cc/football/team/81f5727743f8759ae7a99b8d7f2557e3.png",
+      "away_name": "Phnom Penh Crown FC",
+      "away_logo": "https://img.cltvap.cc/football/team/03dd1707147dbd5897a8dcae40991e2c.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Bệu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/kuching-city-fc-vs-phnom-penh-crown-fc-luc-1700-ngay-26-11-2026-ednm9whwjdgjryo?anchorId=69fc585e696b57b6f1dae26b",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_84",
+      "league": "Azerbaijan First Division",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:30",
+      "home_name": "Karvan Evlakh",
+      "home_logo": "https://img.cltvap.cc/football/team/aa6d9f240dd67791dd86ff4de072d846.png",
+      "away_name": "Mingachevir",
+      "away_logo": "https://img.cltvap.cc/football/team/f6cdc0f1e80f650662078b0c273a6a7e.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/karvan-evlakh-vs-mingachevir-luc-1730-ngay-26-11-2026-dn1m1ghl6w3nmoe?anchorId=6ac6623d35fd50989491e855",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_85",
+      "league": "Azerbaijan First Division",
+      "status": "SẮP ĐÁ",
+      "kickoff": "17:30",
+      "home_name": "Baku Sporting FK",
+      "home_logo": "https://img.cltvap.cc/football/team/afd11580da1ff691b68dcb564d9d10e5.png",
+      "away_name": "Shahdagh Qusar",
+      "away_logo": "https://img.cltvap.cc/football/team/7825be2d4af7efb1b1abda2ec02f4ead.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Son (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/baku-sporting-fk-vs-shahdagh-qusar-luc-1730-ngay-26-11-2026-jw2r09hk8oj1rz8?anchorId=69fc581d696b57b6f1dae269",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_86",
+      "league": "AFC Champions League Two",
+      "status": "SẮP ĐÁ",
+      "kickoff": "19:15",
+      "home_name": "Tai Po",
+      "home_logo": "https://img.cltvap.cc/football/team/df5e92ce4493d63214e8036ad15c1915.png",
+      "away_name": "Adelaide United",
+      "away_logo": "https://img.cltvap.cc/football/team/a27d297d3cfaa7a71ce91a3fa0d40dbf.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Ô Long (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/tai-po-vs-adelaide-united-luc-1915-ngay-26-11-2026-318q66hx97j0qo9?anchorId=6a31da2f9a2eb0e4aaedf62e",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_87",
+      "league": "AFC Champions League Two",
+      "status": "SẮP ĐÁ",
+      "kickoff": "19:15",
+      "home_name": "Preah Khan Reach Svay Rieng FC",
+      "home_logo": "https://img.cltvap.cc/football/team/8b784b23ff2eac9bbdb4437cbc291d52.png",
+      "away_name": "Machida Zelvia",
+      "away_logo": "https://img.cltvap.cc/football/team/539c489a7bd94dd9d785308fd0f0a6b9.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Péo (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/preah-khan-reach-svay-rieng-fc-vs-machida-zelvia-luc-1915-ngay-26-11-2026-6ypq3nhv24l7md7?anchorId=6a78aab67e077ab7a1f9af59",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_88",
+      "league": "FIFA U17 World Cup",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:00",
+      "home_name": "New Zealand U17",
+      "home_logo": "https://img.cltvap.cc/football/team/f827b5406c7aa5b4fe10062ae06a137b.png",
+      "away_name": "Belgium U17",
+      "away_logo": "https://img.cltvap.cc/football/team/f40723ed94042ea9ea36bfb5ad4157b2.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Bệu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/new-zealand-u17-vs-belgium-u17-luc-2000-ngay-26-11-2026-8yomo4h16ox3q0j?anchorId=69fc585e696b57b6f1dae26b",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_89",
+      "league": "FIFA U17 World Cup",
+      "status": "SẮP ĐÁ",
+      "kickoff": "20:00",
+      "home_name": "Vietnam U17",
+      "home_logo": "https://img.cltvap.cc/football/team/488df3a9b3fc86ac6c9e8f6d40733067.png",
+      "away_name": "Mali U17",
+      "away_logo": "https://img.cltvap.cc/football/team/0a94eea42ecd117d87eb79c61bdd656e.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Phệ + Gà Siêu Quỷ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/vietnam-u17-vs-mali-u17-luc-2000-ngay-26-11-2026-ednm9whwp42gryo?anchorId=6a9fea8c419a47d5e57cb68d",
+          "referer": "https://gavang33.gg/"
+        },
+        {
+          "label": "BLV Gà Siêu Gáy (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/vietnam-u17-vs-mali-u17-luc-2000-ngay-26-11-2026-ednm9whwp42gryo?anchorId=6a68b4c60f5c6246168b1fa1",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_90",
+      "league": "FIFA U17 World Cup",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:00",
+      "home_name": "Jamaica U17",
+      "home_logo": "https://img.cltvap.cc/football/team/f7779710d2026dca44c41da7a9b7c748.png",
+      "away_name": "Cote d'Ivoire U17",
+      "away_logo": "https://img.cltvap.cc/football/team/4ceefb51ae9ec399a69540c895f4519f.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Nhí (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/jamaica-u17-vs-cote-divoire-u17-luc-2100-ngay-26-11-2026-l5ergph476y5r8k?anchorId=6aa14ecd419a47d5e57cb691",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_91",
+      "league": "FIFA U17 World Cup",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:00",
+      "home_name": "Uzbekistan U17",
+      "home_logo": "https://img.cltvap.cc/football/team/dcd70ec917f47c6bf3bf086e67d4bc1e.png",
+      "away_name": "Italy U17",
+      "away_logo": "https://img.cltvap.cc/football/team/775bc655c77d679c193f1982dac04668.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/uzbekistan-u17-vs-italy-u17-luc-2100-ngay-26-11-2026-23xmvkh6lj95qg8?anchorId=6ac6623d35fd50989491e855",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_92",
+      "league": "Saudi Professional League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "21:25",
+      "home_name": "Al Fateh",
+      "home_logo": "https://img.cltvap.cc/football/team/ae23ea18931ebe834ef6fe4799572e7f.png",
+      "away_name": "Al Riyadh",
+      "away_logo": "https://img.cltvap.cc/football/team/aa2d8e24a68822387257f31d692c4297.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Tồ (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/al-fateh-vs-al-riyadh-luc-2125-ngay-26-11-2026-965mkyhkv9yer1g?anchorId=6aa14fd12a33b8ed65eea01c",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_93",
+      "league": "FIFA U17 World Cup",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:00",
+      "home_name": "Morocco U17",
+      "home_logo": "https://img.cltvap.cc/football/team/d63036cfba56a5c3cb75ab14b33fe677.png",
+      "away_name": "Spain U17",
+      "away_logo": "https://img.cltvap.cc/football/team/e5858bd2ddb51631a85b1af22f5a1a6a.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Péo (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/morocco-u17-vs-spain-u17-luc-2200-ngay-26-11-2026-2y8m4zh5e9xwql0?anchorId=6a78aab67e077ab7a1f9af59",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_94",
+      "league": "Saudi Professional League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:05",
+      "home_name": "Abha",
+      "home_logo": "https://img.cltvap.cc/football/team/a98a96581615b55fc4ea927d73036ae4.png",
+      "away_name": "Al Shabab",
+      "away_logo": "https://img.cltvap.cc/football/team/b16d1e3b04364c5cd64203d8b4ef76e2.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Son (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/abha-vs-al-shabab-luc-2205-ngay-26-11-2026-zp5rzghgke5yq82?anchorId=69fc581d696b57b6f1dae269",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_95",
+      "league": "UEFA Champions League",
+      "status": "SẮP ĐÁ",
+      "kickoff": "22:30",
+      "home_name": "FC Kairat Almaty",
+      "home_logo": "https://img.cltvap.cc/football/team/3ef04912f88c3166f1a47864cde71949.png",
+      "away_name": "Mjallby AIF",
+      "away_logo": "https://img.cltvap.cc/football/team/0ffb7ffab7e1720c91427e75b4a50ace.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Ô Long (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/fc-kairat-almaty-vs-mjallby-aif-luc-2230-ngay-26-11-2026-x7lm7phjl47ym2w?anchorId=6a31da2f9a2eb0e4aaedf62e",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_96",
+      "league": "FIFA U17 World Cup",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:00",
+      "home_name": "Tajikistan U17",
+      "home_logo": "https://img.cltvap.cc/football/team/79d0360cd882c01f1ac008b3bb85feb3.png",
+      "away_name": "Senegal U17",
+      "away_logo": "https://img.cltvap.cc/football/team/81a0c4689fb7ce553a0d5c2fd19b6efd.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Bệu (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/tajikistan-u17-vs-senegal-u17-luc-2300-ngay-26-11-2026-x7lm7phj2e8dm2w?anchorId=69fc585e696b57b6f1dae26b",
+          "referer": "https://gavang33.gg/"
+        }
+      ]
+    },
+    {
+      "id": "m_97",
+      "league": "Russian Cup",
+      "status": "SẮP ĐÁ",
+      "kickoff": "23:30",
+      "home_name": "Dynamo Moscow",
+      "home_logo": "https://img.cltvap.cc/football/team/4f2e51a4694f68360a19648b651b30ca.png",
+      "away_name": "Fakel Voronezh",
+      "away_logo": "https://img.cltvap.cc/football/team/d4aace06743a4a5df8221771f870f077.png",
+      "score": "vs",
+      "streams": [
+        {
+          "label": "BLV Gà Siêu Mõm (Web Player)",
+          "url": "https://gavang33.gg/truc-tiep/dynamo-moscow-vs-fakel-voronezh-luc-2330-ngay-26-11-2026-k82rekhg4889rep?anchorId=6ac6623d35fd50989491e855",
           "referer": "https://gavang33.gg/"
         }
       ]
