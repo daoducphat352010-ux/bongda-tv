@@ -11,7 +11,6 @@ SOURCE_URLS = [
 def parse_match_info(raw_text: str, base_href: str):
     slug = base_href.rstrip("/").split("/")[-1]
 
-    # 1. Tách đúng giờ đá từ đường dẫn (vd: ...-luc-1915-ngay-24-11-2026-...)
     kickoff = "LIVE"
     m_slug_time = re.search(r"-luc-(\d{2})(\d{2})-ngay-(\d{2}-\d{2}-\d{4})", slug, re.I)
     if m_slug_time:
@@ -22,7 +21,6 @@ def parse_match_info(raw_text: str, base_href: str):
         if m_text_time:
             kickoff = m_text_time.group(1)
 
-    # 2. Cắt bỏ phần "-luc-1915-ngay-..." để tên 2 đội sạch sẽ
     clean_slug = re.sub(r"-luc-\d{4}-ngay-.*$", "", slug, flags=re.I)
     clean_slug = re.sub(r"-[a-zA-Z0-9]{6,}$", "", clean_slug)
     teams_from_slug = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
@@ -41,7 +39,6 @@ def parse_match_info(raw_text: str, base_href: str):
         home = lines[0][:28] if len(lines) >= 1 else clean_slug.replace("-", " ").title()
         away = lines[1][:28] if len(lines) >= 2 else "Trực Tiếp"
 
-    # 3. Phân loại LIVE hay SẮP ĐÁ theo giờ Việt Nam
     now_vn = datetime.now(timezone(timedelta(hours=7)))
     status = "LIVE"
     if re.match(r"^\d{2}:\d{2}$", kickoff):
@@ -51,6 +48,37 @@ def parse_match_info(raw_text: str, base_href: str):
         status = "LIVE" if -15 <= diff_minutes <= 130 else "SẮP ĐÁ"
 
     return home, away, kickoff, status
+
+
+def extract_team_logos_from_page(page):
+    # Tìm 2 ảnh logo vuông (28px - 150px) ở phần đầu trang trận đấu, loại bỏ banner quảng cáo & icon nhỏ
+    logos = page.evaluate(
+        """() => {
+            const found = [];
+            const seen = new Set();
+            const imgs = Array.from(document.querySelectorAll('img'));
+            for (const img of imgs) {
+                const src = (img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-original') || '').trim();
+                if (!src.startsWith('http') || seen.has(src)) continue;
+                const lower = src.toLowerCase();
+                if (/banner|ads|logo-web|favicon|\\.gif|\\.svg|button|loading|avatar/i.test(lower)) continue;
+
+                const rect = img.getBoundingClientRect();
+                if (rect.top >= 0 && rect.top <= 750 && rect.width >= 28 && rect.width <= 150 && rect.height >= 28 && rect.height <= 150) {
+                    const ratio = rect.width / rect.height;
+                    if (ratio >= 0.65 && ratio <= 1.55) {
+                        seen.add(src);
+                        found.push(src);
+                    }
+                }
+                if (found.length >= 2) break;
+            }
+            return found;
+        }"""
+    )
+    h_logo = logos[0] if len(logos) >= 1 else ""
+    a_logo = logos[1] if len(logos) >= 2 else ""
+    return h_logo, a_logo
 
 
 def scrape_all():
@@ -97,7 +125,6 @@ def scrape_all():
                 if not raw_href or raw_href.rstrip("/") == base_url.rstrip("/"):
                     continue
 
-                # Gộp tất cả link phòng BLV (?anchorId=...) của cùng 1 trận vào 1 thẻ duy nhất
                 base_href = raw_href.split("?")[0].rstrip("/")
                 if base_href not in grouped_matches:
                     home_name, away_name, kickoff, status = parse_match_info(item.get("text", ""), base_href)
@@ -119,13 +146,13 @@ def scrape_all():
                 if raw_href not in grouped_matches[base_href]["room_urls"]:
                     grouped_matches[base_href]["room_urls"].append(raw_href)
 
-                if len(grouped_matches) >= 20:
+                if len(grouped_matches) >= 16:
                     break
 
         matches = list(grouped_matches.values())
 
-        # Bắt link luồng phát (.m3u8 / .mpd) cho 12 trận đầu tiên
-        for m in matches[:12]:
+        # Vào từng trang trận đấu để lấy đủ 2 logo đội bóng + link phát trực tiếp (.m3u8 / .mpd)
+        for m in matches:
             captured_streams = []
 
             def on_request(req):
@@ -136,7 +163,14 @@ def scrape_all():
             page.on("request", on_request)
             try:
                 page.goto(m["page_url"], wait_until="domcontentloaded", timeout=15000)
-                page.wait_for_timeout(3500)
+                page.wait_for_timeout(3200)
+
+                h_logo, a_logo = extract_team_logos_from_page(page)
+                if h_logo:
+                    m["home_logo"] = h_logo
+                if a_logo:
+                    m["away_logo"] = a_logo
+
                 html_dump = page.content()
                 extra = re.findall(r'https?://[^\s"\'<>\\)]+\.(?:m3u8|mpd)(?:\?[^\s"\'<>\\)]*)?', html_dump, re.I)
                 for u in extra:
@@ -168,18 +202,6 @@ def scrape_all():
                 )
 
             m["streams"] = streams
-            del m["page_url"]
-            del m["room_urls"]
-
-        for m in matches[12:]:
-            m["streams"] = [
-                {
-                    "label": f"Phòng BLV {idx} (Mở Web Player)",
-                    "url": r_url,
-                    "referer": SOURCE_URLS[0],
-                }
-                for idx, r_url in enumerate(m["room_urls"][:3], 1)
-            ]
             del m["page_url"]
             del m["room_urls"]
 
