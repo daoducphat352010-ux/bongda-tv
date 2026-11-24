@@ -10,6 +10,26 @@ SOURCE_URLS = [
 ]
 OUTPUT_FILE = "giovang_feed.json"
 
+KNOWN_LEAGUES = [
+    "AFC Champions League Elite",
+    "AFC Champions League",
+    "UEFA Champions League",
+    "Champions League",
+    "World Cup U17",
+    "AFC Cup",
+    "Europa League",
+    "Premier League",
+    "Ngoại hạng Anh",
+    "La Liga",
+    "Serie A",
+    "Bundesliga",
+    "Ligue 1",
+    "V-League",
+    "MLS",
+    "TRITON",
+    "PGL Major Singapore 2026 Stage 1",
+]
+
 
 def clean_text(raw: str) -> str:
     if not raw:
@@ -20,8 +40,10 @@ def clean_text(raw: str) -> str:
 def clean_team_name(name: str) -> str:
     t = clean_text(name)
     t = re.sub(r"^(?:xem\s+)?tr[uự]c\s*ti[eế]p\s*[:\-]?\s*", "", t, flags=re.I)
+    # Cắt bỏ mã hash cuối slug hoặc ngày tháng dư (như "24 11 Tou7N5Ebpqv2")
+    t = re.sub(r"\b\d{1,2}\s+\d{1,2}(?:\s+\d{2,4})?\b.*$", "", t)
+    t = re.sub(r"\b[a-z0-9]{8,}\b$", "", t, flags=re.I)
     t = re.sub(r"\s+\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?$", "", t)
-    t = re.sub(r"\s+\d{1,2}\s+\d{1,2}(?:\s+\d{2,4})?$", "", t)
     t = re.sub(r"\s+(?:full\s*hd|hd|live|hom\s*nay|hôm\s*nay)$", "", t, flags=re.I)
     return t.strip(" -|:")[:36]
 
@@ -42,27 +64,13 @@ def is_banned_url(href: str, allowed_host: str) -> bool:
     return "/truc-tiep-" not in low and "-vs-" not in low
 
 
-def sanitize_league_name(raw_league: str, home: str, away: str) -> str:
-    lg = clean_text(raw_league)
-    if not lg or lg.lower().startswith("hôm nay") or lg.lower().startswith("ngày mai"):
-        return "Bóng Đá Trực Tiếp"
-    for token in (home, away, "BLV", "Trực tiếp", "LIVE", "SẮP ĐÁ", "Xem ngay", "Hôm nay"):
-        if token and len(token) >= 3:
-            idx = lg.lower().find(token.lower())
-            if idx != -1:
-                lg = lg[:idx].strip(" -|•:·/,")
-    lg = re.sub(r"\b\d{1,2}:\d{2}\b", "", lg).strip(" -|•:·/,")
-    if len(lg) < 2 or len(lg) > 45:
-        return "Bóng Đá Trực Tiếp"
-    return lg
-
-
 def parse_teams_from_slug(base_href: str) -> tuple[str, str]:
     slug = base_href.rstrip("/").split("/")[-1]
     clean_slug = re.sub(r"^(?:xem-)?truc-tiep-", "", slug, flags=re.I)
     clean_slug = re.sub(r"-luc-\d{4}.*$", "", clean_slug, flags=re.I)
-    clean_slug = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?(?:-[a-f0-9]{6,})?$", "", clean_slug, flags=re.I)
-    clean_slug = re.sub(r"-[a-f0-9]{8,}$", "", clean_slug, flags=re.I)
+    # Cắt đoạn ngày dd-mm(-yyyy) và mã hash ở cuối slug
+    clean_slug = re.sub(r"-\d{1,2}-\d{1,2}(?:-\d{2,4})?(?:-[a-z0-9]{6,})?$", "", clean_slug, flags=re.I)
+    clean_slug = re.sub(r"-[a-z0-9]{8,}$", "", clean_slug, flags=re.I)
     parts = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
     if len(parts) == 2 and parts[0] and parts[1]:
         return (
@@ -70,6 +78,43 @@ def parse_teams_from_slug(base_href: str) -> tuple[str, str]:
             clean_team_name(parts[1].replace("-", " ").title()),
         )
     return "", ""
+
+
+def is_league_label(text: str) -> bool:
+    t = clean_text(text)
+    if not t or len(t) > 45:
+        return False
+    low = t.lower()
+    if low in ("hôm nay,", "hôm nay", "ngày mai,", "ngày mai", "live", "sắp đá", "vs"):
+        return False
+    if any(lg.lower() in low for lg in KNOWN_LEAGUES):
+        return True
+    return bool(re.search(r"\b(cup|league|championship|major|series|u17|u19|u21|u23|la liga|serie a|bundesliga)\b", low))
+
+
+def extract_league_name(item: dict, home: str, away: str) -> str:
+    raw_league = clean_text(item.get("league") or "")
+    lines = [clean_text(ln) for ln in (item.get("text") or "").splitlines() if clean_text(ln)]
+
+    candidates = []
+    if raw_league:
+        candidates.append(raw_league)
+    for ln in lines:
+        if is_league_label(ln) and ln != home and ln != away:
+            candidates.append(ln)
+
+    for cand in candidates:
+        lg = cand
+        for token in (home, away, "BLV", "Trực tiếp", "LIVE", "SẮP ĐÁ", "Xem ngay"):
+            if token and len(token) >= 3:
+                idx = lg.lower().find(token.lower())
+                if idx != -1:
+                    lg = lg[:idx].strip(" -|•:·/,")
+        lg = re.sub(r"\b\d{1,2}:\d{2}\b", "", lg).strip(" -|•:·/,")
+        if lg and len(lg) <= 45 and not lg.lower().startswith(("hôm nay", "ngày mai")):
+            return lg
+
+    return "Bóng Đá Trực Tiếp"
 
 
 def parse_match_info(item: dict, base_href: str):
@@ -85,6 +130,12 @@ def parse_match_info(item: dict, base_href: str):
     home = clean_team_name(item.get("homeText") or "")
     away = clean_team_name(item.get("awayText") or "")
 
+    # Nếu home/away lấy nhầm tên giải thì bỏ qua để dùng tên đội chuẩn
+    if is_league_label(home):
+        home = ""
+    if is_league_label(away):
+        away = ""
+
     if not home or not away:
         vs_idx = -1
         for i, ln in enumerate(lines):
@@ -96,6 +147,7 @@ def parse_match_info(item: dict, base_href: str):
                 cand = lines[back]
                 if (
                     cand.upper() not in noise_exact
+                    and not is_league_label(cand)
                     and not re.match(r"^\d{1,2}[:/]\d{2}", cand)
                     and not re.search(r"tr[uự]c\s*ti[eế]p", cand, re.I)
                     and not cand.lower().startswith("blv")
@@ -106,6 +158,7 @@ def parse_match_info(item: dict, base_href: str):
                 cand = lines[fwd]
                 if (
                     cand.upper() not in noise_exact
+                    and not is_league_label(cand)
                     and not re.match(r"^\d{1,2}[:/]\d{2}", cand)
                     and not re.search(r"tr[uự]c\s*ti[eế]p", cand, re.I)
                     and not cand.lower().startswith("blv")
@@ -115,22 +168,7 @@ def parse_match_info(item: dict, base_href: str):
 
     home = home or slug_home or "Đội Nhà"
     away = away or slug_away or "Đội Khách"
-
-    raw_league = item.get("league") or ""
-    if not raw_league:
-        for ln in lines[:3]:
-            if (
-                3 <= len(ln) <= 45
-                and ln.upper() not in noise_exact
-                and ln != home
-                and ln != away
-                and " vs " not in ln.lower()
-                and not re.match(r"^\d{1,2}[:/]\d{2}", ln)
-                and not ln.lower().startswith("blv")
-            ):
-                raw_league = ln
-                break
-    league_name = sanitize_league_name(raw_league, home, away)
+    league_name = extract_league_name(item, home, away)
 
     kickoff = ""
     m_text_time = re.search(r"\b([01]?\d|2[0-3]):[0-5]\d\b", raw_text)
@@ -339,7 +377,6 @@ def scrape_all():
                 page.goto(base_url, wait_until="domcontentloaded", timeout=25000)
                 page.wait_for_timeout(3500)
 
-                # Bấm các nút "Xem thêm" / tab nếu có và cuộn sâu để tải hết các trận trên trang
                 for _ in range(30):
                     page.evaluate(
                         r"""() => {
@@ -369,7 +406,6 @@ def scrape_all():
                         const lowHref = href.toLowerCase();
                         if (!lowHref.includes('/truc-tiep-') && !lowHref.includes('-vs-')) continue;
 
-                        // Chọn thẻ bọc nhỏ nhất chứa đủ thông tin 1 trận (không leo lên container chứa nhiều trận)
                         let card = a;
                         for (let i = 0; i < 5; i++) {
                             const parent = card.parentElement;
@@ -400,7 +436,6 @@ def scrape_all():
 
                         const text = (card.innerText || a.innerText || '').trim();
 
-                        // Lọc logo 2 đội: ưu tiên /images/teams/, loại bỏ /kbv.svg, /league/, banner, icon
                         const imgs = Array.from(card.querySelectorAll('img'))
                             .map(img => ({
                                 src: img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || img.currentSrc || img.src || '',
