@@ -26,6 +26,12 @@ GARBAGE_LABELS = {
     "ft",
     "chi tiết",
     "chi tiet",
+    "trang chủ",
+    "trang chu",
+    "đăng nhập",
+    "dang nhap",
+    "đăng ký",
+    "dang ky",
 }
 
 
@@ -44,19 +50,24 @@ def is_garbage(s: str) -> bool:
     return False
 
 
-def normalize_logo_url(src: str) -> str:
+def normalize_logo_url(src: str, base_url: str) -> str:
     s = clean(src)
     if not s or s.startswith("data:"):
         return ""
-    return urljoin(SOURCE_URL + "/", s)
+    return urljoin(base_url, s)
 
 
 def scrape_giovang() -> dict:
     raw_items = []
+    final_url = SOURCE_URL
+    page_title = ""
 
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
+            browser = p.chromium.launch(
+                headless=True,
+                args=["--no-sandbox", "--disable-dev-shm-usage"]
+            )
             context = browser.new_context(
                 viewport={"width": 1440, "height": 960},
                 user_agent=(
@@ -67,23 +78,23 @@ def scrape_giovang() -> dict:
                 locale="vi-VN",
             )
             page = context.new_page()
-            page.goto(SOURCE_URL, wait_until="networkidle", timeout=45000)
-            page.wait_for_timeout(3000)
+            page.goto(SOURCE_URL, wait_until="domcontentloaded", timeout=45000)
+            page.wait_for_timeout(5000)
 
-            # Cuộn từng bước để kích hoạt lazy-load cho cả danh sách trận và logo ảnh
-            for _ in range(30):
+            final_url = page.url
+            page_title = clean(page.title())
+            print(f"[INFO] Loaded URL: {final_url} | Title: {page_title}")
+
+            for _ in range(18):
                 before_y = page.evaluate("window.scrollY")
-                page.evaluate("window.scrollBy(0, 550)")
+                page.evaluate("window.scrollBy(0, 650)")
                 page.wait_for_timeout(450)
                 after_y = page.evaluate("window.scrollY")
                 if after_y == before_y and after_y > 0:
-                    page.wait_for_timeout(800)
-                    after_y2 = page.evaluate("window.scrollY")
-                    if after_y2 == after_y:
-                        break
+                    break
 
             page.evaluate("window.scrollTo(0, 0)")
-            page.wait_for_timeout(500)
+            page.wait_for_timeout(400)
 
             raw_items = page.evaluate(
                 """() => {
@@ -97,8 +108,6 @@ def scrape_giovang() -> dict:
 
                         let fullUrl = '';
                         try { fullUrl = new URL(href, location.origin).href; } catch (e) { continue; }
-                        if (!fullUrl.includes('giovang.co')) continue;
-                        if (/\\/(login|register|dang-nhap|dang-ky|tin-tuc|news|soi-keo|nhan-dinh|dmca|privacy|terms)/i.test(fullUrl)) continue;
                         if (seenLinks.has(fullUrl)) continue;
 
                         let card = a;
@@ -106,20 +115,16 @@ def scrape_giovang() -> dict:
                         for (let i = 0; i < 6 && cur && cur.parentElement; i++) {
                             const r = cur.getBoundingClientRect();
                             const aCnt = cur.querySelectorAll('a[href]').length;
-                            if (r.height >= 36 && r.height <= 420 && aCnt <= 10) {
+                            if (r.height >= 32 && r.height <= 450 && aCnt <= 12) {
                                 card = cur;
                                 break;
                             }
                             cur = cur.parentElement;
                         }
 
-                        const rect = card.getBoundingClientRect();
-                        if (rect.width < 60 || rect.height < 24) continue;
-
                         const cardText = (card.innerText || '').replace(/\\s+/g, ' ').trim();
-                        if (cardText.length < 4) continue;
+                        if (cardText.length < 3) continue;
 
-                        // Tìm tên BLV nếu có
                         let blvName = '';
                         const leafEls = Array.from(card.querySelectorAll('*')).filter(el => el.children.length === 0);
                         const leaves = leafEls
@@ -139,7 +144,6 @@ def scrape_giovang() -> dict:
                             }
                         }
 
-                        // Lấy ảnh từ src, data-src, data-original, data-lazy-src
                         const imgs = [];
                         for (const img of card.querySelectorAll('img')) {
                             const cand =
@@ -166,6 +170,7 @@ def scrape_giovang() -> dict:
                 }"""
             )
 
+            print(f"[INFO] Raw candidate links found: {len(raw_items)}")
             browser.close()
     except Exception as exc:
         print(f"[ERROR] {exc}")
@@ -180,7 +185,7 @@ def scrape_giovang() -> dict:
 
         imgs = []
         for raw_img in (item.get("imgs") or []):
-            u = normalize_logo_url(raw_img)
+            u = normalize_logo_url(raw_img, final_url)
             if u and u not in imgs:
                 imgs.append(u)
 
@@ -224,10 +229,16 @@ def scrape_giovang() -> dict:
                         home_name, away_name = h, a
                         break
 
-        if not home_name and not away_name:
+        if not home_name:
+            fallback_candidates = [x for x in leaves if x.lower() != (blv_raw or "").lower()]
+            if fallback_candidates:
+                home_name = fallback_candidates[0]
+            elif len(card_text) >= 2:
+                home_name = card_text[:50]
+
+        if not home_name:
             continue
 
-        # Khóa chống trùng bám theo URL + tên đội để không làm mất các trận khác
         dedup_key = f"{full_url}|{home_name.lower()}|{away_name.lower()}"
         if dedup_key in seen_match_keys:
             continue
@@ -251,7 +262,7 @@ def scrape_giovang() -> dict:
                 {
                     "label": blv_label,
                     "url": full_url,
-                    "referer": SOURCE_URL + "/"
+                    "referer": final_url
                 }
             ]
         })
@@ -259,6 +270,7 @@ def scrape_giovang() -> dict:
     return {
         "app_title": "GioVang TV",
         "source_name": "giovang.co",
+        "source_url_final": final_url,
         "updated_at": datetime.now(VN_TZ).strftime("%d/%m/%Y %H:%M"),
         "matches": matches
     }
