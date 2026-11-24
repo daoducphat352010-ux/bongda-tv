@@ -147,7 +147,7 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 }
             };
 
-            // 1. Lấy 2 logo đội bóng ở phần đầu trang trận đấu
+            // 1. Lấy đúng 2 logo đội bóng lớn (>= 34px) ở khung tỷ số, loại bỏ icon quả bóng nhỏ (< 34px)
             const logos = [];
             const seenLogo = new Set();
             const imgs = Array.from(document.querySelectorAll('img'));
@@ -156,12 +156,12 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 const src = (img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-original') || '').trim();
                 if (!src.startsWith('http') || seenLogo.has(src)) continue;
                 const lower = src.toLowerCase();
-                if (/banner|ads|logo-web|favicon|\.gif|\.svg|button|loading|avatar/i.test(lower)) continue;
+                if (/banner|ads|logo-web|favicon|\.gif|\.svg|button|loading|avatar|ball|soccer|football|icon|default/i.test(lower)) continue;
 
                 const rect = img.getBoundingClientRect();
-                if (rect.top >= 0 && rect.top <= 750 && rect.width >= 28 && rect.width <= 150 && rect.height >= 28 && rect.height <= 150) {
+                if (rect.top >= 0 && rect.top <= 750 && rect.width >= 34 && rect.width <= 150 && rect.height >= 34 && rect.height <= 150) {
                     const ratio = rect.width / rect.height;
-                    if (ratio >= 0.65 && ratio <= 1.55) {
+                    if (ratio >= 0.75 && ratio <= 1.35) {
                         seenLogo.add(src);
                         logos.push(src);
                     }
@@ -169,7 +169,6 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 if (logos.length >= 2) break;
             }
 
-            // 2. Gom ứng viên tên giải đấu từ khu vực chứa thông tin 2 đội hoặc breadcrumb
             const leagueCandidates = [];
             const pushCand = (t) => {
                 const s = (t || '').replace(/\s+/g, ' ').trim();
@@ -183,7 +182,6 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 if (!el.closest('header')) pushCand(el.innerText);
             }
 
-            // Tìm khối chứa đồng thời tên 2 đội trên trang chi tiết và đọc các dòng phía trên tên đội
             const hLow = (homeName || '').toLowerCase();
             const aLow = (awayName || '').toLowerCase();
             if (hLow && aLow) {
@@ -213,7 +211,6 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 }
             }
 
-            // 3. CHỈ lấy các phòng BLV có đường dẫn trùng khớp với trận đấu hiện tại
             const rooms = [];
             const seenHref = new Set();
             const anchors = Array.from(document.querySelectorAll('a[href]'));
@@ -230,24 +227,53 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 rooms.push({ url: href, name: name });
             }
 
-            if (rooms.length === 0) {
-                const hostNodes = Array.from(document.querySelectorAll('[class*="anchor"], [class*="blv"], [class*="commentator"], [class*="streamer"], [class*="host"]'));
-                for (const node of hostNodes) {
-                    const parentLink = node.closest('a[href]');
-                    if (parentLink && normPath(parentLink.href) !== targetPath) continue;
-                    if (node.querySelector('a[href]')) continue;
-                    const txt = (node.innerText || '').trim();
-                    if (txt && txt.length >= 2 && txt.length <= 40 && !/\bvs\b/i.test(txt)) {
-                        rooms.push({ url: window.location.href, name: txt });
-                        break;
-                    }
+            let activeHostName = '';
+            const hostNodes = Array.from(document.querySelectorAll('[class*="anchor"], [class*="blv"], [class*="commentator"], [class*="streamer"], [class*="host"]'));
+            for (const node of hostNodes) {
+                const parentLink = node.closest('a[href]');
+                if (parentLink && normPath(parentLink.href) !== targetPath) continue;
+                if (node.querySelector('a[href]')) continue;
+                const txt = (node.innerText || '').trim();
+                if (txt && txt.length >= 2 && txt.length <= 40 && !/\bvs\b/i.test(txt)) {
+                    activeHostName = txt;
+                    break;
                 }
             }
 
-            return { logos, leagueCandidates, rooms };
+            if (rooms.length === 0 && activeHostName) {
+                rooms.push({ url: window.location.href, name: activeHostName });
+            }
+
+            return { logos, leagueCandidates, rooms, activeHostName };
         }""",
         {"targetPath": target_path, "homeName": home_name, "awayName": away_name},
     )
+
+
+def capture_room_streams(page, url: str):
+    captured = []
+
+    def on_request(req):
+        u = req.url
+        if (".m3u8" in u.lower() or ".mpd" in u.lower()) and u not in captured:
+            captured.append(u)
+
+    page.on("request", on_request)
+    try:
+        page.goto(url, wait_until="domcontentloaded", timeout=14000)
+        page.wait_for_timeout(2400)
+        html_dump = page.content()
+        extra = re.findall(r'https?://[^\s"\'<>\\)]+\.(?:m3u8|mpd)(?:\?[^\s"\'<>\\)]*)?', html_dump, re.I)
+        for u in extra:
+            clean_u = u.replace("\\/", "/")
+            if clean_u not in captured:
+                captured.append(clean_u)
+    except Exception:
+        pass
+    finally:
+        page.remove_listener("request", on_request)
+
+    return captured
 
 
 def scrape_all():
@@ -312,8 +338,6 @@ def scrape_all():
                         const myPath = normPath(href);
                         if (!myPath) continue;
 
-                        // Leo ngược DOM lên tối đa 7 cấp để ôm trọn cả thẻ trận đấu (gồm tiêu đề giải phía trên + 2 đội + nút BLV)
-                        // mà không bị tràn sang thẻ trận đấu khác
                         let card = a;
                         let cur = a.parentElement;
                         for (let step = 0; step < 7 && cur && cur !== document.body; step++) {
@@ -334,7 +358,6 @@ def scrape_all():
                             .filter(Boolean)
                             .slice(0, 8);
 
-                        // Nếu tên giải nằm ở thanh tiêu đề nhóm giải ngay phía trên danh sách trận
                         let groupHeader = '';
                         let prev = card.previousElementSibling;
                         if (prev && !prev.querySelector('a[href]') && (prev.innerText || '').trim().length <= 65) {
@@ -352,10 +375,19 @@ def scrape_all():
                             roomName = (a.innerText || a.getAttribute('title') || imgAlt || '').trim();
                         }
 
+                        // Chỉ lấy logo đội bóng kích thước >= 32px, bỏ qua icon quả bóng nhỏ cạnh tên giải (< 30px)
                         const imgs = Array.from(card.querySelectorAll('img'))
-                            .filter(img => !img.closest('a[href*="anchorId="]'))
+                            .filter(img => {
+                                if (img.closest('a[href*="anchorId="]')) return false;
+                                const rect = img.getBoundingClientRect();
+                                const w = rect.width || img.naturalWidth || 0;
+                                const h = rect.height || img.naturalHeight || 0;
+                                if (w > 0 && w < 32) return false;
+                                if (h > 0 && h < 32) return false;
+                                return true;
+                            })
                             .map(img => (img.currentSrc || img.src || img.getAttribute('data-src') || '').trim())
-                            .filter(src => src.startsWith('http') && !/banner|ads|logo-web|favicon|\.gif|\.svg|avatar/i.test(src.toLowerCase()));
+                            .filter(src => src.startsWith('http') && !/banner|ads|logo-web|favicon|\.gif|\.svg|avatar|ball|soccer|football|icon|default/i.test(src.toLowerCase()));
                         const uniqueImgs = Array.from(new Set(imgs));
 
                         out.push({
@@ -430,84 +462,84 @@ def scrape_all():
 
         matches = list(grouped_matches.values())
 
-        for m in matches[:25]:
-            captured_streams = []
+        for m in matches[:20]:
             target_path = urlparse(m["page_url"]).path.rstrip("/")
+            entry_url = next(iter(m["rooms"].values()))["url"] if m["rooms"] else m["page_url"]
 
-            def on_request(req):
-                u = req.url
-                if (".m3u8" in u.lower() or ".mpd" in u.lower()) and u not in captured_streams:
-                    captured_streams.append(u)
-
-            page.on("request", on_request)
+            first_room_m3u8 = capture_room_streams(page, entry_url)
+            details = {}
             try:
-                entry_url = next(iter(m["rooms"].values()))["url"] if m["rooms"] else m["page_url"]
-                page.goto(entry_url, wait_until="domcontentloaded", timeout=14000)
-                page.wait_for_timeout(2600)
-
                 details = extract_details_from_match_page(page, target_path, m["home_name"], m["away_name"])
-                page_logos = details.get("logos") or []
-                if len(page_logos) >= 1 and not m["home_logo"]:
-                    m["home_logo"] = page_logos[0]
-                if len(page_logos) >= 2 and not m["away_logo"]:
-                    m["away_logo"] = page_logos[1]
-
-                page_rooms = details.get("rooms") or []
-                if page_rooms:
-                    for pr in page_rooms:
-                        pr_url = pr.get("url", "").strip()
-                        pr_name = pr.get("name", "").strip()
-                        if not pr_url:
-                            continue
-                        r_key = get_room_key(pr_url)
-                        if r_key not in m["rooms"]:
-                            m["rooms"][r_key] = {"url": pr_url, "name": pr_name}
-                        elif pr_name:
-                            m["rooms"][r_key]["name"] = pr_name
-
-                blv_list = [r.get("name", "") for r in m["rooms"].values()]
-                if m["league"] == "Bóng Đá Trực Tiếp":
-                    for cand_lg in details.get("leagueCandidates") or []:
-                        if is_valid_league(cand_lg, m["home_name"], m["away_name"], blv_list):
-                            m["league"] = clean_league_text(cand_lg)[:45]
-                            break
-
-                html_dump = page.content()
-                extra = re.findall(r'https?://[^\s"\'<>\\)]+\.(?:m3u8|mpd)(?:\?[^\s"\'<>\\)]*)?', html_dump, re.I)
-                for u in extra:
-                    clean_u = u.replace("\\/", "/")
-                    if clean_u not in captured_streams:
-                        captured_streams.append(clean_u)
             except Exception:
                 pass
-            finally:
-                page.remove_listener("request", on_request)
+
+            page_logos = details.get("logos") or []
+            if len(page_logos) >= 2 and (not m["home_logo"] or not m["away_logo"]):
+                m["home_logo"] = page_logos[0]
+                m["away_logo"] = page_logos[1]
+            elif len(page_logos) == 1 and not m["home_logo"]:
+                m["home_logo"] = page_logos[0]
+
+            page_rooms = details.get("rooms") or []
+            if page_rooms:
+                for pr in page_rooms:
+                    pr_url = pr.get("url", "").strip()
+                    pr_name = pr.get("name", "").strip()
+                    if not pr_url:
+                        continue
+                    r_key = get_room_key(pr_url)
+                    if r_key not in m["rooms"]:
+                        m["rooms"][r_key] = {"url": pr_url, "name": pr_name}
+                    elif pr_name:
+                        m["rooms"][r_key]["name"] = pr_name
+
+            blv_list = [r.get("name", "") for r in m["rooms"].values()]
+            if m["league"] == "Bóng Đá Trực Tiếp":
+                for cand_lg in details.get("leagueCandidates") or []:
+                    if is_valid_league(cand_lg, m["home_name"], m["away_name"], blv_list):
+                        m["league"] = clean_league_text(cand_lg)[:45]
+                        break
 
             streams = []
-            for idx, s_url in enumerate(captured_streams[:3], 1):
-                streams.append(
-                    {
-                        "label": f"Server {idx} - Phát trực tiếp (HD)",
-                        "url": s_url,
-                        "referer": m["page_url"],
-                    }
-                )
-
             room_items = list(m["rooms"].values())
-            for r_idx, room in enumerate(room_items[:4], 1):
-                blv_label = clean_commentator_label(room.get("name", ""), r_idx)
-                streams.append(
-                    {
-                        "label": f"{blv_label} (Web Player)",
-                        "url": room["url"],
-                        "referer": SOURCE_URLS[0],
-                    }
-                )
 
-            if not streams:
+            if room_items:
+                for r_idx, room in enumerate(room_items[:3], 1):
+                    blv_label = clean_commentator_label(room.get("name", ""), r_idx)
+                    if r_idx == 1 and room["url"] == entry_url:
+                        room_m3u8 = first_room_m3u8
+                    else:
+                        room_m3u8 = capture_room_streams(page, room["url"])
+
+                    for s_url in room_m3u8[:1]:
+                        streams.append(
+                            {
+                                "label": f"{blv_label} (HD Trực Tiếp)",
+                                "url": s_url,
+                                "referer": room["url"],
+                            }
+                        )
+
+                    streams.append(
+                        {
+                            "label": f"{blv_label} (Web Player)",
+                            "url": room["url"],
+                            "referer": SOURCE_URLS[0],
+                        }
+                    )
+            else:
+                host_label = clean_commentator_label(details.get("activeHostName", ""), 1)
+                for s_url in first_room_m3u8[:2]:
+                    streams.append(
+                        {
+                            "label": f"{host_label} (HD Trực Tiếp)",
+                            "url": s_url,
+                            "referer": m["page_url"],
+                        }
+                    )
                 streams.append(
                     {
-                        "label": "Mở trực tiếp trận đấu",
+                        "label": f"{host_label} (Web Player)",
                         "url": m["page_url"],
                         "referer": SOURCE_URLS[0],
                     }
@@ -517,7 +549,7 @@ def scrape_all():
             del m["page_url"]
             del m["rooms"]
 
-        for m in matches[25:]:
+        for m in matches[20:]:
             streams = []
             room_items = list(m["rooms"].values())
             for r_idx, room in enumerate(room_items[:4], 1):
