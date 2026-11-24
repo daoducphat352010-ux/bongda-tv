@@ -1,10 +1,10 @@
 {
-  "app_title": "Cập nhật lúc 11:52 24/11/2026",
-  "updated_at": "11:52 24/11/2026",
+  "app_title": "Cập nhật lúc 11:58 24/11/2026",
+  "updated_at": "11:58 24/11/2026",
   "matches": [
     {
       "id": "m_1",
-      "league": "Newcastle Jets",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "14:45",
       "home_name": "Newcastle Jets",
@@ -22,7 +22,7 @@
     },
     {
       "id": "m_2",
-      "league": "Garudayaksa FC",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "16:00",
       "home_name": "Garudayaksa Fc",
@@ -40,7 +40,7 @@
     },
     {
       "id": "m_3",
-      "league": "Persebaya Surabaya",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "16:00",
       "home_name": "Persebaya Surabaya",
@@ -58,7 +58,7 @@
     },
     {
       "id": "m_4",
-      "league": "Daejeon Hana Citizen",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Daejeon Hana Citizen",
@@ -76,7 +76,7 @@
     },
     {
       "id": "m_5",
-      "league": "Kyoto Sanga",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Kyoto Sanga",
@@ -94,7 +94,7 @@
     },
     {
       "id": "m_6",
-      "league": "Shanghai Port",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Shanghai Port",
@@ -112,7 +112,7 @@
     },
     {
       "id": "m_7",
-      "league": "Cong An Ha Noi FC",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Cong An Ha Noi Fc",
@@ -130,7 +130,7 @@
     },
     {
       "id": "m_8",
-      "league": "Ratchaburi FC",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Ratchaburi Fc",
@@ -148,7 +148,7 @@
     },
     {
       "id": "m_9",
-      "league": "Costa Rica U17",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Costa Rica U17",
@@ -166,7 +166,7 @@
     },
     {
       "id": "m_10",
-      "league": "Venezuela U17",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Venezuela U17",
@@ -184,7 +184,7 @@
     },
     {
       "id": "m_11",
-      "league": "Japan U17",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
       "home_name": "Japan U17",
@@ -202,7 +202,7 @@
     },
     {
       "id": "m_12",
-      "league": "Arsenal U19",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
       "home_name": "Arsenal U19",
@@ -220,7 +220,7 @@
     },
     {
       "id": "m_13",
-      "league": "Mexico U17",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "20:30",
       "home_name": "Mexico U17",
@@ -238,7 +238,7 @@
     },
     {
       "id": "m_14",
-      "league": "East Bengal FC",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "20:45",
       "home_name": "East Bengal Fc",
@@ -256,7 +256,7 @@
     },
     {
       "id": "m_15",
-      "league": "Akron Togliatti",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "Akron Togliatti",
@@ -274,7 +274,7 @@
     },
     {
       "id": "m_16",
-      "league": "Northeast United FC",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "Northeast United Fc",
@@ -292,7 +292,7 @@
     },
     {
       "id": "m_17",
-      "league": "Dominican Republic U17",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
       "home_name": "Dominican Republic U17",
@@ -310,7 +310,7 @@
     },
     {
       "id": "m_18",
-      "league": "Al-Riffa",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
       "home_name": "Al Riffa",
@@ -328,7 +328,7 @@
     },
     {
       "id": "m_19",
-      "league": "Gagra FC",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Gagra Fc",
@@ -346,7 +346,7 @@
     },
     {
       "id": "m_20",
-      "league": "Brazil U17",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Brazil U17",
@@ -364,7 +364,7 @@
     },
     {
       "id": "m_21",
-      "league": "Smouha SC",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Smouha Sc",
@@ -382,7 +382,7 @@
     },
     {
       "id": "m_22",
-      "league": "Real Madrid U19",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Real Madrid U19",
@@ -400,7 +400,7 @@
     },
     {
       "id": "m_23",
-      "league": "Algeria U17",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Algeria U17",
@@ -418,7 +418,7 @@
     },
     {
       "id": "m_24",
-      "league": "Honduras U17",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Honduras U17",
@@ -436,7 +436,7 @@
     },
     {
       "id": "m_25",
-      "league": "Al Seeb SC",
+      "league": "Bóng Đá Miễn Phí, Chất Lượng FullHD",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Al Seeb Sc",
@@ -454,7 +454,7 @@
     },
     {
       "id": "m_26",
-      "league": "Shabab Al Ahli",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Shabab Al Ahli",
@@ -472,7 +472,7 @@
     },
     {
       "id": "m_27",
-      "league": "FK Bodo/Glimt",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
       "home_name": "Fk Bodoglimt",
@@ -490,7 +490,7 @@
     },
     {
       "id": "m_28",
-      "league": "Galatasaray",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "00:45",
       "home_name": "Galatasaray",
@@ -508,7 +508,7 @@
     },
     {
       "id": "m_29",
-      "league": "Al Nassr",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "01:15",
       "home_name": "Al Nassr",
@@ -526,7 +526,7 @@
     },
     {
       "id": "m_30",
-      "league": "Arsenal",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Arsenal",
@@ -544,7 +544,7 @@
     },
     {
       "id": "m_31",
-      "league": "Como",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Como",
@@ -562,7 +562,7 @@
     },
     {
       "id": "m_32",
-      "league": "Feyenoord",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Feyenoord",
@@ -580,7 +580,7 @@
     },
     {
       "id": "m_33",
-      "league": "Manchester City",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Manchester City Vs",
@@ -598,7 +598,7 @@
     },
     {
       "id": "m_34",
-      "league": "RB Leipzig",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Rb Leipzig",
@@ -616,7 +616,7 @@
     },
     {
       "id": "m_35",
-      "league": "Real Madrid",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Real Madrid",
@@ -634,7 +634,7 @@
     },
     {
       "id": "m_36",
-      "league": "Slovan Bratislava",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
       "home_name": "Slovan Bratislava",
@@ -652,7 +652,7 @@
     },
     {
       "id": "m_37",
-      "league": "Millonarios",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "06:20",
       "home_name": "Millonarios",
@@ -670,7 +670,7 @@
     },
     {
       "id": "m_38",
-      "league": "America de Cali",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "08:30",
       "home_name": "America De Cali",
@@ -688,7 +688,7 @@
     },
     {
       "id": "m_39",
-      "league": "San Jose Earthquakes",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "LIVE",
       "kickoff": "10:00",
       "home_name": "San Jose Earthquakes",
@@ -706,7 +706,7 @@
     },
     {
       "id": "m_40",
-      "league": "Melbourne Victory",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "14:45",
       "home_name": "Melbourne Victory",
@@ -724,7 +724,7 @@
     },
     {
       "id": "m_41",
-      "league": "Mito Hollyhock",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Mito Hollyhock",
@@ -742,7 +742,7 @@
     },
     {
       "id": "m_42",
-      "league": "FC Tokyo",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Fc Tokyo",
@@ -760,7 +760,7 @@
     },
     {
       "id": "m_43",
-      "league": "Okayama",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Okayama",
@@ -778,7 +778,7 @@
     },
     {
       "id": "m_44",
-      "league": "Avispa Fukuoka",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Avispa Fukuoka",
@@ -796,7 +796,7 @@
     },
     {
       "id": "m_45",
-      "league": "JEF United Ichihara Chiba",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Jef United Ichihara Chiba",
@@ -814,7 +814,7 @@
     },
     {
       "id": "m_46",
-      "league": "V-Varen Nagasaki",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "V Varen Nagasaki",
@@ -832,7 +832,7 @@
     },
     {
       "id": "m_47",
-      "league": "Gamba Osaka",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Gamba Osaka",
@@ -850,7 +850,7 @@
     },
     {
       "id": "m_48",
-      "league": "Kashima Antlers",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
       "home_name": "Kashima Antlers",
@@ -868,7 +868,7 @@
     },
     {
       "id": "m_49",
-      "league": "Urawa Red Diamonds",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "17:30",
       "home_name": "Urawa Red Diamonds",
@@ -886,7 +886,7 @@
     },
     {
       "id": "m_50",
-      "league": "Radnicki Nis",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
       "home_name": "Radnicki Nis",
@@ -904,7 +904,7 @@
     },
     {
       "id": "m_51",
-      "league": "Bali United",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
       "home_name": "Bali United",
@@ -922,7 +922,7 @@
     },
     {
       "id": "m_52",
-      "league": "Persib Bandung",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
       "home_name": "Persib Bandung",
@@ -940,7 +940,7 @@
     },
     {
       "id": "m_53",
-      "league": "Ecuador U17",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Ecuador U17",
@@ -958,7 +958,7 @@
     },
     {
       "id": "m_54",
-      "league": "Uganda U17",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
       "home_name": "Uganda U17",
@@ -976,7 +976,7 @@
     },
     {
       "id": "m_55",
-      "league": "Sporting CP U19",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
       "home_name": "Sporting Cp U19",
@@ -994,7 +994,7 @@
     },
     {
       "id": "m_56",
-      "league": "Haiti U17",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "20:30",
       "home_name": "Haiti U17",
@@ -1012,7 +1012,7 @@
     },
     {
       "id": "m_57",
-      "league": "Uruguay U17",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "20:30",
       "home_name": "Uruguay U17",
@@ -1030,7 +1030,7 @@
     },
     {
       "id": "m_58",
-      "league": "Nasaf Qarshi",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "20:45",
       "home_name": "Nasaf Qarshi",
@@ -1048,7 +1048,7 @@
     },
     {
       "id": "m_59",
-      "league": "Kazma",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "Kazma",
@@ -1066,7 +1066,7 @@
     },
     {
       "id": "m_60",
-      "league": "Greece U17",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
       "home_name": "Greece U17",
@@ -1084,7 +1084,7 @@
     },
     {
       "id": "m_61",
-      "league": "Panama U17",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
       "home_name": "Panama U17",
@@ -1102,7 +1102,7 @@
     },
     {
       "id": "m_62",
-      "league": "Akhmat Grozny",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Akhmat Grozny",
@@ -1120,7 +1120,7 @@
     },
     {
       "id": "m_63",
-      "league": "Denmark U17",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Denmark U17",
@@ -1138,7 +1138,7 @@
     },
     {
       "id": "m_64",
-      "league": "Australia U17",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "Australia U17",
@@ -1156,7 +1156,7 @@
     },
     {
       "id": "m_65",
-      "league": "Al Kuwait SC",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Al Kuwait Sc",
@@ -1174,7 +1174,7 @@
     },
     {
       "id": "m_66",
-      "league": "Al-Jazira(UAE)",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Al Jazirauae",
@@ -1192,7 +1192,7 @@
     },
     {
       "id": "m_67",
-      "league": "Al-Muharraq",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Al Muharraq",
@@ -1210,7 +1210,7 @@
     },
     {
       "id": "m_68",
-      "league": "Al-Faisaly Amman",
+      "league": "Bóng Đá Trực Tiếp",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Al Faisaly Amman",
