@@ -1,11 +1,11 @@
 {
   "app_title": "GioVang TV",
   "source_name": "giovang.co",
-  "updated_at": "24/11/2026 18:24",
+  "updated_at": "24/11/2026 18:31",
   "matches": [
     {
       "id": "gv_1",
-      "league": "Champions League",
+      "league": "AFC Champions League",
       "status": "LIVE",
       "kickoff": "17:00",
       "home_name": "Daejeon Citizen",
@@ -20,7 +20,7 @@
           "referer": "https://giovang.co/"
         },
         {
-          "label": "Soi Kèo",
+          "label": "BLV 2",
           "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
@@ -28,7 +28,7 @@
     },
     {
       "id": "gv_2",
-      "league": "Champions League",
+      "league": "AFC Champions League",
       "status": "LIVE",
       "kickoff": "17:00",
       "home_name": "Kyoto Sanga",
@@ -43,7 +43,7 @@
           "referer": "https://giovang.co/"
         },
         {
-          "label": "Soi Kèo",
+          "label": "BLV 2",
           "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
@@ -51,7 +51,7 @@
     },
     {
       "id": "gv_3",
-      "league": "GioVang.co",
+      "league": "Hàn Quốc Volleyball League Nữ",
       "status": "LIVE",
       "kickoff": "17:00",
       "home_name": "Daejeon JKJ Nữ",
@@ -66,7 +66,7 @@
           "referer": "https://giovang.co/"
         },
         {
-          "label": "Soi Kèo",
+          "label": "BLV 2",
           "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
@@ -74,7 +74,7 @@
     },
     {
       "id": "gv_4",
-      "league": "GioVang.co",
+      "league": "Turkey Sultanlar Ligi",
       "status": "LIVE",
       "kickoff": "18:00",
       "home_name": "Onikisubat",
@@ -89,7 +89,7 @@
           "referer": "https://giovang.co/"
         },
         {
-          "label": "Soi Kèo",
+          "label": "BLV 2",
           "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
@@ -97,7 +97,7 @@
     },
     {
       "id": "gv_5",
-      "league": "GioVang.co",
+      "league": "PGL Major Singapore 2026 Stage 1",
       "status": "LIVE",
       "kickoff": "11:00",
       "home_name": "PGL Major Stage 1 #1",
@@ -112,7 +112,7 @@
           "referer": "https://giovang.co/"
         },
         {
-          "label": "Soi Kèo",
+          "label": "BLV 2",
           "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
@@ -120,7 +120,7 @@
     },
     {
       "id": "gv_6",
-      "league": "GioVang.co",
+      "league": "PGL Major Singapore 2026 Stage 1",
       "status": "LIVE",
       "kickoff": "16:00",
       "home_name": "PGL Major Stage 1 #1 Ca 3",
@@ -135,7 +135,7 @@
           "referer": "https://giovang.co/"
         },
         {
-          "label": "Soi Kèo",
+          "label": "BLV 2",
           "url": "https://giovang.co/tracking-link",
           "referer": "https://giovang.co/"
         }
@@ -143,115 +143,71 @@
     },
     {
       "id": "gv_7",
-      "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "Net88",
-      "home_logo": "https://giovang.guru/wp-content/uploads/2026/05/logo-net88.gif",
-      "away_name": "NET88 – Chơi là phải nét",
-      "away_logo": "",
+      "league": "AFC Champions League",
+      "status": "LIVE",
+      "kickoff": "17:00",
+      "home_name": "Shabab Al Ahli",
+      "home_logo": "https://images.keovip88.net/images/teams/shabab-al-ahli.png",
+      "away_name": "Al-Qadasiya",
+      "away_logo": "https://giovang.guru/wp-content/themes/GioVang/assets/images/icon-vs.svg",
       "score": "vs",
       "streams": [
         {
-          "label": "Cược Ngay",
-          "url": "https://giovang.co/tracking-link",
+          "label": "BLV 1",
+          "url": "https://giovang.co/truc-tiep-shabab-al-ahli-vs-al-qadasiya-24-11-6a8b8a6f4d3de1ad3e0d9544",
           "referer": "https://giovang.co/"
         },
         {
           "label": "BLV 2",
-          "url": "https://giovang.guru/net88/",
+          "url": "https://giovang.co/truc-tiep-al-seeb-vs-al-shorta-24-11-6a8a38e5eb269e70040bbd91",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 3",
+          "url": "https://giovang.co/truc-tiep-eczacibasi-nu-vs-tent-nu-24-11-tou7n5ebpqv2",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 4",
+          "url": "https://giovang.co/truc-tiep-besiktas-cola-turka-vs-paris-25-11-28303273",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 5",
+          "url": "https://giovang.co/truc-tiep-galatasaray-vs-aston-villa-25-11-6a93737afccd5ecc44060e3e",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 6",
+          "url": "https://giovang.co/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 7",
+          "url": "https://giovang.co/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c?blv=blv-tri",
+          "referer": "https://giovang.co/"
+        },
+        {
+          "label": "BLV 8",
+          "url": "https://giovang.co/truc-tiep-bodo-glimt-vs-lask-linz-25-11-6a93737afccd5ecc44060e2c?blv=blv-ngong",
           "referer": "https://giovang.co/"
         }
       ]
     },
     {
       "id": "gv_8",
-      "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "Gem88",
-      "home_logo": "https://giovang.guru/wp-content/uploads/2026/06/logo-gem88.gif",
-      "away_name": "Gem88 – Dẫn lối giàu sang",
-      "away_logo": "",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "Cược Ngay",
-          "url": "https://giovang.co/tracking-link",
-          "referer": "https://giovang.co/"
-        },
-        {
-          "label": "BLV 2",
-          "url": "https://giovang.guru/gem88/",
-          "referer": "https://giovang.co/"
-        }
-      ]
-    },
-    {
-      "id": "gv_9",
-      "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "Max88",
-      "home_logo": "https://giovang.guru/wp-content/uploads/2026/06/logo-max88.gif",
-      "away_name": "Max88 – Chơi là thắng",
-      "away_logo": "",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "Cược Ngay",
-          "url": "https://giovang.co/tracking-link",
-          "referer": "https://giovang.co/"
-        },
-        {
-          "label": "BLV 2",
-          "url": "https://giovang.guru/max88/",
-          "referer": "https://giovang.co/"
-        }
-      ]
-    },
-    {
-      "id": "gv_10",
-      "league": "GioVang.co",
-      "status": "UPCOMING",
-      "kickoff": "",
-      "home_name": "HitClub",
-      "home_logo": "https://giovang.guru/wp-content/uploads/2026/06/logo-hitclub.gif",
-      "away_name": "HitClub – Đầy ví mỗi ngày",
-      "away_logo": "",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "Cược Ngay",
-          "url": "https://giovang.co/tracking-link",
-          "referer": "https://giovang.co/"
-        },
-        {
-          "label": "BLV 2",
-          "url": "https://giovang.guru/hitclub/",
-          "referer": "https://giovang.co/"
-        }
-      ]
-    },
-    {
-      "id": "gv_11",
-      "league": "GioVang.co",
+      "league": "",
       "status": "LIVE",
       "kickoff": "",
-      "home_name": "Go88",
-      "home_logo": "https://giovang.guru/wp-content/uploads/2026/06/logo-go88.gif",
-      "away_name": "Go88 – Cứ vào là thắng",
+      "home_name": "https://giovang.guru/",
+      "home_logo": "",
+      "away_name": "trực tiếp bóng đá",
       "away_logo": "",
       "score": "vs",
       "streams": [
         {
-          "label": "Cược Ngay",
-          "url": "https://giovang.co/tracking-link",
-          "referer": "https://giovang.co/"
-        },
-        {
-          "label": "BLV 2",
-          "url": "https://giovang.guru/go88/",
+          "label": "https://giovang.guru/",
+          "url": "https://giovang.guru/",
           "referer": "https://giovang.co/"
         }
       ]
