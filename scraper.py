@@ -62,6 +62,7 @@ def is_valid_league(cand: str, home: str, away: str, blv_names=None) -> bool:
 def parse_match_info(raw_text: str, base_href: str):
     slug = base_href.rstrip("/").split("/")[-1]
 
+    # 1. Tách giờ thi đấu
     kickoff = "LIVE"
     m_slug_time = re.search(r"-luc-(\d{2})(\d{2})-ngay-(\d{2}-\d{2}-\d{4})", slug, re.I)
     if m_slug_time:
@@ -72,24 +73,47 @@ def parse_match_info(raw_text: str, base_href: str):
         if m_text_time:
             kickoff = m_text_time.group(1)
 
-    clean_slug = re.sub(r"-luc-\d{4}-ngay-.*$", "", slug, flags=re.I)
-    clean_slug = re.sub(r"-[a-zA-Z0-9]{6,}$", "", clean_slug)
-    teams_from_slug = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
+    # 2. Ưu tiên tách tên 2 đội xung quanh chữ "VS" trên thẻ hiển thị để tránh dính tên giải vào tên đội
+    home = ""
+    away = ""
+    raw_lines = [re.sub(r"\s+", " ", ln).strip() for ln in raw_text.splitlines() if ln.strip()]
+    vs_idx = -1
+    for i, ln in enumerate(raw_lines):
+        if ln.upper() == "VS":
+            vs_idx = i
+            break
 
-    if len(teams_from_slug) == 2 and teams_from_slug[0] and teams_from_slug[1]:
-        home = teams_from_slug[0].replace("-", " ").title().strip()
-        away = teams_from_slug[1].replace("-", " ").title().strip()
-    else:
-        lines = [
-            ln.strip()
-            for ln in raw_text.splitlines()
-            if ln.strip()
-            and not re.match(r"^\d{1,2}:\d{2}$", ln.strip())
-            and ln.strip().upper() not in ("LIVE", "HD", "FULL HD", "VS", "XEM NGAY", "TRỰC TIẾP")
-        ]
-        home = lines[0][:28] if len(lines) >= 1 else clean_slug.replace("-", " ").title()
-        away = lines[1][:28] if len(lines) >= 2 else "Trực Tiếp"
+    if vs_idx > 0:
+        for back in range(vs_idx - 1, -1, -1):
+            cand = raw_lines[back]
+            if not re.match(r"^\d{1,2}:\d{2}", cand) and cand.upper() not in ("LIVE", "HD", "SẮP ĐÁ"):
+                home = cand[:32]
+                break
+        for fwd in range(vs_idx + 1, len(raw_lines)):
+            cand = raw_lines[fwd]
+            if (
+                not re.match(r"^\d{1,2}:\d{2}", cand)
+                and not re.match(r"^\d{1,2}/\d{1,2}", cand)
+                and cand.upper() not in ("LIVE", "HD", "FULL HD", "SẮP ĐÁ", "XEM NGAY")
+            ):
+                away = cand[:32]
+                break
 
+    # Dự phòng: tách từ đường dẫn URL nếu thẻ không có chữ VS rõ ràng
+    if not home or not away:
+        clean_slug = re.sub(r"-luc-\d{4}-ngay-.*$", "", slug, flags=re.I)
+        clean_slug = re.sub(r"-[a-zA-Z0-9]{6,}$", "", clean_slug)
+        teams_from_slug = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
+        if len(teams_from_slug) == 2 and teams_from_slug[0] and teams_from_slug[1]:
+            if not home:
+                home = teams_from_slug[0].replace("-", " ").title().strip()
+            if not away:
+                away = teams_from_slug[1].replace("-", " ").title().strip()
+        else:
+            home = home or clean_slug.replace("-", " ").title()[:32]
+            away = away or "Trực Tiếp"
+
+    # 3. Phân loại LIVE hay SẮP ĐÁ theo giờ Việt Nam
     now_vn = datetime.now(timezone(timedelta(hours=7)))
     status = "LIVE"
     if re.match(r"^\d{2}:\d{2}$", kickoff):
@@ -147,29 +171,74 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 }
             };
 
-            const logos = [];
-            const seenLogo = new Set();
-            const imgs = Array.from(document.querySelectorAll('img'));
-            for (const img of imgs) {
-                if (img.closest('a[href*="anchorId="]')) continue;
-                const src = (img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-original') || '').trim();
-                if (!src.startsWith('http') || seenLogo.has(src)) continue;
-                const lower = src.toLowerCase();
-                if (/banner|ads|logo-web|favicon|\.gif|\.svg|button|loading|avatar/i.test(lower)) continue;
-
-                const rect = img.getBoundingClientRect();
-                const w = rect.width || img.naturalWidth || 0;
-                const h = rect.height || img.naturalHeight || 0;
-                if (w >= 20 && w <= 220 && h >= 20 && h <= 220) {
-                    seenLogo.add(src);
-                    logos.push({ src, left: rect.left, top: rect.top });
+            const getImgUrl = (img) => {
+                const attrs = [
+                    img.getAttribute('data-src'),
+                    img.getAttribute('data-original'),
+                    img.getAttribute('data-lazy-src'),
+                    img.currentSrc,
+                    img.src
+                ];
+                for (const raw of attrs) {
+                    const s = (raw || '').trim();
+                    if (s.startsWith('http://') || s.startsWith('https://')) return s;
                 }
-                if (logos.length >= 4) break;
+                const srcset = (img.getAttribute('srcset') || '').trim();
+                if (srcset) {
+                    const first = srcset.split(',')[0].trim().split(/\s+/)[0];
+                    if (first.startsWith('http://') || first.startsWith('https://')) return first;
+                }
+                return '';
+            };
+
+            // Tìm đúng khối bảng tỷ số chứa cả tên 2 đội của trận hiện tại (bỏ qua thanh trận hot bên ngoài)
+            const hLow = (homeName || '').toLowerCase().trim();
+            const aLow = (awayName || '').toLowerCase().trim();
+            let bestBlock = null;
+            if (hLow && aLow) {
+                const blocks = Array.from(document.querySelectorAll('div, section, header'));
+                let bestLen = 999999;
+                for (const b of blocks) {
+                    if (b.closest('[class*="sidebar"], aside, footer')) continue;
+                    const txt = (b.innerText || '').trim();
+                    const low = txt.toLowerCase();
+                    if (txt.length >= 10 && txt.length < bestLen && low.includes(hLow) && low.includes(aLow)) {
+                        bestBlock = b;
+                        bestLen = txt.length;
+                    }
+                }
             }
 
-            // Sắp xếp theo vị trí trên khung tỷ số (trên xuống, trái sang phải)
-            logos.sort((a, b) => (Math.abs(a.top - b.top) > 40 ? a.top - b.top : a.left - b.left));
-            const sortedLogos = logos.map(x => x.src);
+            // Chỉ lấy 2 logo nằm BÊN TRONG khung tỷ số của trận này, xếp từ trái sang phải
+            let homeLogo = '';
+            let awayLogo = '';
+            if (bestBlock) {
+                const boxRect = bestBlock.getBoundingClientRect();
+                const midX = boxRect.left + (boxRect.width / 2);
+                const valid = [];
+                const seen = new Set();
+                for (const img of Array.from(bestBlock.querySelectorAll('img'))) {
+                    if (img.closest('a[href*="anchorId="]')) continue;
+                    const src = getImgUrl(img);
+                    if (!src || seen.has(src)) continue;
+                    if (/banner|ads|logo-web|favicon|\.gif|\.svg|avatar/i.test(src.toLowerCase())) continue;
+                    const r = img.getBoundingClientRect();
+                    const w = r.width || img.naturalWidth || 0;
+                    const h = r.height || img.naturalHeight || 0;
+                    if (w >= 26 && w <= 160 && h >= 26 && h <= 160) {
+                        seen.add(src);
+                        valid.push({ src, cx: r.left + (w / 2) });
+                    }
+                }
+                valid.sort((a, b) => a.cx - b.cx);
+                if (valid.length >= 2) {
+                    homeLogo = valid[0].src;
+                    awayLogo = valid[valid.length - 1].src;
+                } else if (valid.length === 1) {
+                    if (valid[0].cx <= midX) homeLogo = valid[0].src;
+                    else awayLogo = valid[0].src;
+                }
+            }
 
             const leagueCandidates = [];
             const pushCand = (t) => {
@@ -184,32 +253,12 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 if (!el.closest('header')) pushCand(el.innerText);
             }
 
-            const hLow = (homeName || '').toLowerCase();
-            const aLow = (awayName || '').toLowerCase();
-            if (hLow && aLow) {
-                const blocks = Array.from(document.querySelectorAll('div, section, header'));
-                let bestBlock = null;
-                let bestLen = 999999;
-                for (const b of blocks) {
-                    if (b.closest('[class*="sidebar"], aside, footer')) continue;
-                    const txt = (b.innerText || '').trim();
-                    const low = txt.toLowerCase();
-                    if (txt.length >= 15 && txt.length < bestLen && low.includes(hLow) && low.includes(aLow)) {
-                        bestBlock = b;
-                        bestLen = txt.length;
-                    }
-                }
-                if (bestBlock) {
-                    const lines = (bestBlock.innerText || '').split('\n').map(s => s.trim()).filter(Boolean);
-                    for (const ln of lines.slice(0, 6)) {
-                        pushCand(ln);
-                    }
-                    if (bestBlock.previousElementSibling) {
-                        const prevLines = (bestBlock.previousElementSibling.innerText || '').split('\n').map(s => s.trim()).filter(Boolean);
-                        for (const ln of prevLines.slice(0, 3)) {
-                            pushCand(ln);
-                        }
-                    }
+            if (bestBlock) {
+                const lines = (bestBlock.innerText || '').split('\n').map(s => s.trim()).filter(Boolean);
+                for (const ln of lines.slice(0, 6)) pushCand(ln);
+                if (bestBlock.previousElementSibling) {
+                    const prevLines = (bestBlock.previousElementSibling.innerText || '').split('\n').map(s => s.trim()).filter(Boolean);
+                    for (const ln of prevLines.slice(0, 3)) pushCand(ln);
                 }
             }
 
@@ -246,7 +295,7 @@ def extract_details_from_match_page(page, target_path: str, home_name: str, away
                 rooms.push({ url: window.location.href, name: activeHostName });
             }
 
-            return { logos: sortedLogos, leagueCandidates, rooms, activeHostName };
+            return { homeLogo, awayLogo, leagueCandidates, rooms, activeHostName };
         }""",
         {"targetPath": target_path, "homeName": home_name, "awayName": away_name},
     )
@@ -314,9 +363,10 @@ def scrape_all():
                         break
                     page.wait_for_timeout(1200)
 
-                for _ in range(15):
-                    page.evaluate("window.scrollBy(0, 1200)")
-                    page.wait_for_timeout(500)
+                # Cuộn từng bước vừa phải để mọi logo đội bóng ở nửa trái & nửa phải đều tải đủ ảnh
+                for _ in range(22):
+                    page.evaluate("window.scrollBy(0, 750)")
+                    page.wait_for_timeout(450)
             except Exception:
                 continue
 
@@ -331,6 +381,26 @@ def scrape_all():
                         }
                     };
                     const isMatchHref = (u) => /truc-tiep|xem-|live|match|tran-dau/i.test(u.toLowerCase());
+
+                    const getImgUrl = (img) => {
+                        const attrs = [
+                            img.getAttribute('data-src'),
+                            img.getAttribute('data-original'),
+                            img.getAttribute('data-lazy-src'),
+                            img.currentSrc,
+                            img.src
+                        ];
+                        for (const raw of attrs) {
+                            const s = (raw || '').trim();
+                            if (s.startsWith('http://') || s.startsWith('https://')) return s;
+                        }
+                        const srcset = (img.getAttribute('srcset') || '').trim();
+                        if (srcset) {
+                            const first = srcset.split(',')[0].trim().split(/\s+/)[0];
+                            if (first.startsWith('http://') || first.startsWith('https://')) return first;
+                        }
+                        return '';
+                    };
 
                     const anchors = Array.from(document.querySelectorAll('a[href]'));
                     for (const a of anchors) {
@@ -377,17 +447,52 @@ def scrape_all():
                             roomName = (a.innerText || a.getAttribute('title') || imgAlt || '').trim();
                         }
 
-                        const imgs = Array.from(card.querySelectorAll('img'))
-                            .filter(img => !img.closest('a[href*="anchorId="]'))
-                            .map(img => ({
-                                src: (img.currentSrc || img.src || img.getAttribute('data-src') || '').trim(),
-                                left: img.getBoundingClientRect().left || 0,
-                                top: img.getBoundingClientRect().top || 0
-                            }))
-                            .filter(x => x.src.startsWith('http') && !/banner|ads|logo-web|favicon|\.gif|\.svg|avatar/i.test(x.src.toLowerCase()));
+                        // Tách chính xác logo bên TRÁI (chủ nhà) và bên PHẢI (đội khách), bỏ qua icon quả bóng phía trên
+                        const cardRect = card.getBoundingClientRect();
+                        const centerX = cardRect.left + (cardRect.width / 2);
+                        let vsTop = cardRect.top + 22;
+                        for (const el of Array.from(card.querySelectorAll('*'))) {
+                            if (el.children.length === 0 && (el.innerText || '').trim().toUpperCase() === 'VS') {
+                                const vr = el.getBoundingClientRect();
+                                if (vr.top > 0) {
+                                    vsTop = vr.top;
+                                    break;
+                                }
+                            }
+                        }
 
-                        imgs.sort((a, b) => (Math.abs(a.top - b.top) > 35 ? a.top - b.top : a.left - b.left));
-                        const uniqueImgs = Array.from(new Set(imgs.map(x => x.src)));
+                        let homeLogo = '';
+                        let awayLogo = '';
+                        const fallbackList = [];
+                        for (const img of Array.from(card.querySelectorAll('img'))) {
+                            if (img.closest('a[href*="anchorId="]')) continue;
+                            const src = getImgUrl(img);
+                            if (!src) continue;
+                            if (/banner|ads|logo-web|favicon|\.gif|\.svg|avatar/i.test(src.toLowerCase())) continue;
+
+                            const r = img.getBoundingClientRect();
+                            const w = r.width || img.naturalWidth || 0;
+                            const h = r.height || img.naturalHeight || 0;
+                            if (w > 0 && w < 26) continue;
+                            if (h > 0 && h < 26) continue;
+                            if (r.bottom > 0 && r.bottom < vsTop - 16) continue;
+
+                            if (!fallbackList.includes(src)) fallbackList.push(src);
+
+                            if (cardRect.width > 0 && r.width > 0) {
+                                const imgCenterX = r.left + (w / 2);
+                                if (imgCenterX <= centerX && !homeLogo) {
+                                    homeLogo = src;
+                                } else if (imgCenterX > centerX && !awayLogo) {
+                                    awayLogo = src;
+                                }
+                            }
+                        }
+
+                        if (!homeLogo && !awayLogo && fallbackList.length >= 1) {
+                            homeLogo = fallbackList[0];
+                            if (fallbackList.length >= 2) awayLogo = fallbackList[1];
+                        }
 
                         out.push({
                             href: href,
@@ -395,7 +500,8 @@ def scrape_all():
                             cardLines: cardLines,
                             groupHeader: groupHeader,
                             roomName: roomName,
-                            logos: uniqueImgs.slice(0, 3)
+                            homeLogo: homeLogo,
+                            awayLogo: awayLogo
                         });
                     }
                     return out;
@@ -420,9 +526,8 @@ def scrape_all():
                         picked_league = clean_league_text(ln)[:45]
                         break
 
-                logos = item.get("logos") or []
-                h_logo = logos[0] if len(logos) >= 1 else ""
-                a_logo = logos[1] if len(logos) >= 2 else ""
+                h_logo = item.get("homeLogo") or ""
+                a_logo = item.get("awayLogo") or ""
 
                 if base_href not in grouped_matches:
                     grouped_matches[base_href] = {
@@ -461,7 +566,7 @@ def scrape_all():
 
         matches = list(grouped_matches.values())
 
-        # Đếm tần suất xuất hiện ảnh để tự động bỏ qua icon quả bóng dùng chung nhiều trận
+        # Loại bỏ ảnh icon dùng chung nếu xuất hiện lặp lại >= 5 lần
         img_freq = {}
         for m in matches:
             for key in ("home_logo", "away_logo"):
@@ -475,6 +580,7 @@ def scrape_all():
                 if u and img_freq.get(u, 0) >= 5:
                     m[key] = ""
 
+        # Quét chi tiết 20 trận đầu tiên: bổ sung logo từ khung tỷ số trận đó & gắn tên BLV vào cả luồng HD lẫn Web Player
         for m in matches[:20]:
             target_path = urlparse(m["page_url"]).path.rstrip("/")
             entry_url = next(iter(m["rooms"].values()))["url"] if m["rooms"] else m["page_url"]
@@ -486,17 +592,12 @@ def scrape_all():
             except Exception:
                 pass
 
-            page_logos = [u for u in (details.get("logos") or []) if img_freq.get(u, 0) < 5]
-            if len(page_logos) >= 2:
-                if not m["home_logo"]:
-                    m["home_logo"] = page_logos[0]
-                if not m["away_logo"]:
-                    m["away_logo"] = page_logos[1]
-            elif len(page_logos) == 1:
-                if not m["home_logo"]:
-                    m["home_logo"] = page_logos[0]
-                elif not m["away_logo"] and page_logos[0] != m["home_logo"]:
-                    m["away_logo"] = page_logos[0]
+            d_home_logo = details.get("homeLogo") or ""
+            d_away_logo = details.get("awayLogo") or ""
+            if not m["home_logo"] and d_home_logo and img_freq.get(d_home_logo, 0) < 5:
+                m["home_logo"] = d_home_logo
+            if not m["away_logo"] and d_away_logo and img_freq.get(d_away_logo, 0) < 5:
+                m["away_logo"] = d_away_logo
 
             page_rooms = details.get("rooms") or []
             if page_rooms:
