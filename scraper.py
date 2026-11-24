@@ -12,7 +12,6 @@ SOURCE_URLS = [
 def clean_league_text(raw: str) -> str:
     if not raw:
         return ""
-    # Loại bỏ icon quả bóng ⚽ hoặc ký tự thừa ở đầu/cuối chuỗi
     txt = re.sub(r"\s+", " ", raw).strip()
     txt = re.sub(r"^[^\w\u00C0-\u1EF9]+|[^\w\u00C0-\u1EF9)]+$", "", txt).strip()
     return txt
@@ -27,36 +26,32 @@ def is_valid_league(cand: str, home: str, away: str, blv_names=None) -> bool:
     hl = (home or "").lower().strip()
     al = (away or "").lower().strip()
 
-    # Loại bỏ nếu trùng tên đội chủ nhà / đội khách
     if hl and len(hl) >= 3 and (hl in cl or cl in hl):
         return False
     if al and len(al) >= 3 and (al in cl or cl in al):
         return False
 
-    # Loại bỏ nếu trùng tên BLV của trận đó
     if blv_names:
         for b in blv_names:
             bl = clean_league_text(b).lower()
             if bl and len(bl) >= 3 and (bl in cl or cl in bl):
                 return False
 
-    # Loại bỏ giờ đá, ngày tháng, chữ VS
     if re.search(r"\bvs\b", cl) or re.match(r"^\d{1,2}:\d{2}", c):
         return False
     if re.search(r"\b\d{1,2}/\d{1,2}(?:/\d{2,4})?\b", cl):
         return False
 
-    # Chặn toàn bộ câu khẩu hiệu quảng cáo của web và các nhãn điều hướng chung
     banned_phrases = (
         "miễn phí", "chất lượng", "fullhd", "full hd", "tốc độ", "mượt mà",
         "không giật", "không quảng cáo", "gavang", "gà vàng", "trực tiếp",
         "xem bóng", "lịch thi đấu", "kết quả", "bảng xếp hạng", "nguồn phát",
-        "trang chủ", "sắp đá", "xem ngay"
+        "trang chủ", "sắp đá", "xem ngay", "đang diễn ra", "kết thúc"
     )
     if any(p in cl for p in banned_phrases):
         return False
 
-    if cl in ("home", "live", "hd", "vs"):
+    if cl in ("home", "live", "hd", "vs", "ft", "ht"):
         return False
     if cl.startswith("blv ") or cl.startswith("phòng "):
         return False
@@ -67,7 +62,6 @@ def is_valid_league(cand: str, home: str, away: str, blv_names=None) -> bool:
 def parse_match_info(raw_text: str, base_href: str):
     slug = base_href.rstrip("/").split("/")[-1]
 
-    # 1. Tách đúng giờ đá từ đường dẫn (vd: ...-luc-1445-ngay-24-11-2026-...)
     kickoff = "LIVE"
     m_slug_time = re.search(r"-luc-(\d{2})(\d{2})-ngay-(\d{2}-\d{2}-\d{4})", slug, re.I)
     if m_slug_time:
@@ -78,7 +72,6 @@ def parse_match_info(raw_text: str, base_href: str):
         if m_text_time:
             kickoff = m_text_time.group(1)
 
-    # 2. Cắt bỏ phần "-luc-1445-ngay-..." để tên 2 đội sạch sẽ
     clean_slug = re.sub(r"-luc-\d{4}-ngay-.*$", "", slug, flags=re.I)
     clean_slug = re.sub(r"-[a-zA-Z0-9]{6,}$", "", clean_slug)
     teams_from_slug = re.split(r"-vs-", clean_slug, maxsplit=1, flags=re.I)
@@ -97,7 +90,6 @@ def parse_match_info(raw_text: str, base_href: str):
         home = lines[0][:28] if len(lines) >= 1 else clean_slug.replace("-", " ").title()
         away = lines[1][:28] if len(lines) >= 2 else "Trực Tiếp"
 
-    # 3. Phân loại LIVE hay SẮP ĐÁ theo giờ Việt Nam
     now_vn = datetime.now(timezone(timedelta(hours=7)))
     status = "LIVE"
     if re.match(r"^\d{2}:\d{2}$", kickoff):
@@ -144,9 +136,9 @@ def get_room_key(url: str) -> str:
     return parsed.path.rstrip("/")
 
 
-def extract_details_from_match_page(page, target_path: str):
+def extract_details_from_match_page(page, target_path: str, home_name: str, away_name: str):
     return page.evaluate(
-        r"""(targetPath) => {
+        r"""({ targetPath, homeName, awayName }) => {
             const normPath = (u) => {
                 try {
                     return new URL(u, window.location.origin).pathname.replace(/\/+$/, '');
@@ -177,7 +169,7 @@ def extract_details_from_match_page(page, target_path: str):
                 if (logos.length >= 2) break;
             }
 
-            // 2. Gom các ứng viên tên giải đấu từ Breadcrumb & khu vực phía trên khung tỷ số (không dùng <title>)
+            // 2. Gom ứng viên tên giải đấu từ khu vực chứa thông tin 2 đội hoặc breadcrumb
             const leagueCandidates = [];
             const pushCand = (t) => {
                 const s = (t || '').replace(/\s+/g, ' ').trim();
@@ -186,15 +178,39 @@ def extract_details_from_match_page(page, target_path: str):
                 }
             };
 
-            const crumbNodes = Array.from(document.querySelectorAll('[class*="breadcrumb"] a, [class*="breadcrumb"] span, nav[aria-label*="breadcrumb"] a, nav[aria-label*="breadcrumb"] span'));
+            const crumbNodes = Array.from(document.querySelectorAll('nav a, nav span, [class*="breadcrumb"] a, [class*="breadcrumb"] span'));
             for (const el of crumbNodes) {
-                pushCand(el.innerText);
+                if (!el.closest('header')) pushCand(el.innerText);
             }
 
-            const leagueNodes = Array.from(document.querySelectorAll('[class*="league"], [class*="tournament"], [class*="competition"], [class*="champ"], [class*="cup"]'));
-            for (const el of leagueNodes) {
-                if (el.closest('header, footer, [class*="sidebar"], [class*="menu"], [class*="hot"]')) continue;
-                pushCand((el.innerText || '').split('\n')[0]);
+            // Tìm khối chứa đồng thời tên 2 đội trên trang chi tiết và đọc các dòng phía trên tên đội
+            const hLow = (homeName || '').toLowerCase();
+            const aLow = (awayName || '').toLowerCase();
+            if (hLow && aLow) {
+                const blocks = Array.from(document.querySelectorAll('div, section, header'));
+                let bestBlock = null;
+                let bestLen = 999999;
+                for (const b of blocks) {
+                    if (b.closest('[class*="sidebar"], aside, footer')) continue;
+                    const txt = (b.innerText || '').trim();
+                    const low = txt.toLowerCase();
+                    if (txt.length >= 15 && txt.length < bestLen && low.includes(hLow) && low.includes(aLow)) {
+                        bestBlock = b;
+                        bestLen = txt.length;
+                    }
+                }
+                if (bestBlock) {
+                    const lines = (bestBlock.innerText || '').split('\n').map(s => s.trim()).filter(Boolean);
+                    for (const ln of lines.slice(0, 6)) {
+                        pushCand(ln);
+                    }
+                    if (bestBlock.previousElementSibling) {
+                        const prevLines = (bestBlock.previousElementSibling.innerText || '').split('\n').map(s => s.trim()).filter(Boolean);
+                        for (const ln of prevLines.slice(0, 3)) {
+                            pushCand(ln);
+                        }
+                    }
+                }
             }
 
             // 3. CHỈ lấy các phòng BLV có đường dẫn trùng khớp với trận đấu hiện tại
@@ -230,7 +246,7 @@ def extract_details_from_match_page(page, target_path: str):
 
             return { logos, leagueCandidates, rooms };
         }""",
-        target_path,
+        {"targetPath": target_path, "homeName": home_name, "awayName": away_name},
     )
 
 
@@ -279,30 +295,63 @@ def scrape_all():
             candidates = page.evaluate(
                 r"""() => {
                     const out = [];
+                    const normPath = (u) => {
+                        try {
+                            return new URL(u, window.location.origin).pathname.replace(/\/+$/, '');
+                        } catch (e) {
+                            return '';
+                        }
+                    };
+                    const isMatchHref = (u) => /truc-tiep|xem-|live|match|tran-dau/i.test(u.toLowerCase());
+
                     const anchors = Array.from(document.querySelectorAll('a[href]'));
                     for (const a of anchors) {
                         const href = (a.href || '').trim();
-                        if (!href.startsWith('http')) continue;
-                        if (!/truc-tiep|xem-|live|match|tran-dau/i.test(href.toLowerCase())) continue;
+                        if (!href.startsWith('http') || !isMatchHref(href)) continue;
 
-                        const card = a.closest('article, li, [class*="match"], [class*="item"], [class*="card"], [class*="game"], tr') || a;
+                        const myPath = normPath(href);
+                        if (!myPath) continue;
+
+                        // Leo ngược DOM lên tối đa 7 cấp để ôm trọn cả thẻ trận đấu (gồm tiêu đề giải phía trên + 2 đội + nút BLV)
+                        // mà không bị tràn sang thẻ trận đấu khác
+                        let card = a;
+                        let cur = a.parentElement;
+                        for (let step = 0; step < 7 && cur && cur !== document.body; step++) {
+                            const subLinks = Array.from(cur.querySelectorAll('a[href]')).filter(x => isMatchHref(x.href || ''));
+                            const distinctPaths = new Set(subLinks.map(x => normPath(x.href)).filter(Boolean));
+                            if (distinctPaths.size === 1 && distinctPaths.has(myPath)) {
+                                card = cur;
+                                cur = cur.parentElement;
+                            } else {
+                                break;
+                            }
+                        }
+
                         const text = (card.innerText || a.innerText || '').trim();
-
-                        // Lấy các dòng chữ bên trong thẻ (dòng đầu tiên chính là tên giải đấu, vd: "AFC Champions League Elite")
                         const cardLines = text
                             .split('\n')
                             .map(s => s.replace(/\s+/g, ' ').trim())
                             .filter(Boolean)
-                            .slice(0, 6);
+                            .slice(0, 8);
 
-                        // Lấy tên BLV nếu nút link là phòng bình luận viên (?anchorId=...)
+                        // Nếu tên giải nằm ở thanh tiêu đề nhóm giải ngay phía trên danh sách trận
+                        let groupHeader = '';
+                        let prev = card.previousElementSibling;
+                        if (prev && !prev.querySelector('a[href]') && (prev.innerText || '').trim().length <= 65) {
+                            groupHeader = (prev.innerText || '').split('\n')[0].trim();
+                        } else if (card.parentElement && card.parentElement.previousElementSibling) {
+                            const pPrev = card.parentElement.previousElementSibling;
+                            if (!pPrev.querySelector('a[href]') && (pPrev.innerText || '').trim().length <= 65) {
+                                groupHeader = (pPrev.innerText || '').split('\n')[0].trim();
+                            }
+                        }
+
                         let roomName = '';
                         if (href.includes('anchorId=')) {
                             const imgAlt = a.querySelector('img')?.getAttribute('alt') || '';
                             roomName = (a.innerText || a.getAttribute('title') || imgAlt || '').trim();
                         }
 
-                        // Lấy sẵn 2 logo đội bóng trong thẻ (bỏ qua ảnh avatar nằm trong nút phòng BLV)
                         const imgs = Array.from(card.querySelectorAll('img'))
                             .filter(img => !img.closest('a[href*="anchorId="]'))
                             .map(img => (img.currentSrc || img.src || img.getAttribute('data-src') || '').trim())
@@ -313,6 +362,7 @@ def scrape_all():
                             href: href,
                             text: text,
                             cardLines: cardLines,
+                            groupHeader: groupHeader,
                             roomName: roomName,
                             logos: uniqueImgs.slice(0, 2)
                         });
@@ -329,9 +379,12 @@ def scrape_all():
                 base_href = raw_href.split("?")[0].rstrip("/")
                 home_name, away_name, kickoff, status = parse_match_info(item.get("text", ""), base_href)
 
-                # Chọn tên giải đấu từ các dòng ở đầu thẻ trận đấu
                 picked_league = ""
-                for ln in item.get("cardLines") or []:
+                candidate_lines = list(item.get("cardLines") or [])
+                if item.get("groupHeader"):
+                    candidate_lines.append(item["groupHeader"])
+
+                for ln in candidate_lines:
                     if is_valid_league(ln, home_name, away_name, [item.get("roomName", "")]):
                         picked_league = clean_league_text(ln)[:45]
                         break
@@ -377,7 +430,6 @@ def scrape_all():
 
         matches = list(grouped_matches.values())
 
-        # Vào chi tiết 25 trận đầu tiên để lấy logo, BLV thật, tên giải bổ sung và link .m3u8
         for m in matches[:25]:
             captured_streams = []
             target_path = urlparse(m["page_url"]).path.rstrip("/")
@@ -393,7 +445,7 @@ def scrape_all():
                 page.goto(entry_url, wait_until="domcontentloaded", timeout=14000)
                 page.wait_for_timeout(2600)
 
-                details = extract_details_from_match_page(page, target_path)
+                details = extract_details_from_match_page(page, target_path, m["home_name"], m["away_name"])
                 page_logos = details.get("logos") or []
                 if len(page_logos) >= 1 and not m["home_logo"]:
                     m["home_logo"] = page_logos[0]
