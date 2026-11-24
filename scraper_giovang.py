@@ -1,17 +1,33 @@
+import gzip
 import json
 import re
-from datetime import datetime, timezone, timedelta
+import ssl
+from datetime import datetime, timedelta, timezone
+from html.parser import HTMLParser
 from urllib.parse import urljoin
-import requests
-from bs4 import BeautifulSoup
+from urllib.request import Request, urlopen
 
 BASE_URL = "https://giovang.guru"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
     "Referer": BASE_URL + "/",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Encoding": "gzip, deflate",
 }
-
 VN_TZ = timezone(timedelta(hours=7))
+
+SSL_CTX = ssl.create_default_context()
+SSL_CTX.check_hostname = False
+SSL_CTX.verify_mode = ssl.CERT_NONE
+
+
+def fetch_html(url: str, timeout: int = 15) -> str:
+    req = Request(url, headers=HEADERS)
+    with urlopen(req, timeout=timeout, context=SSL_CTX) as resp:
+        raw = resp.read()
+        if resp.headers.get("Content-Encoding") == "gzip" or raw[:2] == b"\x1f\x8b":
+            raw = gzip.decompress(raw)
+        return raw.decode("utf-8", errors="ignore")
 
 
 def clean_text(text: str) -> str:
@@ -27,18 +43,11 @@ def normalize_blv_label(raw: str) -> str:
     return txt
 
 
-def extract_img_url(img_tag) -> str:
-    if not img_tag:
-        return ""
-    for attr in ("data-src", "data-lazy-src", "data-original", "src"):
-        val = (img_tag.get(attr) or "").strip()
-        if val and not val.startswith("data:image") and "placeholder" not in val.lower():
-            return urljoin(BASE_URL, val)
-    return ""
-
-
 def parse_teams_from_slug(url: str):
-    m = re.search(r"/truc-tiep-([a-z0-9-]+?)-vs-([a-z0-9-]+?)(?:-\d{2}-\d{2}|-[a-f0-9]{10,}|$)", url)
+    m = re.search(
+        r"/truc-tiep-([a-z0-9-]+?)-vs-([a-z0-9-]+?)(?:-\d{2}-\d{2}|-[a-f0-9]{10,}|$)",
+        url,
+    )
     if not m:
         return "", ""
     home = m.group(1).replace("-", " ").title()
@@ -46,7 +55,7 @@ def parse_teams_from_slug(url: str):
     return home, away
 
 
-def sanitize_league(raw_league: str, home: str, away: str, blvs: list[str]) -> str:
+def sanitize_league(raw_league: str, home: str, away: str, blvs: list) -> str:
     league = clean_text(raw_league)
     stop_tokens = [home, away, "BLV", "Trực tiếp", "LIVE", "SẮP ĐÁ"] + [
         b.replace("BLV ", "") for b in blvs
@@ -60,67 +69,87 @@ def sanitize_league(raw_league: str, home: str, away: str, blvs: list[str]) -> s
     return league
 
 
-def extract_card_blvs(card, home_name: str, away_name: str) -> list[str]:
-    """Chỉ lấy tên BLV nằm bên trong thẻ trận hiện tại."""
-    blvs = []
+class AnchorCardParser(HTMLParser):
+    """Tách toàn bộ thẻ <a href="..."> cùng các thẻ con bên trong (img, text, class)."""
 
-    # 1. Tìm trong các thẻ con chuyên chứa tên BLV / commentator
-    for el in card.select("[class*='blv'], [class*='commentator'], [class*='caster'], [class*='author']"):
-        txt = clean_text(el.get_text())
-        if txt and len(txt) <= 25 and txt.lower() not in (home_name.lower(), away_name.lower()):
-            label = normalize_blv_label(txt)
-            if label not in blvs:
-                blvs.append(label)
+    def __init__(self):
+        super().__init__()
+        self.anchors = []
+        self._cur = None
+        self._depth = 0
+        self._tag_stack = []
 
-    # 2. Nếu không có class riêng, bắt mẫu "BLV Tên" trong text của thẻ trận
-    if not blvs:
-        card_text = clean_text(card.get_text(" "))
-        for m in re.findall(r"BLV\s+[A-Za-zÀ-ỹ0-9_]+", card_text):
-            label = normalize_blv_label(m)
-            if label not in blvs:
-                blvs.append(label)
+    def handle_starttag(self, tag, attrs):
+        attr_dict = dict(attrs)
+        if tag == "a" and self._cur is None:
+            href = (attr_dict.get("href") or "").strip()
+            self._cur = {
+                "href": href,
+                "texts": [],
+                "imgs": [],
+                "league_texts": [],
+                "blv_texts": [],
+                "team_texts": [],
+            }
+            self._depth = 1
+            self._tag_stack = [(tag, attr_dict.get("class", ""))]
+            return
 
-    return blvs
+        if self._cur is not None:
+            self._depth += 1
+            cls = attr_dict.get("class", "")
+            self._tag_stack.append((tag, cls))
+            if tag == "img":
+                for k in ("data-src", "data-lazy-src", "data-original", "src"):
+                    v = (attr_dict.get(k) or "").strip()
+                    if v and not v.startswith("data:image") and "placeholder" not in v.lower():
+                        self._cur["imgs"].append(urljoin(BASE_URL, v))
+                        break
+
+    def handle_data(self, data):
+        if self._cur is None:
+            return
+        txt = clean_text(data)
+        if not txt:
+            return
+        self._cur["texts"].append(txt)
+
+        all_classes = " ".join(c for _, c in self._tag_stack).lower()
+        if any(k in all_classes for k in ("league", "tournament", "tour", "champ")):
+            self._cur["league_texts"].append(txt)
+        if any(k in all_classes for k in ("blv", "commentator", "caster", "author")):
+            self._cur["blv_texts"].append(txt)
+        if any(k in all_classes for k in ("team", "home", "away", "name")):
+            self._cur["team_texts"].append(txt)
+
+    def handle_endtag(self, tag):
+        if self._cur is None:
+            return
+        if self._tag_stack:
+            self._tag_stack.pop()
+        self._depth -= 1
+        if self._depth <= 0:
+            self.anchors.append(self._cur)
+            self._cur = None
+            self._depth = 0
+            self._tag_stack = []
 
 
-def fetch_stream_details(session: requests.Session, match_url: str, card_blvs: list[str]):
+def fetch_stream_details(match_url: str, card_blvs: list) -> list:
     m3u8_urls = []
-    player_blvs = []
-
     try:
-        resp = session.get(match_url, timeout=12)
-        if resp.status_code == 200:
-            html = resp.text
-
-            # Lấy link .m3u8 trực tiếp của trận này
-            for u in re.findall(r"https?://[^\s\"'<>\\]+\.m3u8[^\s\"'<>\\]*", html):
-                u = u.replace("\\/", "/")
-                if u not in m3u8_urls:
-                    m3u8_urls.append(u)
-
-            # Chỉ quét nút chọn server/BLV bên trong vùng player (bỏ qua sidebar trận khác)
-            soup = BeautifulSoup(html, "html.parser")
-            player_zone = soup.select_one(
-                "#player, .player-container, .player-wrap, .server-list, .list-server, .box-player"
-            )
-            if player_zone:
-                for btn in player_zone.select("button, a, [data-link], [data-url], [data-src]"):
-                    txt = clean_text(btn.get_text())
-                    if txt.lower().startswith("blv") and len(txt) <= 25:
-                        label = normalize_blv_label(txt)
-                        if label not in player_blvs:
-                            player_blvs.append(label)
+        html = fetch_html(match_url, timeout=12)
+        for u in re.findall(r"https?://[^\s\"'<>\\]+\.m3u8[^\s\"'<>\\]*", html):
+            u = u.replace("\\/", "/")
+            if u not in m3u8_urls:
+                m3u8_urls.append(u)
     except Exception:
         pass
 
-    # Ưu tiên danh sách BLV lấy trực tiếp từ player_zone, nếu không có thì dùng BLV trên thẻ trận
-    final_blvs = player_blvs if player_blvs else card_blvs
-    if not final_blvs:
-        final_blvs = ["BLV Trực Tiếp"]
-
+    final_blvs = card_blvs if card_blvs else ["BLV Trực Tiếp"]
     streams = []
+
     if m3u8_urls:
-        # Không bao giờ nhân bản 1 link m3u8 thành 3 phòng trùng nhau
         if len(m3u8_urls) == 1:
             streams.append({
                 "label": final_blvs[0],
@@ -136,7 +165,6 @@ def fetch_stream_details(session: requests.Session, match_url: str, card_blvs: l
                     "referer": match_url,
                 })
     else:
-        # Chưa có link m3u8 trực tiếp thì chỉ giữ đúng số phòng BLV thật của trận
         for label in final_blvs:
             streams.append({
                 "label": label,
@@ -148,19 +176,15 @@ def fetch_stream_details(session: requests.Session, match_url: str, card_blvs: l
 
 
 def scrape_giovang():
-    session = requests.Session()
-    session.headers.update(HEADERS)
-
-    resp = session.get(BASE_URL, timeout=15)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
+    html = fetch_html(BASE_URL, timeout=15)
+    parser = AnchorCardParser()
+    parser.feed(html)
 
     seen_urls = set()
     matches = []
 
-    for a_tag in soup.find_all("a", href=True):
-        href = a_tag["href"].strip()
-        full_url = urljoin(BASE_URL, href)
+    for item in parser.anchors:
+        full_url = urljoin(BASE_URL, item["href"])
 
         if "/truc-tiep-" not in full_url:
             continue
@@ -170,21 +194,18 @@ def scrape_giovang():
             continue
         seen_urls.add(full_url)
 
-        card = a_tag
-        if len(clean_text(a_tag.get_text())) < 10 and a_tag.parent:
-            card = a_tag.parent
+        card_text = clean_text(" ".join(item["texts"]))
 
-        team_els = card.select("[class*='team-name'], [class*='name'], .home, .away")
+        # 1. Lấy tên 2 đội
         unique_teams = []
-        for el in team_els:
-            txt = clean_text(el.get_text())
+        for t in item["team_texts"]:
             if (
-                2 <= len(txt) <= 32
-                and not re.match(r"^\d{1,2}:\d{2}$", txt)
-                and not txt.lower().startswith("blv")
-                and txt not in unique_teams
+                2 <= len(t) <= 32
+                and not re.match(r"^\d{1,2}:\d{2}$", t)
+                and not t.lower().startswith("blv")
+                and t not in unique_teams
             ):
-                unique_teams.append(txt)
+                unique_teams.append(t)
 
         slug_home, slug_away = parse_teams_from_slug(full_url)
         home_name = unique_teams[0] if len(unique_teams) >= 2 else slug_home
@@ -192,27 +213,38 @@ def scrape_giovang():
         if not home_name or not away_name:
             continue
 
-        imgs = [extract_img_url(img) for img in card.find_all("img") if extract_img_url(img)]
-        team_logos = [u for u in imgs if "/icon" not in u.lower() and "/logo-web" not in u.lower()]
+        # 2. Lấy logo 2 đội
+        team_logos = [
+            u for u in item["imgs"]
+            if "/icon" not in u.lower() and "/logo-web" not in u.lower()
+        ]
         home_logo = team_logos[0] if len(team_logos) >= 1 else ""
         away_logo = team_logos[1] if len(team_logos) >= 2 else ""
 
-        card_blvs = extract_card_blvs(card, home_name, away_name)
+        # 3. Lấy đúng BLV của riêng thẻ trận này
+        card_blvs = []
+        for b in item["blv_texts"]:
+            if b.lower() not in (home_name.lower(), away_name.lower()) and len(b) <= 25:
+                lbl = normalize_blv_label(b)
+                if lbl not in card_blvs:
+                    card_blvs.append(lbl)
+        if not card_blvs:
+            for m in re.findall(r"BLV\s+[A-Za-zÀ-ỹ0-9_]+", card_text):
+                lbl = normalize_blv_label(m)
+                if lbl not in card_blvs:
+                    card_blvs.append(lbl)
 
-        league_el = card.select_one(
-            "[class*='league'], [class*='tournament'], [class*='tour'], [class*='champ'], .title-league"
-        )
-        raw_league = league_el.get_text() if league_el else ""
+        # 4. Lấy tên giải đấu sạch
+        raw_league = " ".join(item["league_texts"])
         league = sanitize_league(raw_league, home_name, away_name, card_blvs)
 
-        card_text = clean_text(card.get_text(" "))
+        # 5. Giờ đá & trạng thái LIVE / SẮP ĐÁ
         time_match = re.search(r"\b(\d{1,2}:\d{2})\b", card_text)
         kickoff = time_match.group(1) if time_match else "20:00"
-
         is_live = bool(re.search(r"\b(LIVE|Đang đá|Hiệp 1|Hiệp 2|HT)\b", card_text, re.IGNORECASE))
         status = "LIVE" if is_live else "SẮP ĐÁ"
 
-        streams = fetch_stream_details(session, full_url, card_blvs)
+        streams = fetch_stream_details(full_url, card_blvs)
 
         matches.append({
             "id": f"gv_{len(matches) + 1}",
