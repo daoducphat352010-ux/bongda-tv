@@ -1,433 +1,63 @@
 {
-  "app_title": "Cập nhật lúc 22:55 25/11/2026",
-  "updated_at": "22:55 25/11/2026",
+  "app_title": "Cập nhật lúc 07:00 26/11/2026",
+  "updated_at": "07:00 26/11/2026",
   "matches": [
     {
       "id": "m_1",
-      "league": "UEFA Youth League",
-      "status": "LIVE",
-      "kickoff": "21:00",
-      "home_name": "Club Brugge U19",
-      "home_logo": "https://img.cltvap.cc/football/team/2949f63aa1981975fdb031ffabd20eeb.png",
-      "away_name": "Liverpool U19",
-      "away_logo": "https://img.cltvap.cc/football/team/3e944ec9bfba71dbb16dea25da6ca94a.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Ô Long",
-          "url": "https://live2.zktsva.app/live/432017.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/club-brugge-u19-vs-liverpool-u19-luc-2100-ngay-25-11-2026-l7oqdehg7ggdr51?anchorId=6a31da2f9a2eb0e4aaedf62e"
-        }
-      ]
-    },
-    {
-      "id": "m_2",
-      "league": "FIFA U17 World Cup",
-      "status": "LIVE",
-      "kickoff": "21:30",
-      "home_name": "Greece U17",
-      "home_logo": "https://img.cltvap.cc/football/team/1da38e9fc1f765ffa964a0ab64c8d8fe.png",
-      "away_name": "Qatar U17",
-      "away_logo": "https://img.cltvap.cc/football/team/7303a103c93fea0445384d6ff3f3d1b9.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Tồ",
-          "url": "https://live2.zktsva.app/live/796315.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/greece-u17-vs-qatar-u17-luc-2130-ngay-25-11-2026-ednm9whwp4x8ryo?anchorId=6aa14fd12a33b8ed65eea01c"
-        }
-      ]
-    },
-    {
-      "id": "m_3",
-      "league": "FIFA U17 World Cup",
-      "status": "LIVE",
-      "kickoff": "21:30",
-      "home_name": "Panama U17",
-      "home_logo": "https://img.cltvap.cc/football/team/a159b2e2c6b3cb7bf0e92eb43fe27bdd.png",
-      "away_name": "Egypt U17",
-      "away_logo": "https://img.cltvap.cc/football/team/65a579da11fa712149bca347ecfcb208.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Nhí",
-          "url": "https://live2.zktsva.app/live/301263.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/panama-u17-vs-egypt-u17-luc-2130-ngay-25-11-2026-6ypq3nhvpoevmd7?anchorId=6aa14ecd419a47d5e57cb691"
-        }
-      ]
-    },
-    {
-      "id": "m_4",
-      "league": "Russian Cup",
-      "status": "LIVE",
-      "kickoff": "22:00",
-      "home_name": "Akhmat Grozny",
-      "home_logo": "https://img.cltvap.cc/football/team/553ebe5306456914b5574aa8ef0eaf0f.png",
-      "away_name": "Fk",
-      "away_logo": "https://img.cltvap.cc/football/team/f48a781b76e04c7a50ea2136cb37ab87.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Tốc",
-          "url": "https://live2.zktsva.app/live/307240.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/akhmat-grozny-vs-fk-krasnodar-luc-2200-ngay-25-11-2026-318q66hxp77vqo9?anchorId=69fcb2b17f55d5be198f16aa"
-        }
-      ]
-    },
-    {
-      "id": "m_5",
-      "league": "FIFA U17 World Cup",
-      "status": "LIVE",
-      "kickoff": "22:30",
-      "home_name": "Denmark U17",
-      "home_logo": "https://img.cltvap.cc/football/team/685d3703a0b1410dc3bf2280eb5a15ec.png",
-      "away_name": "Argentina U17",
-      "away_logo": "https://img.cltvap.cc/football/team/7d44a77ef7bf7d809287828b992f3007.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Quỷ",
-          "url": "https://live2.zktsva.app/live/304565.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/denmark-u17-vs-argentina-u17-luc-2230-ngay-25-11-2026-1l4rjnh9d028m7v?anchorId=6a9fea8c419a47d5e57cb68d"
-        }
-      ]
-    },
-    {
-      "id": "m_6",
-      "league": "FIFA U17 World Cup",
-      "status": "LIVE",
-      "kickoff": "22:30",
-      "home_name": "Australia U17",
-      "home_logo": "https://img.cltvap.cc/football/team/2d8fe42de2f833581faa077f788329fa.png",
-      "away_name": "Mozambique U17",
-      "away_logo": "https://img.cltvap.cc/football/team/d3b8cf8b9c797942fe68565e4ed2d8c3.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Péo",
-          "url": "https://live2.zktsva.app/live/303098.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/australia-u17-vs-mozambique-u17-luc-2230-ngay-25-11-2026-jw2r09hkgv6krz8?anchorId=6a78aab67e077ab7a1f9af59"
-        }
-      ]
-    },
-    {
-      "id": "m_7",
-      "league": "AFC Champions League Two",
-      "status": "LIVE",
-      "kickoff": "23:00",
-      "home_name": "Al Kuwait Sc",
-      "home_logo": "https://img.cltvap.cc/football/team/b292fe77f1c6c63d12782e565ea3e92f.png",
-      "away_name": "Al",
-      "away_logo": "https://img.cltvap.cc/football/team/21da55d164e80f29bdfd9f8cef55a76b.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Mõm",
-          "url": "https://live2.zktsva.app/live/300523.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/al-kuwait-sc-vs-al-wahdauae-luc-2300-ngay-25-11-2026-vjxm8ghen2g3r6o?anchorId=6ac6623d35fd50989491e855"
-        }
-      ]
-    },
-    {
-      "id": "m_8",
-      "league": "AFC Champions League Two",
-      "status": "LIVE",
-      "kickoff": "23:00",
-      "home_name": "Al Jazirauae",
-      "home_logo": "https://img.cltvap.cc/football/team/9352b8e0b9515b84abf716a32c42777e.png",
-      "away_name": "Gol Gohar Fc",
-      "away_logo": "https://img.cltvap.cc/football/team/69625f17e031ad1fcb33823338b74d95.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Bệu",
-          "url": "https://live2.zktsva.app/live/289650.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/al-jazirauae-vs-gol-gohar-fc-luc-2300-ngay-25-11-2026-1l4rjnh9831gm7v?anchorId=69fc585e696b57b6f1dae26b"
-        }
-      ]
-    },
-    {
-      "id": "m_9",
-      "league": "AFC Champions League Two",
-      "status": "LIVE",
-      "kickoff": "23:00",
-      "home_name": "Al Muharraq",
-      "home_logo": "https://img.cltvap.cc/football/team/4e9422ab24a8dff2521be20e1c129f20.png",
-      "away_name": "Arkadag Fk",
-      "away_logo": "https://img.cltvap.cc/football/team/aad022bfac5c480bed8d0dc2a710281e.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Gáy",
-          "url": "https://live2.zktsva.app/live/294335.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/al-muharraq-vs-arkadag-fk-luc-2300-ngay-25-11-2026-jw2r09hkepxlrz8?anchorId=6a68b4c60f5c6246168b1fa1"
-        }
-      ]
-    },
-    {
-      "id": "m_10",
-      "league": "AFC Champions League Two",
-      "status": "LIVE",
-      "kickoff": "23:00",
-      "home_name": "Al Faisaly Amman",
-      "home_logo": "https://img.cltvap.cc/football/team/d73fc6a782904bb6819be4e0e86e8a55.png",
-      "away_name": "Al Rayyan Sports Club",
-      "away_logo": "https://img.cltvap.cc/football/team/d36d53da32742efb1d00f27e959603a0.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Kiêu",
-          "url": "https://live2.zktsva.app/live/741294.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/al-faisaly-amman-vs-al-rayyan-sports-club-luc-2300-ngay-25-11-2026-n54qllhnlkx7qvy?anchorId=6a955bd5c8262fd0d7ecee7a"
-        }
-      ]
-    },
-    {
-      "id": "m_11",
-      "league": "GCC Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "00:00",
-      "home_name": "Qatar Sports Club",
-      "home_logo": "https://img.cltvap.cc/football/team/e17b91a2f24fb83448c42da816708785.png",
-      "away_name": "Al-Nasr Dubai",
-      "away_logo": "https://img.cltvap.cc/football/team/5e5f56f16382d66ff8bcdb20bd309169.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Tồ",
-          "url": "https://gavang33.ag/truc-tiep/qatar-sports-club-vs-al-nasr-dubai-luc-0000-ngay-26-11-2026-23xmvkhyvnw8qg8?anchorId=6aa14fd12a33b8ed65eea01c",
-          "referer": "https://gavang33.ag/truc-tiep/qatar-sports-club-vs-al-nasr-dubai-luc-0000-ngay-26-11-2026-23xmvkhyvnw8qg8?anchorId=6aa14fd12a33b8ed65eea01c"
-        }
-      ]
-    },
-    {
-      "id": "m_12",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "00:45",
-      "home_name": "Sabah Baku",
-      "home_logo": "https://img.cltvap.cc/football/team/3333e7a476b2b7e0555c0c7607d1a10e.png",
-      "away_name": "FC Barcelona",
-      "away_logo": "https://img.cltvap.cc/football/team/c88eb303b56b45b088944ed95dc3d443.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Phệ + Gà Siêu Quỷ",
-          "url": "https://gavang33.ag/truc-tiep/sabah-baku-vs-fc-barcelona-luc-0045-ngay-26-11-2026-l5ergph4zx4xr8k?anchorId=6a2412365aa4c65a86c08fb5",
-          "referer": "https://gavang33.ag/truc-tiep/sabah-baku-vs-fc-barcelona-luc-0045-ngay-26-11-2026-l5ergph4zx4xr8k?anchorId=6a2412365aa4c65a86c08fb5"
-        },
-        {
-          "label": "BLV Gà Siêu Péo",
-          "url": "https://gavang33.ag/truc-tiep/sabah-baku-vs-fc-barcelona-luc-0045-ngay-26-11-2026-l5ergph4zx4xr8k?anchorId=6a78aab67e077ab7a1f9af59",
-          "referer": "https://gavang33.ag/truc-tiep/sabah-baku-vs-fc-barcelona-luc-0045-ngay-26-11-2026-l5ergph4zx4xr8k?anchorId=6a78aab67e077ab7a1f9af59"
-        }
-      ]
-    },
-    {
-      "id": "m_13",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "00:45",
-      "home_name": "SK Slavia Praha",
-      "home_logo": "https://img.cltvap.cc/football/team/2080ede2c5d09638a7188913c81075ef.png",
-      "away_name": "Villarreal CF",
-      "away_logo": "https://img.cltvap.cc/football/team/c23f7906c95f439eafebb8575c30e7e3.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Nhí",
-          "url": "https://gavang33.ag/truc-tiep/sk-slavia-praha-vs-villarreal-cf-luc-0045-ngay-26-11-2026-x7lm7phjlyx9m2w?anchorId=6aa14ecd419a47d5e57cb691",
-          "referer": "https://gavang33.ag/truc-tiep/sk-slavia-praha-vs-villarreal-cf-luc-0045-ngay-26-11-2026-x7lm7phjlyx9m2w?anchorId=6aa14ecd419a47d5e57cb691"
-        }
-      ]
-    },
-    {
-      "id": "m_14",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Atletico Madrid",
-      "home_logo": "https://img.cltvap.cc/football/team/10cc5b7340144b8eb8238166e64bd62f.png",
-      "away_name": "Viking",
-      "away_logo": "https://img.cltvap.cc/football/team/b637f7ccc5e84fe4a4c3e822d2123333.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Bệu",
-          "url": "https://gavang33.ag/truc-tiep/atletico-madrid-vs-viking-luc-0300-ngay-26-11-2026-jw2r09hkey93rz8?anchorId=69fc585e696b57b6f1dae26b",
-          "referer": "https://gavang33.ag/truc-tiep/atletico-madrid-vs-viking-luc-0300-ngay-26-11-2026-jw2r09hkey93rz8?anchorId=69fc585e696b57b6f1dae26b"
-        }
-      ]
-    },
-    {
-      "id": "m_15",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Club Brugge",
-      "home_logo": "https://img.cltvap.cc/football/team/2e9f652d28ec91e0b66c0b714bff8d78.png",
-      "away_name": "Liverpool",
-      "away_logo": "https://img.cltvap.cc/football/team/b3df4496e857030cbd50532969bad9a6.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Ngố",
-          "url": "https://gavang33.ag/truc-tiep/club-brugge-vs-liverpool-luc-0300-ngay-26-11-2026-965mkyhkjdo1r1g?anchorId=6aa136bffcdef77bf7fcc812",
-          "referer": "https://gavang33.ag/truc-tiep/club-brugge-vs-liverpool-luc-0300-ngay-26-11-2026-965mkyhkjdo1r1g?anchorId=6aa136bffcdef77bf7fcc812"
-        }
-      ]
-    },
-    {
-      "id": "m_16",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Inter Milan",
-      "home_logo": "https://img.cltvap.cc/football/team/a8cd83c5eca342bbafa6ab8134c27e80.png",
-      "away_name": "VfB Stuttgart",
-      "away_logo": "https://img.cltvap.cc/football/team/58d10af2e12e4ed18ee9de02c0c4235e.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Ô Long",
-          "url": "https://gavang33.ag/truc-tiep/inter-milan-vs-vfb-stuttgart-luc-0300-ngay-26-11-2026-k82rekhg5p0erep?anchorId=6a31da2f9a2eb0e4aaedf62e",
-          "referer": "https://gavang33.ag/truc-tiep/inter-milan-vs-vfb-stuttgart-luc-0300-ngay-26-11-2026-k82rekhg5p0erep?anchorId=6a31da2f9a2eb0e4aaedf62e"
-        }
-      ]
-    },
-    {
-      "id": "m_17",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "LOSC Lille",
-      "home_logo": "https://img.cltvap.cc/football/team/88276c7b79264337a84f3996acb57233.png",
-      "away_name": "FC Bayern Munich",
-      "away_logo": "https://img.cltvap.cc/football/team/d7d1832604de46559909b010b33e60ab.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Mõm",
-          "url": "https://gavang33.ag/truc-tiep/losc-lille-vs-fc-bayern-munich-luc-0300-ngay-26-11-2026-8yomo4h1wl3eq0j?anchorId=6ac6623d35fd50989491e855",
-          "referer": "https://gavang33.ag/truc-tiep/losc-lille-vs-fc-bayern-munich-luc-0300-ngay-26-11-2026-8yomo4h1wl3eq0j?anchorId=6ac6623d35fd50989491e855"
-        }
-      ]
-    },
-    {
-      "id": "m_18",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Paris Saint Germain",
-      "home_logo": "https://img.cltvap.cc/football/team/52b1faac01114db59798b5191df5c925.png",
-      "away_name": "AS Roma",
-      "away_logo": "https://img.cltvap.cc/football/team/7a192686d30c1ad031d2fb605eaf2f2a.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Tồ",
-          "url": "https://gavang33.ag/truc-tiep/paris-saint-germain-vs-as-roma-luc-0300-ngay-26-11-2026-l7oqdehgvwo5r51?anchorId=6aa14fd12a33b8ed65eea01c",
-          "referer": "https://gavang33.ag/truc-tiep/paris-saint-germain-vs-as-roma-luc-0300-ngay-26-11-2026-l7oqdehgvwo5r51?anchorId=6aa14fd12a33b8ed65eea01c"
-        }
-      ]
-    },
-    {
-      "id": "m_19",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "FC Shakhtar Donetsk",
-      "home_logo": "https://img.cltvap.cc/football/team/141bcf6ab6d0bc7b8c67dc5eeb9f347d.png",
-      "away_name": "Fenerbahce",
-      "away_logo": "https://img.cltvap.cc/football/team/dff00f1fd4a7dd2feac000b462416867.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Kiêu",
-          "url": "https://gavang33.ag/truc-tiep/fc-shakhtar-donetsk-vs-fenerbahce-luc-0300-ngay-26-11-2026-6ypq3nhv2yk0md7?anchorId=6a955bd5c8262fd0d7ecee7a",
-          "referer": "https://gavang33.ag/truc-tiep/fc-shakhtar-donetsk-vs-fenerbahce-luc-0300-ngay-26-11-2026-6ypq3nhv2yk0md7?anchorId=6a955bd5c8262fd0d7ecee7a"
-        }
-      ]
-    },
-    {
-      "id": "m_20",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Sporting CP",
-      "home_logo": "https://img.cltvap.cc/football/team/646764e6e2fe4ca7970b9eb87c8b65af.png",
-      "away_name": "Manchester United",
-      "away_logo": "https://img.cltvap.cc/football/team/85f3bc66effc4225b0efb602bb5e85e3.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Phệ + Gà Siêu Quỷ",
-          "url": "https://gavang33.ag/truc-tiep/sporting-cp-vs-manchester-united-luc-0300-ngay-26-11-2026-ednm9whwjy57ryo?anchorId=6a2412365aa4c65a86c08fb5",
-          "referer": "https://gavang33.ag/truc-tiep/sporting-cp-vs-manchester-united-luc-0300-ngay-26-11-2026-ednm9whwjy57ryo?anchorId=6a2412365aa4c65a86c08fb5"
-        },
-        {
-          "label": "BLV Gà Siêu Gáy + Gà Siêu Ngố",
-          "url": "https://gavang33.ag/truc-tiep/sporting-cp-vs-manchester-united-luc-0300-ngay-26-11-2026-ednm9whwjy57ryo?anchorId=6b06eb2896bf1978124d0ae3",
-          "referer": "https://gavang33.ag/truc-tiep/sporting-cp-vs-manchester-united-luc-0300-ngay-26-11-2026-ednm9whwjy57ryo?anchorId=6b06eb2896bf1978124d0ae3"
-        }
-      ]
-    },
-    {
-      "id": "m_21",
       "league": "Brazilian Serie A",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "06:00",
-      "home_name": "Atlético Mineiro - MG",
+      "home_name": "Atletico Mineiro Mg",
       "home_logo": "https://img.cltvap.cc/football/team/079e86cebd6511ce807cc6073a3e26ee.png",
-      "away_name": "Corinthians - SP",
+      "away_name": "Corinthians Sp",
       "away_logo": "https://img.cltvap.cc/football/team/aa4d61da1df31972e52e1e62f90ec558.png",
       "score": "vs",
       "streams": [
         {
           "label": "BLV Gà Siêu Kiêu",
-          "url": "https://gavang33.ag/truc-tiep/atletico-mineiro-mg-vs-corinthians-sp-luc-0600-ngay-26-11-2026-k82rekhg0vnxrep?anchorId=6a955bd5c8262fd0d7ecee7a",
+          "url": "https://live2.zktsva.app/live/741294.m3u8",
           "referer": "https://gavang33.ag/truc-tiep/atletico-mineiro-mg-vs-corinthians-sp-luc-0600-ngay-26-11-2026-k82rekhg0vnxrep?anchorId=6a955bd5c8262fd0d7ecee7a"
         }
       ]
     },
     {
-      "id": "m_22",
+      "id": "m_2",
       "league": "Categoría Primera A",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "06:20",
       "home_name": "Independiente Santa Fe",
       "home_logo": "https://img.cltvap.cc/football/team/5761c77ebe56b383931a6870372f5e46.png",
-      "away_name": "Deportiva Once Caldas",
+      "away_name": "Deportiva Once",
       "away_logo": "https://img.cltvap.cc/football/team/b060f70150fe2b52fba8aa026a930c4e.png",
       "score": "vs",
       "streams": [
         {
           "label": "BLV Gà Siêu Tốc",
-          "url": "https://gavang33.ag/truc-tiep/independiente-santa-fe-vs-deportiva-once-caldas-luc-0620-ngay-26-11-2026-6ypq3nhk0y37md7?anchorId=69fcb2b17f55d5be198f16aa",
+          "url": "https://live2.zktsva.app/live/307240.m3u8",
           "referer": "https://gavang33.ag/truc-tiep/independiente-santa-fe-vs-deportiva-once-caldas-luc-0620-ngay-26-11-2026-6ypq3nhk0y37md7?anchorId=69fcb2b17f55d5be198f16aa"
         }
       ]
     },
     {
-      "id": "m_23",
+      "id": "m_3",
       "league": "Argentine Division 1",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "07:00",
       "home_name": "Boca Juniors",
       "home_logo": "https://img.cltvap.cc/football/team/dadc7fc58b2f470a8986ee1bee0cccbe.png",
-      "away_name": "Independiente Rivadavia",
+      "away_name": "Independiente",
       "away_logo": "https://img.cltvap.cc/football/team/df85f430a4bb46f28cb8a9b2e2aef198.png",
       "score": "vs",
       "streams": [
         {
           "label": "BLV Gà Siêu Son",
-          "url": "https://gavang33.ag/truc-tiep/boca-juniors-vs-independiente-rivadavia-luc-0700-ngay-26-11-2026-y0or5jh9l9dlqwz?anchorId=69fc581d696b57b6f1dae269",
+          "url": "https://live2.zktsva.app/live/306290.m3u8",
           "referer": "https://gavang33.ag/truc-tiep/boca-juniors-vs-independiente-rivadavia-luc-0700-ngay-26-11-2026-y0or5jh9l9dlqwz?anchorId=69fc581d696b57b6f1dae269"
         }
       ]
     },
     {
-      "id": "m_24",
+      "id": "m_4",
       "league": "Categoría Primera A",
       "status": "SẮP ĐÁ",
       "kickoff": "08:30",
@@ -445,7 +75,7 @@
       ]
     },
     {
-      "id": "m_25",
+      "id": "m_5",
       "league": "Guatemala Liga Nacional",
       "status": "SẮP ĐÁ",
       "kickoff": "09:00",
@@ -463,7 +93,7 @@
       ]
     },
     {
-      "id": "m_26",
+      "id": "m_6",
       "league": "Indonesian Super League",
       "status": "SẮP ĐÁ",
       "kickoff": "15:30",
@@ -481,7 +111,7 @@
       ]
     },
     {
-      "id": "m_27",
+      "id": "m_7",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -499,7 +129,7 @@
       ]
     },
     {
-      "id": "m_28",
+      "id": "m_8",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -517,7 +147,7 @@
       ]
     },
     {
-      "id": "m_29",
+      "id": "m_9",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "17:00",
@@ -535,7 +165,7 @@
       ]
     },
     {
-      "id": "m_30",
+      "id": "m_10",
       "league": "Azerbaijan First Division",
       "status": "SẮP ĐÁ",
       "kickoff": "17:30",
@@ -553,7 +183,7 @@
       ]
     },
     {
-      "id": "m_31",
+      "id": "m_11",
       "league": "Azerbaijan First Division",
       "status": "SẮP ĐÁ",
       "kickoff": "17:30",
@@ -571,7 +201,7 @@
       ]
     },
     {
-      "id": "m_32",
+      "id": "m_12",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
@@ -589,7 +219,7 @@
       ]
     },
     {
-      "id": "m_33",
+      "id": "m_13",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
@@ -607,7 +237,7 @@
       ]
     },
     {
-      "id": "m_34",
+      "id": "m_14",
       "league": "AFC Champions League Two",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
@@ -625,7 +255,7 @@
       ]
     },
     {
-      "id": "m_35",
+      "id": "m_15",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
@@ -643,7 +273,7 @@
       ]
     },
     {
-      "id": "m_36",
+      "id": "m_16",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
@@ -666,9 +296,9 @@
       ]
     },
     {
-      "id": "m_37",
+      "id": "m_17",
       "league": "FIFA U17 World Cup",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "Jamaica U17",
       "home_logo": "https://img.cltvap.cc/football/team/f7779710d2026dca44c41da7a9b7c748.png",
@@ -684,9 +314,9 @@
       ]
     },
     {
-      "id": "m_38",
+      "id": "m_18",
       "league": "FIFA U17 World Cup",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "Uzbekistan U17",
       "home_logo": "https://img.cltvap.cc/football/team/dcd70ec917f47c6bf3bf086e67d4bc1e.png",
@@ -702,9 +332,9 @@
       ]
     },
     {
-      "id": "m_39",
+      "id": "m_19",
       "league": "Russian Cup",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "21:00",
       "home_name": "FC Orenburg",
       "home_logo": "https://img.cltvap.cc/football/team/6d81ef01fa7aaedf7144c933bdcc62d8.png",
@@ -720,9 +350,9 @@
       ]
     },
     {
-      "id": "m_40",
+      "id": "m_20",
       "league": "Saudi Professional League",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "21:25",
       "home_name": "Al Fateh",
       "home_logo": "https://img.cltvap.cc/football/team/ae23ea18931ebe834ef6fe4799572e7f.png",
@@ -738,9 +368,9 @@
       ]
     },
     {
-      "id": "m_41",
+      "id": "m_21",
       "league": "FIFA U17 World Cup",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "China U17",
       "home_logo": "https://img.cltvap.cc/football/team/c04fddecf9b964a3f66a1aa28bba9625.png",
@@ -756,9 +386,9 @@
       ]
     },
     {
-      "id": "m_42",
+      "id": "m_22",
       "league": "FIFA U17 World Cup",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "22:00",
       "home_name": "Morocco U17",
       "home_logo": "https://img.cltvap.cc/football/team/d63036cfba56a5c3cb75ab14b33fe677.png",
@@ -774,9 +404,9 @@
       ]
     },
     {
-      "id": "m_43",
+      "id": "m_23",
       "league": "Saudi Professional League",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "22:05",
       "home_name": "Abha",
       "home_logo": "https://img.cltvap.cc/football/team/a98a96581615b55fc4ea927d73036ae4.png",
@@ -792,9 +422,9 @@
       ]
     },
     {
-      "id": "m_44",
+      "id": "m_24",
       "league": "UEFA Champions League",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "22:30",
       "home_name": "FC Kairat Almaty",
       "home_logo": "https://img.cltvap.cc/football/team/3ef04912f88c3166f1a47864cde71949.png",
@@ -810,9 +440,9 @@
       ]
     },
     {
-      "id": "m_45",
+      "id": "m_25",
       "league": "FIFA U17 World Cup",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Tajikistan U17",
       "home_logo": "https://img.cltvap.cc/football/team/79d0360cd882c01f1ac008b3bb85feb3.png",
@@ -828,9 +458,9 @@
       ]
     },
     {
-      "id": "m_46",
+      "id": "m_26",
       "league": "FIFA U17 World Cup",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "23:00",
       "home_name": "Croatia U17",
       "home_logo": "https://img.cltvap.cc/football/team/0c383e8deecbd58d5cbdfd324132b91f.png",
@@ -846,7 +476,7 @@
       ]
     },
     {
-      "id": "m_47",
+      "id": "m_27",
       "league": "Russian Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "23:30",
