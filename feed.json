@@ -1,357 +1,15 @@
 {
-  "app_title": "Cập nhật lúc 01:21 27/11/2026",
-  "updated_at": "01:21 27/11/2026",
+  "app_title": "Cập nhật lúc 08:53 27/11/2026",
+  "updated_at": "08:53 27/11/2026",
   "matches": [
     {
       "id": "m_1",
-      "league": "UEFA Europa League",
-      "status": "LIVE",
-      "kickoff": "00:45",
-      "home_name": "Rc Celta",
-      "home_logo": "https://img.cltvap.cc/football/team/4cae02e963f046f381c25a5d16039d0b.png",
-      "away_name": "Bournemouth Afc",
-      "away_logo": "https://img.cltvap.cc/football/team/932f872b378d4c9280f2f898b8c42905.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Tốc",
-          "url": "https://live2.zktsva.app/live/307240.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/rc-celta-vs-bournemouth-afc-luc-0045-ngay-27-11-2026-318q66hx9l0eqo9?anchorId=69fcb2b17f55d5be198f16aa"
-        }
-      ]
-    },
-    {
-      "id": "m_2",
-      "league": "UEFA Champions League",
-      "status": "LIVE",
-      "kickoff": "00:45",
-      "home_name": "Brighton Hove Albion",
-      "home_logo": "https://img.cltvap.cc/football/team/29083e9b799845be80570fa263aa5be7.png",
-      "away_name": "Cs Universitatea",
-      "away_logo": "https://img.cltvap.cc/football/team/d8fef73043961d11ed61a37476a54568.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Ngố",
-          "url": "https://live2.zktsva.app/live/301238.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/brighton-hove-albion-vs-cs-universitatea-craiova-luc-0045-ngay-27-11-2026-dj2ryohlw841q1z?anchorId=6aa136bffcdef77bf7fcc812"
-        }
-      ]
-    },
-    {
-      "id": "m_3",
-      "league": "UEFA Europa League",
-      "status": "LIVE",
-      "kickoff": "00:45",
-      "home_name": "Olympiacos Piraeus",
-      "home_logo": "https://img.cltvap.cc/football/team/1df992d91eb0877558c872a18ea605f0.png",
-      "away_name": "Ac Milan",
-      "away_logo": "https://img.cltvap.cc/football/team/4fda9a77bc9c4d8c97d68f792dbb95d1.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Gáy",
-          "url": "https://live2.zktsva.app/live/294335.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/olympiacos-piraeus-vs-ac-milan-luc-0045-ngay-27-11-2026-l7oqdehgv711r51?anchorId=6a68b4c60f5c6246168b1fa1"
-        }
-      ]
-    },
-    {
-      "id": "m_4",
-      "league": "UEFA Europa League",
-      "status": "LIVE",
-      "kickoff": "00:45",
-      "home_name": "Marseille",
-      "home_logo": "https://img.cltvap.cc/football/team/bf38710e138f43618dac312e088195bd.png",
-      "away_name": "Levski Sofia",
-      "away_logo": "https://img.cltvap.cc/football/team/8dbd61602ca445f0b51ab75962031d4a.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Ô Long",
-          "url": "https://live2.zktsva.app/live/432017.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/marseille-vs-levski-sofia-luc-0045-ngay-27-11-2026-1l4rjnh98vkom7v?anchorId=6a31da2f9a2eb0e4aaedf62e"
-        }
-      ]
-    },
-    {
-      "id": "m_5",
-      "league": "UEFA Europa League",
-      "status": "LIVE",
-      "kickoff": "00:45",
-      "home_name": "Red Bull Salzburg",
-      "home_logo": "https://img.cltvap.cc/football/team/4e07d3ac5c7d1f02fba7fa4c14c8ee76.png",
-      "away_name": "Ararat Armenia Fc",
-      "away_logo": "https://img.cltvap.cc/football/team/445b142144eafa15449f92563fd1b978.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Nhí",
-          "url": "https://live2.zktsva.app/live/301263.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/red-bull-salzburg-vs-ararat-armenia-fc-luc-0045-ngay-27-11-2026-965mkyhkjp13r1g?anchorId=6aa14ecd419a47d5e57cb691"
-        }
-      ]
-    },
-    {
-      "id": "m_6",
-      "league": "UEFA Europa League",
-      "status": "LIVE",
-      "kickoff": "00:45",
-      "home_name": "Dinamo Zagreb",
-      "home_logo": "https://img.cltvap.cc/football/team/b22d9b2c5fc8d98df9194a9c5d66ec83.png",
-      "away_name": "Bayer 04",
-      "away_logo": "https://img.cltvap.cc/football/team/dde60194018144009e079fc9c0af9090.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Tồ",
-          "url": "https://live2.zktsva.app/live/796315.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/dinamo-zagreb-vs-bayer-04-leverkusen-luc-0045-ngay-27-11-2026-3glrw7hnxdjlqdy?anchorId=6aa14fd12a33b8ed65eea01c"
-        }
-      ]
-    },
-    {
-      "id": "m_7",
-      "league": "UEFA Europa League",
-      "status": "LIVE",
-      "kickoff": "00:45",
-      "home_name": "Union Saint Gilloise",
-      "home_logo": "https://img.cltvap.cc/football/team/b796af8f1a3f43d5d56f4a4255b87260.png",
-      "away_name": "Lech",
-      "away_logo": "https://img.cltvap.cc/football/team/d49ab93fbac0f4602293bac98b94d9c0.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Péo",
-          "url": "https://live2.zktsva.app/live/303098.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/union-saint-gilloise-vs-lech-poznan-luc-0045-ngay-27-11-2026-23xmvkh6e7geqg8?anchorId=6a78aab67e077ab7a1f9af59"
-        }
-      ]
-    },
-    {
-      "id": "m_8",
-      "league": "Russian Cup",
-      "status": "SẮP ĐÁ",
-      "kickoff": "23:30",
-      "home_name": "Dynamo Moscow",
-      "home_logo": "https://img.cltvap.cc/football/team/e990f1f508004c8784be082e68ae1bff.png",
-      "away_name": "Fakel",
-      "away_logo": "https://img.cltvap.cc/football/team/d4aace06743a4a5df8221771f870f077.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Mõm",
-          "url": "https://live2.zktsva.app/live/300523.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/dynamo-moscow-vs-fakel-voronezh-luc-2330-ngay-26-11-2026-k82rekhg4889rep?anchorId=6ac6623d35fd50989491e855"
-        }
-      ]
-    },
-    {
-      "id": "m_9",
-      "league": "UEFA Europa League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Crystal Palace",
-      "home_logo": "https://img.cltvap.cc/football/team/6c4a14d88b0c4ffc950b06ac67257e97.png",
-      "away_name": "Real Sociedad",
-      "away_logo": "https://img.cltvap.cc/football/team/7a53e6d23881468e94c000bc6db40c3a.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Ngố",
-          "url": "https://gavang33.ag/truc-tiep/crystal-palace-vs-real-sociedad-luc-0300-ngay-27-11-2026-8yomo4h1wn2vq0j?anchorId=6aa136bffcdef77bf7fcc812",
-          "referer": "https://gavang33.ag/truc-tiep/crystal-palace-vs-real-sociedad-luc-0300-ngay-27-11-2026-8yomo4h1wn2vq0j?anchorId=6aa136bffcdef77bf7fcc812"
-        }
-      ]
-    },
-    {
-      "id": "m_10",
-      "league": "UEFA Europa League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Ferencvarosi TC",
-      "home_logo": "https://img.cltvap.cc/football/team/202e45f30a94193466ba2ae8a96e7685.png",
-      "away_name": "NK Publikum Celje",
-      "away_logo": "https://img.cltvap.cc/football/team/a893553fb0ef04426d914ac3eb07433b.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Péo",
-          "url": "https://gavang33.ag/truc-tiep/ferencvarosi-tc-vs-nk-publikum-celje-luc-0300-ngay-27-11-2026-x7lm7phjl40xm2w?anchorId=6a78aab67e077ab7a1f9af59",
-          "referer": "https://gavang33.ag/truc-tiep/ferencvarosi-tc-vs-nk-publikum-celje-luc-0300-ngay-27-11-2026-x7lm7phjl40xm2w?anchorId=6a78aab67e077ab7a1f9af59"
-        }
-      ]
-    },
-    {
-      "id": "m_11",
-      "league": "UEFA Europa League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "TSG Hoffenheim",
-      "home_logo": "https://img.cltvap.cc/football/team/b8e6ee09d2414834b547c3a955dab99b.png",
-      "away_name": "Sturm Graz",
-      "away_logo": "https://img.cltvap.cc/football/team/4cc9044aed34f71c4e79bd260ea938fb.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Tồ",
-          "url": "https://gavang33.ag/truc-tiep/tsg-hoffenheim-vs-sturm-graz-luc-0300-ngay-27-11-2026-y39mp1h6x7j7moj?anchorId=6aa14fd12a33b8ed65eea01c",
-          "referer": "https://gavang33.ag/truc-tiep/tsg-hoffenheim-vs-sturm-graz-luc-0300-ngay-27-11-2026-y39mp1h6x7j7moj?anchorId=6aa14fd12a33b8ed65eea01c"
-        }
-      ]
-    },
-    {
-      "id": "m_12",
-      "league": "UEFA Europa League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Juventus",
-      "home_logo": "https://img.cltvap.cc/football/team/3b1eace38b5847ab87a09bbdd885f1c4.png",
-      "away_name": "Omonia Nicosia FC",
-      "away_logo": "https://img.cltvap.cc/football/team/21fdafedb4eed8612da51c6c236b3d63.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Kiêu",
-          "url": "https://gavang33.ag/truc-tiep/juventus-vs-omonia-nicosia-fc-luc-0300-ngay-27-11-2026-8yomo4h1wnvxq0j?anchorId=6a955bd5c8262fd0d7ecee7a",
-          "referer": "https://gavang33.ag/truc-tiep/juventus-vs-omonia-nicosia-fc-luc-0300-ngay-27-11-2026-8yomo4h1wnvxq0j?anchorId=6a955bd5c8262fd0d7ecee7a"
-        }
-      ]
-    },
-    {
-      "id": "m_13",
-      "league": "UEFA Europa League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Lyon",
-      "home_logo": "https://img.cltvap.cc/football/team/aa3497ccbc2348199cbfcf3c9f9d9dec.png",
-      "away_name": "Lillestrom",
-      "away_logo": "https://img.cltvap.cc/football/team/f46fa570a21dc0f62e327d211a98ebaa.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Ô Long",
-          "url": "https://gavang33.ag/truc-tiep/lyon-vs-lillestrom-luc-0300-ngay-27-11-2026-pxwrxlhy6dzxryk?anchorId=6a31da2f9a2eb0e4aaedf62e",
-          "referer": "https://gavang33.ag/truc-tiep/lyon-vs-lillestrom-luc-0300-ngay-27-11-2026-pxwrxlhy6dzxryk?anchorId=6a31da2f9a2eb0e4aaedf62e"
-        }
-      ]
-    },
-    {
-      "id": "m_14",
-      "league": "UEFA Europa League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "NEC Nijmegen",
-      "home_logo": "https://img.cltvap.cc/football/team/d22de494a1ff648e90892c249c5aed12.png",
-      "away_name": "Stade Rennais FC",
-      "away_logo": "https://img.cltvap.cc/football/team/d845beab75524154b179cfb4f70da4e5.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Kiêu",
-          "url": "https://gavang33.ag/truc-tiep/nec-nijmegen-vs-stade-rennais-fc-luc-0300-ngay-27-11-2026-965mkyhkjpnjr1g?anchorId=6a955bd5c8262fd0d7ecee7a",
-          "referer": "https://gavang33.ag/truc-tiep/nec-nijmegen-vs-stade-rennais-fc-luc-0300-ngay-27-11-2026-965mkyhkjpnjr1g?anchorId=6a955bd5c8262fd0d7ecee7a"
-        }
-      ]
-    },
-    {
-      "id": "m_15",
-      "league": "UEFA Champions League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Borac Banja Luka",
-      "home_logo": "https://img.cltvap.cc/football/team/538d312c2512ebda3129f105db04e5e5.png",
-      "away_name": "Atalanta",
-      "away_logo": "https://img.cltvap.cc/football/team/1fb162414c1d48018423ea8b749ac1b8.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Nhí",
-          "url": "https://gavang33.ag/truc-tiep/borac-banja-luka-vs-atalanta-luc-0300-ngay-27-11-2026-n54qllhnlvdwqvy?anchorId=6aa14ecd419a47d5e57cb691",
-          "referer": "https://gavang33.ag/truc-tiep/borac-banja-luka-vs-atalanta-luc-0300-ngay-27-11-2026-n54qllhnlvdwqvy?anchorId=6aa14ecd419a47d5e57cb691"
-        }
-      ]
-    },
-    {
-      "id": "m_16",
-      "league": "UEFA Europa League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "AC Sparta Praha",
-      "home_logo": "https://img.cltvap.cc/football/team/5b8479ebddd13feeef3165a1393aad19.png",
-      "away_name": "AZ Alkmaar",
-      "away_logo": "https://img.cltvap.cc/football/team/e52b745126bbb6bdddc90b91b44413ae.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Bệu",
-          "url": "https://gavang33.ag/truc-tiep/ac-sparta-praha-vs-az-alkmaar-luc-0300-ngay-27-11-2026-k82rekhg5ln3rep?anchorId=69fc585e696b57b6f1dae26b",
-          "referer": "https://gavang33.ag/truc-tiep/ac-sparta-praha-vs-az-alkmaar-luc-0300-ngay-27-11-2026-k82rekhg5ln3rep?anchorId=69fc585e696b57b6f1dae26b"
-        }
-      ]
-    },
-    {
-      "id": "m_17",
-      "league": "UEFA Europa League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "Sunderland",
-      "home_logo": "https://img.cltvap.cc/football/team/9b111ad58ebc40b6bbcc47414b204d87.png",
-      "away_name": "Jagiellonia Bialystok",
-      "away_logo": "https://img.cltvap.cc/football/team/b0fa01690e4a5c944c861b245b42d5b4.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Gáy",
-          "url": "https://gavang33.ag/truc-tiep/sunderland-vs-jagiellonia-bialystok-luc-0300-ngay-27-11-2026-pxwrxlhy6d70ryk?anchorId=6a68b4c60f5c6246168b1fa1",
-          "referer": "https://gavang33.ag/truc-tiep/sunderland-vs-jagiellonia-bialystok-luc-0300-ngay-27-11-2026-pxwrxlhy6d70ryk?anchorId=6a68b4c60f5c6246168b1fa1"
-        }
-      ]
-    },
-    {
-      "id": "m_18",
-      "league": "UEFA Europa League",
-      "status": "SẮP ĐÁ",
-      "kickoff": "03:00",
-      "home_name": "SCU Torreense",
-      "home_logo": "https://img.cltvap.cc/football/team/3555977b288a6b8b02f876b0e5a1da53.png",
-      "away_name": "Celtic FC",
-      "away_logo": "https://img.cltvap.cc/football/team/4952d00987ef86afeda3204d66ac3fd6.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Mõm",
-          "url": "https://gavang33.ag/truc-tiep/scu-torreense-vs-celtic-fc-luc-0300-ngay-27-11-2026-4jwq2ghn8lp4m0v?anchorId=6ac6623d35fd50989491e855",
-          "referer": "https://gavang33.ag/truc-tiep/scu-torreense-vs-celtic-fc-luc-0300-ngay-27-11-2026-4jwq2ghn8lp4m0v?anchorId=6ac6623d35fd50989491e855"
-        }
-      ]
-    },
-    {
-      "id": "m_19",
-      "league": "Brazilian Serie A",
-      "status": "SẮP ĐÁ",
-      "kickoff": "06:00",
-      "home_name": "São Paulo - SP",
-      "home_logo": "https://img.cltvap.cc/football/team/31f5171de0e1404fdebcef19cd7cd409.png",
-      "away_name": "Remo - PA",
-      "away_logo": "https://img.cltvap.cc/football/team/8d4ae02740684681d297792508ed0e70.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Son",
-          "url": "https://gavang33.ag/truc-tiep/sao-paulo-sp-vs-remo-pa-luc-0600-ngay-27-11-2026-y0or5jh8zljlqwz?anchorId=69fc581d696b57b6f1dae269",
-          "referer": "https://gavang33.ag/truc-tiep/sao-paulo-sp-vs-remo-pa-luc-0600-ngay-27-11-2026-y0or5jh8zljlqwz?anchorId=69fc581d696b57b6f1dae269"
-        }
-      ]
-    },
-    {
-      "id": "m_20",
       "league": "Mexico Liga MX",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "08:00",
       "home_name": "Pachuca",
       "home_logo": "https://img.cltvap.cc/football/team/cff411edceeeb7c1677d9db65ce47164.png",
-      "away_name": "Club Deportivo Guadalajara",
+      "away_name": "Club Deportivo",
       "away_logo": "https://img.cltvap.cc/football/team/872867a492989e6a9a0785cfd0a40680.png",
       "score": "vs",
       "streams": [
@@ -363,7 +21,7 @@
       ]
     },
     {
-      "id": "m_21",
+      "id": "m_2",
       "league": "Mexico Liga MX",
       "status": "SẮP ĐÁ",
       "kickoff": "10:10",
@@ -381,7 +39,7 @@
       ]
     },
     {
-      "id": "m_22",
+      "id": "m_3",
       "league": "Vietnam National First Class League",
       "status": "SẮP ĐÁ",
       "kickoff": "15:30",
@@ -399,7 +57,7 @@
       ]
     },
     {
-      "id": "m_23",
+      "id": "m_4",
       "league": "Aus Champ",
       "status": "SẮP ĐÁ",
       "kickoff": "15:30",
@@ -417,7 +75,7 @@
       ]
     },
     {
-      "id": "m_24",
+      "id": "m_5",
       "league": "Australia A-League",
       "status": "SẮP ĐÁ",
       "kickoff": "15:40",
@@ -435,7 +93,7 @@
       ]
     },
     {
-      "id": "m_25",
+      "id": "m_6",
       "league": "Azerbaijan Premier League",
       "status": "SẮP ĐÁ",
       "kickoff": "17:30",
@@ -453,7 +111,7 @@
       ]
     },
     {
-      "id": "m_26",
+      "id": "m_7",
       "league": "Vietnam National Champion League",
       "status": "SẮP ĐÁ",
       "kickoff": "18:00",
@@ -471,7 +129,7 @@
       ]
     },
     {
-      "id": "m_27",
+      "id": "m_8",
       "league": "Vietnam National Champion League",
       "status": "SẮP ĐÁ",
       "kickoff": "18:00",
@@ -489,7 +147,7 @@
       ]
     },
     {
-      "id": "m_28",
+      "id": "m_9",
       "league": "Vietnam National First Class League",
       "status": "SẮP ĐÁ",
       "kickoff": "18:00",
@@ -507,7 +165,7 @@
       ]
     },
     {
-      "id": "m_29",
+      "id": "m_10",
       "league": "Vietnam National First Class League",
       "status": "SẮP ĐÁ",
       "kickoff": "18:00",
@@ -525,7 +183,7 @@
       ]
     },
     {
-      "id": "m_30",
+      "id": "m_11",
       "league": "Vietnam National First Class League",
       "status": "SẮP ĐÁ",
       "kickoff": "18:00",
@@ -543,7 +201,7 @@
       ]
     },
     {
-      "id": "m_31",
+      "id": "m_12",
       "league": "Thai League 1",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
@@ -561,7 +219,7 @@
       ]
     },
     {
-      "id": "m_32",
+      "id": "m_13",
       "league": "Saudi Professional League",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
@@ -579,7 +237,7 @@
       ]
     },
     {
-      "id": "m_33",
+      "id": "m_14",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
@@ -597,7 +255,7 @@
       ]
     },
     {
-      "id": "m_34",
+      "id": "m_15",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
@@ -615,7 +273,7 @@
       ]
     },
     {
-      "id": "m_35",
+      "id": "m_16",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
@@ -633,7 +291,7 @@
       ]
     },
     {
-      "id": "m_36",
+      "id": "m_17",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
@@ -651,7 +309,7 @@
       ]
     },
     {
-      "id": "m_37",
+      "id": "m_18",
       "league": "Indian Super League",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
@@ -669,7 +327,7 @@
       ]
     },
     {
-      "id": "m_38",
+      "id": "m_19",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -687,7 +345,7 @@
       ]
     },
     {
-      "id": "m_39",
+      "id": "m_20",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -705,7 +363,7 @@
       ]
     },
     {
-      "id": "m_40",
+      "id": "m_21",
       "league": "Azerbaijan Premier League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -723,7 +381,7 @@
       ]
     },
     {
-      "id": "m_41",
+      "id": "m_22",
       "league": "Romanian Super Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
@@ -741,7 +399,7 @@
       ]
     },
     {
-      "id": "m_42",
+      "id": "m_23",
       "league": "Qatar Stars League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
@@ -759,7 +417,7 @@
       ]
     },
     {
-      "id": "m_43",
+      "id": "m_24",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -777,7 +435,7 @@
       ]
     },
     {
-      "id": "m_44",
+      "id": "m_25",
       "league": "FIFA U17 World Cup",
       "status": "SẮP ĐÁ",
       "kickoff": "23:00",
@@ -795,7 +453,7 @@
       ]
     },
     {
-      "id": "m_45",
+      "id": "m_26",
       "league": "Bulgarian First League",
       "status": "SẮP ĐÁ",
       "kickoff": "23:30",
@@ -813,9 +471,9 @@
       ]
     },
     {
-      "id": "m_46",
+      "id": "m_27",
       "league": "Saudi Professional League",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "00:30",
       "home_name": "Al Ittihad",
       "home_logo": "https://img.cltvap.cc/football/team/dea986d20115216c05d1a45ba9a6162e.png",
@@ -831,9 +489,9 @@
       ]
     },
     {
-      "id": "m_47",
+      "id": "m_28",
       "league": "German Bundesliga 2",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "00:30",
       "home_name": "VfL Bochum 1848",
       "home_logo": "https://img.cltvap.cc/football/team/51e1cbc15a7ae90e176b1c1dfb096928.png",
@@ -849,9 +507,9 @@
       ]
     },
     {
-      "id": "m_48",
+      "id": "m_29",
       "league": "German Bundesliga 2",
-      "status": "LIVE",
+      "status": "SẮP ĐÁ",
       "kickoff": "00:30",
       "home_name": "1. FC Heidenheim 1846",
       "home_logo": "https://img.cltvap.cc/football/team/65ee743f20fa7db286fdeda4d33c6980.png",
@@ -867,7 +525,7 @@
       ]
     },
     {
-      "id": "m_49",
+      "id": "m_30",
       "league": "Netherlands Eredivisie",
       "status": "SẮP ĐÁ",
       "kickoff": "02:00",
@@ -885,7 +543,7 @@
       ]
     },
     {
-      "id": "m_50",
+      "id": "m_31",
       "league": "Bundesliga",
       "status": "SẮP ĐÁ",
       "kickoff": "02:30",
@@ -903,7 +561,7 @@
       ]
     },
     {
-      "id": "m_51",
+      "id": "m_32",
       "league": "Italian Serie A",
       "status": "SẮP ĐÁ",
       "kickoff": "02:45",
@@ -921,7 +579,7 @@
       ]
     },
     {
-      "id": "m_52",
+      "id": "m_33",
       "league": "French Ligue 1",
       "status": "SẮP ĐÁ",
       "kickoff": "02:45",
@@ -939,7 +597,7 @@
       ]
     },
     {
-      "id": "m_53",
+      "id": "m_34",
       "league": "English Premier League",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -957,7 +615,7 @@
       ]
     },
     {
-      "id": "m_54",
+      "id": "m_35",
       "league": "Spanish La Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "03:00",
@@ -975,7 +633,7 @@
       ]
     },
     {
-      "id": "m_55",
+      "id": "m_36",
       "league": "Brazilian Serie A",
       "status": "SẮP ĐÁ",
       "kickoff": "06:00",
@@ -993,7 +651,7 @@
       ]
     },
     {
-      "id": "m_56",
+      "id": "m_37",
       "league": "Categoría Primera A",
       "status": "SẮP ĐÁ",
       "kickoff": "06:35",
@@ -1011,9 +669,9 @@
       ]
     },
     {
-      "id": "m_57",
+      "id": "m_38",
       "league": "United States Major League Soccer",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "08:00",
       "home_name": "Columbus Crew",
       "home_logo": "https://img.cltvap.cc/football/team/b6d8f81e8454813b3e672b179e627d3a.png",
@@ -1029,9 +687,9 @@
       ]
     },
     {
-      "id": "m_58",
+      "id": "m_39",
       "league": "Categoría Primera A",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "08:40",
       "home_name": "Millonarios",
       "home_logo": "https://img.cltvap.cc/football/team/88bf2a10fe7e8d3f9a21b73f3f77fcde.png",
@@ -1047,7 +705,7 @@
       ]
     },
     {
-      "id": "m_59",
+      "id": "m_40",
       "league": "United States Major League Soccer",
       "status": "SẮP ĐÁ",
       "kickoff": "10:00",
@@ -1065,7 +723,7 @@
       ]
     },
     {
-      "id": "m_60",
+      "id": "m_41",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "12:00",
@@ -1083,7 +741,7 @@
       ]
     },
     {
-      "id": "m_61",
+      "id": "m_42",
       "league": "Korean K League 1",
       "status": "SẮP ĐÁ",
       "kickoff": "12:00",
@@ -1101,7 +759,7 @@
       ]
     },
     {
-      "id": "m_62",
+      "id": "m_43",
       "league": "Korean K League 1",
       "status": "SẮP ĐÁ",
       "kickoff": "12:00",
@@ -1119,7 +777,7 @@
       ]
     },
     {
-      "id": "m_63",
+      "id": "m_44",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "13:00",
@@ -1137,7 +795,7 @@
       ]
     },
     {
-      "id": "m_64",
+      "id": "m_45",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "13:00",
@@ -1155,7 +813,7 @@
       ]
     },
     {
-      "id": "m_65",
+      "id": "m_46",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "14:00",
@@ -1173,7 +831,7 @@
       ]
     },
     {
-      "id": "m_66",
+      "id": "m_47",
       "league": "Korean K League 1",
       "status": "SẮP ĐÁ",
       "kickoff": "14:30",
@@ -1191,7 +849,7 @@
       ]
     },
     {
-      "id": "m_67",
+      "id": "m_48",
       "league": "Korean K League 1",
       "status": "SẮP ĐÁ",
       "kickoff": "14:30",
@@ -1209,7 +867,7 @@
       ]
     },
     {
-      "id": "m_68",
+      "id": "m_49",
       "league": "Australia A-League",
       "status": "SẮP ĐÁ",
       "kickoff": "15:40",
@@ -1227,7 +885,7 @@
       ]
     },
     {
-      "id": "m_69",
+      "id": "m_50",
       "league": "Vietnam National Champion League",
       "status": "SẮP ĐÁ",
       "kickoff": "18:00",
@@ -1245,7 +903,7 @@
       ]
     },
     {
-      "id": "m_70",
+      "id": "m_51",
       "league": "Vietnam National Champion League",
       "status": "SẮP ĐÁ",
       "kickoff": "18:00",
@@ -1263,7 +921,7 @@
       ]
     },
     {
-      "id": "m_71",
+      "id": "m_52",
       "league": "German Bundesliga 2",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
@@ -1281,7 +939,7 @@
       ]
     },
     {
-      "id": "m_72",
+      "id": "m_53",
       "league": "German Bundesliga 2",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
@@ -1299,7 +957,7 @@
       ]
     },
     {
-      "id": "m_73",
+      "id": "m_54",
       "league": "German Bundesliga 2",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
@@ -1317,7 +975,7 @@
       ]
     },
     {
-      "id": "m_74",
+      "id": "m_55",
       "league": "Vietnam National Champion League",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
@@ -1335,7 +993,7 @@
       ]
     },
     {
-      "id": "m_75",
+      "id": "m_56",
       "league": "Saudi Arabia Youth League",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
@@ -1353,7 +1011,7 @@
       ]
     },
     {
-      "id": "m_76",
+      "id": "m_57",
       "league": "English Football League Championship",
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
@@ -1371,7 +1029,7 @@
       ]
     },
     {
-      "id": "m_77",
+      "id": "m_58",
       "league": "Spanish La Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
@@ -1389,7 +1047,7 @@
       ]
     },
     {
-      "id": "m_78",
+      "id": "m_59",
       "league": "Italian Serie A",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
@@ -1407,7 +1065,7 @@
       ]
     },
     {
-      "id": "m_79",
+      "id": "m_60",
       "league": "Bundesliga",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
@@ -1425,7 +1083,7 @@
       ]
     },
     {
-      "id": "m_80",
+      "id": "m_61",
       "league": "Bundesliga",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
@@ -1443,7 +1101,7 @@
       ]
     },
     {
-      "id": "m_81",
+      "id": "m_62",
       "league": "Bundesliga",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
@@ -1461,7 +1119,7 @@
       ]
     },
     {
-      "id": "m_82",
+      "id": "m_63",
       "league": "Bundesliga",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
@@ -1479,7 +1137,7 @@
       ]
     },
     {
-      "id": "m_83",
+      "id": "m_64",
       "league": "English Premier League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -1497,7 +1155,7 @@
       ]
     },
     {
-      "id": "m_84",
+      "id": "m_65",
       "league": "English Premier League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -1520,7 +1178,7 @@
       ]
     },
     {
-      "id": "m_85",
+      "id": "m_66",
       "league": "English Football League Championship",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -1538,7 +1196,7 @@
       ]
     },
     {
-      "id": "m_86",
+      "id": "m_67",
       "league": "English Football League Championship",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -1556,7 +1214,7 @@
       ]
     },
     {
-      "id": "m_87",
+      "id": "m_68",
       "league": "Spanish La Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "22:15",
@@ -1574,7 +1232,7 @@
       ]
     },
     {
-      "id": "m_88",
+      "id": "m_69",
       "league": "Portuguese Primera Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
@@ -1592,7 +1250,7 @@
       ]
     },
     {
-      "id": "m_89",
+      "id": "m_70",
       "league": "French Ligue 1",
       "status": "SẮP ĐÁ",
       "kickoff": "23:15",
