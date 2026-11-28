@@ -1,189 +1,45 @@
 {
-  "app_title": "Cập nhật lúc 02:49 28/11/2026",
-  "updated_at": "02:49 28/11/2026",
+  "app_title": "Cập nhật lúc 09:30 28/11/2026",
+  "updated_at": "09:30 28/11/2026",
   "matches": [
     {
       "id": "m_1",
-      "league": "English Premier League",
-      "status": "LIVE",
-      "kickoff": "03:00",
-      "home_name": "Nottingham Forest Vs",
-      "home_logo": "https://img.cltvap.cc/football/team/8f05da8e406345e0a12aa11ea8ce6506.png",
-      "away_name": "Trực Tiếp",
-      "away_logo": "https://img.cltvap.cc/football/team/e498984443da45129524c96731153e82.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Gáy",
-          "url": "https://live2.zktsva.app/live/294335.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/nottingham-forest-vs-chelsea-luc-0300-ngay-28-11-2026-k82rekhgd4y0rep?anchorId=6a68b4c60f5c6246168b1fa1"
-        }
-      ]
-    },
-    {
-      "id": "m_2",
-      "league": "Spanish La Liga",
-      "status": "LIVE",
-      "kickoff": "03:00",
-      "home_name": "Levante",
-      "home_logo": "https://img.cltvap.cc/football/team/2728d4cb86a245d6835a6d2fdbbd3baa.png",
-      "away_name": "Racing",
-      "away_logo": "https://img.cltvap.cc/football/team/0747bed6010b493bbb243d7aaeb7e4a0.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Péo",
-          "url": "https://live2.zktsva.app/live/303098.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/levante-vs-racing-santander-luc-0300-ngay-28-11-2026-23xmvkh6jx0jqg8?anchorId=6a78aab67e077ab7a1f9af59"
-        }
-      ]
-    },
-    {
-      "id": "m_3",
-      "league": "Bundesliga",
-      "status": "LIVE",
-      "kickoff": "02:30",
-      "home_name": "Sv Werder Bremen",
-      "home_logo": "https://img.cltvap.cc/football/team/54a9f7be8dcf4bbdb76187f4f8e6400d.png",
-      "away_name": "Borussia",
-      "away_logo": "https://img.cltvap.cc/football/team/999c033d7cd14dc38d05a0957f3230b4.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Quỷ",
-          "url": "https://live2.zktsva.app/live/304565.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/sv-werder-bremen-vs-borussia-monchengladbach-luc-0230-ngay-28-11-2026-8yomo4h1o5pkq0j?anchorId=6a9fea8c419a47d5e57cb68d"
-        }
-      ]
-    },
-    {
-      "id": "m_4",
-      "league": "Italian Serie A",
-      "status": "LIVE",
-      "kickoff": "02:45",
-      "home_name": "Venezia Vs",
-      "home_logo": "https://img.cltvap.cc/football/team/217846278dae47c8955cf5eaa230e6e8.png",
-      "away_name": "Trực Tiếp",
-      "away_logo": "https://img.cltvap.cc/football/team/de1764657d2642e0893928e7ed86a19c.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Bệu",
-          "url": "https://live2.zktsva.app/live/289650.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/venezia-vs-bologna-luc-0245-ngay-28-11-2026-zp5rzghgejnkq82?anchorId=69fc585e696b57b6f1dae26b"
-        }
-      ]
-    },
-    {
-      "id": "m_5",
-      "league": "French Ligue 1",
-      "status": "LIVE",
-      "kickoff": "02:45",
-      "home_name": "Stade Brestois 29",
-      "home_logo": "https://img.cltvap.cc/football/team/e40b3120486c4355aac5561e8f9c0a1e.png",
-      "away_name": "Paris Fc",
-      "away_logo": "https://img.cltvap.cc/football/team/2687f671f7874ff6b42f079842b73d9f.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Ngố",
-          "url": "https://live2.zktsva.app/live/301238.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/stade-brestois-29-vs-paris-fc-luc-0245-ngay-28-11-2026-k82rekhgdo5erep?anchorId=6aa136bffcdef77bf7fcc812"
-        }
-      ]
-    },
-    {
-      "id": "m_6",
-      "league": "Netherlands Eredivisie",
-      "status": "LIVE",
-      "kickoff": "02:00",
-      "home_name": "Groningen",
-      "home_logo": "https://img.cltvap.cc/football/team/98a1646fa8a5b6f02b0505cf3857f6d5.png",
-      "away_name": "Willem Ii",
-      "away_logo": "https://img.cltvap.cc/football/team/7b10a020a3acd1ed95d783a1dfa3498e.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Kiêu",
-          "url": "https://live2.zktsva.app/live/741294.m3u8",
-          "referer": "https://gavang33.ag/truc-tiep/groningen-vs-willem-ii-luc-0200-ngay-28-11-2026-3glrw7hnelz8qdy?anchorId=6a955bd5c8262fd0d7ecee7a"
-        }
-      ]
-    },
-    {
-      "id": "m_7",
-      "league": "Brazilian Serie A",
-      "status": "SẮP ĐÁ",
-      "kickoff": "06:00",
-      "home_name": "Fluminense - RJ",
-      "home_logo": "https://img.cltvap.cc/football/team/a6bce9adfac7903426bed2b253991a18.png",
-      "away_name": "Cruzeiro - MG",
-      "away_logo": "https://img.cltvap.cc/football/team/3fe9281df0fdaf026741ff54ac24bdeb.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Son",
-          "url": "https://gavang33.ag/truc-tiep/fluminense-rj-vs-cruzeiro-mg-luc-0600-ngay-28-11-2026-3glrw7hn3woeqdy?anchorId=69fc581d696b57b6f1dae269",
-          "referer": "https://gavang33.ag/truc-tiep/fluminense-rj-vs-cruzeiro-mg-luc-0600-ngay-28-11-2026-3glrw7hn3woeqdy?anchorId=69fc581d696b57b6f1dae269"
-        }
-      ]
-    },
-    {
-      "id": "m_8",
-      "league": "Categoría Primera A",
-      "status": "SẮP ĐÁ",
-      "kickoff": "06:35",
-      "home_name": "Deportivo Cali",
-      "home_logo": "https://img.cltvap.cc/football/team/b997a2811a0caed43ff38b631a708420.png",
-      "away_name": "Atletico Bucaramanga",
-      "away_logo": "https://img.cltvap.cc/football/team/70c92764e181ce7abe6176c411a93fe3.png",
-      "score": "vs",
-      "streams": [
-        {
-          "label": "BLV Gà Siêu Tốc",
-          "url": "https://gavang33.ag/truc-tiep/deportivo-cali-vs-atletico-bucaramanga-luc-0635-ngay-28-11-2026-ednm9wh5k320ryo?anchorId=69fcb2b17f55d5be198f16aa",
-          "referer": "https://gavang33.ag/truc-tiep/deportivo-cali-vs-atletico-bucaramanga-luc-0635-ngay-28-11-2026-ednm9wh5k320ryo?anchorId=69fcb2b17f55d5be198f16aa"
-        }
-      ]
-    },
-    {
-      "id": "m_9",
       "league": "United States Major League Soccer",
-      "status": "SẮP ĐÁ",
-      "kickoff": "08:00",
+      "status": "LIVE",
+      "kickoff": "08:15",
       "home_name": "Columbus Crew",
       "home_logo": "https://img.cltvap.cc/football/team/b6d8f81e8454813b3e672b179e627d3a.png",
-      "away_name": "Inter Miami CF",
+      "away_name": "Inter Miami Cf",
       "away_logo": "https://img.cltvap.cc/football/team/976fe1d29c112f4baeb844cdda2f04cb.png",
       "score": "vs",
       "streams": [
         {
           "label": "BLV Gà Siêu Tồ",
-          "url": "https://gavang33.ag/truc-tiep/columbus-crew-vs-inter-miami-cf-luc-0800-ngay-28-11-2026-y39mp1hd364xmoj?anchorId=6aa14fd12a33b8ed65eea01c",
-          "referer": "https://gavang33.ag/truc-tiep/columbus-crew-vs-inter-miami-cf-luc-0800-ngay-28-11-2026-y39mp1hd364xmoj?anchorId=6aa14fd12a33b8ed65eea01c"
+          "url": "https://live2.zktsva.app/live/796315.m3u8",
+          "referer": "https://gavang33.ag/truc-tiep/columbus-crew-vs-inter-miami-cf-luc-0815-ngay-28-11-2026-y39mp1hd364xmoj?anchorId=6aa14fd12a33b8ed65eea01c"
         }
       ]
     },
     {
-      "id": "m_10",
+      "id": "m_2",
       "league": "Categoría Primera A",
-      "status": "SẮP ĐÁ",
+      "status": "LIVE",
       "kickoff": "08:40",
       "home_name": "Millonarios",
       "home_logo": "https://img.cltvap.cc/football/team/88bf2a10fe7e8d3f9a21b73f3f77fcde.png",
-      "away_name": "America de Cali",
+      "away_name": "America De Cali",
       "away_logo": "https://img.cltvap.cc/football/team/ed6ae7fa894cb5bdbccfd605d1d6ad04.png",
       "score": "vs",
       "streams": [
         {
           "label": "BLV Gà Siêu Son",
-          "url": "https://gavang33.ag/truc-tiep/millonarios-vs-america-de-cali-luc-0840-ngay-28-11-2026-965mkyh87622r1g?anchorId=69fc581d696b57b6f1dae269",
+          "url": "https://live2.zktsva.app/live/306290.m3u8",
           "referer": "https://gavang33.ag/truc-tiep/millonarios-vs-america-de-cali-luc-0840-ngay-28-11-2026-965mkyh87622r1g?anchorId=69fc581d696b57b6f1dae269"
         }
       ]
     },
     {
-      "id": "m_11",
+      "id": "m_3",
       "league": "United States Major League Soccer",
       "status": "SẮP ĐÁ",
       "kickoff": "10:00",
@@ -201,7 +57,7 @@
       ]
     },
     {
-      "id": "m_12",
+      "id": "m_4",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "12:00",
@@ -219,7 +75,7 @@
       ]
     },
     {
-      "id": "m_13",
+      "id": "m_5",
       "league": "Korean K League 1",
       "status": "SẮP ĐÁ",
       "kickoff": "12:00",
@@ -237,7 +93,7 @@
       ]
     },
     {
-      "id": "m_14",
+      "id": "m_6",
       "league": "Korean K League 1",
       "status": "SẮP ĐÁ",
       "kickoff": "12:00",
@@ -255,7 +111,7 @@
       ]
     },
     {
-      "id": "m_15",
+      "id": "m_7",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "13:00",
@@ -273,7 +129,7 @@
       ]
     },
     {
-      "id": "m_16",
+      "id": "m_8",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "13:00",
@@ -291,7 +147,7 @@
       ]
     },
     {
-      "id": "m_17",
+      "id": "m_9",
       "league": "Japanese J1 League",
       "status": "SẮP ĐÁ",
       "kickoff": "14:00",
@@ -309,7 +165,7 @@
       ]
     },
     {
-      "id": "m_18",
+      "id": "m_10",
       "league": "Korean K League 1",
       "status": "SẮP ĐÁ",
       "kickoff": "14:30",
@@ -327,7 +183,7 @@
       ]
     },
     {
-      "id": "m_19",
+      "id": "m_11",
       "league": "Korean K League 1",
       "status": "SẮP ĐÁ",
       "kickoff": "14:30",
@@ -345,7 +201,7 @@
       ]
     },
     {
-      "id": "m_20",
+      "id": "m_12",
       "league": "Australia A-League",
       "status": "SẮP ĐÁ",
       "kickoff": "15:40",
@@ -363,7 +219,7 @@
       ]
     },
     {
-      "id": "m_21",
+      "id": "m_13",
       "league": "Vietnam National Champion League",
       "status": "SẮP ĐÁ",
       "kickoff": "18:00",
@@ -381,7 +237,7 @@
       ]
     },
     {
-      "id": "m_22",
+      "id": "m_14",
       "league": "Vietnam National Champion League",
       "status": "SẮP ĐÁ",
       "kickoff": "18:00",
@@ -399,7 +255,7 @@
       ]
     },
     {
-      "id": "m_23",
+      "id": "m_15",
       "league": "German Bundesliga 2",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
@@ -417,7 +273,7 @@
       ]
     },
     {
-      "id": "m_24",
+      "id": "m_16",
       "league": "German Bundesliga 2",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
@@ -435,7 +291,7 @@
       ]
     },
     {
-      "id": "m_25",
+      "id": "m_17",
       "league": "German Bundesliga 2",
       "status": "SẮP ĐÁ",
       "kickoff": "19:00",
@@ -453,7 +309,7 @@
       ]
     },
     {
-      "id": "m_26",
+      "id": "m_18",
       "league": "Vietnam National Champion League",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
@@ -471,7 +327,7 @@
       ]
     },
     {
-      "id": "m_27",
+      "id": "m_19",
       "league": "Saudi Arabia Youth League",
       "status": "SẮP ĐÁ",
       "kickoff": "19:15",
@@ -489,7 +345,7 @@
       ]
     },
     {
-      "id": "m_28",
+      "id": "m_20",
       "league": "English Football League Championship",
       "status": "SẮP ĐÁ",
       "kickoff": "19:30",
@@ -507,7 +363,7 @@
       ]
     },
     {
-      "id": "m_29",
+      "id": "m_21",
       "league": "Spanish La Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "20:00",
@@ -525,7 +381,7 @@
       ]
     },
     {
-      "id": "m_30",
+      "id": "m_22",
       "league": "Italian Serie A",
       "status": "SẮP ĐÁ",
       "kickoff": "21:00",
@@ -543,7 +399,7 @@
       ]
     },
     {
-      "id": "m_31",
+      "id": "m_23",
       "league": "Bundesliga",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
@@ -561,7 +417,7 @@
       ]
     },
     {
-      "id": "m_32",
+      "id": "m_24",
       "league": "Bundesliga",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
@@ -579,7 +435,7 @@
       ]
     },
     {
-      "id": "m_33",
+      "id": "m_25",
       "league": "Bundesliga",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
@@ -597,7 +453,7 @@
       ]
     },
     {
-      "id": "m_34",
+      "id": "m_26",
       "league": "Bundesliga",
       "status": "SẮP ĐÁ",
       "kickoff": "21:30",
@@ -615,7 +471,7 @@
       ]
     },
     {
-      "id": "m_35",
+      "id": "m_27",
       "league": "English Premier League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -633,7 +489,7 @@
       ]
     },
     {
-      "id": "m_36",
+      "id": "m_28",
       "league": "English Premier League",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -656,7 +512,7 @@
       ]
     },
     {
-      "id": "m_37",
+      "id": "m_29",
       "league": "English Football League Championship",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -674,7 +530,7 @@
       ]
     },
     {
-      "id": "m_38",
+      "id": "m_30",
       "league": "English Football League Championship",
       "status": "SẮP ĐÁ",
       "kickoff": "22:00",
@@ -692,7 +548,7 @@
       ]
     },
     {
-      "id": "m_39",
+      "id": "m_31",
       "league": "Spanish La Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "22:15",
@@ -710,7 +566,7 @@
       ]
     },
     {
-      "id": "m_40",
+      "id": "m_32",
       "league": "Portuguese Primeria Liga",
       "status": "SẮP ĐÁ",
       "kickoff": "22:30",
@@ -728,7 +584,7 @@
       ]
     },
     {
-      "id": "m_41",
+      "id": "m_33",
       "league": "French Ligue 1",
       "status": "SẮP ĐÁ",
       "kickoff": "23:15",
